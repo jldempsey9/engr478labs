@@ -3,40 +3,6 @@
 #include "cydevice.h"
 #include "cydevice_trm.h"
 
-/* Pin_1 */
-#define Pin_1__0__INTTYPE CYREG_PICU3_INTTYPE7
-#define Pin_1__0__MASK 0x80u
-#define Pin_1__0__PC CYREG_PRT3_PC7
-#define Pin_1__0__PORT 3u
-#define Pin_1__0__SHIFT 7u
-#define Pin_1__AG CYREG_PRT3_AG
-#define Pin_1__AMUX CYREG_PRT3_AMUX
-#define Pin_1__BIE CYREG_PRT3_BIE
-#define Pin_1__BIT_MASK CYREG_PRT3_BIT_MASK
-#define Pin_1__BYP CYREG_PRT3_BYP
-#define Pin_1__CTL CYREG_PRT3_CTL
-#define Pin_1__DM0 CYREG_PRT3_DM0
-#define Pin_1__DM1 CYREG_PRT3_DM1
-#define Pin_1__DM2 CYREG_PRT3_DM2
-#define Pin_1__DR CYREG_PRT3_DR
-#define Pin_1__INP_DIS CYREG_PRT3_INP_DIS
-#define Pin_1__INTTYPE_BASE CYDEV_PICU_INTTYPE_PICU3_BASE
-#define Pin_1__LCD_COM_SEG CYREG_PRT3_LCD_COM_SEG
-#define Pin_1__LCD_EN CYREG_PRT3_LCD_EN
-#define Pin_1__MASK 0x80u
-#define Pin_1__PORT 3u
-#define Pin_1__PRT CYREG_PRT3_PRT
-#define Pin_1__PRTDSI__CAPS_SEL CYREG_PRT3_CAPS_SEL
-#define Pin_1__PRTDSI__DBL_SYNC_IN CYREG_PRT3_DBL_SYNC_IN
-#define Pin_1__PRTDSI__OE_SEL0 CYREG_PRT3_OE_SEL0
-#define Pin_1__PRTDSI__OE_SEL1 CYREG_PRT3_OE_SEL1
-#define Pin_1__PRTDSI__OUT_SEL0 CYREG_PRT3_OUT_SEL0
-#define Pin_1__PRTDSI__OUT_SEL1 CYREG_PRT3_OUT_SEL1
-#define Pin_1__PRTDSI__SYNC_OUT CYREG_PRT3_SYNC_OUT
-#define Pin_1__PS CYREG_PRT3_PS
-#define Pin_1__SHIFT 7u
-#define Pin_1__SLW CYREG_PRT3_SLW
-
 /* isr_1 */
 #define isr_1__INTC_CLR_EN_REG CYREG_NVIC_CLRENA0
 #define isr_1__INTC_CLR_PD_REG CYREG_NVIC_CLRPEND0
@@ -57,6 +23,30 @@
 #define Clock_2__PM_ACT_MSK 0x02u
 #define Clock_2__PM_STBY_CFG CYREG_PM_STBY_CFG2
 #define Clock_2__PM_STBY_MSK 0x02u
+
+/* VDAC8_1_viDAC8 */
+#define VDAC8_1_viDAC8__CR0 CYREG_DAC1_CR0
+#define VDAC8_1_viDAC8__CR1 CYREG_DAC1_CR1
+#define VDAC8_1_viDAC8__D CYREG_DAC1_D
+#define VDAC8_1_viDAC8__PM_ACT_CFG CYREG_PM_ACT_CFG8
+#define VDAC8_1_viDAC8__PM_ACT_MSK 0x02u
+#define VDAC8_1_viDAC8__PM_STBY_CFG CYREG_PM_STBY_CFG8
+#define VDAC8_1_viDAC8__PM_STBY_MSK 0x02u
+#define VDAC8_1_viDAC8__STROBE CYREG_DAC1_STROBE
+#define VDAC8_1_viDAC8__SW0 CYREG_DAC1_SW0
+#define VDAC8_1_viDAC8__SW2 CYREG_DAC1_SW2
+#define VDAC8_1_viDAC8__SW3 CYREG_DAC1_SW3
+#define VDAC8_1_viDAC8__SW4 CYREG_DAC1_SW4
+#define VDAC8_1_viDAC8__TR CYREG_DAC1_TR
+#define VDAC8_1_viDAC8__TRIM__M1 CYREG_FLSHID_CUST_TABLES_DAC1_M1
+#define VDAC8_1_viDAC8__TRIM__M2 CYREG_FLSHID_CUST_TABLES_DAC1_M2
+#define VDAC8_1_viDAC8__TRIM__M3 CYREG_FLSHID_CUST_TABLES_DAC1_M3
+#define VDAC8_1_viDAC8__TRIM__M4 CYREG_FLSHID_CUST_TABLES_DAC1_M4
+#define VDAC8_1_viDAC8__TRIM__M5 CYREG_FLSHID_CUST_TABLES_DAC1_M5
+#define VDAC8_1_viDAC8__TRIM__M6 CYREG_FLSHID_CUST_TABLES_DAC1_M6
+#define VDAC8_1_viDAC8__TRIM__M7 CYREG_FLSHID_CUST_TABLES_DAC1_M7
+#define VDAC8_1_viDAC8__TRIM__M8 CYREG_FLSHID_CUST_TABLES_DAC1_M8
+#define VDAC8_1_viDAC8__TST CYREG_DAC1_TST
 
 /* ADC_SAR_1_ADC_SAR */
 #define ADC_SAR_1_ADC_SAR__CLK CYREG_SAR1_CLK
@@ -79,40 +69,6 @@
 #define ADC_SAR_1_ADC_SAR__TR0 CYREG_SAR1_TR0
 #define ADC_SAR_1_ADC_SAR__WRK0 CYREG_SAR1_WRK0
 #define ADC_SAR_1_ADC_SAR__WRK1 CYREG_SAR1_WRK1
-
-/* ADC_SAR_1_Bypass */
-#define ADC_SAR_1_Bypass__0__INTTYPE CYREG_PICU0_INTTYPE2
-#define ADC_SAR_1_Bypass__0__MASK 0x04u
-#define ADC_SAR_1_Bypass__0__PC CYREG_PRT0_PC2
-#define ADC_SAR_1_Bypass__0__PORT 0u
-#define ADC_SAR_1_Bypass__0__SHIFT 2u
-#define ADC_SAR_1_Bypass__AG CYREG_PRT0_AG
-#define ADC_SAR_1_Bypass__AMUX CYREG_PRT0_AMUX
-#define ADC_SAR_1_Bypass__BIE CYREG_PRT0_BIE
-#define ADC_SAR_1_Bypass__BIT_MASK CYREG_PRT0_BIT_MASK
-#define ADC_SAR_1_Bypass__BYP CYREG_PRT0_BYP
-#define ADC_SAR_1_Bypass__CTL CYREG_PRT0_CTL
-#define ADC_SAR_1_Bypass__DM0 CYREG_PRT0_DM0
-#define ADC_SAR_1_Bypass__DM1 CYREG_PRT0_DM1
-#define ADC_SAR_1_Bypass__DM2 CYREG_PRT0_DM2
-#define ADC_SAR_1_Bypass__DR CYREG_PRT0_DR
-#define ADC_SAR_1_Bypass__INP_DIS CYREG_PRT0_INP_DIS
-#define ADC_SAR_1_Bypass__INTTYPE_BASE CYDEV_PICU_INTTYPE_PICU0_BASE
-#define ADC_SAR_1_Bypass__LCD_COM_SEG CYREG_PRT0_LCD_COM_SEG
-#define ADC_SAR_1_Bypass__LCD_EN CYREG_PRT0_LCD_EN
-#define ADC_SAR_1_Bypass__MASK 0x04u
-#define ADC_SAR_1_Bypass__PORT 0u
-#define ADC_SAR_1_Bypass__PRT CYREG_PRT0_PRT
-#define ADC_SAR_1_Bypass__PRTDSI__CAPS_SEL CYREG_PRT0_CAPS_SEL
-#define ADC_SAR_1_Bypass__PRTDSI__DBL_SYNC_IN CYREG_PRT0_DBL_SYNC_IN
-#define ADC_SAR_1_Bypass__PRTDSI__OE_SEL0 CYREG_PRT0_OE_SEL0
-#define ADC_SAR_1_Bypass__PRTDSI__OE_SEL1 CYREG_PRT0_OE_SEL1
-#define ADC_SAR_1_Bypass__PRTDSI__OUT_SEL0 CYREG_PRT0_OUT_SEL0
-#define ADC_SAR_1_Bypass__PRTDSI__OUT_SEL1 CYREG_PRT0_OUT_SEL1
-#define ADC_SAR_1_Bypass__PRTDSI__SYNC_OUT CYREG_PRT0_SYNC_OUT
-#define ADC_SAR_1_Bypass__PS CYREG_PRT0_PS
-#define ADC_SAR_1_Bypass__SHIFT 2u
-#define ADC_SAR_1_Bypass__SLW CYREG_PRT0_SLW
 
 /* ADC_SAR_1_IRQ */
 #define ADC_SAR_1_IRQ__INTC_CLR_EN_REG CYREG_NVIC_CLRENA0
@@ -217,6 +173,9 @@
 #define Status_Reg_1_sts_sts_reg__STATUS_CONTROL_REG CYREG_B0_UDB13_ST_CTL
 #define Status_Reg_1_sts_sts_reg__STATUS_REG CYREG_B0_UDB13_ST
 
+/* Status_Reg_2 */
+#define Status_Reg_2_sts_sts_reg__REMOVED 1u
+
 /* Control_Reg_1 */
 #define Control_Reg_1_Sync_ctrl_reg__0__MASK 0x01u
 #define Control_Reg_1_Sync_ctrl_reg__0__POS 0
@@ -238,6 +197,40 @@
 #define Control_Reg_1_Sync_ctrl_reg__MASK_CTL_AUX_CTL_REG CYREG_B0_UDB13_MSK_ACTL
 #define Control_Reg_1_Sync_ctrl_reg__PER_CTL_AUX_CTL_REG CYREG_B0_UDB13_MSK_ACTL
 #define Control_Reg_1_Sync_ctrl_reg__PERIOD_REG CYREG_B0_UDB13_MSK
+
+/* Potentiometer_in */
+#define Potentiometer_in__0__INTTYPE CYREG_PICU3_INTTYPE7
+#define Potentiometer_in__0__MASK 0x80u
+#define Potentiometer_in__0__PC CYREG_PRT3_PC7
+#define Potentiometer_in__0__PORT 3u
+#define Potentiometer_in__0__SHIFT 7u
+#define Potentiometer_in__AG CYREG_PRT3_AG
+#define Potentiometer_in__AMUX CYREG_PRT3_AMUX
+#define Potentiometer_in__BIE CYREG_PRT3_BIE
+#define Potentiometer_in__BIT_MASK CYREG_PRT3_BIT_MASK
+#define Potentiometer_in__BYP CYREG_PRT3_BYP
+#define Potentiometer_in__CTL CYREG_PRT3_CTL
+#define Potentiometer_in__DM0 CYREG_PRT3_DM0
+#define Potentiometer_in__DM1 CYREG_PRT3_DM1
+#define Potentiometer_in__DM2 CYREG_PRT3_DM2
+#define Potentiometer_in__DR CYREG_PRT3_DR
+#define Potentiometer_in__INP_DIS CYREG_PRT3_INP_DIS
+#define Potentiometer_in__INTTYPE_BASE CYDEV_PICU_INTTYPE_PICU3_BASE
+#define Potentiometer_in__LCD_COM_SEG CYREG_PRT3_LCD_COM_SEG
+#define Potentiometer_in__LCD_EN CYREG_PRT3_LCD_EN
+#define Potentiometer_in__MASK 0x80u
+#define Potentiometer_in__PORT 3u
+#define Potentiometer_in__PRT CYREG_PRT3_PRT
+#define Potentiometer_in__PRTDSI__CAPS_SEL CYREG_PRT3_CAPS_SEL
+#define Potentiometer_in__PRTDSI__DBL_SYNC_IN CYREG_PRT3_DBL_SYNC_IN
+#define Potentiometer_in__PRTDSI__OE_SEL0 CYREG_PRT3_OE_SEL0
+#define Potentiometer_in__PRTDSI__OE_SEL1 CYREG_PRT3_OE_SEL1
+#define Potentiometer_in__PRTDSI__OUT_SEL0 CYREG_PRT3_OUT_SEL0
+#define Potentiometer_in__PRTDSI__OUT_SEL1 CYREG_PRT3_OUT_SEL1
+#define Potentiometer_in__PRTDSI__SYNC_OUT CYREG_PRT3_SYNC_OUT
+#define Potentiometer_in__PS CYREG_PRT3_PS
+#define Potentiometer_in__SHIFT 7u
+#define Potentiometer_in__SLW CYREG_PRT3_SLW
 
 /* Miscellaneous */
 #define BCLK__BUS_CLK__HZ 24000000U

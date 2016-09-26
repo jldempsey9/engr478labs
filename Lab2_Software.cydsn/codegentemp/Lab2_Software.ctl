@@ -1,6 +1,6 @@
 -- ======================================================================
 -- Lab2_Software.ctl generated from Lab2_Software
--- 09/23/2016 at 10:17
+-- 09/25/2016 at 18:05
 -- This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 -- ======================================================================
 

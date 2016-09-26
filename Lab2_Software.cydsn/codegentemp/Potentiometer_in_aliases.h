@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: Pin_1.h  
+* File Name: Potentiometer_in.h  
 * Version 2.20
 *
 * Description:
@@ -15,8 +15,8 @@
 * the software package with which this file was provided.
 *******************************************************************************/
 
-#if !defined(CY_PINS_Pin_1_ALIASES_H) /* Pins Pin_1_ALIASES_H */
-#define CY_PINS_Pin_1_ALIASES_H
+#if !defined(CY_PINS_Potentiometer_in_ALIASES_H) /* Pins Potentiometer_in_ALIASES_H */
+#define CY_PINS_Potentiometer_in_ALIASES_H
 
 #include "cytypes.h"
 #include "cyfitter.h"
@@ -25,12 +25,12 @@
 /***************************************
 *              Constants        
 ***************************************/
-#define Pin_1_0			(Pin_1__0__PC)
-#define Pin_1_0_INTR	((uint16)((uint16)0x0001u << Pin_1__0__SHIFT))
+#define Potentiometer_in_0			(Potentiometer_in__0__PC)
+#define Potentiometer_in_0_INTR	((uint16)((uint16)0x0001u << Potentiometer_in__0__SHIFT))
 
-#define Pin_1_INTR_ALL	 ((uint16)(Pin_1_0_INTR))
+#define Potentiometer_in_INTR_ALL	 ((uint16)(Potentiometer_in_0_INTR))
 
-#endif /* End Pins Pin_1_ALIASES_H */
+#endif /* End Pins Potentiometer_in_ALIASES_H */
 
 
 /* [] END OF FILE */

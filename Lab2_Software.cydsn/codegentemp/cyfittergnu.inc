@@ -3,40 +3,6 @@
 .include "cydevicegnu.inc"
 .include "cydevicegnu_trm.inc"
 
-/* Pin_1 */
-.set Pin_1__0__INTTYPE, CYREG_PICU3_INTTYPE7
-.set Pin_1__0__MASK, 0x80
-.set Pin_1__0__PC, CYREG_PRT3_PC7
-.set Pin_1__0__PORT, 3
-.set Pin_1__0__SHIFT, 7
-.set Pin_1__AG, CYREG_PRT3_AG
-.set Pin_1__AMUX, CYREG_PRT3_AMUX
-.set Pin_1__BIE, CYREG_PRT3_BIE
-.set Pin_1__BIT_MASK, CYREG_PRT3_BIT_MASK
-.set Pin_1__BYP, CYREG_PRT3_BYP
-.set Pin_1__CTL, CYREG_PRT3_CTL
-.set Pin_1__DM0, CYREG_PRT3_DM0
-.set Pin_1__DM1, CYREG_PRT3_DM1
-.set Pin_1__DM2, CYREG_PRT3_DM2
-.set Pin_1__DR, CYREG_PRT3_DR
-.set Pin_1__INP_DIS, CYREG_PRT3_INP_DIS
-.set Pin_1__INTTYPE_BASE, CYDEV_PICU_INTTYPE_PICU3_BASE
-.set Pin_1__LCD_COM_SEG, CYREG_PRT3_LCD_COM_SEG
-.set Pin_1__LCD_EN, CYREG_PRT3_LCD_EN
-.set Pin_1__MASK, 0x80
-.set Pin_1__PORT, 3
-.set Pin_1__PRT, CYREG_PRT3_PRT
-.set Pin_1__PRTDSI__CAPS_SEL, CYREG_PRT3_CAPS_SEL
-.set Pin_1__PRTDSI__DBL_SYNC_IN, CYREG_PRT3_DBL_SYNC_IN
-.set Pin_1__PRTDSI__OE_SEL0, CYREG_PRT3_OE_SEL0
-.set Pin_1__PRTDSI__OE_SEL1, CYREG_PRT3_OE_SEL1
-.set Pin_1__PRTDSI__OUT_SEL0, CYREG_PRT3_OUT_SEL0
-.set Pin_1__PRTDSI__OUT_SEL1, CYREG_PRT3_OUT_SEL1
-.set Pin_1__PRTDSI__SYNC_OUT, CYREG_PRT3_SYNC_OUT
-.set Pin_1__PS, CYREG_PRT3_PS
-.set Pin_1__SHIFT, 7
-.set Pin_1__SLW, CYREG_PRT3_SLW
-
 /* isr_1 */
 .set isr_1__INTC_CLR_EN_REG, CYREG_NVIC_CLRENA0
 .set isr_1__INTC_CLR_PD_REG, CYREG_NVIC_CLRPEND0
@@ -57,6 +23,30 @@
 .set Clock_2__PM_ACT_MSK, 0x02
 .set Clock_2__PM_STBY_CFG, CYREG_PM_STBY_CFG2
 .set Clock_2__PM_STBY_MSK, 0x02
+
+/* VDAC8_1_viDAC8 */
+.set VDAC8_1_viDAC8__CR0, CYREG_DAC1_CR0
+.set VDAC8_1_viDAC8__CR1, CYREG_DAC1_CR1
+.set VDAC8_1_viDAC8__D, CYREG_DAC1_D
+.set VDAC8_1_viDAC8__PM_ACT_CFG, CYREG_PM_ACT_CFG8
+.set VDAC8_1_viDAC8__PM_ACT_MSK, 0x02
+.set VDAC8_1_viDAC8__PM_STBY_CFG, CYREG_PM_STBY_CFG8
+.set VDAC8_1_viDAC8__PM_STBY_MSK, 0x02
+.set VDAC8_1_viDAC8__STROBE, CYREG_DAC1_STROBE
+.set VDAC8_1_viDAC8__SW0, CYREG_DAC1_SW0
+.set VDAC8_1_viDAC8__SW2, CYREG_DAC1_SW2
+.set VDAC8_1_viDAC8__SW3, CYREG_DAC1_SW3
+.set VDAC8_1_viDAC8__SW4, CYREG_DAC1_SW4
+.set VDAC8_1_viDAC8__TR, CYREG_DAC1_TR
+.set VDAC8_1_viDAC8__TRIM__M1, CYREG_FLSHID_CUST_TABLES_DAC1_M1
+.set VDAC8_1_viDAC8__TRIM__M2, CYREG_FLSHID_CUST_TABLES_DAC1_M2
+.set VDAC8_1_viDAC8__TRIM__M3, CYREG_FLSHID_CUST_TABLES_DAC1_M3
+.set VDAC8_1_viDAC8__TRIM__M4, CYREG_FLSHID_CUST_TABLES_DAC1_M4
+.set VDAC8_1_viDAC8__TRIM__M5, CYREG_FLSHID_CUST_TABLES_DAC1_M5
+.set VDAC8_1_viDAC8__TRIM__M6, CYREG_FLSHID_CUST_TABLES_DAC1_M6
+.set VDAC8_1_viDAC8__TRIM__M7, CYREG_FLSHID_CUST_TABLES_DAC1_M7
+.set VDAC8_1_viDAC8__TRIM__M8, CYREG_FLSHID_CUST_TABLES_DAC1_M8
+.set VDAC8_1_viDAC8__TST, CYREG_DAC1_TST
 
 /* ADC_SAR_1_ADC_SAR */
 .set ADC_SAR_1_ADC_SAR__CLK, CYREG_SAR1_CLK
@@ -79,40 +69,6 @@
 .set ADC_SAR_1_ADC_SAR__TR0, CYREG_SAR1_TR0
 .set ADC_SAR_1_ADC_SAR__WRK0, CYREG_SAR1_WRK0
 .set ADC_SAR_1_ADC_SAR__WRK1, CYREG_SAR1_WRK1
-
-/* ADC_SAR_1_Bypass */
-.set ADC_SAR_1_Bypass__0__INTTYPE, CYREG_PICU0_INTTYPE2
-.set ADC_SAR_1_Bypass__0__MASK, 0x04
-.set ADC_SAR_1_Bypass__0__PC, CYREG_PRT0_PC2
-.set ADC_SAR_1_Bypass__0__PORT, 0
-.set ADC_SAR_1_Bypass__0__SHIFT, 2
-.set ADC_SAR_1_Bypass__AG, CYREG_PRT0_AG
-.set ADC_SAR_1_Bypass__AMUX, CYREG_PRT0_AMUX
-.set ADC_SAR_1_Bypass__BIE, CYREG_PRT0_BIE
-.set ADC_SAR_1_Bypass__BIT_MASK, CYREG_PRT0_BIT_MASK
-.set ADC_SAR_1_Bypass__BYP, CYREG_PRT0_BYP
-.set ADC_SAR_1_Bypass__CTL, CYREG_PRT0_CTL
-.set ADC_SAR_1_Bypass__DM0, CYREG_PRT0_DM0
-.set ADC_SAR_1_Bypass__DM1, CYREG_PRT0_DM1
-.set ADC_SAR_1_Bypass__DM2, CYREG_PRT0_DM2
-.set ADC_SAR_1_Bypass__DR, CYREG_PRT0_DR
-.set ADC_SAR_1_Bypass__INP_DIS, CYREG_PRT0_INP_DIS
-.set ADC_SAR_1_Bypass__INTTYPE_BASE, CYDEV_PICU_INTTYPE_PICU0_BASE
-.set ADC_SAR_1_Bypass__LCD_COM_SEG, CYREG_PRT0_LCD_COM_SEG
-.set ADC_SAR_1_Bypass__LCD_EN, CYREG_PRT0_LCD_EN
-.set ADC_SAR_1_Bypass__MASK, 0x04
-.set ADC_SAR_1_Bypass__PORT, 0
-.set ADC_SAR_1_Bypass__PRT, CYREG_PRT0_PRT
-.set ADC_SAR_1_Bypass__PRTDSI__CAPS_SEL, CYREG_PRT0_CAPS_SEL
-.set ADC_SAR_1_Bypass__PRTDSI__DBL_SYNC_IN, CYREG_PRT0_DBL_SYNC_IN
-.set ADC_SAR_1_Bypass__PRTDSI__OE_SEL0, CYREG_PRT0_OE_SEL0
-.set ADC_SAR_1_Bypass__PRTDSI__OE_SEL1, CYREG_PRT0_OE_SEL1
-.set ADC_SAR_1_Bypass__PRTDSI__OUT_SEL0, CYREG_PRT0_OUT_SEL0
-.set ADC_SAR_1_Bypass__PRTDSI__OUT_SEL1, CYREG_PRT0_OUT_SEL1
-.set ADC_SAR_1_Bypass__PRTDSI__SYNC_OUT, CYREG_PRT0_SYNC_OUT
-.set ADC_SAR_1_Bypass__PS, CYREG_PRT0_PS
-.set ADC_SAR_1_Bypass__SHIFT, 2
-.set ADC_SAR_1_Bypass__SLW, CYREG_PRT0_SLW
 
 /* ADC_SAR_1_IRQ */
 .set ADC_SAR_1_IRQ__INTC_CLR_EN_REG, CYREG_NVIC_CLRENA0
@@ -217,6 +173,9 @@
 .set Status_Reg_1_sts_sts_reg__STATUS_CONTROL_REG, CYREG_B0_UDB13_ST_CTL
 .set Status_Reg_1_sts_sts_reg__STATUS_REG, CYREG_B0_UDB13_ST
 
+/* Status_Reg_2 */
+.set Status_Reg_2_sts_sts_reg__REMOVED, 1
+
 /* Control_Reg_1 */
 .set Control_Reg_1_Sync_ctrl_reg__0__MASK, 0x01
 .set Control_Reg_1_Sync_ctrl_reg__0__POS, 0
@@ -238,6 +197,40 @@
 .set Control_Reg_1_Sync_ctrl_reg__MASK_CTL_AUX_CTL_REG, CYREG_B0_UDB13_MSK_ACTL
 .set Control_Reg_1_Sync_ctrl_reg__PER_CTL_AUX_CTL_REG, CYREG_B0_UDB13_MSK_ACTL
 .set Control_Reg_1_Sync_ctrl_reg__PERIOD_REG, CYREG_B0_UDB13_MSK
+
+/* Potentiometer_in */
+.set Potentiometer_in__0__INTTYPE, CYREG_PICU3_INTTYPE7
+.set Potentiometer_in__0__MASK, 0x80
+.set Potentiometer_in__0__PC, CYREG_PRT3_PC7
+.set Potentiometer_in__0__PORT, 3
+.set Potentiometer_in__0__SHIFT, 7
+.set Potentiometer_in__AG, CYREG_PRT3_AG
+.set Potentiometer_in__AMUX, CYREG_PRT3_AMUX
+.set Potentiometer_in__BIE, CYREG_PRT3_BIE
+.set Potentiometer_in__BIT_MASK, CYREG_PRT3_BIT_MASK
+.set Potentiometer_in__BYP, CYREG_PRT3_BYP
+.set Potentiometer_in__CTL, CYREG_PRT3_CTL
+.set Potentiometer_in__DM0, CYREG_PRT3_DM0
+.set Potentiometer_in__DM1, CYREG_PRT3_DM1
+.set Potentiometer_in__DM2, CYREG_PRT3_DM2
+.set Potentiometer_in__DR, CYREG_PRT3_DR
+.set Potentiometer_in__INP_DIS, CYREG_PRT3_INP_DIS
+.set Potentiometer_in__INTTYPE_BASE, CYDEV_PICU_INTTYPE_PICU3_BASE
+.set Potentiometer_in__LCD_COM_SEG, CYREG_PRT3_LCD_COM_SEG
+.set Potentiometer_in__LCD_EN, CYREG_PRT3_LCD_EN
+.set Potentiometer_in__MASK, 0x80
+.set Potentiometer_in__PORT, 3
+.set Potentiometer_in__PRT, CYREG_PRT3_PRT
+.set Potentiometer_in__PRTDSI__CAPS_SEL, CYREG_PRT3_CAPS_SEL
+.set Potentiometer_in__PRTDSI__DBL_SYNC_IN, CYREG_PRT3_DBL_SYNC_IN
+.set Potentiometer_in__PRTDSI__OE_SEL0, CYREG_PRT3_OE_SEL0
+.set Potentiometer_in__PRTDSI__OE_SEL1, CYREG_PRT3_OE_SEL1
+.set Potentiometer_in__PRTDSI__OUT_SEL0, CYREG_PRT3_OUT_SEL0
+.set Potentiometer_in__PRTDSI__OUT_SEL1, CYREG_PRT3_OUT_SEL1
+.set Potentiometer_in__PRTDSI__SYNC_OUT, CYREG_PRT3_SYNC_OUT
+.set Potentiometer_in__PS, CYREG_PRT3_PS
+.set Potentiometer_in__SHIFT, 7
+.set Potentiometer_in__SLW, CYREG_PRT3_SLW
 
 /* Miscellaneous */
 .set BCLK__BUS_CLK__HZ, 24000000

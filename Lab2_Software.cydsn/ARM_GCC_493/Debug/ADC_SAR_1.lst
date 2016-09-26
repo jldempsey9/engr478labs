@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 1
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 1
   19:.\Generated_Source\PSoC5/ADC_SAR_1.c **** #include "ADC_SAR_1.h"
   20:.\Generated_Source\PSoC5/ADC_SAR_1.c **** 
   21:.\Generated_Source\PSoC5/ADC_SAR_1.c **** #if(ADC_SAR_1_DEFAULT_INTERNAL_CLK)
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 2
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 2
 
 
   22:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     #include "ADC_SAR_1_theACLK.h"
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 1
   37              		.loc 1 75 0
   38              		.cfi_startproc
   39              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 3
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 3
 
 
   40              		@ frame_needed = 1, uses_anonymous_args = 0
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 1
   92:.\Generated_Source\PSoC5/ADC_SAR_1.c **** *  Initialize component's parameters to the parameters set by user in the
   93:.\Generated_Source\PSoC5/ADC_SAR_1.c **** *  customizer of the component placed onto schematic. Usually called in
   94:.\Generated_Source\PSoC5/ADC_SAR_1.c **** *  ADC_SAR_1_Start().
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 4
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 4
 
 
   95:.\Generated_Source\PSoC5/ADC_SAR_1.c **** *
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 1
  105 0026 DBB2     		uxtb	r3, r3
  106 0028 1370     		strb	r3, [r2]
  122:.\Generated_Source\PSoC5/ADC_SAR_1.c **** 
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 5
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 5
 
 
  123:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     /*Set SAR ADC resolution ADC */
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 1
  139              		.cfi_offset 7, -8
  140              		.cfi_offset 14, -4
  141 0002 82B0     		sub	sp, sp, #8
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 6
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 6
 
 
  142              		.cfi_def_cfa_offset 16
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 1
  160:.\Generated_Source\PSoC5/ADC_SAR_1.c **** 
  161:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     /* Enable VCM buffer and Enable Int Ref Amp */
  162:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     tmpReg = ADC_SAR_1_SAR_CSR3_REG;
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 7
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 7
 
 
  181              		.loc 1 162 0
@@ -397,31 +397,31 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 1
  180:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     #else  /* Reference goes through internal buffer */
  181:.\Generated_Source\PSoC5/ADC_SAR_1.c ****         #if(ADC_SAR_1_DEFAULT_REFERENCE == ADC_SAR_1__INT_REF_NOT_BYPASSED)
  182:.\Generated_Source\PSoC5/ADC_SAR_1.c ****             ADC_SAR_1_SAR_CSR6_REG = ADC_SAR_1_INT_VREF;            /* S3 + S4 */
+ 197              		.loc 1 182 0
+ 198 006a 1C4B     		ldr	r3, .L9+20
+ 199 006c 1822     		movs	r2, #24
+ 200 006e 1A70     		strb	r2, [r3]
  183:.\Generated_Source\PSoC5/ADC_SAR_1.c ****         #else /* INTREF Bypassed of External */
  184:.\Generated_Source\PSoC5/ADC_SAR_1.c ****             ADC_SAR_1_SAR_CSR6_REG = ADC_SAR_1_INT_BYPASS_EXT_VREF; /* S2 */
- 197              		.loc 1 184 0
- 198 006a 1C4B     		ldr	r3, .L9+20
- 199 006c 0422     		movs	r2, #4
- 200 006e 1A70     		strb	r2, [r3]
  185:.\Generated_Source\PSoC5/ADC_SAR_1.c ****         #endif /* ADC_SAR_1_DEFAULT_REFERENCE == ADC_SAR_1__INT_REF_NOT_BYPASSED */
  186:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     #endif /* VNEG_VDDA_DIFF */
  187:.\Generated_Source\PSoC5/ADC_SAR_1.c **** 
  188:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     /* Low non-overlap delay for sampling clock signals (for 1MSPS) */
  189:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     #if(ADC_SAR_1_HIGH_POWER_PULSE == 0u) /* MinPulseWidth <= 50 ns */
  190:.\Generated_Source\PSoC5/ADC_SAR_1.c ****         ADC_SAR_1_SAR_CSR5_REG &= (uint8)~ADC_SAR_1_SAR_DLY_INC;
- 201              		.loc 1 190 0
+ 191:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     #else /* Set High non-overlap delay for sampling clock signals (for <500KSPS)*/
+ 192:.\Generated_Source\PSoC5/ADC_SAR_1.c ****         ADC_SAR_1_SAR_CSR5_REG |= ADC_SAR_1_SAR_DLY_INC;
+ 201              		.loc 1 192 0
  202 0070 1B4A     		ldr	r2, .L9+24
  203 0072 1B4B     		ldr	r3, .L9+24
  204 0074 1B78     		ldrb	r3, [r3]
  205 0076 DBB2     		uxtb	r3, r3
- 206 0078 23F04003 		bic	r3, r3, #64
+ 206 0078 43F04003 		orr	r3, r3, #64
  207 007c DBB2     		uxtb	r3, r3
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 8
+
+
  208 007e 1370     		strb	r3, [r2]
- 191:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     #else /* Set High non-overlap delay for sampling clock signals (for <500KSPS)*/
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 8
-
-
- 192:.\Generated_Source\PSoC5/ADC_SAR_1.c ****         ADC_SAR_1_SAR_CSR5_REG |= ADC_SAR_1_SAR_DLY_INC;
  193:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     #endif /* ADC_SAR_1_HIGH_POWER_PULSE == 0u */
  194:.\Generated_Source\PSoC5/ADC_SAR_1.c **** 
  195:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     /* Increase comparator latch enable delay by 20%, 
@@ -430,23 +430,23 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 1
  198:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     */
  199:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     #if(ADC_SAR_1_HIGH_POWER_PULSE == 0u)    /* MinPulseWidth <= 50 ns */
  200:.\Generated_Source\PSoC5/ADC_SAR_1.c ****         ADC_SAR_1_SAR_CSR5_REG |= ADC_SAR_1_SAR_SEL_CSEL_DFT_CHAR;
- 209              		.loc 1 200 0
+ 201:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     #else /* for <500ksps */
+ 202:.\Generated_Source\PSoC5/ADC_SAR_1.c ****         ADC_SAR_1_SAR_CSR5_REG &= (uint8)~ADC_SAR_1_SAR_SEL_CSEL_DFT_CHAR;
+ 209              		.loc 1 202 0
  210 0080 174A     		ldr	r2, .L9+24
  211 0082 174B     		ldr	r3, .L9+24
  212 0084 1B78     		ldrb	r3, [r3]
  213 0086 DBB2     		uxtb	r3, r3
- 214 0088 43F00303 		orr	r3, r3, #3
+ 214 0088 23F00303 		bic	r3, r3, #3
  215 008c DBB2     		uxtb	r3, r3
  216 008e 1370     		strb	r3, [r2]
- 201:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     #else /* for <500ksps */
- 202:.\Generated_Source\PSoC5/ADC_SAR_1.c ****         ADC_SAR_1_SAR_CSR5_REG &= (uint8)~ADC_SAR_1_SAR_SEL_CSEL_DFT_CHAR;
  203:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     #endif /* ADC_SAR_1_HIGH_POWER_PULSE == 0u */
  204:.\Generated_Source\PSoC5/ADC_SAR_1.c **** 
  205:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     /* Set default power and other configurations for control register 0 in multiple lines */
  206:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     ADC_SAR_1_SAR_CSR0_REG = (uint8)((uint8)ADC_SAR_1_DEFAULT_POWER << ADC_SAR_1_SAR_POWER_SHIFT)
  217              		.loc 1 206 0
  218 0090 144B     		ldr	r3, .L9+28
- 219 0092 0822     		movs	r2, #8
+ 219 0092 C822     		movs	r2, #200
  220 0094 1A70     		strb	r2, [r3]
  207:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     /* SAR_HIZ_CLEAR:   Should not be used for LP */
  208:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     #if ((CY_PSOC5LP) || (ADC_SAR_1_DEFAULT_REFERENCE != ADC_SAR_1__EXT_REF))
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 1
  222:.\Generated_Source\PSoC5/ADC_SAR_1.c **** 
  223:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     CyDelayUs(10u); /* The block is ready to use 10 us after the enable signal is set high. */
  233              		.loc 1 223 0
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 9
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 9
 
 
  234 00ac 0A20     		movs	r0, #10
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 1
  236:.\Generated_Source\PSoC5/ADC_SAR_1.c **** ********************************************************************************
  237:.\Generated_Source\PSoC5/ADC_SAR_1.c **** *
  238:.\Generated_Source\PSoC5/ADC_SAR_1.c **** * Summary:
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 10
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 10
 
 
  239:.\Generated_Source\PSoC5/ADC_SAR_1.c **** *  Stops ADC conversions and puts the ADC into its lowest power mode.
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 1
  310 0030 104B     		ldr	r3, .L12+8
  311 0032 1B78     		ldrb	r3, [r3]
  312 0034 DBB2     		uxtb	r3, r3
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 11
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 11
 
 
  313 0036 23F00203 		bic	r3, r3, #2
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 1
  357              		.thumb
  358              		.thumb_func
  359              		.type	ADC_SAR_1_SetPower, %function
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 12
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 12
 
 
  360              	ADC_SAR_1_SetPower:
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 1
  384 0018 03F03F03 		and	r3, r3, #63
  385 001c FB73     		strb	r3, [r7, #15]
  299:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     tmpReg |= (uint8)(power << ADC_SAR_1_SAR_POWER_SHIFT);
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 13
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 13
 
 
  386              		.loc 1 299 0
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 1
  318:.\Generated_Source\PSoC5/ADC_SAR_1.c **** *  None.
  319:.\Generated_Source\PSoC5/ADC_SAR_1.c **** *
  320:.\Generated_Source\PSoC5/ADC_SAR_1.c **** * Side Effects:
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 14
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 14
 
 
  321:.\Generated_Source\PSoC5/ADC_SAR_1.c **** *  The ADC resolution cannot be changed during a conversion cycle. The
@@ -834,11 +834,11 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 1
  347:.\Generated_Source\PSoC5/ADC_SAR_1.c ****         case (uint8)ADC_SAR_1__BITS_12:
  348:.\Generated_Source\PSoC5/ADC_SAR_1.c ****             tmpReg = ADC_SAR_1_SAR_RESOLUTION_12BIT | ADC_SAR_1_SAR_SAMPLE_WIDTH;
  446              		.loc 1 348 0
- 447 001a C423     		movs	r3, #196
+ 447 001a C223     		movs	r3, #194
  448 001c FB73     		strb	r3, [r7, #15]
  349:.\Generated_Source\PSoC5/ADC_SAR_1.c ****             break;
  449              		.loc 1 349 0
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 15
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 15
 
 
  450 001e 0BE0     		b	.L22
@@ -846,7 +846,7 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 1
  350:.\Generated_Source\PSoC5/ADC_SAR_1.c ****         case (uint8)ADC_SAR_1__BITS_10:
  351:.\Generated_Source\PSoC5/ADC_SAR_1.c ****             tmpReg = ADC_SAR_1_SAR_RESOLUTION_10BIT | ADC_SAR_1_SAR_SAMPLE_WIDTH;
  452              		.loc 1 351 0
- 453 0020 8423     		movs	r3, #132
+ 453 0020 8223     		movs	r3, #130
  454 0022 FB73     		strb	r3, [r7, #15]
  352:.\Generated_Source\PSoC5/ADC_SAR_1.c ****             break;
  455              		.loc 1 352 0
@@ -855,7 +855,7 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 1
  353:.\Generated_Source\PSoC5/ADC_SAR_1.c ****         case (uint8)ADC_SAR_1__BITS_8:
  354:.\Generated_Source\PSoC5/ADC_SAR_1.c ****             tmpReg = ADC_SAR_1_SAR_RESOLUTION_8BIT | ADC_SAR_1_SAR_SAMPLE_WIDTH;
  458              		.loc 1 354 0
- 459 0026 4423     		movs	r3, #68
+ 459 0026 4223     		movs	r3, #66
  460 0028 FB73     		strb	r3, [r7, #15]
  355:.\Generated_Source\PSoC5/ADC_SAR_1.c ****             break;
  461              		.loc 1 355 0
@@ -864,7 +864,7 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 1
  356:.\Generated_Source\PSoC5/ADC_SAR_1.c ****         default:
  357:.\Generated_Source\PSoC5/ADC_SAR_1.c ****             tmpReg = ADC_SAR_1_SAR_RESOLUTION_12BIT | ADC_SAR_1_SAR_SAMPLE_WIDTH;
  464              		.loc 1 357 0
- 465 002c C423     		movs	r3, #196
+ 465 002c C223     		movs	r3, #194
  466 002e FB73     		strb	r3, [r7, #15]
  358:.\Generated_Source\PSoC5/ADC_SAR_1.c ****             /* Halt CPU in debug mode if resolution is out of valid range */
  359:.\Generated_Source\PSoC5/ADC_SAR_1.c ****             CYASSERT(0u != 0u);
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 1
  487 004a 80BD     		pop	{r7, pc}
  488              	.L25:
  489              		.align	2
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 16
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 16
 
 
  490              	.L24:
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 1
  508 0000 80B4     		push	{r7}
  509              		.cfi_def_cfa_offset 4
  510              		.cfi_offset 7, -4
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 17
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 17
 
 
  511 0002 00AF     		add	r7, sp, #0
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 1
  424:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     * Return:
  425:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     *  None.
  426:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     *
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 18
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 18
 
 
  427:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     * Theory:
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 1
  579              		.global	ADC_SAR_1_IsEndConversion
  580              		.thumb
  581              		.thumb_func
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 19
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 19
 
 
  582              		.type	ADC_SAR_1_IsEndConversion, %function
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 1
  600              		.loc 1 481 0 discriminator 2
  601 000a 0C4B     		ldr	r3, .L37
  602 000c 1B78     		ldrb	r3, [r3]
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 20
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 20
 
 
  603 000e DBB2     		uxtb	r3, r3
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 1
  645              		.global	ADC_SAR_1_GetResult8
  646              		.thumb
  647              		.thumb_func
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 21
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 21
 
 
  648              		.type	ADC_SAR_1_GetResult8, %function
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 1
  523:.\Generated_Source\PSoC5/ADC_SAR_1.c **** }
  673              		.loc 1 523 0
  674 001a 1846     		mov	r0, r3
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 22
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 22
 
 
  675 001c BD46     		mov	sp, r7
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 1
  701              		@ frame_needed = 1, uses_anonymous_args = 0
  702              		@ link register save eliminated.
  703 0000 80B4     		push	{r7}
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 23
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 23
 
 
  704              		.cfi_def_cfa_offset 4
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 1
  559:.\Generated_Source\PSoC5/ADC_SAR_1.c **** 
  560:.\Generated_Source\PSoC5/ADC_SAR_1.c **** /*******************************************************************************
  561:.\Generated_Source\PSoC5/ADC_SAR_1.c **** * Function Name: ADC_SAR_1_SetOffset
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 24
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 24
 
 
  562:.\Generated_Source\PSoC5/ADC_SAR_1.c **** ********************************************************************************
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 1
  778 0018 7047     		bx	lr
  779              	.L49:
  780 001a 00BF     		.align	2
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 25
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 25
 
 
  781              	.L48:
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 1
  617:.\Generated_Source\PSoC5/ADC_SAR_1.c ****         uint16 diff_zero;
  618:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     #endif /* End ADC_SAR_1_DEFAULT_RANGE */
  619:.\Generated_Source\PSoC5/ADC_SAR_1.c **** 
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 26
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 26
 
 
  620:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     switch (resolution)
@@ -1510,7 +1510,7 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 1
  812 0012 02D0     		beq	.L53
  813 0014 082B     		cmp	r3, #8
  814 0016 08D0     		beq	.L54
- 815 0018 0BE0     		b	.L57
+ 815 0018 0BE0     		b	.L56
  816              	.L53:
  621:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     {
  622:.\Generated_Source\PSoC5/ADC_SAR_1.c ****         case (uint8)ADC_SAR_1__BITS_12:
@@ -1554,11 +1554,11 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 1
  645:.\Generated_Source\PSoC5/ADC_SAR_1.c ****             break;
  832              		.loc 1 645 0
  833 0030 05E0     		b	.L55
- 834              	.L57:
+ 834              	.L56:
  646:.\Generated_Source\PSoC5/ADC_SAR_1.c ****         default: /* Halt CPU in debug mode if resolution is out of valid range */
  647:.\Generated_Source\PSoC5/ADC_SAR_1.c ****             counts = 0;
  835              		.loc 1 647 0
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 27
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 27
 
 
  836 0032 0023     		movs	r3, #0
@@ -1579,7 +1579,7 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 1
  655:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     }
  656:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     ADC_SAR_1_countsPerVolt = 0; /* Clear obsolete variable */
  844              		.loc 1 656 0
- 845 003e 0C4B     		ldr	r3, .L58
+ 845 003e 0C4B     		ldr	r3, .L57
  846 0040 0022     		movs	r2, #0
  847 0042 1A80     		strh	r2, [r3]	@ movhi
  657:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     /* Calculate gain in counts per 10 volts with rounding */
@@ -1588,59 +1588,60 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 1
  849 0044 FB68     		ldr	r3, [r7, #12]
  850 0046 42F21072 		movw	r2, #10000
  851 004a 02FB03F3 		mul	r3, r2, r3
- 852 004e 03F58063 		add	r3, r3, #1024
+ 852 004e 03F59C53 		add	r3, r3, #4992
+ 853 0052 0833     		adds	r3, r3, #8
  659:.\Generated_Source\PSoC5/ADC_SAR_1.c ****                         ADC_SAR_1_DEFAULT_REF_VOLTAGE_MV) / (ADC_SAR_1_DEFAULT_REF_VOLTAGE_MV * 2))
- 853              		.loc 1 659 0
- 854 0052 002B     		cmp	r3, #0
- 855 0054 01DA     		bge	.L56
- 856 0056 03F2FF73 		addw	r3, r3, #2047
- 857              	.L56:
- 858 005a DB12     		asrs	r3, r3, #11
- 859 005c 1A46     		mov	r2, r3
+ 854              		.loc 1 659 0
+ 855 0054 074A     		ldr	r2, .L57+4
+ 856 0056 82FB0312 		smull	r1, r2, r2, r3
+ 857 005a 1213     		asrs	r2, r2, #12
+ 858 005c DB17     		asrs	r3, r3, #31
+ 859 005e D31A     		subs	r3, r2, r3
  658:.\Generated_Source\PSoC5/ADC_SAR_1.c ****                         ADC_SAR_1_DEFAULT_REF_VOLTAGE_MV) / (ADC_SAR_1_DEFAULT_REF_VOLTAGE_MV * 2))
  860              		.loc 1 658 0
- 861 005e 054B     		ldr	r3, .L58+4
- 862 0060 1A60     		str	r2, [r3]
+ 861 0060 054A     		ldr	r2, .L57+8
+ 862 0062 1360     		str	r3, [r2]
  660:.\Generated_Source\PSoC5/ADC_SAR_1.c **** 
  661:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     #if( (ADC_SAR_1_DEFAULT_RANGE == ADC_SAR_1__VSS_TO_VREF) || \
  662:.\Generated_Source\PSoC5/ADC_SAR_1.c ****          (ADC_SAR_1_DEFAULT_RANGE == ADC_SAR_1__VSSA_TO_VDDA) || \
  663:.\Generated_Source\PSoC5/ADC_SAR_1.c ****          (ADC_SAR_1_DEFAULT_RANGE == ADC_SAR_1__VSSA_TO_VDAC) )
  664:.\Generated_Source\PSoC5/ADC_SAR_1.c ****         ADC_SAR_1_shift = 0;
  863              		.loc 1 664 0
- 864 0062 054B     		ldr	r3, .L58+8
- 865 0064 0022     		movs	r2, #0
- 866 0066 1A80     		strh	r2, [r3]	@ movhi
+ 864 0064 054B     		ldr	r3, .L57+12
+ 865 0066 0022     		movs	r2, #0
+ 866 0068 1A80     		strh	r2, [r3]	@ movhi
  665:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     #else
  666:.\Generated_Source\PSoC5/ADC_SAR_1.c ****         ADC_SAR_1_shift = diff_zero;
  667:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     #endif /* End ADC_SAR_1_DEFAULT_RANGE */
  668:.\Generated_Source\PSoC5/ADC_SAR_1.c **** }
  867              		.loc 1 668 0
- 868 0068 1037     		adds	r7, r7, #16
+ 868 006a 1037     		adds	r7, r7, #16
  869              		.cfi_def_cfa_offset 8
- 870 006a BD46     		mov	sp, r7
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 28
+ 870 006c BD46     		mov	sp, r7
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 28
 
 
  871              		.cfi_def_cfa_register 13
  872              		@ sp needed
- 873 006c 80BD     		pop	{r7, pc}
- 874              	.L59:
- 875 006e 00BF     		.align	2
- 876              	.L58:
+ 873 006e 80BD     		pop	{r7, pc}
+ 874              	.L58:
+ 875              		.align	2
+ 876              	.L57:
  877 0070 00000000 		.word	ADC_SAR_1_countsPerVolt
- 878 0074 00000000 		.word	ADC_SAR_1_countsPer10Volt
- 879 0078 00000000 		.word	ADC_SAR_1_shift
- 880              		.cfi_endproc
- 881              	.LFE12:
- 882              		.size	ADC_SAR_1_CalcGain, .-ADC_SAR_1_CalcGain
- 883              		.section	.text.ADC_SAR_1_SetGain,"ax",%progbits
- 884              		.align	2
- 885              		.global	ADC_SAR_1_SetGain
- 886              		.thumb
- 887              		.thumb_func
- 888              		.type	ADC_SAR_1_SetGain, %function
- 889              	ADC_SAR_1_SetGain:
- 890              	.LFB13:
+ 878 0074 AD8BDB68 		.word	1759218605
+ 879 0078 00000000 		.word	ADC_SAR_1_countsPer10Volt
+ 880 007c 00000000 		.word	ADC_SAR_1_shift
+ 881              		.cfi_endproc
+ 882              	.LFE12:
+ 883              		.size	ADC_SAR_1_CalcGain, .-ADC_SAR_1_CalcGain
+ 884              		.section	.text.ADC_SAR_1_SetGain,"ax",%progbits
+ 885              		.align	2
+ 886              		.global	ADC_SAR_1_SetGain
+ 887              		.thumb
+ 888              		.thumb_func
+ 889              		.type	ADC_SAR_1_SetGain, %function
+ 890              	ADC_SAR_1_SetGain:
+ 891              	.LFB13:
  669:.\Generated_Source\PSoC5/ADC_SAR_1.c **** 
  670:.\Generated_Source\PSoC5/ADC_SAR_1.c **** 
  671:.\Generated_Source\PSoC5/ADC_SAR_1.c **** /*******************************************************************************
@@ -1666,59 +1667,59 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 1
  691:.\Generated_Source\PSoC5/ADC_SAR_1.c **** *******************************************************************************/
  692:.\Generated_Source\PSoC5/ADC_SAR_1.c **** void ADC_SAR_1_SetGain(int16 adcGain)
  693:.\Generated_Source\PSoC5/ADC_SAR_1.c **** {
- 891              		.loc 1 693 0
- 892              		.cfi_startproc
- 893              		@ args = 0, pretend = 0, frame = 8
- 894              		@ frame_needed = 1, uses_anonymous_args = 0
- 895              		@ link register save eliminated.
- 896 0000 80B4     		push	{r7}
- 897              		.cfi_def_cfa_offset 4
- 898              		.cfi_offset 7, -4
- 899 0002 83B0     		sub	sp, sp, #12
- 900              		.cfi_def_cfa_offset 16
- 901 0004 00AF     		add	r7, sp, #0
- 902              		.cfi_def_cfa_register 7
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 29
+ 892              		.loc 1 693 0
+ 893              		.cfi_startproc
+ 894              		@ args = 0, pretend = 0, frame = 8
+ 895              		@ frame_needed = 1, uses_anonymous_args = 0
+ 896              		@ link register save eliminated.
+ 897 0000 80B4     		push	{r7}
+ 898              		.cfi_def_cfa_offset 4
+ 899              		.cfi_offset 7, -4
+ 900 0002 83B0     		sub	sp, sp, #12
+ 901              		.cfi_def_cfa_offset 16
+ 902 0004 00AF     		add	r7, sp, #0
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 29
 
 
- 903 0006 0346     		mov	r3, r0
- 904 0008 FB80     		strh	r3, [r7, #6]	@ movhi
+ 903              		.cfi_def_cfa_register 7
+ 904 0006 0346     		mov	r3, r0
+ 905 0008 FB80     		strh	r3, [r7, #6]	@ movhi
  694:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     ADC_SAR_1_countsPer10Volt = (int32)adcGain * 10;
- 905              		.loc 1 694 0
- 906 000a B7F90620 		ldrsh	r2, [r7, #6]
- 907 000e 1346     		mov	r3, r2
- 908 0010 9B00     		lsls	r3, r3, #2
- 909 0012 1344     		add	r3, r3, r2
- 910 0014 5B00     		lsls	r3, r3, #1
- 911 0016 1A46     		mov	r2, r3
- 912 0018 034B     		ldr	r3, .L61
- 913 001a 1A60     		str	r2, [r3]
+ 906              		.loc 1 694 0
+ 907 000a B7F90620 		ldrsh	r2, [r7, #6]
+ 908 000e 1346     		mov	r3, r2
+ 909 0010 9B00     		lsls	r3, r3, #2
+ 910 0012 1344     		add	r3, r3, r2
+ 911 0014 5B00     		lsls	r3, r3, #1
+ 912 0016 1A46     		mov	r2, r3
+ 913 0018 034B     		ldr	r3, .L60
+ 914 001a 1A60     		str	r2, [r3]
  695:.\Generated_Source\PSoC5/ADC_SAR_1.c **** }
- 914              		.loc 1 695 0
- 915 001c 0C37     		adds	r7, r7, #12
- 916              		.cfi_def_cfa_offset 4
- 917 001e BD46     		mov	sp, r7
- 918              		.cfi_def_cfa_register 13
- 919              		@ sp needed
- 920 0020 5DF8047B 		ldr	r7, [sp], #4
- 921              		.cfi_restore 7
- 922              		.cfi_def_cfa_offset 0
- 923 0024 7047     		bx	lr
- 924              	.L62:
- 925 0026 00BF     		.align	2
- 926              	.L61:
- 927 0028 00000000 		.word	ADC_SAR_1_countsPer10Volt
- 928              		.cfi_endproc
- 929              	.LFE13:
- 930              		.size	ADC_SAR_1_SetGain, .-ADC_SAR_1_SetGain
- 931              		.section	.text.ADC_SAR_1_SetScaledGain,"ax",%progbits
- 932              		.align	2
- 933              		.global	ADC_SAR_1_SetScaledGain
- 934              		.thumb
- 935              		.thumb_func
- 936              		.type	ADC_SAR_1_SetScaledGain, %function
- 937              	ADC_SAR_1_SetScaledGain:
- 938              	.LFB14:
+ 915              		.loc 1 695 0
+ 916 001c 0C37     		adds	r7, r7, #12
+ 917              		.cfi_def_cfa_offset 4
+ 918 001e BD46     		mov	sp, r7
+ 919              		.cfi_def_cfa_register 13
+ 920              		@ sp needed
+ 921 0020 5DF8047B 		ldr	r7, [sp], #4
+ 922              		.cfi_restore 7
+ 923              		.cfi_def_cfa_offset 0
+ 924 0024 7047     		bx	lr
+ 925              	.L61:
+ 926 0026 00BF     		.align	2
+ 927              	.L60:
+ 928 0028 00000000 		.word	ADC_SAR_1_countsPer10Volt
+ 929              		.cfi_endproc
+ 930              	.LFE13:
+ 931              		.size	ADC_SAR_1_SetGain, .-ADC_SAR_1_SetGain
+ 932              		.section	.text.ADC_SAR_1_SetScaledGain,"ax",%progbits
+ 933              		.align	2
+ 934              		.global	ADC_SAR_1_SetScaledGain
+ 935              		.thumb
+ 936              		.thumb_func
+ 937              		.type	ADC_SAR_1_SetScaledGain, %function
+ 938              	ADC_SAR_1_SetScaledGain:
+ 939              	.LFB14:
  696:.\Generated_Source\PSoC5/ADC_SAR_1.c **** 
  697:.\Generated_Source\PSoC5/ADC_SAR_1.c **** 
  698:.\Generated_Source\PSoC5/ADC_SAR_1.c **** /*******************************************************************************
@@ -1737,70 +1738,70 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 1
  711:.\Generated_Source\PSoC5/ADC_SAR_1.c **** * Return:
  712:.\Generated_Source\PSoC5/ADC_SAR_1.c **** *  None.
  713:.\Generated_Source\PSoC5/ADC_SAR_1.c **** *
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 30
+
+
  714:.\Generated_Source\PSoC5/ADC_SAR_1.c **** * Global Variables:
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 30
-
-
  715:.\Generated_Source\PSoC5/ADC_SAR_1.c **** *  ADC_SAR_1_countsPer10Volt variable modified. This variable is used
  716:.\Generated_Source\PSoC5/ADC_SAR_1.c **** *  for gain calibration purpose.
  717:.\Generated_Source\PSoC5/ADC_SAR_1.c **** *
  718:.\Generated_Source\PSoC5/ADC_SAR_1.c **** *******************************************************************************/
  719:.\Generated_Source\PSoC5/ADC_SAR_1.c **** void ADC_SAR_1_SetScaledGain(int32 adcGain)
  720:.\Generated_Source\PSoC5/ADC_SAR_1.c **** {
- 939              		.loc 1 720 0
- 940              		.cfi_startproc
- 941              		@ args = 0, pretend = 0, frame = 8
- 942              		@ frame_needed = 1, uses_anonymous_args = 0
- 943              		@ link register save eliminated.
- 944 0000 80B4     		push	{r7}
- 945              		.cfi_def_cfa_offset 4
- 946              		.cfi_offset 7, -4
- 947 0002 83B0     		sub	sp, sp, #12
- 948              		.cfi_def_cfa_offset 16
- 949 0004 00AF     		add	r7, sp, #0
- 950              		.cfi_def_cfa_register 7
- 951 0006 7860     		str	r0, [r7, #4]
+ 940              		.loc 1 720 0
+ 941              		.cfi_startproc
+ 942              		@ args = 0, pretend = 0, frame = 8
+ 943              		@ frame_needed = 1, uses_anonymous_args = 0
+ 944              		@ link register save eliminated.
+ 945 0000 80B4     		push	{r7}
+ 946              		.cfi_def_cfa_offset 4
+ 947              		.cfi_offset 7, -4
+ 948 0002 83B0     		sub	sp, sp, #12
+ 949              		.cfi_def_cfa_offset 16
+ 950 0004 00AF     		add	r7, sp, #0
+ 951              		.cfi_def_cfa_register 7
+ 952 0006 7860     		str	r0, [r7, #4]
  721:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     ADC_SAR_1_countsPer10Volt = adcGain;
- 952              		.loc 1 721 0
- 953 0008 034A     		ldr	r2, .L64
- 954 000a 7B68     		ldr	r3, [r7, #4]
- 955 000c 1360     		str	r3, [r2]
+ 953              		.loc 1 721 0
+ 954 0008 034A     		ldr	r2, .L63
+ 955 000a 7B68     		ldr	r3, [r7, #4]
+ 956 000c 1360     		str	r3, [r2]
  722:.\Generated_Source\PSoC5/ADC_SAR_1.c **** }
- 956              		.loc 1 722 0
- 957 000e 0C37     		adds	r7, r7, #12
- 958              		.cfi_def_cfa_offset 4
- 959 0010 BD46     		mov	sp, r7
- 960              		.cfi_def_cfa_register 13
- 961              		@ sp needed
- 962 0012 5DF8047B 		ldr	r7, [sp], #4
- 963              		.cfi_restore 7
- 964              		.cfi_def_cfa_offset 0
- 965 0016 7047     		bx	lr
- 966              	.L65:
- 967              		.align	2
- 968              	.L64:
- 969 0018 00000000 		.word	ADC_SAR_1_countsPer10Volt
- 970              		.cfi_endproc
- 971              	.LFE14:
- 972              		.size	ADC_SAR_1_SetScaledGain, .-ADC_SAR_1_SetScaledGain
- 973              		.section	.text.ADC_SAR_1_CountsTo_mVolts,"ax",%progbits
- 974              		.align	2
- 975              		.global	ADC_SAR_1_CountsTo_mVolts
- 976              		.thumb
- 977              		.thumb_func
- 978              		.type	ADC_SAR_1_CountsTo_mVolts, %function
- 979              	ADC_SAR_1_CountsTo_mVolts:
- 980              	.LFB15:
+ 957              		.loc 1 722 0
+ 958 000e 0C37     		adds	r7, r7, #12
+ 959              		.cfi_def_cfa_offset 4
+ 960 0010 BD46     		mov	sp, r7
+ 961              		.cfi_def_cfa_register 13
+ 962              		@ sp needed
+ 963 0012 5DF8047B 		ldr	r7, [sp], #4
+ 964              		.cfi_restore 7
+ 965              		.cfi_def_cfa_offset 0
+ 966 0016 7047     		bx	lr
+ 967              	.L64:
+ 968              		.align	2
+ 969              	.L63:
+ 970 0018 00000000 		.word	ADC_SAR_1_countsPer10Volt
+ 971              		.cfi_endproc
+ 972              	.LFE14:
+ 973              		.size	ADC_SAR_1_SetScaledGain, .-ADC_SAR_1_SetScaledGain
+ 974              		.section	.text.ADC_SAR_1_CountsTo_mVolts,"ax",%progbits
+ 975              		.align	2
+ 976              		.global	ADC_SAR_1_CountsTo_mVolts
+ 977              		.thumb
+ 978              		.thumb_func
+ 979              		.type	ADC_SAR_1_CountsTo_mVolts, %function
+ 980              	ADC_SAR_1_CountsTo_mVolts:
+ 981              	.LFB15:
  723:.\Generated_Source\PSoC5/ADC_SAR_1.c **** 
  724:.\Generated_Source\PSoC5/ADC_SAR_1.c **** 
  725:.\Generated_Source\PSoC5/ADC_SAR_1.c **** /*******************************************************************************
  726:.\Generated_Source\PSoC5/ADC_SAR_1.c **** * Function Name: ADC_SAR_1_CountsTo_mVolts
  727:.\Generated_Source\PSoC5/ADC_SAR_1.c **** ********************************************************************************
  728:.\Generated_Source\PSoC5/ADC_SAR_1.c **** *
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 31
+
+
  729:.\Generated_Source\PSoC5/ADC_SAR_1.c **** * Summary:
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 31
-
-
  730:.\Generated_Source\PSoC5/ADC_SAR_1.c **** *  Converts the ADC output to millivolts as a 16-bit integer.
  731:.\Generated_Source\PSoC5/ADC_SAR_1.c **** *
  732:.\Generated_Source\PSoC5/ADC_SAR_1.c **** * Parameters:
@@ -1816,141 +1817,141 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 1
  742:.\Generated_Source\PSoC5/ADC_SAR_1.c **** *******************************************************************************/
  743:.\Generated_Source\PSoC5/ADC_SAR_1.c **** int16 ADC_SAR_1_CountsTo_mVolts(int16 adcCounts)
  744:.\Generated_Source\PSoC5/ADC_SAR_1.c **** {
- 981              		.loc 1 744 0
- 982              		.cfi_startproc
- 983              		@ args = 0, pretend = 0, frame = 16
- 984              		@ frame_needed = 1, uses_anonymous_args = 0
- 985              		@ link register save eliminated.
- 986 0000 80B4     		push	{r7}
- 987              		.cfi_def_cfa_offset 4
- 988              		.cfi_offset 7, -4
- 989 0002 85B0     		sub	sp, sp, #20
- 990              		.cfi_def_cfa_offset 24
- 991 0004 00AF     		add	r7, sp, #0
- 992              		.cfi_def_cfa_register 7
- 993 0006 0346     		mov	r3, r0
- 994 0008 FB80     		strh	r3, [r7, #6]	@ movhi
+ 982              		.loc 1 744 0
+ 983              		.cfi_startproc
+ 984              		@ args = 0, pretend = 0, frame = 16
+ 985              		@ frame_needed = 1, uses_anonymous_args = 0
+ 986              		@ link register save eliminated.
+ 987 0000 80B4     		push	{r7}
+ 988              		.cfi_def_cfa_offset 4
+ 989              		.cfi_offset 7, -4
+ 990 0002 85B0     		sub	sp, sp, #20
+ 991              		.cfi_def_cfa_offset 24
+ 992 0004 00AF     		add	r7, sp, #0
+ 993              		.cfi_def_cfa_register 7
+ 994 0006 0346     		mov	r3, r0
+ 995 0008 FB80     		strh	r3, [r7, #6]	@ movhi
  745:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     int16 mVolts;
  746:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     int32 countsPer10Volt;
  747:.\Generated_Source\PSoC5/ADC_SAR_1.c **** 
  748:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     if(ADC_SAR_1_countsPerVolt != 0)
- 995              		.loc 1 748 0
- 996 000a 1D4B     		ldr	r3, .L72
- 997 000c 1B88     		ldrh	r3, [r3]	@ movhi
- 998 000e 9BB2     		uxth	r3, r3
- 999 0010 002B     		cmp	r3, #0
- 1000 0012 09D0     		beq	.L67
+ 996              		.loc 1 748 0
+ 997 000a 1D4B     		ldr	r3, .L71
+ 998 000c 1B88     		ldrh	r3, [r3]	@ movhi
+ 999 000e 9BB2     		uxth	r3, r3
+ 1000 0010 002B     		cmp	r3, #0
+ 1001 0012 09D0     		beq	.L66
  749:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     {   /* Support obsolete method */
  750:.\Generated_Source\PSoC5/ADC_SAR_1.c ****         countsPer10Volt = (int32)ADC_SAR_1_countsPerVolt * 10;
- 1001              		.loc 1 750 0
- 1002 0014 1A4B     		ldr	r3, .L72
- 1003 0016 1B88     		ldrh	r3, [r3]	@ movhi
- 1004 0018 9BB2     		uxth	r3, r3
- 1005 001a 1AB2     		sxth	r2, r3
- 1006 001c 1346     		mov	r3, r2
- 1007 001e 9B00     		lsls	r3, r3, #2
- 1008 0020 1344     		add	r3, r3, r2
- 1009 0022 5B00     		lsls	r3, r3, #1
- 1010 0024 FB60     		str	r3, [r7, #12]
- 1011 0026 02E0     		b	.L68
- 1012              	.L67:
+ 1002              		.loc 1 750 0
+ 1003 0014 1A4B     		ldr	r3, .L71
+ 1004 0016 1B88     		ldrh	r3, [r3]	@ movhi
+ 1005 0018 9BB2     		uxth	r3, r3
+ 1006 001a 1AB2     		sxth	r2, r3
+ 1007 001c 1346     		mov	r3, r2
+ 1008 001e 9B00     		lsls	r3, r3, #2
+ 1009 0020 1344     		add	r3, r3, r2
+ 1010 0022 5B00     		lsls	r3, r3, #1
+ 1011 0024 FB60     		str	r3, [r7, #12]
+ 1012 0026 02E0     		b	.L67
+ 1013              	.L66:
  751:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     }
  752:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     else
  753:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     {
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 32
+
+
  754:.\Generated_Source\PSoC5/ADC_SAR_1.c ****         countsPer10Volt = ADC_SAR_1_countsPer10Volt;
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 32
-
-
- 1013              		.loc 1 754 0
- 1014 0028 164B     		ldr	r3, .L72+4
- 1015 002a 1B68     		ldr	r3, [r3]
- 1016 002c FB60     		str	r3, [r7, #12]
- 1017              	.L68:
+ 1014              		.loc 1 754 0
+ 1015 0028 164B     		ldr	r3, .L71+4
+ 1016 002a 1B68     		ldr	r3, [r3]
+ 1017 002c FB60     		str	r3, [r7, #12]
+ 1018              	.L67:
  755:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     }
  756:.\Generated_Source\PSoC5/ADC_SAR_1.c **** 
  757:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     /* Subtract ADC offset */
  758:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     adcCounts -= ADC_SAR_1_offset;
- 1018              		.loc 1 758 0
- 1019 002e 164B     		ldr	r3, .L72+8
- 1020 0030 1B88     		ldrh	r3, [r3]	@ movhi
- 1021 0032 9BB2     		uxth	r3, r3
- 1022 0034 FA88     		ldrh	r2, [r7, #6]
- 1023 0036 9BB2     		uxth	r3, r3
- 1024 0038 D31A     		subs	r3, r2, r3
- 1025 003a 9BB2     		uxth	r3, r3
- 1026 003c FB80     		strh	r3, [r7, #6]	@ movhi
+ 1019              		.loc 1 758 0
+ 1020 002e 164B     		ldr	r3, .L71+8
+ 1021 0030 1B88     		ldrh	r3, [r3]	@ movhi
+ 1022 0032 9BB2     		uxth	r3, r3
+ 1023 0034 FA88     		ldrh	r2, [r7, #6]
+ 1024 0036 9BB2     		uxth	r3, r3
+ 1025 0038 D31A     		subs	r3, r2, r3
+ 1026 003a 9BB2     		uxth	r3, r3
+ 1027 003c FB80     		strh	r3, [r7, #6]	@ movhi
  759:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     /* Convert to millivolts with rounding */
  760:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     mVolts = (int16)( (( (int32)adcCounts * ADC_SAR_1_10MV_COUNTS ) + ( (adcCounts > 0) ?
- 1027              		.loc 1 760 0
- 1028 003e B7F90630 		ldrsh	r3, [r7, #6]
- 1029 0042 42F21072 		movw	r2, #10000
- 1030 0046 02FB03F2 		mul	r2, r2, r3
+ 1028              		.loc 1 760 0
+ 1029 003e B7F90630 		ldrsh	r3, [r7, #6]
+ 1030 0042 42F21072 		movw	r2, #10000
+ 1031 0046 02FB03F2 		mul	r2, r2, r3
  761:.\Generated_Source\PSoC5/ADC_SAR_1.c ****                        (countsPer10Volt / 2) : (-(countsPer10Volt / 2)) )) / countsPer10Volt);
- 1031              		.loc 1 761 0
- 1032 004a B7F90630 		ldrsh	r3, [r7, #6]
- 1033 004e 002B     		cmp	r3, #0
- 1034 0050 04DD     		ble	.L69
- 1035              		.loc 1 761 0 is_stmt 0 discriminator 1
- 1036 0052 FB68     		ldr	r3, [r7, #12]
- 1037 0054 D90F     		lsrs	r1, r3, #31
- 1038 0056 0B44     		add	r3, r3, r1
- 1039 0058 5B10     		asrs	r3, r3, #1
- 1040 005a 04E0     		b	.L70
- 1041              	.L69:
- 1042              		.loc 1 761 0 discriminator 2
- 1043 005c FB68     		ldr	r3, [r7, #12]
- 1044 005e D90F     		lsrs	r1, r3, #31
- 1045 0060 0B44     		add	r3, r3, r1
- 1046 0062 5B10     		asrs	r3, r3, #1
- 1047 0064 5B42     		negs	r3, r3
- 1048              	.L70:
+ 1032              		.loc 1 761 0
+ 1033 004a B7F90630 		ldrsh	r3, [r7, #6]
+ 1034 004e 002B     		cmp	r3, #0
+ 1035 0050 04DD     		ble	.L68
+ 1036              		.loc 1 761 0 is_stmt 0 discriminator 1
+ 1037 0052 FB68     		ldr	r3, [r7, #12]
+ 1038 0054 D90F     		lsrs	r1, r3, #31
+ 1039 0056 0B44     		add	r3, r3, r1
+ 1040 0058 5B10     		asrs	r3, r3, #1
+ 1041 005a 04E0     		b	.L69
+ 1042              	.L68:
+ 1043              		.loc 1 761 0 discriminator 2
+ 1044 005c FB68     		ldr	r3, [r7, #12]
+ 1045 005e D90F     		lsrs	r1, r3, #31
+ 1046 0060 0B44     		add	r3, r3, r1
+ 1047 0062 5B10     		asrs	r3, r3, #1
+ 1048 0064 5B42     		negs	r3, r3
+ 1049              	.L69:
  760:.\Generated_Source\PSoC5/ADC_SAR_1.c ****                        (countsPer10Volt / 2) : (-(countsPer10Volt / 2)) )) / countsPer10Volt);
- 1049              		.loc 1 760 0 is_stmt 1
- 1050 0066 1A44     		add	r2, r2, r3
- 1051              		.loc 1 761 0
- 1052 0068 FB68     		ldr	r3, [r7, #12]
- 1053 006a 92FBF3F3 		sdiv	r3, r2, r3
+ 1050              		.loc 1 760 0 is_stmt 1
+ 1051 0066 1A44     		add	r2, r2, r3
+ 1052              		.loc 1 761 0
+ 1053 0068 FB68     		ldr	r3, [r7, #12]
+ 1054 006a 92FBF3F3 		sdiv	r3, r2, r3
  760:.\Generated_Source\PSoC5/ADC_SAR_1.c ****                        (countsPer10Volt / 2) : (-(countsPer10Volt / 2)) )) / countsPer10Volt);
- 1054              		.loc 1 760 0
- 1055 006e 7B81     		strh	r3, [r7, #10]	@ movhi
+ 1055              		.loc 1 760 0
+ 1056 006e 7B81     		strh	r3, [r7, #10]	@ movhi
  762:.\Generated_Source\PSoC5/ADC_SAR_1.c **** 
  763:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     return( mVolts );
- 1056              		.loc 1 763 0
- 1057 0070 7B89     		ldrh	r3, [r7, #10]
- 1058 0072 1BB2     		sxth	r3, r3
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 33
+ 1057              		.loc 1 763 0
+ 1058 0070 7B89     		ldrh	r3, [r7, #10]
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 33
 
 
+ 1059 0072 1BB2     		sxth	r3, r3
  764:.\Generated_Source\PSoC5/ADC_SAR_1.c **** }
- 1059              		.loc 1 764 0
- 1060 0074 1846     		mov	r0, r3
- 1061 0076 1437     		adds	r7, r7, #20
- 1062              		.cfi_def_cfa_offset 4
- 1063 0078 BD46     		mov	sp, r7
- 1064              		.cfi_def_cfa_register 13
- 1065              		@ sp needed
- 1066 007a 5DF8047B 		ldr	r7, [sp], #4
- 1067              		.cfi_restore 7
- 1068              		.cfi_def_cfa_offset 0
- 1069 007e 7047     		bx	lr
- 1070              	.L73:
- 1071              		.align	2
- 1072              	.L72:
- 1073 0080 00000000 		.word	ADC_SAR_1_countsPerVolt
- 1074 0084 00000000 		.word	ADC_SAR_1_countsPer10Volt
- 1075 0088 00000000 		.word	ADC_SAR_1_offset
- 1076              		.cfi_endproc
- 1077              	.LFE15:
- 1078              		.size	ADC_SAR_1_CountsTo_mVolts, .-ADC_SAR_1_CountsTo_mVolts
- 1079              		.global	__aeabi_ldivmod
- 1080              		.section	.text.ADC_SAR_1_CountsTo_uVolts,"ax",%progbits
- 1081              		.align	2
- 1082              		.global	ADC_SAR_1_CountsTo_uVolts
- 1083              		.thumb
- 1084              		.thumb_func
- 1085              		.type	ADC_SAR_1_CountsTo_uVolts, %function
- 1086              	ADC_SAR_1_CountsTo_uVolts:
- 1087              	.LFB16:
+ 1060              		.loc 1 764 0
+ 1061 0074 1846     		mov	r0, r3
+ 1062 0076 1437     		adds	r7, r7, #20
+ 1063              		.cfi_def_cfa_offset 4
+ 1064 0078 BD46     		mov	sp, r7
+ 1065              		.cfi_def_cfa_register 13
+ 1066              		@ sp needed
+ 1067 007a 5DF8047B 		ldr	r7, [sp], #4
+ 1068              		.cfi_restore 7
+ 1069              		.cfi_def_cfa_offset 0
+ 1070 007e 7047     		bx	lr
+ 1071              	.L72:
+ 1072              		.align	2
+ 1073              	.L71:
+ 1074 0080 00000000 		.word	ADC_SAR_1_countsPerVolt
+ 1075 0084 00000000 		.word	ADC_SAR_1_countsPer10Volt
+ 1076 0088 00000000 		.word	ADC_SAR_1_offset
+ 1077              		.cfi_endproc
+ 1078              	.LFE15:
+ 1079              		.size	ADC_SAR_1_CountsTo_mVolts, .-ADC_SAR_1_CountsTo_mVolts
+ 1080              		.global	__aeabi_ldivmod
+ 1081              		.section	.text.ADC_SAR_1_CountsTo_uVolts,"ax",%progbits
+ 1082              		.align	2
+ 1083              		.global	ADC_SAR_1_CountsTo_uVolts
+ 1084              		.thumb
+ 1085              		.thumb_func
+ 1086              		.type	ADC_SAR_1_CountsTo_uVolts, %function
+ 1087              	ADC_SAR_1_CountsTo_uVolts:
+ 1088              	.LFB16:
  765:.\Generated_Source\PSoC5/ADC_SAR_1.c **** 
  766:.\Generated_Source\PSoC5/ADC_SAR_1.c **** 
  767:.\Generated_Source\PSoC5/ADC_SAR_1.c **** /*******************************************************************************
@@ -1973,139 +1974,139 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 1
  784:.\Generated_Source\PSoC5/ADC_SAR_1.c **** *******************************************************************************/
  785:.\Generated_Source\PSoC5/ADC_SAR_1.c **** int32 ADC_SAR_1_CountsTo_uVolts(int16 adcCounts)
  786:.\Generated_Source\PSoC5/ADC_SAR_1.c **** {
- 1088              		.loc 1 786 0
- 1089              		.cfi_startproc
- 1090              		@ args = 0, pretend = 0, frame = 24
- 1091              		@ frame_needed = 1, uses_anonymous_args = 0
- 1092 0000 B0B5     		push	{r4, r5, r7, lr}
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 34
+ 1089              		.loc 1 786 0
+ 1090              		.cfi_startproc
+ 1091              		@ args = 0, pretend = 0, frame = 24
+ 1092              		@ frame_needed = 1, uses_anonymous_args = 0
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 34
 
 
- 1093              		.cfi_def_cfa_offset 16
- 1094              		.cfi_offset 4, -16
- 1095              		.cfi_offset 5, -12
- 1096              		.cfi_offset 7, -8
- 1097              		.cfi_offset 14, -4
- 1098 0002 86B0     		sub	sp, sp, #24
- 1099              		.cfi_def_cfa_offset 40
- 1100 0004 00AF     		add	r7, sp, #0
- 1101              		.cfi_def_cfa_register 7
- 1102 0006 0346     		mov	r3, r0
- 1103 0008 FB80     		strh	r3, [r7, #6]	@ movhi
+ 1093 0000 B0B5     		push	{r4, r5, r7, lr}
+ 1094              		.cfi_def_cfa_offset 16
+ 1095              		.cfi_offset 4, -16
+ 1096              		.cfi_offset 5, -12
+ 1097              		.cfi_offset 7, -8
+ 1098              		.cfi_offset 14, -4
+ 1099 0002 86B0     		sub	sp, sp, #24
+ 1100              		.cfi_def_cfa_offset 40
+ 1101 0004 00AF     		add	r7, sp, #0
+ 1102              		.cfi_def_cfa_register 7
+ 1103 0006 0346     		mov	r3, r0
+ 1104 0008 FB80     		strh	r3, [r7, #6]	@ movhi
  787:.\Generated_Source\PSoC5/ADC_SAR_1.c **** 
  788:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     int64 uVolts;
  789:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     int32 countsPer10Volt;
  790:.\Generated_Source\PSoC5/ADC_SAR_1.c **** 
  791:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     if(ADC_SAR_1_countsPerVolt != 0)
- 1104              		.loc 1 791 0
- 1105 000a 1E4B     		ldr	r3, .L78
- 1106 000c 1B88     		ldrh	r3, [r3]	@ movhi
- 1107 000e 9BB2     		uxth	r3, r3
- 1108 0010 002B     		cmp	r3, #0
- 1109 0012 09D0     		beq	.L75
+ 1105              		.loc 1 791 0
+ 1106 000a 1E4B     		ldr	r3, .L77
+ 1107 000c 1B88     		ldrh	r3, [r3]	@ movhi
+ 1108 000e 9BB2     		uxth	r3, r3
+ 1109 0010 002B     		cmp	r3, #0
+ 1110 0012 09D0     		beq	.L74
  792:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     {   /* Support obsolete method */
  793:.\Generated_Source\PSoC5/ADC_SAR_1.c ****         countsPer10Volt = (int32)ADC_SAR_1_countsPerVolt * 10;
- 1110              		.loc 1 793 0
- 1111 0014 1B4B     		ldr	r3, .L78
- 1112 0016 1B88     		ldrh	r3, [r3]	@ movhi
- 1113 0018 9BB2     		uxth	r3, r3
- 1114 001a 1AB2     		sxth	r2, r3
- 1115 001c 1346     		mov	r3, r2
- 1116 001e 9B00     		lsls	r3, r3, #2
- 1117 0020 1344     		add	r3, r3, r2
- 1118 0022 5B00     		lsls	r3, r3, #1
- 1119 0024 7B61     		str	r3, [r7, #20]
- 1120 0026 02E0     		b	.L76
- 1121              	.L75:
+ 1111              		.loc 1 793 0
+ 1112 0014 1B4B     		ldr	r3, .L77
+ 1113 0016 1B88     		ldrh	r3, [r3]	@ movhi
+ 1114 0018 9BB2     		uxth	r3, r3
+ 1115 001a 1AB2     		sxth	r2, r3
+ 1116 001c 1346     		mov	r3, r2
+ 1117 001e 9B00     		lsls	r3, r3, #2
+ 1118 0020 1344     		add	r3, r3, r2
+ 1119 0022 5B00     		lsls	r3, r3, #1
+ 1120 0024 7B61     		str	r3, [r7, #20]
+ 1121 0026 02E0     		b	.L75
+ 1122              	.L74:
  794:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     }
  795:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     else
  796:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     {
  797:.\Generated_Source\PSoC5/ADC_SAR_1.c ****         countsPer10Volt = ADC_SAR_1_countsPer10Volt;
- 1122              		.loc 1 797 0
- 1123 0028 174B     		ldr	r3, .L78+4
- 1124 002a 1B68     		ldr	r3, [r3]
- 1125 002c 7B61     		str	r3, [r7, #20]
- 1126              	.L76:
+ 1123              		.loc 1 797 0
+ 1124 0028 174B     		ldr	r3, .L77+4
+ 1125 002a 1B68     		ldr	r3, [r3]
+ 1126 002c 7B61     		str	r3, [r7, #20]
+ 1127              	.L75:
  798:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     }
  799:.\Generated_Source\PSoC5/ADC_SAR_1.c **** 
  800:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     /* Subtract ADC offset */
  801:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     adcCounts -= ADC_SAR_1_offset;
- 1127              		.loc 1 801 0
- 1128 002e 174B     		ldr	r3, .L78+8
- 1129 0030 1B88     		ldrh	r3, [r3]	@ movhi
- 1130 0032 9BB2     		uxth	r3, r3
- 1131 0034 FA88     		ldrh	r2, [r7, #6]
- 1132 0036 9BB2     		uxth	r3, r3
- 1133 0038 D31A     		subs	r3, r2, r3
- 1134 003a 9BB2     		uxth	r3, r3
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 35
+ 1128              		.loc 1 801 0
+ 1129 002e 174B     		ldr	r3, .L77+8
+ 1130 0030 1B88     		ldrh	r3, [r3]	@ movhi
+ 1131 0032 9BB2     		uxth	r3, r3
+ 1132 0034 FA88     		ldrh	r2, [r7, #6]
+ 1133 0036 9BB2     		uxth	r3, r3
+ 1134 0038 D31A     		subs	r3, r2, r3
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 35
 
 
- 1135 003c FB80     		strh	r3, [r7, #6]	@ movhi
+ 1135 003a 9BB2     		uxth	r3, r3
+ 1136 003c FB80     		strh	r3, [r7, #6]	@ movhi
  802:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     /* To convert adcCounts to microVolts it is required to be multiplied
  803:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     *  on 10 million and later divide on gain in counts per 10V.
  804:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     */
  805:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     uVolts = (( (int64)adcCounts * ADC_SAR_1_10UV_COUNTS ) / countsPer10Volt);
- 1136              		.loc 1 805 0
- 1137 003e B7F90620 		ldrsh	r2, [r7, #6]
- 1138 0042 4FEAE273 		asr	r3, r2, #31
- 1139 0046 1249     		ldr	r1, .L78+12
- 1140 0048 01FB03F0 		mul	r0, r1, r3
- 1141 004c 0021     		movs	r1, #0
- 1142 004e 01FB02F1 		mul	r1, r1, r2
- 1143 0052 0144     		add	r1, r1, r0
- 1144 0054 0E48     		ldr	r0, .L78+12
- 1145 0056 A2FB0023 		umull	r2, r3, r2, r0
- 1146 005a 1944     		add	r1, r1, r3
- 1147 005c 0B46     		mov	r3, r1
- 1148 005e 7969     		ldr	r1, [r7, #20]
- 1149 0060 0C46     		mov	r4, r1
- 1150 0062 4FEAE475 		asr	r5, r4, #31
- 1151 0066 1046     		mov	r0, r2
- 1152 0068 1946     		mov	r1, r3
- 1153 006a 2246     		mov	r2, r4
- 1154 006c 2B46     		mov	r3, r5
- 1155 006e FFF7FEFF 		bl	__aeabi_ldivmod
- 1156 0072 0246     		mov	r2, r0
- 1157 0074 0B46     		mov	r3, r1
- 1158 0076 C7E90223 		strd	r2, [r7, #8]
+ 1137              		.loc 1 805 0
+ 1138 003e B7F90620 		ldrsh	r2, [r7, #6]
+ 1139 0042 4FEAE273 		asr	r3, r2, #31
+ 1140 0046 1249     		ldr	r1, .L77+12
+ 1141 0048 01FB03F0 		mul	r0, r1, r3
+ 1142 004c 0021     		movs	r1, #0
+ 1143 004e 01FB02F1 		mul	r1, r1, r2
+ 1144 0052 0144     		add	r1, r1, r0
+ 1145 0054 0E48     		ldr	r0, .L77+12
+ 1146 0056 A2FB0023 		umull	r2, r3, r2, r0
+ 1147 005a 1944     		add	r1, r1, r3
+ 1148 005c 0B46     		mov	r3, r1
+ 1149 005e 7969     		ldr	r1, [r7, #20]
+ 1150 0060 0C46     		mov	r4, r1
+ 1151 0062 4FEAE475 		asr	r5, r4, #31
+ 1152 0066 1046     		mov	r0, r2
+ 1153 0068 1946     		mov	r1, r3
+ 1154 006a 2246     		mov	r2, r4
+ 1155 006c 2B46     		mov	r3, r5
+ 1156 006e FFF7FEFF 		bl	__aeabi_ldivmod
+ 1157 0072 0246     		mov	r2, r0
+ 1158 0074 0B46     		mov	r3, r1
+ 1159 0076 C7E90223 		strd	r2, [r7, #8]
  806:.\Generated_Source\PSoC5/ADC_SAR_1.c **** 
  807:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     return( uVolts );
- 1159              		.loc 1 807 0
- 1160 007a BB68     		ldr	r3, [r7, #8]
+ 1160              		.loc 1 807 0
+ 1161 007a BB68     		ldr	r3, [r7, #8]
  808:.\Generated_Source\PSoC5/ADC_SAR_1.c **** }
- 1161              		.loc 1 808 0
- 1162 007c 1846     		mov	r0, r3
- 1163 007e 1837     		adds	r7, r7, #24
- 1164              		.cfi_def_cfa_offset 16
- 1165 0080 BD46     		mov	sp, r7
- 1166              		.cfi_def_cfa_register 13
- 1167              		@ sp needed
- 1168 0082 B0BD     		pop	{r4, r5, r7, pc}
- 1169              	.L79:
- 1170              		.align	2
- 1171              	.L78:
- 1172 0084 00000000 		.word	ADC_SAR_1_countsPerVolt
- 1173 0088 00000000 		.word	ADC_SAR_1_countsPer10Volt
- 1174 008c 00000000 		.word	ADC_SAR_1_offset
- 1175 0090 80969800 		.word	10000000
- 1176              		.cfi_endproc
- 1177              	.LFE16:
- 1178              		.size	ADC_SAR_1_CountsTo_uVolts, .-ADC_SAR_1_CountsTo_uVolts
- 1179              		.global	__aeabi_i2f
- 1180              		.global	__aeabi_fmul
- 1181              		.global	__aeabi_fdiv
- 1182              		.section	.text.ADC_SAR_1_CountsTo_Volts,"ax",%progbits
- 1183              		.align	2
- 1184              		.global	ADC_SAR_1_CountsTo_Volts
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 36
+ 1162              		.loc 1 808 0
+ 1163 007c 1846     		mov	r0, r3
+ 1164 007e 1837     		adds	r7, r7, #24
+ 1165              		.cfi_def_cfa_offset 16
+ 1166 0080 BD46     		mov	sp, r7
+ 1167              		.cfi_def_cfa_register 13
+ 1168              		@ sp needed
+ 1169 0082 B0BD     		pop	{r4, r5, r7, pc}
+ 1170              	.L78:
+ 1171              		.align	2
+ 1172              	.L77:
+ 1173 0084 00000000 		.word	ADC_SAR_1_countsPerVolt
+ 1174 0088 00000000 		.word	ADC_SAR_1_countsPer10Volt
+ 1175 008c 00000000 		.word	ADC_SAR_1_offset
+ 1176 0090 80969800 		.word	10000000
+ 1177              		.cfi_endproc
+ 1178              	.LFE16:
+ 1179              		.size	ADC_SAR_1_CountsTo_uVolts, .-ADC_SAR_1_CountsTo_uVolts
+ 1180              		.global	__aeabi_i2f
+ 1181              		.global	__aeabi_fmul
+ 1182              		.global	__aeabi_fdiv
+ 1183              		.section	.text.ADC_SAR_1_CountsTo_Volts,"ax",%progbits
+ 1184              		.align	2
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 36
 
 
- 1185              		.thumb
- 1186              		.thumb_func
- 1187              		.type	ADC_SAR_1_CountsTo_Volts, %function
- 1188              	ADC_SAR_1_CountsTo_Volts:
- 1189              	.LFB17:
+ 1185              		.global	ADC_SAR_1_CountsTo_Volts
+ 1186              		.thumb
+ 1187              		.thumb_func
+ 1188              		.type	ADC_SAR_1_CountsTo_Volts, %function
+ 1189              	ADC_SAR_1_CountsTo_Volts:
+ 1190              	.LFB17:
  809:.\Generated_Source\PSoC5/ADC_SAR_1.c **** 
  810:.\Generated_Source\PSoC5/ADC_SAR_1.c **** 
  811:.\Generated_Source\PSoC5/ADC_SAR_1.c **** /*******************************************************************************
@@ -2128,1494 +2129,1492 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 1
  828:.\Generated_Source\PSoC5/ADC_SAR_1.c **** *******************************************************************************/
  829:.\Generated_Source\PSoC5/ADC_SAR_1.c **** float32 ADC_SAR_1_CountsTo_Volts(int16 adcCounts)
  830:.\Generated_Source\PSoC5/ADC_SAR_1.c **** {
- 1190              		.loc 1 830 0
- 1191              		.cfi_startproc
- 1192              		@ args = 0, pretend = 0, frame = 16
- 1193              		@ frame_needed = 1, uses_anonymous_args = 0
- 1194 0000 90B5     		push	{r4, r7, lr}
- 1195              		.cfi_def_cfa_offset 12
- 1196              		.cfi_offset 4, -12
- 1197              		.cfi_offset 7, -8
- 1198              		.cfi_offset 14, -4
- 1199 0002 85B0     		sub	sp, sp, #20
- 1200              		.cfi_def_cfa_offset 32
- 1201 0004 00AF     		add	r7, sp, #0
- 1202              		.cfi_def_cfa_register 7
- 1203 0006 0346     		mov	r3, r0
- 1204 0008 FB80     		strh	r3, [r7, #6]	@ movhi
+ 1191              		.loc 1 830 0
+ 1192              		.cfi_startproc
+ 1193              		@ args = 0, pretend = 0, frame = 16
+ 1194              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1195 0000 90B5     		push	{r4, r7, lr}
+ 1196              		.cfi_def_cfa_offset 12
+ 1197              		.cfi_offset 4, -12
+ 1198              		.cfi_offset 7, -8
+ 1199              		.cfi_offset 14, -4
+ 1200 0002 85B0     		sub	sp, sp, #20
+ 1201              		.cfi_def_cfa_offset 32
+ 1202 0004 00AF     		add	r7, sp, #0
+ 1203              		.cfi_def_cfa_register 7
+ 1204 0006 0346     		mov	r3, r0
+ 1205 0008 FB80     		strh	r3, [r7, #6]	@ movhi
  831:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     float32 volts;
  832:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     int32 countsPer10Volt;
  833:.\Generated_Source\PSoC5/ADC_SAR_1.c **** 
  834:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     if(ADC_SAR_1_countsPerVolt != 0)
- 1205              		.loc 1 834 0
- 1206 000a 1A4B     		ldr	r3, .L84
- 1207 000c 1B88     		ldrh	r3, [r3]	@ movhi
- 1208 000e 9BB2     		uxth	r3, r3
- 1209 0010 002B     		cmp	r3, #0
- 1210 0012 09D0     		beq	.L81
+ 1206              		.loc 1 834 0
+ 1207 000a 1A4B     		ldr	r3, .L83
+ 1208 000c 1B88     		ldrh	r3, [r3]	@ movhi
+ 1209 000e 9BB2     		uxth	r3, r3
+ 1210 0010 002B     		cmp	r3, #0
+ 1211 0012 09D0     		beq	.L80
  835:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     {   /* Support obsolete method */
  836:.\Generated_Source\PSoC5/ADC_SAR_1.c ****         countsPer10Volt = (int32)ADC_SAR_1_countsPerVolt * 10;
- 1211              		.loc 1 836 0
- 1212 0014 174B     		ldr	r3, .L84
- 1213 0016 1B88     		ldrh	r3, [r3]	@ movhi
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 37
+ 1212              		.loc 1 836 0
+ 1213 0014 174B     		ldr	r3, .L83
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 37
 
 
- 1214 0018 9BB2     		uxth	r3, r3
- 1215 001a 1AB2     		sxth	r2, r3
- 1216 001c 1346     		mov	r3, r2
- 1217 001e 9B00     		lsls	r3, r3, #2
- 1218 0020 1344     		add	r3, r3, r2
- 1219 0022 5B00     		lsls	r3, r3, #1
- 1220 0024 FB60     		str	r3, [r7, #12]
- 1221 0026 02E0     		b	.L82
- 1222              	.L81:
+ 1214 0016 1B88     		ldrh	r3, [r3]	@ movhi
+ 1215 0018 9BB2     		uxth	r3, r3
+ 1216 001a 1AB2     		sxth	r2, r3
+ 1217 001c 1346     		mov	r3, r2
+ 1218 001e 9B00     		lsls	r3, r3, #2
+ 1219 0020 1344     		add	r3, r3, r2
+ 1220 0022 5B00     		lsls	r3, r3, #1
+ 1221 0024 FB60     		str	r3, [r7, #12]
+ 1222 0026 02E0     		b	.L81
+ 1223              	.L80:
  837:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     }
  838:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     else
  839:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     {
  840:.\Generated_Source\PSoC5/ADC_SAR_1.c ****         countsPer10Volt = ADC_SAR_1_countsPer10Volt;
- 1223              		.loc 1 840 0
- 1224 0028 134B     		ldr	r3, .L84+4
- 1225 002a 1B68     		ldr	r3, [r3]
- 1226 002c FB60     		str	r3, [r7, #12]
- 1227              	.L82:
+ 1224              		.loc 1 840 0
+ 1225 0028 134B     		ldr	r3, .L83+4
+ 1226 002a 1B68     		ldr	r3, [r3]
+ 1227 002c FB60     		str	r3, [r7, #12]
+ 1228              	.L81:
  841:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     }
  842:.\Generated_Source\PSoC5/ADC_SAR_1.c **** 
  843:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     /* Subtract ADC offset */
  844:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     adcCounts -= ADC_SAR_1_offset;
- 1228              		.loc 1 844 0
- 1229 002e 134B     		ldr	r3, .L84+8
- 1230 0030 1B88     		ldrh	r3, [r3]	@ movhi
- 1231 0032 9BB2     		uxth	r3, r3
- 1232 0034 FA88     		ldrh	r2, [r7, #6]
- 1233 0036 9BB2     		uxth	r3, r3
- 1234 0038 D31A     		subs	r3, r2, r3
- 1235 003a 9BB2     		uxth	r3, r3
- 1236 003c FB80     		strh	r3, [r7, #6]	@ movhi
+ 1229              		.loc 1 844 0
+ 1230 002e 134B     		ldr	r3, .L83+8
+ 1231 0030 1B88     		ldrh	r3, [r3]	@ movhi
+ 1232 0032 9BB2     		uxth	r3, r3
+ 1233 0034 FA88     		ldrh	r2, [r7, #6]
+ 1234 0036 9BB2     		uxth	r3, r3
+ 1235 0038 D31A     		subs	r3, r2, r3
+ 1236 003a 9BB2     		uxth	r3, r3
+ 1237 003c FB80     		strh	r3, [r7, #6]	@ movhi
  845:.\Generated_Source\PSoC5/ADC_SAR_1.c **** 
  846:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     volts = ((float32)adcCounts * ADC_SAR_1_10V_COUNTS) / (float32)countsPer10Volt;
- 1237              		.loc 1 846 0
- 1238 003e B7F90630 		ldrsh	r3, [r7, #6]
- 1239 0042 1846     		mov	r0, r3
- 1240 0044 FFF7FEFF 		bl	__aeabi_i2f
- 1241 0048 0346     		mov	r3, r0
- 1242 004a 1846     		mov	r0, r3
- 1243 004c 0C49     		ldr	r1, .L84+12
- 1244 004e FFF7FEFF 		bl	__aeabi_fmul
- 1245 0052 0346     		mov	r3, r0
- 1246 0054 1C46     		mov	r4, r3
- 1247 0056 F868     		ldr	r0, [r7, #12]
- 1248 0058 FFF7FEFF 		bl	__aeabi_i2f
- 1249 005c 0346     		mov	r3, r0
- 1250 005e 2046     		mov	r0, r4
- 1251 0060 1946     		mov	r1, r3
- 1252 0062 FFF7FEFF 		bl	__aeabi_fdiv
- 1253 0066 0346     		mov	r3, r0
- 1254 0068 BB60     		str	r3, [r7, #8]	@ float
+ 1238              		.loc 1 846 0
+ 1239 003e B7F90630 		ldrsh	r3, [r7, #6]
+ 1240 0042 1846     		mov	r0, r3
+ 1241 0044 FFF7FEFF 		bl	__aeabi_i2f
+ 1242 0048 0346     		mov	r3, r0
+ 1243 004a 1846     		mov	r0, r3
+ 1244 004c 0C49     		ldr	r1, .L83+12
+ 1245 004e FFF7FEFF 		bl	__aeabi_fmul
+ 1246 0052 0346     		mov	r3, r0
+ 1247 0054 1C46     		mov	r4, r3
+ 1248 0056 F868     		ldr	r0, [r7, #12]
+ 1249 0058 FFF7FEFF 		bl	__aeabi_i2f
+ 1250 005c 0346     		mov	r3, r0
+ 1251 005e 2046     		mov	r0, r4
+ 1252 0060 1946     		mov	r1, r3
+ 1253 0062 FFF7FEFF 		bl	__aeabi_fdiv
+ 1254 0066 0346     		mov	r3, r0
+ 1255 0068 BB60     		str	r3, [r7, #8]	@ float
  847:.\Generated_Source\PSoC5/ADC_SAR_1.c **** 
  848:.\Generated_Source\PSoC5/ADC_SAR_1.c ****     return( volts );
- 1255              		.loc 1 848 0
- 1256 006a BB68     		ldr	r3, [r7, #8]	@ float
+ 1256              		.loc 1 848 0
+ 1257 006a BB68     		ldr	r3, [r7, #8]	@ float
  849:.\Generated_Source\PSoC5/ADC_SAR_1.c **** }
- 1257              		.loc 1 849 0
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 38
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 38
 
 
- 1258 006c 1846     		mov	r0, r3
- 1259 006e 1437     		adds	r7, r7, #20
- 1260              		.cfi_def_cfa_offset 12
- 1261 0070 BD46     		mov	sp, r7
- 1262              		.cfi_def_cfa_register 13
- 1263              		@ sp needed
- 1264 0072 90BD     		pop	{r4, r7, pc}
- 1265              	.L85:
- 1266              		.align	2
- 1267              	.L84:
- 1268 0074 00000000 		.word	ADC_SAR_1_countsPerVolt
- 1269 0078 00000000 		.word	ADC_SAR_1_countsPer10Volt
- 1270 007c 00000000 		.word	ADC_SAR_1_offset
- 1271 0080 00002041 		.word	1092616192
- 1272              		.cfi_endproc
- 1273              	.LFE17:
- 1274              		.size	ADC_SAR_1_CountsTo_Volts, .-ADC_SAR_1_CountsTo_Volts
- 1275              		.text
- 1276              	.Letext0:
- 1277              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
- 1278              		.section	.debug_info,"",%progbits
- 1279              	.Ldebug_info0:
- 1280 0000 74040000 		.4byte	0x474
- 1281 0004 0400     		.2byte	0x4
- 1282 0006 00000000 		.4byte	.Ldebug_abbrev0
- 1283 000a 04       		.byte	0x4
- 1284 000b 01       		.uleb128 0x1
- 1285 000c DC010000 		.4byte	.LASF59
- 1286 0010 01       		.byte	0x1
- 1287 0011 36000000 		.4byte	.LASF60
- 1288 0015 BF000000 		.4byte	.LASF61
- 1289 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 1290 001d 00000000 		.4byte	0
- 1291 0021 00000000 		.4byte	.Ldebug_line0
- 1292 0025 02       		.uleb128 0x2
- 1293 0026 04       		.byte	0x4
- 1294 0027 05       		.byte	0x5
- 1295 0028 696E7400 		.ascii	"int\000"
- 1296 002c 03       		.uleb128 0x3
- 1297 002d 04       		.byte	0x4
- 1298 002e 07       		.byte	0x7
- 1299 002f 21010000 		.4byte	.LASF0
- 1300 0033 03       		.uleb128 0x3
- 1301 0034 01       		.byte	0x1
- 1302 0035 06       		.byte	0x6
- 1303 0036 80000000 		.4byte	.LASF1
- 1304 003a 03       		.uleb128 0x3
- 1305 003b 01       		.byte	0x1
- 1306 003c 08       		.byte	0x8
- 1307 003d B7020000 		.4byte	.LASF2
- 1308 0041 03       		.uleb128 0x3
- 1309 0042 02       		.byte	0x2
- 1310 0043 05       		.byte	0x5
- 1311 0044 DF020000 		.4byte	.LASF3
- 1312 0048 03       		.uleb128 0x3
- 1313 0049 02       		.byte	0x2
- 1314 004a 07       		.byte	0x7
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 39
+ 1258              		.loc 1 849 0
+ 1259 006c 1846     		mov	r0, r3
+ 1260 006e 1437     		adds	r7, r7, #20
+ 1261              		.cfi_def_cfa_offset 12
+ 1262 0070 BD46     		mov	sp, r7
+ 1263              		.cfi_def_cfa_register 13
+ 1264              		@ sp needed
+ 1265 0072 90BD     		pop	{r4, r7, pc}
+ 1266              	.L84:
+ 1267              		.align	2
+ 1268              	.L83:
+ 1269 0074 00000000 		.word	ADC_SAR_1_countsPerVolt
+ 1270 0078 00000000 		.word	ADC_SAR_1_countsPer10Volt
+ 1271 007c 00000000 		.word	ADC_SAR_1_offset
+ 1272 0080 00002041 		.word	1092616192
+ 1273              		.cfi_endproc
+ 1274              	.LFE17:
+ 1275              		.size	ADC_SAR_1_CountsTo_Volts, .-ADC_SAR_1_CountsTo_Volts
+ 1276              		.text
+ 1277              	.Letext0:
+ 1278              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
+ 1279              		.section	.debug_info,"",%progbits
+ 1280              	.Ldebug_info0:
+ 1281 0000 74040000 		.4byte	0x474
+ 1282 0004 0400     		.2byte	0x4
+ 1283 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 1284 000a 04       		.byte	0x4
+ 1285 000b 01       		.uleb128 0x1
+ 1286 000c D3010000 		.4byte	.LASF59
+ 1287 0010 01       		.byte	0x1
+ 1288 0011 36000000 		.4byte	.LASF60
+ 1289 0015 99010000 		.4byte	.LASF61
+ 1290 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 1291 001d 00000000 		.4byte	0
+ 1292 0021 00000000 		.4byte	.Ldebug_line0
+ 1293 0025 02       		.uleb128 0x2
+ 1294 0026 04       		.byte	0x4
+ 1295 0027 05       		.byte	0x5
+ 1296 0028 696E7400 		.ascii	"int\000"
+ 1297 002c 03       		.uleb128 0x3
+ 1298 002d 04       		.byte	0x4
+ 1299 002e 07       		.byte	0x7
+ 1300 002f DE000000 		.4byte	.LASF0
+ 1301 0033 03       		.uleb128 0x3
+ 1302 0034 01       		.byte	0x1
+ 1303 0035 06       		.byte	0x6
+ 1304 0036 80000000 		.4byte	.LASF1
+ 1305 003a 03       		.uleb128 0x3
+ 1306 003b 01       		.byte	0x1
+ 1307 003c 08       		.byte	0x8
+ 1308 003d AE020000 		.4byte	.LASF2
+ 1309 0041 03       		.uleb128 0x3
+ 1310 0042 02       		.byte	0x2
+ 1311 0043 05       		.byte	0x5
+ 1312 0044 D6020000 		.4byte	.LASF3
+ 1313 0048 03       		.uleb128 0x3
+ 1314 0049 02       		.byte	0x2
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 39
 
 
- 1315 004b 4D010000 		.4byte	.LASF4
- 1316 004f 03       		.uleb128 0x3
- 1317 0050 04       		.byte	0x4
- 1318 0051 05       		.byte	0x5
- 1319 0052 92000000 		.4byte	.LASF5
- 1320 0056 03       		.uleb128 0x3
- 1321 0057 04       		.byte	0x4
- 1322 0058 07       		.byte	0x7
- 1323 0059 35010000 		.4byte	.LASF6
- 1324 005d 03       		.uleb128 0x3
- 1325 005e 08       		.byte	0x8
- 1326 005f 05       		.byte	0x5
- 1327 0060 72000000 		.4byte	.LASF7
- 1328 0064 03       		.uleb128 0x3
- 1329 0065 08       		.byte	0x8
- 1330 0066 07       		.byte	0x7
- 1331 0067 5B000000 		.4byte	.LASF8
- 1332 006b 03       		.uleb128 0x3
- 1333 006c 04       		.byte	0x4
- 1334 006d 07       		.byte	0x7
- 1335 006e A1010000 		.4byte	.LASF9
- 1336 0072 03       		.uleb128 0x3
- 1337 0073 01       		.byte	0x1
- 1338 0074 08       		.byte	0x8
- 1339 0075 3B030000 		.4byte	.LASF10
- 1340 0079 04       		.uleb128 0x4
- 1341 007a B2000000 		.4byte	.LASF11
- 1342 007e 02       		.byte	0x2
- 1343 007f 9201     		.2byte	0x192
- 1344 0081 3A000000 		.4byte	0x3a
- 1345 0085 04       		.uleb128 0x4
- 1346 0086 00000000 		.4byte	.LASF12
- 1347 008a 02       		.byte	0x2
- 1348 008b 9301     		.2byte	0x193
- 1349 008d 48000000 		.4byte	0x48
- 1350 0091 04       		.uleb128 0x4
- 1351 0092 02010000 		.4byte	.LASF13
- 1352 0096 02       		.byte	0x2
- 1353 0097 9401     		.2byte	0x194
- 1354 0099 56000000 		.4byte	0x56
- 1355 009d 04       		.uleb128 0x4
- 1356 009e 6F010000 		.4byte	.LASF14
- 1357 00a2 02       		.byte	0x2
- 1358 00a3 9501     		.2byte	0x195
- 1359 00a5 33000000 		.4byte	0x33
- 1360 00a9 04       		.uleb128 0x4
- 1361 00aa D7030000 		.4byte	.LASF15
- 1362 00ae 02       		.byte	0x2
- 1363 00af 9601     		.2byte	0x196
- 1364 00b1 41000000 		.4byte	0x41
- 1365 00b5 04       		.uleb128 0x4
- 1366 00b6 8C000000 		.4byte	.LASF16
- 1367 00ba 02       		.byte	0x2
- 1368 00bb 9701     		.2byte	0x197
- 1369 00bd 4F000000 		.4byte	0x4f
- 1370 00c1 04       		.uleb128 0x4
- 1371 00c2 99010000 		.4byte	.LASF17
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 40
+ 1315 004a 07       		.byte	0x7
+ 1316 004b 0A010000 		.4byte	.LASF4
+ 1317 004f 03       		.uleb128 0x3
+ 1318 0050 04       		.byte	0x4
+ 1319 0051 05       		.byte	0x5
+ 1320 0052 92000000 		.4byte	.LASF5
+ 1321 0056 03       		.uleb128 0x3
+ 1322 0057 04       		.byte	0x4
+ 1323 0058 07       		.byte	0x7
+ 1324 0059 F2000000 		.4byte	.LASF6
+ 1325 005d 03       		.uleb128 0x3
+ 1326 005e 08       		.byte	0x8
+ 1327 005f 05       		.byte	0x5
+ 1328 0060 72000000 		.4byte	.LASF7
+ 1329 0064 03       		.uleb128 0x3
+ 1330 0065 08       		.byte	0x8
+ 1331 0066 07       		.byte	0x7
+ 1332 0067 5B000000 		.4byte	.LASF8
+ 1333 006b 03       		.uleb128 0x3
+ 1334 006c 04       		.byte	0x4
+ 1335 006d 07       		.byte	0x7
+ 1336 006e 5E010000 		.4byte	.LASF9
+ 1337 0072 03       		.uleb128 0x3
+ 1338 0073 01       		.byte	0x1
+ 1339 0074 08       		.byte	0x8
+ 1340 0075 32030000 		.4byte	.LASF10
+ 1341 0079 04       		.uleb128 0x4
+ 1342 007a B2000000 		.4byte	.LASF11
+ 1343 007e 02       		.byte	0x2
+ 1344 007f 9201     		.2byte	0x192
+ 1345 0081 3A000000 		.4byte	0x3a
+ 1346 0085 04       		.uleb128 0x4
+ 1347 0086 00000000 		.4byte	.LASF12
+ 1348 008a 02       		.byte	0x2
+ 1349 008b 9301     		.2byte	0x193
+ 1350 008d 48000000 		.4byte	0x48
+ 1351 0091 04       		.uleb128 0x4
+ 1352 0092 BF000000 		.4byte	.LASF13
+ 1353 0096 02       		.byte	0x2
+ 1354 0097 9401     		.2byte	0x194
+ 1355 0099 56000000 		.4byte	0x56
+ 1356 009d 04       		.uleb128 0x4
+ 1357 009e 2C010000 		.4byte	.LASF14
+ 1358 00a2 02       		.byte	0x2
+ 1359 00a3 9501     		.2byte	0x195
+ 1360 00a5 33000000 		.4byte	0x33
+ 1361 00a9 04       		.uleb128 0x4
+ 1362 00aa CE030000 		.4byte	.LASF15
+ 1363 00ae 02       		.byte	0x2
+ 1364 00af 9601     		.2byte	0x196
+ 1365 00b1 41000000 		.4byte	0x41
+ 1366 00b5 04       		.uleb128 0x4
+ 1367 00b6 8C000000 		.4byte	.LASF16
+ 1368 00ba 02       		.byte	0x2
+ 1369 00bb 9701     		.2byte	0x197
+ 1370 00bd 4F000000 		.4byte	0x4f
+ 1371 00c1 04       		.uleb128 0x4
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 40
 
 
- 1372 00c6 02       		.byte	0x2
- 1373 00c7 9801     		.2byte	0x198
- 1374 00c9 CD000000 		.4byte	0xcd
- 1375 00cd 03       		.uleb128 0x3
- 1376 00ce 04       		.byte	0x4
- 1377 00cf 04       		.byte	0x4
- 1378 00d0 94020000 		.4byte	.LASF18
- 1379 00d4 03       		.uleb128 0x3
- 1380 00d5 08       		.byte	0x8
- 1381 00d6 04       		.byte	0x4
- 1382 00d7 B8000000 		.4byte	.LASF19
- 1383 00db 04       		.uleb128 0x4
- 1384 00dc 7A020000 		.4byte	.LASF20
- 1385 00e0 02       		.byte	0x2
- 1386 00e1 9D01     		.2byte	0x19d
- 1387 00e3 5D000000 		.4byte	0x5d
- 1388 00e7 04       		.uleb128 0x4
- 1389 00e8 B2020000 		.4byte	.LASF21
- 1390 00ec 02       		.byte	0x2
- 1391 00ed 3C02     		.2byte	0x23c
- 1392 00ef F3000000 		.4byte	0xf3
- 1393 00f3 05       		.uleb128 0x5
- 1394 00f4 79000000 		.4byte	0x79
- 1395 00f8 04       		.uleb128 0x4
- 1396 00f9 AC000000 		.4byte	.LASF22
- 1397 00fd 02       		.byte	0x2
- 1398 00fe 3D02     		.2byte	0x23d
- 1399 0100 04010000 		.4byte	0x104
- 1400 0104 05       		.uleb128 0x5
- 1401 0105 85000000 		.4byte	0x85
- 1402 0109 04       		.uleb128 0x4
- 1403 010a 7B010000 		.4byte	.LASF23
- 1404 010e 02       		.byte	0x2
- 1405 010f 3E02     		.2byte	0x23e
- 1406 0111 15010000 		.4byte	0x115
- 1407 0115 05       		.uleb128 0x5
- 1408 0116 91000000 		.4byte	0x91
- 1409 011a 06       		.uleb128 0x6
- 1410 011b 6A020000 		.4byte	.LASF24
- 1411 011f 01       		.byte	0x1
- 1412 0120 4A       		.byte	0x4a
- 1413 0121 00000000 		.4byte	.LFB0
- 1414 0125 20000000 		.4byte	.LFE0-.LFB0
- 1415 0129 01       		.uleb128 0x1
- 1416 012a 9C       		.byte	0x9c
- 1417 012b 06       		.uleb128 0x6
- 1418 012c 60010000 		.4byte	.LASF25
- 1419 0130 01       		.byte	0x1
- 1420 0131 6A       		.byte	0x6a
- 1421 0132 00000000 		.4byte	.LFB1
- 1422 0136 44000000 		.4byte	.LFE1-.LFB1
- 1423 013a 01       		.uleb128 0x1
- 1424 013b 9C       		.byte	0x9c
- 1425 013c 07       		.uleb128 0x7
- 1426 013d F1020000 		.4byte	.LASF28
- 1427 0141 01       		.byte	0x1
- 1428 0142 8F       		.byte	0x8f
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 41
+ 1372 00c2 56010000 		.4byte	.LASF17
+ 1373 00c6 02       		.byte	0x2
+ 1374 00c7 9801     		.2byte	0x198
+ 1375 00c9 CD000000 		.4byte	0xcd
+ 1376 00cd 03       		.uleb128 0x3
+ 1377 00ce 04       		.byte	0x4
+ 1378 00cf 04       		.byte	0x4
+ 1379 00d0 8B020000 		.4byte	.LASF18
+ 1380 00d4 03       		.uleb128 0x3
+ 1381 00d5 08       		.byte	0x8
+ 1382 00d6 04       		.byte	0x4
+ 1383 00d7 B8000000 		.4byte	.LASF19
+ 1384 00db 04       		.uleb128 0x4
+ 1385 00dc 71020000 		.4byte	.LASF20
+ 1386 00e0 02       		.byte	0x2
+ 1387 00e1 9D01     		.2byte	0x19d
+ 1388 00e3 5D000000 		.4byte	0x5d
+ 1389 00e7 04       		.uleb128 0x4
+ 1390 00e8 A9020000 		.4byte	.LASF21
+ 1391 00ec 02       		.byte	0x2
+ 1392 00ed 3C02     		.2byte	0x23c
+ 1393 00ef F3000000 		.4byte	0xf3
+ 1394 00f3 05       		.uleb128 0x5
+ 1395 00f4 79000000 		.4byte	0x79
+ 1396 00f8 04       		.uleb128 0x4
+ 1397 00f9 AC000000 		.4byte	.LASF22
+ 1398 00fd 02       		.byte	0x2
+ 1399 00fe 3D02     		.2byte	0x23d
+ 1400 0100 04010000 		.4byte	0x104
+ 1401 0104 05       		.uleb128 0x5
+ 1402 0105 85000000 		.4byte	0x85
+ 1403 0109 04       		.uleb128 0x4
+ 1404 010a 38010000 		.4byte	.LASF23
+ 1405 010e 02       		.byte	0x2
+ 1406 010f 3E02     		.2byte	0x23e
+ 1407 0111 15010000 		.4byte	0x115
+ 1408 0115 05       		.uleb128 0x5
+ 1409 0116 91000000 		.4byte	0x91
+ 1410 011a 06       		.uleb128 0x6
+ 1411 011b 61020000 		.4byte	.LASF24
+ 1412 011f 01       		.byte	0x1
+ 1413 0120 4A       		.byte	0x4a
+ 1414 0121 00000000 		.4byte	.LFB0
+ 1415 0125 20000000 		.4byte	.LFE0-.LFB0
+ 1416 0129 01       		.uleb128 0x1
+ 1417 012a 9C       		.byte	0x9c
+ 1418 012b 06       		.uleb128 0x6
+ 1419 012c 1D010000 		.4byte	.LASF25
+ 1420 0130 01       		.byte	0x1
+ 1421 0131 6A       		.byte	0x6a
+ 1422 0132 00000000 		.4byte	.LFB1
+ 1423 0136 44000000 		.4byte	.LFE1-.LFB1
+ 1424 013a 01       		.uleb128 0x1
+ 1425 013b 9C       		.byte	0x9c
+ 1426 013c 07       		.uleb128 0x7
+ 1427 013d E8020000 		.4byte	.LASF28
+ 1428 0141 01       		.byte	0x1
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 41
 
 
- 1429 0143 00000000 		.4byte	.LFB2
- 1430 0147 F4000000 		.4byte	.LFE2-.LFB2
- 1431 014b 01       		.uleb128 0x1
- 1432 014c 9C       		.byte	0x9c
- 1433 014d 6E010000 		.4byte	0x16e
- 1434 0151 08       		.uleb128 0x8
- 1435 0152 0E040000 		.4byte	.LASF26
- 1436 0156 01       		.byte	0x1
- 1437 0157 91       		.byte	0x91
- 1438 0158 79000000 		.4byte	0x79
- 1439 015c 02       		.uleb128 0x2
- 1440 015d 91       		.byte	0x91
- 1441 015e 76       		.sleb128 -10
- 1442 015f 08       		.uleb128 0x8
- 1443 0160 80030000 		.4byte	.LASF27
- 1444 0164 01       		.byte	0x1
- 1445 0165 92       		.byte	0x92
- 1446 0166 79000000 		.4byte	0x79
- 1447 016a 02       		.uleb128 0x2
- 1448 016b 91       		.byte	0x91
- 1449 016c 77       		.sleb128 -9
- 1450 016d 00       		.byte	0
- 1451 016e 07       		.uleb128 0x7
- 1452 016f 25040000 		.4byte	.LASF29
- 1453 0173 01       		.byte	0x1
- 1454 0174 F8       		.byte	0xf8
- 1455 0175 00000000 		.4byte	.LFB3
- 1456 0179 80000000 		.4byte	.LFE3-.LFB3
- 1457 017d 01       		.uleb128 0x1
- 1458 017e 9C       		.byte	0x9c
- 1459 017f 92010000 		.4byte	0x192
- 1460 0183 08       		.uleb128 0x8
- 1461 0184 80030000 		.4byte	.LASF27
- 1462 0188 01       		.byte	0x1
- 1463 0189 FA       		.byte	0xfa
- 1464 018a 79000000 		.4byte	0x79
- 1465 018e 02       		.uleb128 0x2
- 1466 018f 91       		.byte	0x91
- 1467 0190 77       		.sleb128 -9
- 1468 0191 00       		.byte	0
- 1469 0192 09       		.uleb128 0x9
- 1470 0193 B2030000 		.4byte	.LASF30
- 1471 0197 01       		.byte	0x1
- 1472 0198 2201     		.2byte	0x122
- 1473 019a 00000000 		.4byte	.LFB4
- 1474 019e 40000000 		.4byte	.LFE4-.LFB4
- 1475 01a2 01       		.uleb128 0x1
- 1476 01a3 9C       		.byte	0x9c
- 1477 01a4 C7010000 		.4byte	0x1c7
- 1478 01a8 0A       		.uleb128 0xa
- 1479 01a9 AC020000 		.4byte	.LASF32
- 1480 01ad 01       		.byte	0x1
- 1481 01ae 2201     		.2byte	0x122
- 1482 01b0 79000000 		.4byte	0x79
- 1483 01b4 02       		.uleb128 0x2
- 1484 01b5 91       		.byte	0x91
- 1485 01b6 6F       		.sleb128 -17
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 42
+ 1429 0142 8F       		.byte	0x8f
+ 1430 0143 00000000 		.4byte	.LFB2
+ 1431 0147 F4000000 		.4byte	.LFE2-.LFB2
+ 1432 014b 01       		.uleb128 0x1
+ 1433 014c 9C       		.byte	0x9c
+ 1434 014d 6E010000 		.4byte	0x16e
+ 1435 0151 08       		.uleb128 0x8
+ 1436 0152 05040000 		.4byte	.LASF26
+ 1437 0156 01       		.byte	0x1
+ 1438 0157 91       		.byte	0x91
+ 1439 0158 79000000 		.4byte	0x79
+ 1440 015c 02       		.uleb128 0x2
+ 1441 015d 91       		.byte	0x91
+ 1442 015e 76       		.sleb128 -10
+ 1443 015f 08       		.uleb128 0x8
+ 1444 0160 77030000 		.4byte	.LASF27
+ 1445 0164 01       		.byte	0x1
+ 1446 0165 92       		.byte	0x92
+ 1447 0166 79000000 		.4byte	0x79
+ 1448 016a 02       		.uleb128 0x2
+ 1449 016b 91       		.byte	0x91
+ 1450 016c 77       		.sleb128 -9
+ 1451 016d 00       		.byte	0
+ 1452 016e 07       		.uleb128 0x7
+ 1453 016f 1C040000 		.4byte	.LASF29
+ 1454 0173 01       		.byte	0x1
+ 1455 0174 F8       		.byte	0xf8
+ 1456 0175 00000000 		.4byte	.LFB3
+ 1457 0179 80000000 		.4byte	.LFE3-.LFB3
+ 1458 017d 01       		.uleb128 0x1
+ 1459 017e 9C       		.byte	0x9c
+ 1460 017f 92010000 		.4byte	0x192
+ 1461 0183 08       		.uleb128 0x8
+ 1462 0184 77030000 		.4byte	.LASF27
+ 1463 0188 01       		.byte	0x1
+ 1464 0189 FA       		.byte	0xfa
+ 1465 018a 79000000 		.4byte	0x79
+ 1466 018e 02       		.uleb128 0x2
+ 1467 018f 91       		.byte	0x91
+ 1468 0190 77       		.sleb128 -9
+ 1469 0191 00       		.byte	0
+ 1470 0192 09       		.uleb128 0x9
+ 1471 0193 A9030000 		.4byte	.LASF30
+ 1472 0197 01       		.byte	0x1
+ 1473 0198 2201     		.2byte	0x122
+ 1474 019a 00000000 		.4byte	.LFB4
+ 1475 019e 40000000 		.4byte	.LFE4-.LFB4
+ 1476 01a2 01       		.uleb128 0x1
+ 1477 01a3 9C       		.byte	0x9c
+ 1478 01a4 C7010000 		.4byte	0x1c7
+ 1479 01a8 0A       		.uleb128 0xa
+ 1480 01a9 A3020000 		.4byte	.LASF32
+ 1481 01ad 01       		.byte	0x1
+ 1482 01ae 2201     		.2byte	0x122
+ 1483 01b0 79000000 		.4byte	0x79
+ 1484 01b4 02       		.uleb128 0x2
+ 1485 01b5 91       		.byte	0x91
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 42
 
 
- 1486 01b7 0B       		.uleb128 0xb
- 1487 01b8 0E040000 		.4byte	.LASF26
- 1488 01bc 01       		.byte	0x1
- 1489 01bd 2401     		.2byte	0x124
- 1490 01bf 79000000 		.4byte	0x79
- 1491 01c3 02       		.uleb128 0x2
- 1492 01c4 91       		.byte	0x91
- 1493 01c5 77       		.sleb128 -9
- 1494 01c6 00       		.byte	0
- 1495 01c7 0C       		.uleb128 0xc
- 1496 01c8 AA010000 		.4byte	.LASF31
- 1497 01cc 01       		.byte	0x1
- 1498 01cd 5401     		.2byte	0x154
- 1499 01cf 00000000 		.4byte	.LFB5
- 1500 01d3 50000000 		.4byte	.LFE5-.LFB5
- 1501 01d7 01       		.uleb128 0x1
- 1502 01d8 9C       		.byte	0x9c
- 1503 01d9 FC010000 		.4byte	0x1fc
- 1504 01dd 0A       		.uleb128 0xa
- 1505 01de 30030000 		.4byte	.LASF33
- 1506 01e2 01       		.byte	0x1
- 1507 01e3 5401     		.2byte	0x154
- 1508 01e5 79000000 		.4byte	0x79
- 1509 01e9 02       		.uleb128 0x2
- 1510 01ea 91       		.byte	0x91
- 1511 01eb 6F       		.sleb128 -17
- 1512 01ec 0B       		.uleb128 0xb
- 1513 01ed 0E040000 		.4byte	.LASF26
- 1514 01f1 01       		.byte	0x1
- 1515 01f2 5601     		.2byte	0x156
- 1516 01f4 79000000 		.4byte	0x79
- 1517 01f8 02       		.uleb128 0x2
- 1518 01f9 91       		.byte	0x91
- 1519 01fa 77       		.sleb128 -9
- 1520 01fb 00       		.byte	0
- 1521 01fc 0D       		.uleb128 0xd
- 1522 01fd F7030000 		.4byte	.LASF34
- 1523 0201 01       		.byte	0x1
- 1524 0202 9101     		.2byte	0x191
- 1525 0204 00000000 		.4byte	.LFB6
- 1526 0208 20000000 		.4byte	.LFE6-.LFB6
- 1527 020c 01       		.uleb128 0x1
- 1528 020d 9C       		.byte	0x9c
- 1529 020e 0D       		.uleb128 0xd
- 1530 020f 60030000 		.4byte	.LASF35
- 1531 0213 01       		.byte	0x1
- 1532 0214 B301     		.2byte	0x1b3
- 1533 0216 00000000 		.4byte	.LFB7
- 1534 021a 20000000 		.4byte	.LFE7-.LFB7
- 1535 021e 01       		.uleb128 0x1
- 1536 021f 9C       		.byte	0x9c
- 1537 0220 0E       		.uleb128 0xe
- 1538 0221 98030000 		.4byte	.LASF38
- 1539 0225 01       		.byte	0x1
- 1540 0226 DB01     		.2byte	0x1db
- 1541 0228 79000000 		.4byte	0x79
- 1542 022c 00000000 		.4byte	.LFB8
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 43
+ 1486 01b6 6F       		.sleb128 -17
+ 1487 01b7 0B       		.uleb128 0xb
+ 1488 01b8 05040000 		.4byte	.LASF26
+ 1489 01bc 01       		.byte	0x1
+ 1490 01bd 2401     		.2byte	0x124
+ 1491 01bf 79000000 		.4byte	0x79
+ 1492 01c3 02       		.uleb128 0x2
+ 1493 01c4 91       		.byte	0x91
+ 1494 01c5 77       		.sleb128 -9
+ 1495 01c6 00       		.byte	0
+ 1496 01c7 0C       		.uleb128 0xc
+ 1497 01c8 67010000 		.4byte	.LASF31
+ 1498 01cc 01       		.byte	0x1
+ 1499 01cd 5401     		.2byte	0x154
+ 1500 01cf 00000000 		.4byte	.LFB5
+ 1501 01d3 50000000 		.4byte	.LFE5-.LFB5
+ 1502 01d7 01       		.uleb128 0x1
+ 1503 01d8 9C       		.byte	0x9c
+ 1504 01d9 FC010000 		.4byte	0x1fc
+ 1505 01dd 0A       		.uleb128 0xa
+ 1506 01de 27030000 		.4byte	.LASF33
+ 1507 01e2 01       		.byte	0x1
+ 1508 01e3 5401     		.2byte	0x154
+ 1509 01e5 79000000 		.4byte	0x79
+ 1510 01e9 02       		.uleb128 0x2
+ 1511 01ea 91       		.byte	0x91
+ 1512 01eb 6F       		.sleb128 -17
+ 1513 01ec 0B       		.uleb128 0xb
+ 1514 01ed 05040000 		.4byte	.LASF26
+ 1515 01f1 01       		.byte	0x1
+ 1516 01f2 5601     		.2byte	0x156
+ 1517 01f4 79000000 		.4byte	0x79
+ 1518 01f8 02       		.uleb128 0x2
+ 1519 01f9 91       		.byte	0x91
+ 1520 01fa 77       		.sleb128 -9
+ 1521 01fb 00       		.byte	0
+ 1522 01fc 0D       		.uleb128 0xd
+ 1523 01fd EE030000 		.4byte	.LASF34
+ 1524 0201 01       		.byte	0x1
+ 1525 0202 9101     		.2byte	0x191
+ 1526 0204 00000000 		.4byte	.LFB6
+ 1527 0208 20000000 		.4byte	.LFE6-.LFB6
+ 1528 020c 01       		.uleb128 0x1
+ 1529 020d 9C       		.byte	0x9c
+ 1530 020e 0D       		.uleb128 0xd
+ 1531 020f 57030000 		.4byte	.LASF35
+ 1532 0213 01       		.byte	0x1
+ 1533 0214 B301     		.2byte	0x1b3
+ 1534 0216 00000000 		.4byte	.LFB7
+ 1535 021a 20000000 		.4byte	.LFE7-.LFB7
+ 1536 021e 01       		.uleb128 0x1
+ 1537 021f 9C       		.byte	0x9c
+ 1538 0220 0E       		.uleb128 0xe
+ 1539 0221 8F030000 		.4byte	.LASF38
+ 1540 0225 01       		.byte	0x1
+ 1541 0226 DB01     		.2byte	0x1db
+ 1542 0228 79000000 		.4byte	0x79
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 43
 
 
- 1543 0230 40000000 		.4byte	.LFE8-.LFB8
- 1544 0234 01       		.uleb128 0x1
- 1545 0235 9C       		.byte	0x9c
- 1546 0236 59020000 		.4byte	0x259
- 1547 023a 0A       		.uleb128 0xa
- 1548 023b 19010000 		.4byte	.LASF36
- 1549 023f 01       		.byte	0x1
- 1550 0240 DB01     		.2byte	0x1db
- 1551 0242 79000000 		.4byte	0x79
- 1552 0246 02       		.uleb128 0x2
- 1553 0247 91       		.byte	0x91
- 1554 0248 6F       		.sleb128 -17
- 1555 0249 0B       		.uleb128 0xb
- 1556 024a 91030000 		.4byte	.LASF37
- 1557 024e 01       		.byte	0x1
- 1558 024f DD01     		.2byte	0x1dd
- 1559 0251 79000000 		.4byte	0x79
- 1560 0255 02       		.uleb128 0x2
- 1561 0256 91       		.byte	0x91
- 1562 0257 77       		.sleb128 -9
- 1563 0258 00       		.byte	0
- 1564 0259 0F       		.uleb128 0xf
- 1565 025a 07000000 		.4byte	.LASF62
- 1566 025e 01       		.byte	0x1
- 1567 025f 0802     		.2byte	0x208
- 1568 0261 9D000000 		.4byte	0x9d
- 1569 0265 00000000 		.4byte	.LFB9
- 1570 0269 2C000000 		.4byte	.LFE9-.LFB9
- 1571 026d 01       		.uleb128 0x1
- 1572 026e 9C       		.byte	0x9c
- 1573 026f 10       		.uleb128 0x10
- 1574 0270 1A030000 		.4byte	.LASF39
- 1575 0274 01       		.byte	0x1
- 1576 0275 2602     		.2byte	0x226
- 1577 0277 A9000000 		.4byte	0xa9
- 1578 027b 00000000 		.4byte	.LFB10
- 1579 027f 34000000 		.4byte	.LFE10-.LFB10
- 1580 0283 01       		.uleb128 0x1
- 1581 0284 9C       		.byte	0x9c
- 1582 0285 99020000 		.4byte	0x299
- 1583 0289 11       		.uleb128 0x11
- 1584 028a 72657300 		.ascii	"res\000"
- 1585 028e 01       		.byte	0x1
- 1586 028f 2802     		.2byte	0x228
- 1587 0291 85000000 		.4byte	0x85
- 1588 0295 02       		.uleb128 0x2
- 1589 0296 91       		.byte	0x91
- 1590 0297 76       		.sleb128 -10
- 1591 0298 00       		.byte	0
- 1592 0299 09       		.uleb128 0x9
- 1593 029a 80020000 		.4byte	.LASF40
- 1594 029e 01       		.byte	0x1
- 1595 029f 4902     		.2byte	0x249
- 1596 02a1 00000000 		.4byte	.LFB11
- 1597 02a5 20000000 		.4byte	.LFE11-.LFB11
- 1598 02a9 01       		.uleb128 0x1
- 1599 02aa 9C       		.byte	0x9c
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 44
+ 1543 022c 00000000 		.4byte	.LFB8
+ 1544 0230 40000000 		.4byte	.LFE8-.LFB8
+ 1545 0234 01       		.uleb128 0x1
+ 1546 0235 9C       		.byte	0x9c
+ 1547 0236 59020000 		.4byte	0x259
+ 1548 023a 0A       		.uleb128 0xa
+ 1549 023b D6000000 		.4byte	.LASF36
+ 1550 023f 01       		.byte	0x1
+ 1551 0240 DB01     		.2byte	0x1db
+ 1552 0242 79000000 		.4byte	0x79
+ 1553 0246 02       		.uleb128 0x2
+ 1554 0247 91       		.byte	0x91
+ 1555 0248 6F       		.sleb128 -17
+ 1556 0249 0B       		.uleb128 0xb
+ 1557 024a 88030000 		.4byte	.LASF37
+ 1558 024e 01       		.byte	0x1
+ 1559 024f DD01     		.2byte	0x1dd
+ 1560 0251 79000000 		.4byte	0x79
+ 1561 0255 02       		.uleb128 0x2
+ 1562 0256 91       		.byte	0x91
+ 1563 0257 77       		.sleb128 -9
+ 1564 0258 00       		.byte	0
+ 1565 0259 0F       		.uleb128 0xf
+ 1566 025a 07000000 		.4byte	.LASF62
+ 1567 025e 01       		.byte	0x1
+ 1568 025f 0802     		.2byte	0x208
+ 1569 0261 9D000000 		.4byte	0x9d
+ 1570 0265 00000000 		.4byte	.LFB9
+ 1571 0269 2C000000 		.4byte	.LFE9-.LFB9
+ 1572 026d 01       		.uleb128 0x1
+ 1573 026e 9C       		.byte	0x9c
+ 1574 026f 10       		.uleb128 0x10
+ 1575 0270 11030000 		.4byte	.LASF39
+ 1576 0274 01       		.byte	0x1
+ 1577 0275 2602     		.2byte	0x226
+ 1578 0277 A9000000 		.4byte	0xa9
+ 1579 027b 00000000 		.4byte	.LFB10
+ 1580 027f 34000000 		.4byte	.LFE10-.LFB10
+ 1581 0283 01       		.uleb128 0x1
+ 1582 0284 9C       		.byte	0x9c
+ 1583 0285 99020000 		.4byte	0x299
+ 1584 0289 11       		.uleb128 0x11
+ 1585 028a 72657300 		.ascii	"res\000"
+ 1586 028e 01       		.byte	0x1
+ 1587 028f 2802     		.2byte	0x228
+ 1588 0291 85000000 		.4byte	0x85
+ 1589 0295 02       		.uleb128 0x2
+ 1590 0296 91       		.byte	0x91
+ 1591 0297 76       		.sleb128 -10
+ 1592 0298 00       		.byte	0
+ 1593 0299 09       		.uleb128 0x9
+ 1594 029a 77020000 		.4byte	.LASF40
+ 1595 029e 01       		.byte	0x1
+ 1596 029f 4902     		.2byte	0x249
+ 1597 02a1 00000000 		.4byte	.LFB11
+ 1598 02a5 20000000 		.4byte	.LFE11-.LFB11
+ 1599 02a9 01       		.uleb128 0x1
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 44
 
 
- 1600 02ab BF020000 		.4byte	0x2bf
- 1601 02af 0A       		.uleb128 0xa
- 1602 02b0 59030000 		.4byte	.LASF41
- 1603 02b4 01       		.byte	0x1
- 1604 02b5 4902     		.2byte	0x249
- 1605 02b7 A9000000 		.4byte	0xa9
- 1606 02bb 02       		.uleb128 0x2
- 1607 02bc 91       		.byte	0x91
- 1608 02bd 76       		.sleb128 -10
- 1609 02be 00       		.byte	0
- 1610 02bf 12       		.uleb128 0x12
- 1611 02c0 23000000 		.4byte	.LASF63
- 1612 02c4 01       		.byte	0x1
- 1613 02c5 6302     		.2byte	0x263
- 1614 02c7 00000000 		.4byte	.LFB12
- 1615 02cb 7C000000 		.4byte	.LFE12-.LFB12
- 1616 02cf 01       		.uleb128 0x1
- 1617 02d0 9C       		.byte	0x9c
- 1618 02d1 F4020000 		.4byte	0x2f4
- 1619 02d5 0A       		.uleb128 0xa
- 1620 02d6 30030000 		.4byte	.LASF33
- 1621 02da 01       		.byte	0x1
- 1622 02db 6302     		.2byte	0x263
- 1623 02dd 79000000 		.4byte	0x79
- 1624 02e1 02       		.uleb128 0x2
- 1625 02e2 91       		.byte	0x91
- 1626 02e3 6F       		.sleb128 -17
- 1627 02e4 0B       		.uleb128 0xb
- 1628 02e5 1C000000 		.4byte	.LASF42
- 1629 02e9 01       		.byte	0x1
- 1630 02ea 6502     		.2byte	0x265
- 1631 02ec B5000000 		.4byte	0xb5
- 1632 02f0 02       		.uleb128 0x2
- 1633 02f1 91       		.byte	0x91
- 1634 02f2 74       		.sleb128 -12
- 1635 02f3 00       		.byte	0
- 1636 02f4 09       		.uleb128 0x9
- 1637 02f5 C5030000 		.4byte	.LASF43
- 1638 02f9 01       		.byte	0x1
- 1639 02fa B402     		.2byte	0x2b4
- 1640 02fc 00000000 		.4byte	.LFB13
- 1641 0300 2C000000 		.4byte	.LFE13-.LFB13
- 1642 0304 01       		.uleb128 0x1
- 1643 0305 9C       		.byte	0x9c
- 1644 0306 1A030000 		.4byte	0x31a
- 1645 030a 0A       		.uleb128 0xa
- 1646 030b E9020000 		.4byte	.LASF44
- 1647 030f 01       		.byte	0x1
- 1648 0310 B402     		.2byte	0x2b4
- 1649 0312 A9000000 		.4byte	0xa9
- 1650 0316 02       		.uleb128 0x2
- 1651 0317 91       		.byte	0x91
- 1652 0318 76       		.sleb128 -10
- 1653 0319 00       		.byte	0
- 1654 031a 09       		.uleb128 0x9
- 1655 031b 02030000 		.4byte	.LASF45
- 1656 031f 01       		.byte	0x1
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 45
+ 1600 02aa 9C       		.byte	0x9c
+ 1601 02ab BF020000 		.4byte	0x2bf
+ 1602 02af 0A       		.uleb128 0xa
+ 1603 02b0 50030000 		.4byte	.LASF41
+ 1604 02b4 01       		.byte	0x1
+ 1605 02b5 4902     		.2byte	0x249
+ 1606 02b7 A9000000 		.4byte	0xa9
+ 1607 02bb 02       		.uleb128 0x2
+ 1608 02bc 91       		.byte	0x91
+ 1609 02bd 76       		.sleb128 -10
+ 1610 02be 00       		.byte	0
+ 1611 02bf 12       		.uleb128 0x12
+ 1612 02c0 23000000 		.4byte	.LASF63
+ 1613 02c4 01       		.byte	0x1
+ 1614 02c5 6302     		.2byte	0x263
+ 1615 02c7 00000000 		.4byte	.LFB12
+ 1616 02cb 80000000 		.4byte	.LFE12-.LFB12
+ 1617 02cf 01       		.uleb128 0x1
+ 1618 02d0 9C       		.byte	0x9c
+ 1619 02d1 F4020000 		.4byte	0x2f4
+ 1620 02d5 0A       		.uleb128 0xa
+ 1621 02d6 27030000 		.4byte	.LASF33
+ 1622 02da 01       		.byte	0x1
+ 1623 02db 6302     		.2byte	0x263
+ 1624 02dd 79000000 		.4byte	0x79
+ 1625 02e1 02       		.uleb128 0x2
+ 1626 02e2 91       		.byte	0x91
+ 1627 02e3 6F       		.sleb128 -17
+ 1628 02e4 0B       		.uleb128 0xb
+ 1629 02e5 1C000000 		.4byte	.LASF42
+ 1630 02e9 01       		.byte	0x1
+ 1631 02ea 6502     		.2byte	0x265
+ 1632 02ec B5000000 		.4byte	0xb5
+ 1633 02f0 02       		.uleb128 0x2
+ 1634 02f1 91       		.byte	0x91
+ 1635 02f2 74       		.sleb128 -12
+ 1636 02f3 00       		.byte	0
+ 1637 02f4 09       		.uleb128 0x9
+ 1638 02f5 BC030000 		.4byte	.LASF43
+ 1639 02f9 01       		.byte	0x1
+ 1640 02fa B402     		.2byte	0x2b4
+ 1641 02fc 00000000 		.4byte	.LFB13
+ 1642 0300 2C000000 		.4byte	.LFE13-.LFB13
+ 1643 0304 01       		.uleb128 0x1
+ 1644 0305 9C       		.byte	0x9c
+ 1645 0306 1A030000 		.4byte	0x31a
+ 1646 030a 0A       		.uleb128 0xa
+ 1647 030b E0020000 		.4byte	.LASF44
+ 1648 030f 01       		.byte	0x1
+ 1649 0310 B402     		.2byte	0x2b4
+ 1650 0312 A9000000 		.4byte	0xa9
+ 1651 0316 02       		.uleb128 0x2
+ 1652 0317 91       		.byte	0x91
+ 1653 0318 76       		.sleb128 -10
+ 1654 0319 00       		.byte	0
+ 1655 031a 09       		.uleb128 0x9
+ 1656 031b F9020000 		.4byte	.LASF45
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 45
 
 
- 1657 0320 CF02     		.2byte	0x2cf
- 1658 0322 00000000 		.4byte	.LFB14
- 1659 0326 1C000000 		.4byte	.LFE14-.LFB14
- 1660 032a 01       		.uleb128 0x1
- 1661 032b 9C       		.byte	0x9c
- 1662 032c 40030000 		.4byte	0x340
- 1663 0330 0A       		.uleb128 0xa
- 1664 0331 E9020000 		.4byte	.LASF44
- 1665 0335 01       		.byte	0x1
- 1666 0336 CF02     		.2byte	0x2cf
- 1667 0338 B5000000 		.4byte	0xb5
- 1668 033c 02       		.uleb128 0x2
- 1669 033d 91       		.byte	0x91
- 1670 033e 74       		.sleb128 -12
- 1671 033f 00       		.byte	0
- 1672 0340 10       		.uleb128 0x10
- 1673 0341 C5020000 		.4byte	.LASF46
- 1674 0345 01       		.byte	0x1
- 1675 0346 E702     		.2byte	0x2e7
- 1676 0348 A9000000 		.4byte	0xa9
- 1677 034c 00000000 		.4byte	.LFB15
- 1678 0350 8C000000 		.4byte	.LFE15-.LFB15
- 1679 0354 01       		.uleb128 0x1
- 1680 0355 9C       		.byte	0x9c
- 1681 0356 88030000 		.4byte	0x388
- 1682 035a 0A       		.uleb128 0xa
- 1683 035b 76030000 		.4byte	.LASF47
- 1684 035f 01       		.byte	0x1
- 1685 0360 E702     		.2byte	0x2e7
- 1686 0362 A9000000 		.4byte	0xa9
- 1687 0366 02       		.uleb128 0x2
- 1688 0367 91       		.byte	0x91
- 1689 0368 6E       		.sleb128 -18
- 1690 0369 0B       		.uleb128 0xb
- 1691 036a 74010000 		.4byte	.LASF48
- 1692 036e 01       		.byte	0x1
- 1693 036f E902     		.2byte	0x2e9
- 1694 0371 A9000000 		.4byte	0xa9
- 1695 0375 02       		.uleb128 0x2
- 1696 0376 91       		.byte	0x91
- 1697 0377 72       		.sleb128 -14
- 1698 0378 0B       		.uleb128 0xb
- 1699 0379 09010000 		.4byte	.LASF49
- 1700 037d 01       		.byte	0x1
- 1701 037e EA02     		.2byte	0x2ea
- 1702 0380 B5000000 		.4byte	0xb5
- 1703 0384 02       		.uleb128 0x2
- 1704 0385 91       		.byte	0x91
- 1705 0386 74       		.sleb128 -12
- 1706 0387 00       		.byte	0
- 1707 0388 0E       		.uleb128 0xe
- 1708 0389 C2010000 		.4byte	.LASF50
- 1709 038d 01       		.byte	0x1
- 1710 038e 1103     		.2byte	0x311
- 1711 0390 B5000000 		.4byte	0xb5
- 1712 0394 00000000 		.4byte	.LFB16
- 1713 0398 94000000 		.4byte	.LFE16-.LFB16
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 46
+ 1657 031f 01       		.byte	0x1
+ 1658 0320 CF02     		.2byte	0x2cf
+ 1659 0322 00000000 		.4byte	.LFB14
+ 1660 0326 1C000000 		.4byte	.LFE14-.LFB14
+ 1661 032a 01       		.uleb128 0x1
+ 1662 032b 9C       		.byte	0x9c
+ 1663 032c 40030000 		.4byte	0x340
+ 1664 0330 0A       		.uleb128 0xa
+ 1665 0331 E0020000 		.4byte	.LASF44
+ 1666 0335 01       		.byte	0x1
+ 1667 0336 CF02     		.2byte	0x2cf
+ 1668 0338 B5000000 		.4byte	0xb5
+ 1669 033c 02       		.uleb128 0x2
+ 1670 033d 91       		.byte	0x91
+ 1671 033e 74       		.sleb128 -12
+ 1672 033f 00       		.byte	0
+ 1673 0340 10       		.uleb128 0x10
+ 1674 0341 BC020000 		.4byte	.LASF46
+ 1675 0345 01       		.byte	0x1
+ 1676 0346 E702     		.2byte	0x2e7
+ 1677 0348 A9000000 		.4byte	0xa9
+ 1678 034c 00000000 		.4byte	.LFB15
+ 1679 0350 8C000000 		.4byte	.LFE15-.LFB15
+ 1680 0354 01       		.uleb128 0x1
+ 1681 0355 9C       		.byte	0x9c
+ 1682 0356 88030000 		.4byte	0x388
+ 1683 035a 0A       		.uleb128 0xa
+ 1684 035b 6D030000 		.4byte	.LASF47
+ 1685 035f 01       		.byte	0x1
+ 1686 0360 E702     		.2byte	0x2e7
+ 1687 0362 A9000000 		.4byte	0xa9
+ 1688 0366 02       		.uleb128 0x2
+ 1689 0367 91       		.byte	0x91
+ 1690 0368 6E       		.sleb128 -18
+ 1691 0369 0B       		.uleb128 0xb
+ 1692 036a 31010000 		.4byte	.LASF48
+ 1693 036e 01       		.byte	0x1
+ 1694 036f E902     		.2byte	0x2e9
+ 1695 0371 A9000000 		.4byte	0xa9
+ 1696 0375 02       		.uleb128 0x2
+ 1697 0376 91       		.byte	0x91
+ 1698 0377 72       		.sleb128 -14
+ 1699 0378 0B       		.uleb128 0xb
+ 1700 0379 C6000000 		.4byte	.LASF49
+ 1701 037d 01       		.byte	0x1
+ 1702 037e EA02     		.2byte	0x2ea
+ 1703 0380 B5000000 		.4byte	0xb5
+ 1704 0384 02       		.uleb128 0x2
+ 1705 0385 91       		.byte	0x91
+ 1706 0386 74       		.sleb128 -12
+ 1707 0387 00       		.byte	0
+ 1708 0388 0E       		.uleb128 0xe
+ 1709 0389 7F010000 		.4byte	.LASF50
+ 1710 038d 01       		.byte	0x1
+ 1711 038e 1103     		.2byte	0x311
+ 1712 0390 B5000000 		.4byte	0xb5
+ 1713 0394 00000000 		.4byte	.LFB16
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 46
 
 
- 1714 039c 01       		.uleb128 0x1
- 1715 039d 9C       		.byte	0x9c
- 1716 039e D0030000 		.4byte	0x3d0
- 1717 03a2 0A       		.uleb128 0xa
- 1718 03a3 76030000 		.4byte	.LASF47
- 1719 03a7 01       		.byte	0x1
- 1720 03a8 1103     		.2byte	0x311
- 1721 03aa A9000000 		.4byte	0xa9
- 1722 03ae 02       		.uleb128 0x2
- 1723 03af 91       		.byte	0x91
- 1724 03b0 5E       		.sleb128 -34
- 1725 03b1 0B       		.uleb128 0xb
- 1726 03b2 2E010000 		.4byte	.LASF51
- 1727 03b6 01       		.byte	0x1
- 1728 03b7 1403     		.2byte	0x314
- 1729 03b9 DB000000 		.4byte	0xdb
- 1730 03bd 02       		.uleb128 0x2
- 1731 03be 91       		.byte	0x91
- 1732 03bf 60       		.sleb128 -32
- 1733 03c0 0B       		.uleb128 0xb
- 1734 03c1 09010000 		.4byte	.LASF49
- 1735 03c5 01       		.byte	0x1
- 1736 03c6 1503     		.2byte	0x315
- 1737 03c8 B5000000 		.4byte	0xb5
- 1738 03cc 02       		.uleb128 0x2
- 1739 03cd 91       		.byte	0x91
- 1740 03ce 6C       		.sleb128 -20
- 1741 03cf 00       		.byte	0
- 1742 03d0 0E       		.uleb128 0xe
- 1743 03d1 40030000 		.4byte	.LASF52
- 1744 03d5 01       		.byte	0x1
- 1745 03d6 3D03     		.2byte	0x33d
- 1746 03d8 C1000000 		.4byte	0xc1
- 1747 03dc 00000000 		.4byte	.LFB17
- 1748 03e0 84000000 		.4byte	.LFE17-.LFB17
- 1749 03e4 01       		.uleb128 0x1
- 1750 03e5 9C       		.byte	0x9c
- 1751 03e6 18040000 		.4byte	0x418
- 1752 03ea 0A       		.uleb128 0xa
- 1753 03eb 76030000 		.4byte	.LASF47
- 1754 03ef 01       		.byte	0x1
- 1755 03f0 3D03     		.2byte	0x33d
- 1756 03f2 A9000000 		.4byte	0xa9
- 1757 03f6 02       		.uleb128 0x2
- 1758 03f7 91       		.byte	0x91
- 1759 03f8 66       		.sleb128 -26
- 1760 03f9 0B       		.uleb128 0xb
- 1761 03fa 47010000 		.4byte	.LASF53
- 1762 03fe 01       		.byte	0x1
- 1763 03ff 3F03     		.2byte	0x33f
- 1764 0401 C1000000 		.4byte	0xc1
- 1765 0405 02       		.uleb128 0x2
- 1766 0406 91       		.byte	0x91
- 1767 0407 68       		.sleb128 -24
- 1768 0408 0B       		.uleb128 0xb
- 1769 0409 09010000 		.4byte	.LASF49
- 1770 040d 01       		.byte	0x1
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 47
+ 1714 0398 94000000 		.4byte	.LFE16-.LFB16
+ 1715 039c 01       		.uleb128 0x1
+ 1716 039d 9C       		.byte	0x9c
+ 1717 039e D0030000 		.4byte	0x3d0
+ 1718 03a2 0A       		.uleb128 0xa
+ 1719 03a3 6D030000 		.4byte	.LASF47
+ 1720 03a7 01       		.byte	0x1
+ 1721 03a8 1103     		.2byte	0x311
+ 1722 03aa A9000000 		.4byte	0xa9
+ 1723 03ae 02       		.uleb128 0x2
+ 1724 03af 91       		.byte	0x91
+ 1725 03b0 5E       		.sleb128 -34
+ 1726 03b1 0B       		.uleb128 0xb
+ 1727 03b2 EB000000 		.4byte	.LASF51
+ 1728 03b6 01       		.byte	0x1
+ 1729 03b7 1403     		.2byte	0x314
+ 1730 03b9 DB000000 		.4byte	0xdb
+ 1731 03bd 02       		.uleb128 0x2
+ 1732 03be 91       		.byte	0x91
+ 1733 03bf 60       		.sleb128 -32
+ 1734 03c0 0B       		.uleb128 0xb
+ 1735 03c1 C6000000 		.4byte	.LASF49
+ 1736 03c5 01       		.byte	0x1
+ 1737 03c6 1503     		.2byte	0x315
+ 1738 03c8 B5000000 		.4byte	0xb5
+ 1739 03cc 02       		.uleb128 0x2
+ 1740 03cd 91       		.byte	0x91
+ 1741 03ce 6C       		.sleb128 -20
+ 1742 03cf 00       		.byte	0
+ 1743 03d0 0E       		.uleb128 0xe
+ 1744 03d1 37030000 		.4byte	.LASF52
+ 1745 03d5 01       		.byte	0x1
+ 1746 03d6 3D03     		.2byte	0x33d
+ 1747 03d8 C1000000 		.4byte	0xc1
+ 1748 03dc 00000000 		.4byte	.LFB17
+ 1749 03e0 84000000 		.4byte	.LFE17-.LFB17
+ 1750 03e4 01       		.uleb128 0x1
+ 1751 03e5 9C       		.byte	0x9c
+ 1752 03e6 18040000 		.4byte	0x418
+ 1753 03ea 0A       		.uleb128 0xa
+ 1754 03eb 6D030000 		.4byte	.LASF47
+ 1755 03ef 01       		.byte	0x1
+ 1756 03f0 3D03     		.2byte	0x33d
+ 1757 03f2 A9000000 		.4byte	0xa9
+ 1758 03f6 02       		.uleb128 0x2
+ 1759 03f7 91       		.byte	0x91
+ 1760 03f8 66       		.sleb128 -26
+ 1761 03f9 0B       		.uleb128 0xb
+ 1762 03fa 04010000 		.4byte	.LASF53
+ 1763 03fe 01       		.byte	0x1
+ 1764 03ff 3F03     		.2byte	0x33f
+ 1765 0401 C1000000 		.4byte	0xc1
+ 1766 0405 02       		.uleb128 0x2
+ 1767 0406 91       		.byte	0x91
+ 1768 0407 68       		.sleb128 -24
+ 1769 0408 0B       		.uleb128 0xb
+ 1770 0409 C6000000 		.4byte	.LASF49
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 47
 
 
- 1771 040e 4003     		.2byte	0x340
- 1772 0410 B5000000 		.4byte	0xb5
- 1773 0414 02       		.uleb128 0x2
- 1774 0415 91       		.byte	0x91
- 1775 0416 6C       		.sleb128 -20
- 1776 0417 00       		.byte	0
- 1777 0418 13       		.uleb128 0x13
- 1778 0419 9A020000 		.4byte	.LASF54
- 1779 041d 01       		.byte	0x1
- 1780 041e 23       		.byte	0x23
- 1781 041f 79000000 		.4byte	0x79
- 1782 0423 05       		.uleb128 0x5
- 1783 0424 03       		.byte	0x3
- 1784 0425 00000000 		.4byte	ADC_SAR_1_initVar
- 1785 0429 13       		.uleb128 0x13
- 1786 042a 9B000000 		.4byte	.LASF55
- 1787 042e 01       		.byte	0x1
- 1788 042f 24       		.byte	0x24
- 1789 0430 3A040000 		.4byte	0x43a
- 1790 0434 05       		.uleb128 0x5
- 1791 0435 03       		.byte	0x3
- 1792 0436 00000000 		.4byte	ADC_SAR_1_offset
- 1793 043a 05       		.uleb128 0x5
- 1794 043b A9000000 		.4byte	0xa9
- 1795 043f 13       		.uleb128 0x13
- 1796 0440 81010000 		.4byte	.LASF56
- 1797 0444 01       		.byte	0x1
- 1798 0445 25       		.byte	0x25
- 1799 0446 3A040000 		.4byte	0x43a
- 1800 044a 05       		.uleb128 0x5
- 1801 044b 03       		.byte	0x3
- 1802 044c 00000000 		.4byte	ADC_SAR_1_countsPerVolt
- 1803 0450 13       		.uleb128 0x13
- 1804 0451 DD030000 		.4byte	.LASF57
- 1805 0455 01       		.byte	0x1
- 1806 0456 26       		.byte	0x26
- 1807 0457 61040000 		.4byte	0x461
- 1808 045b 05       		.uleb128 0x5
- 1809 045c 03       		.byte	0x3
- 1810 045d 00000000 		.4byte	ADC_SAR_1_countsPer10Volt
- 1811 0461 05       		.uleb128 0x5
- 1812 0462 B5000000 		.4byte	0xb5
- 1813 0466 13       		.uleb128 0x13
- 1814 0467 15040000 		.4byte	.LASF58
- 1815 046b 01       		.byte	0x1
- 1816 046c 27       		.byte	0x27
- 1817 046d 3A040000 		.4byte	0x43a
- 1818 0471 05       		.uleb128 0x5
- 1819 0472 03       		.byte	0x3
- 1820 0473 00000000 		.4byte	ADC_SAR_1_shift
- 1821 0477 00       		.byte	0
- 1822              		.section	.debug_abbrev,"",%progbits
- 1823              	.Ldebug_abbrev0:
- 1824 0000 01       		.uleb128 0x1
- 1825 0001 11       		.uleb128 0x11
- 1826 0002 01       		.byte	0x1
- 1827 0003 25       		.uleb128 0x25
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 48
+ 1771 040d 01       		.byte	0x1
+ 1772 040e 4003     		.2byte	0x340
+ 1773 0410 B5000000 		.4byte	0xb5
+ 1774 0414 02       		.uleb128 0x2
+ 1775 0415 91       		.byte	0x91
+ 1776 0416 6C       		.sleb128 -20
+ 1777 0417 00       		.byte	0
+ 1778 0418 13       		.uleb128 0x13
+ 1779 0419 91020000 		.4byte	.LASF54
+ 1780 041d 01       		.byte	0x1
+ 1781 041e 23       		.byte	0x23
+ 1782 041f 79000000 		.4byte	0x79
+ 1783 0423 05       		.uleb128 0x5
+ 1784 0424 03       		.byte	0x3
+ 1785 0425 00000000 		.4byte	ADC_SAR_1_initVar
+ 1786 0429 13       		.uleb128 0x13
+ 1787 042a 9B000000 		.4byte	.LASF55
+ 1788 042e 01       		.byte	0x1
+ 1789 042f 24       		.byte	0x24
+ 1790 0430 3A040000 		.4byte	0x43a
+ 1791 0434 05       		.uleb128 0x5
+ 1792 0435 03       		.byte	0x3
+ 1793 0436 00000000 		.4byte	ADC_SAR_1_offset
+ 1794 043a 05       		.uleb128 0x5
+ 1795 043b A9000000 		.4byte	0xa9
+ 1796 043f 13       		.uleb128 0x13
+ 1797 0440 3E010000 		.4byte	.LASF56
+ 1798 0444 01       		.byte	0x1
+ 1799 0445 25       		.byte	0x25
+ 1800 0446 3A040000 		.4byte	0x43a
+ 1801 044a 05       		.uleb128 0x5
+ 1802 044b 03       		.byte	0x3
+ 1803 044c 00000000 		.4byte	ADC_SAR_1_countsPerVolt
+ 1804 0450 13       		.uleb128 0x13
+ 1805 0451 D4030000 		.4byte	.LASF57
+ 1806 0455 01       		.byte	0x1
+ 1807 0456 26       		.byte	0x26
+ 1808 0457 61040000 		.4byte	0x461
+ 1809 045b 05       		.uleb128 0x5
+ 1810 045c 03       		.byte	0x3
+ 1811 045d 00000000 		.4byte	ADC_SAR_1_countsPer10Volt
+ 1812 0461 05       		.uleb128 0x5
+ 1813 0462 B5000000 		.4byte	0xb5
+ 1814 0466 13       		.uleb128 0x13
+ 1815 0467 0C040000 		.4byte	.LASF58
+ 1816 046b 01       		.byte	0x1
+ 1817 046c 27       		.byte	0x27
+ 1818 046d 3A040000 		.4byte	0x43a
+ 1819 0471 05       		.uleb128 0x5
+ 1820 0472 03       		.byte	0x3
+ 1821 0473 00000000 		.4byte	ADC_SAR_1_shift
+ 1822 0477 00       		.byte	0
+ 1823              		.section	.debug_abbrev,"",%progbits
+ 1824              	.Ldebug_abbrev0:
+ 1825 0000 01       		.uleb128 0x1
+ 1826 0001 11       		.uleb128 0x11
+ 1827 0002 01       		.byte	0x1
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 48
 
 
- 1828 0004 0E       		.uleb128 0xe
- 1829 0005 13       		.uleb128 0x13
- 1830 0006 0B       		.uleb128 0xb
- 1831 0007 03       		.uleb128 0x3
- 1832 0008 0E       		.uleb128 0xe
- 1833 0009 1B       		.uleb128 0x1b
- 1834 000a 0E       		.uleb128 0xe
- 1835 000b 55       		.uleb128 0x55
- 1836 000c 17       		.uleb128 0x17
- 1837 000d 11       		.uleb128 0x11
- 1838 000e 01       		.uleb128 0x1
- 1839 000f 10       		.uleb128 0x10
- 1840 0010 17       		.uleb128 0x17
- 1841 0011 00       		.byte	0
- 1842 0012 00       		.byte	0
- 1843 0013 02       		.uleb128 0x2
- 1844 0014 24       		.uleb128 0x24
- 1845 0015 00       		.byte	0
- 1846 0016 0B       		.uleb128 0xb
- 1847 0017 0B       		.uleb128 0xb
- 1848 0018 3E       		.uleb128 0x3e
- 1849 0019 0B       		.uleb128 0xb
- 1850 001a 03       		.uleb128 0x3
- 1851 001b 08       		.uleb128 0x8
- 1852 001c 00       		.byte	0
- 1853 001d 00       		.byte	0
- 1854 001e 03       		.uleb128 0x3
- 1855 001f 24       		.uleb128 0x24
- 1856 0020 00       		.byte	0
- 1857 0021 0B       		.uleb128 0xb
- 1858 0022 0B       		.uleb128 0xb
- 1859 0023 3E       		.uleb128 0x3e
- 1860 0024 0B       		.uleb128 0xb
- 1861 0025 03       		.uleb128 0x3
- 1862 0026 0E       		.uleb128 0xe
- 1863 0027 00       		.byte	0
- 1864 0028 00       		.byte	0
- 1865 0029 04       		.uleb128 0x4
- 1866 002a 16       		.uleb128 0x16
- 1867 002b 00       		.byte	0
- 1868 002c 03       		.uleb128 0x3
- 1869 002d 0E       		.uleb128 0xe
- 1870 002e 3A       		.uleb128 0x3a
- 1871 002f 0B       		.uleb128 0xb
- 1872 0030 3B       		.uleb128 0x3b
- 1873 0031 05       		.uleb128 0x5
- 1874 0032 49       		.uleb128 0x49
- 1875 0033 13       		.uleb128 0x13
- 1876 0034 00       		.byte	0
- 1877 0035 00       		.byte	0
- 1878 0036 05       		.uleb128 0x5
- 1879 0037 35       		.uleb128 0x35
- 1880 0038 00       		.byte	0
- 1881 0039 49       		.uleb128 0x49
- 1882 003a 13       		.uleb128 0x13
- 1883 003b 00       		.byte	0
- 1884 003c 00       		.byte	0
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 49
+ 1828 0003 25       		.uleb128 0x25
+ 1829 0004 0E       		.uleb128 0xe
+ 1830 0005 13       		.uleb128 0x13
+ 1831 0006 0B       		.uleb128 0xb
+ 1832 0007 03       		.uleb128 0x3
+ 1833 0008 0E       		.uleb128 0xe
+ 1834 0009 1B       		.uleb128 0x1b
+ 1835 000a 0E       		.uleb128 0xe
+ 1836 000b 55       		.uleb128 0x55
+ 1837 000c 17       		.uleb128 0x17
+ 1838 000d 11       		.uleb128 0x11
+ 1839 000e 01       		.uleb128 0x1
+ 1840 000f 10       		.uleb128 0x10
+ 1841 0010 17       		.uleb128 0x17
+ 1842 0011 00       		.byte	0
+ 1843 0012 00       		.byte	0
+ 1844 0013 02       		.uleb128 0x2
+ 1845 0014 24       		.uleb128 0x24
+ 1846 0015 00       		.byte	0
+ 1847 0016 0B       		.uleb128 0xb
+ 1848 0017 0B       		.uleb128 0xb
+ 1849 0018 3E       		.uleb128 0x3e
+ 1850 0019 0B       		.uleb128 0xb
+ 1851 001a 03       		.uleb128 0x3
+ 1852 001b 08       		.uleb128 0x8
+ 1853 001c 00       		.byte	0
+ 1854 001d 00       		.byte	0
+ 1855 001e 03       		.uleb128 0x3
+ 1856 001f 24       		.uleb128 0x24
+ 1857 0020 00       		.byte	0
+ 1858 0021 0B       		.uleb128 0xb
+ 1859 0022 0B       		.uleb128 0xb
+ 1860 0023 3E       		.uleb128 0x3e
+ 1861 0024 0B       		.uleb128 0xb
+ 1862 0025 03       		.uleb128 0x3
+ 1863 0026 0E       		.uleb128 0xe
+ 1864 0027 00       		.byte	0
+ 1865 0028 00       		.byte	0
+ 1866 0029 04       		.uleb128 0x4
+ 1867 002a 16       		.uleb128 0x16
+ 1868 002b 00       		.byte	0
+ 1869 002c 03       		.uleb128 0x3
+ 1870 002d 0E       		.uleb128 0xe
+ 1871 002e 3A       		.uleb128 0x3a
+ 1872 002f 0B       		.uleb128 0xb
+ 1873 0030 3B       		.uleb128 0x3b
+ 1874 0031 05       		.uleb128 0x5
+ 1875 0032 49       		.uleb128 0x49
+ 1876 0033 13       		.uleb128 0x13
+ 1877 0034 00       		.byte	0
+ 1878 0035 00       		.byte	0
+ 1879 0036 05       		.uleb128 0x5
+ 1880 0037 35       		.uleb128 0x35
+ 1881 0038 00       		.byte	0
+ 1882 0039 49       		.uleb128 0x49
+ 1883 003a 13       		.uleb128 0x13
+ 1884 003b 00       		.byte	0
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 49
 
 
- 1885 003d 06       		.uleb128 0x6
- 1886 003e 2E       		.uleb128 0x2e
- 1887 003f 00       		.byte	0
- 1888 0040 3F       		.uleb128 0x3f
- 1889 0041 19       		.uleb128 0x19
- 1890 0042 03       		.uleb128 0x3
- 1891 0043 0E       		.uleb128 0xe
- 1892 0044 3A       		.uleb128 0x3a
- 1893 0045 0B       		.uleb128 0xb
- 1894 0046 3B       		.uleb128 0x3b
- 1895 0047 0B       		.uleb128 0xb
- 1896 0048 27       		.uleb128 0x27
- 1897 0049 19       		.uleb128 0x19
- 1898 004a 11       		.uleb128 0x11
- 1899 004b 01       		.uleb128 0x1
- 1900 004c 12       		.uleb128 0x12
- 1901 004d 06       		.uleb128 0x6
- 1902 004e 40       		.uleb128 0x40
- 1903 004f 18       		.uleb128 0x18
- 1904 0050 9642     		.uleb128 0x2116
- 1905 0052 19       		.uleb128 0x19
- 1906 0053 00       		.byte	0
- 1907 0054 00       		.byte	0
- 1908 0055 07       		.uleb128 0x7
- 1909 0056 2E       		.uleb128 0x2e
- 1910 0057 01       		.byte	0x1
- 1911 0058 3F       		.uleb128 0x3f
- 1912 0059 19       		.uleb128 0x19
- 1913 005a 03       		.uleb128 0x3
- 1914 005b 0E       		.uleb128 0xe
- 1915 005c 3A       		.uleb128 0x3a
- 1916 005d 0B       		.uleb128 0xb
- 1917 005e 3B       		.uleb128 0x3b
- 1918 005f 0B       		.uleb128 0xb
- 1919 0060 27       		.uleb128 0x27
- 1920 0061 19       		.uleb128 0x19
- 1921 0062 11       		.uleb128 0x11
- 1922 0063 01       		.uleb128 0x1
- 1923 0064 12       		.uleb128 0x12
- 1924 0065 06       		.uleb128 0x6
- 1925 0066 40       		.uleb128 0x40
- 1926 0067 18       		.uleb128 0x18
- 1927 0068 9642     		.uleb128 0x2116
- 1928 006a 19       		.uleb128 0x19
- 1929 006b 01       		.uleb128 0x1
- 1930 006c 13       		.uleb128 0x13
- 1931 006d 00       		.byte	0
- 1932 006e 00       		.byte	0
- 1933 006f 08       		.uleb128 0x8
- 1934 0070 34       		.uleb128 0x34
- 1935 0071 00       		.byte	0
- 1936 0072 03       		.uleb128 0x3
- 1937 0073 0E       		.uleb128 0xe
- 1938 0074 3A       		.uleb128 0x3a
- 1939 0075 0B       		.uleb128 0xb
- 1940 0076 3B       		.uleb128 0x3b
- 1941 0077 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 50
+ 1885 003c 00       		.byte	0
+ 1886 003d 06       		.uleb128 0x6
+ 1887 003e 2E       		.uleb128 0x2e
+ 1888 003f 00       		.byte	0
+ 1889 0040 3F       		.uleb128 0x3f
+ 1890 0041 19       		.uleb128 0x19
+ 1891 0042 03       		.uleb128 0x3
+ 1892 0043 0E       		.uleb128 0xe
+ 1893 0044 3A       		.uleb128 0x3a
+ 1894 0045 0B       		.uleb128 0xb
+ 1895 0046 3B       		.uleb128 0x3b
+ 1896 0047 0B       		.uleb128 0xb
+ 1897 0048 27       		.uleb128 0x27
+ 1898 0049 19       		.uleb128 0x19
+ 1899 004a 11       		.uleb128 0x11
+ 1900 004b 01       		.uleb128 0x1
+ 1901 004c 12       		.uleb128 0x12
+ 1902 004d 06       		.uleb128 0x6
+ 1903 004e 40       		.uleb128 0x40
+ 1904 004f 18       		.uleb128 0x18
+ 1905 0050 9642     		.uleb128 0x2116
+ 1906 0052 19       		.uleb128 0x19
+ 1907 0053 00       		.byte	0
+ 1908 0054 00       		.byte	0
+ 1909 0055 07       		.uleb128 0x7
+ 1910 0056 2E       		.uleb128 0x2e
+ 1911 0057 01       		.byte	0x1
+ 1912 0058 3F       		.uleb128 0x3f
+ 1913 0059 19       		.uleb128 0x19
+ 1914 005a 03       		.uleb128 0x3
+ 1915 005b 0E       		.uleb128 0xe
+ 1916 005c 3A       		.uleb128 0x3a
+ 1917 005d 0B       		.uleb128 0xb
+ 1918 005e 3B       		.uleb128 0x3b
+ 1919 005f 0B       		.uleb128 0xb
+ 1920 0060 27       		.uleb128 0x27
+ 1921 0061 19       		.uleb128 0x19
+ 1922 0062 11       		.uleb128 0x11
+ 1923 0063 01       		.uleb128 0x1
+ 1924 0064 12       		.uleb128 0x12
+ 1925 0065 06       		.uleb128 0x6
+ 1926 0066 40       		.uleb128 0x40
+ 1927 0067 18       		.uleb128 0x18
+ 1928 0068 9642     		.uleb128 0x2116
+ 1929 006a 19       		.uleb128 0x19
+ 1930 006b 01       		.uleb128 0x1
+ 1931 006c 13       		.uleb128 0x13
+ 1932 006d 00       		.byte	0
+ 1933 006e 00       		.byte	0
+ 1934 006f 08       		.uleb128 0x8
+ 1935 0070 34       		.uleb128 0x34
+ 1936 0071 00       		.byte	0
+ 1937 0072 03       		.uleb128 0x3
+ 1938 0073 0E       		.uleb128 0xe
+ 1939 0074 3A       		.uleb128 0x3a
+ 1940 0075 0B       		.uleb128 0xb
+ 1941 0076 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 50
 
 
- 1942 0078 49       		.uleb128 0x49
- 1943 0079 13       		.uleb128 0x13
- 1944 007a 02       		.uleb128 0x2
- 1945 007b 18       		.uleb128 0x18
- 1946 007c 00       		.byte	0
- 1947 007d 00       		.byte	0
- 1948 007e 09       		.uleb128 0x9
- 1949 007f 2E       		.uleb128 0x2e
- 1950 0080 01       		.byte	0x1
- 1951 0081 3F       		.uleb128 0x3f
- 1952 0082 19       		.uleb128 0x19
- 1953 0083 03       		.uleb128 0x3
- 1954 0084 0E       		.uleb128 0xe
- 1955 0085 3A       		.uleb128 0x3a
- 1956 0086 0B       		.uleb128 0xb
- 1957 0087 3B       		.uleb128 0x3b
- 1958 0088 05       		.uleb128 0x5
- 1959 0089 27       		.uleb128 0x27
- 1960 008a 19       		.uleb128 0x19
- 1961 008b 11       		.uleb128 0x11
- 1962 008c 01       		.uleb128 0x1
- 1963 008d 12       		.uleb128 0x12
- 1964 008e 06       		.uleb128 0x6
- 1965 008f 40       		.uleb128 0x40
- 1966 0090 18       		.uleb128 0x18
- 1967 0091 9742     		.uleb128 0x2117
- 1968 0093 19       		.uleb128 0x19
- 1969 0094 01       		.uleb128 0x1
- 1970 0095 13       		.uleb128 0x13
- 1971 0096 00       		.byte	0
- 1972 0097 00       		.byte	0
- 1973 0098 0A       		.uleb128 0xa
- 1974 0099 05       		.uleb128 0x5
- 1975 009a 00       		.byte	0
- 1976 009b 03       		.uleb128 0x3
- 1977 009c 0E       		.uleb128 0xe
- 1978 009d 3A       		.uleb128 0x3a
- 1979 009e 0B       		.uleb128 0xb
- 1980 009f 3B       		.uleb128 0x3b
- 1981 00a0 05       		.uleb128 0x5
- 1982 00a1 49       		.uleb128 0x49
- 1983 00a2 13       		.uleb128 0x13
- 1984 00a3 02       		.uleb128 0x2
- 1985 00a4 18       		.uleb128 0x18
- 1986 00a5 00       		.byte	0
- 1987 00a6 00       		.byte	0
- 1988 00a7 0B       		.uleb128 0xb
- 1989 00a8 34       		.uleb128 0x34
- 1990 00a9 00       		.byte	0
- 1991 00aa 03       		.uleb128 0x3
- 1992 00ab 0E       		.uleb128 0xe
- 1993 00ac 3A       		.uleb128 0x3a
- 1994 00ad 0B       		.uleb128 0xb
- 1995 00ae 3B       		.uleb128 0x3b
- 1996 00af 05       		.uleb128 0x5
- 1997 00b0 49       		.uleb128 0x49
- 1998 00b1 13       		.uleb128 0x13
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 51
+ 1942 0077 0B       		.uleb128 0xb
+ 1943 0078 49       		.uleb128 0x49
+ 1944 0079 13       		.uleb128 0x13
+ 1945 007a 02       		.uleb128 0x2
+ 1946 007b 18       		.uleb128 0x18
+ 1947 007c 00       		.byte	0
+ 1948 007d 00       		.byte	0
+ 1949 007e 09       		.uleb128 0x9
+ 1950 007f 2E       		.uleb128 0x2e
+ 1951 0080 01       		.byte	0x1
+ 1952 0081 3F       		.uleb128 0x3f
+ 1953 0082 19       		.uleb128 0x19
+ 1954 0083 03       		.uleb128 0x3
+ 1955 0084 0E       		.uleb128 0xe
+ 1956 0085 3A       		.uleb128 0x3a
+ 1957 0086 0B       		.uleb128 0xb
+ 1958 0087 3B       		.uleb128 0x3b
+ 1959 0088 05       		.uleb128 0x5
+ 1960 0089 27       		.uleb128 0x27
+ 1961 008a 19       		.uleb128 0x19
+ 1962 008b 11       		.uleb128 0x11
+ 1963 008c 01       		.uleb128 0x1
+ 1964 008d 12       		.uleb128 0x12
+ 1965 008e 06       		.uleb128 0x6
+ 1966 008f 40       		.uleb128 0x40
+ 1967 0090 18       		.uleb128 0x18
+ 1968 0091 9742     		.uleb128 0x2117
+ 1969 0093 19       		.uleb128 0x19
+ 1970 0094 01       		.uleb128 0x1
+ 1971 0095 13       		.uleb128 0x13
+ 1972 0096 00       		.byte	0
+ 1973 0097 00       		.byte	0
+ 1974 0098 0A       		.uleb128 0xa
+ 1975 0099 05       		.uleb128 0x5
+ 1976 009a 00       		.byte	0
+ 1977 009b 03       		.uleb128 0x3
+ 1978 009c 0E       		.uleb128 0xe
+ 1979 009d 3A       		.uleb128 0x3a
+ 1980 009e 0B       		.uleb128 0xb
+ 1981 009f 3B       		.uleb128 0x3b
+ 1982 00a0 05       		.uleb128 0x5
+ 1983 00a1 49       		.uleb128 0x49
+ 1984 00a2 13       		.uleb128 0x13
+ 1985 00a3 02       		.uleb128 0x2
+ 1986 00a4 18       		.uleb128 0x18
+ 1987 00a5 00       		.byte	0
+ 1988 00a6 00       		.byte	0
+ 1989 00a7 0B       		.uleb128 0xb
+ 1990 00a8 34       		.uleb128 0x34
+ 1991 00a9 00       		.byte	0
+ 1992 00aa 03       		.uleb128 0x3
+ 1993 00ab 0E       		.uleb128 0xe
+ 1994 00ac 3A       		.uleb128 0x3a
+ 1995 00ad 0B       		.uleb128 0xb
+ 1996 00ae 3B       		.uleb128 0x3b
+ 1997 00af 05       		.uleb128 0x5
+ 1998 00b0 49       		.uleb128 0x49
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 51
 
 
- 1999 00b2 02       		.uleb128 0x2
- 2000 00b3 18       		.uleb128 0x18
- 2001 00b4 00       		.byte	0
- 2002 00b5 00       		.byte	0
- 2003 00b6 0C       		.uleb128 0xc
- 2004 00b7 2E       		.uleb128 0x2e
- 2005 00b8 01       		.byte	0x1
- 2006 00b9 3F       		.uleb128 0x3f
- 2007 00ba 19       		.uleb128 0x19
- 2008 00bb 03       		.uleb128 0x3
- 2009 00bc 0E       		.uleb128 0xe
- 2010 00bd 3A       		.uleb128 0x3a
- 2011 00be 0B       		.uleb128 0xb
- 2012 00bf 3B       		.uleb128 0x3b
- 2013 00c0 05       		.uleb128 0x5
- 2014 00c1 27       		.uleb128 0x27
- 2015 00c2 19       		.uleb128 0x19
- 2016 00c3 11       		.uleb128 0x11
- 2017 00c4 01       		.uleb128 0x1
- 2018 00c5 12       		.uleb128 0x12
- 2019 00c6 06       		.uleb128 0x6
- 2020 00c7 40       		.uleb128 0x40
- 2021 00c8 18       		.uleb128 0x18
- 2022 00c9 9642     		.uleb128 0x2116
- 2023 00cb 19       		.uleb128 0x19
- 2024 00cc 01       		.uleb128 0x1
- 2025 00cd 13       		.uleb128 0x13
- 2026 00ce 00       		.byte	0
- 2027 00cf 00       		.byte	0
- 2028 00d0 0D       		.uleb128 0xd
- 2029 00d1 2E       		.uleb128 0x2e
- 2030 00d2 00       		.byte	0
- 2031 00d3 3F       		.uleb128 0x3f
- 2032 00d4 19       		.uleb128 0x19
- 2033 00d5 03       		.uleb128 0x3
- 2034 00d6 0E       		.uleb128 0xe
- 2035 00d7 3A       		.uleb128 0x3a
- 2036 00d8 0B       		.uleb128 0xb
- 2037 00d9 3B       		.uleb128 0x3b
- 2038 00da 05       		.uleb128 0x5
- 2039 00db 27       		.uleb128 0x27
- 2040 00dc 19       		.uleb128 0x19
- 2041 00dd 11       		.uleb128 0x11
- 2042 00de 01       		.uleb128 0x1
- 2043 00df 12       		.uleb128 0x12
- 2044 00e0 06       		.uleb128 0x6
- 2045 00e1 40       		.uleb128 0x40
- 2046 00e2 18       		.uleb128 0x18
- 2047 00e3 9742     		.uleb128 0x2117
- 2048 00e5 19       		.uleb128 0x19
- 2049 00e6 00       		.byte	0
- 2050 00e7 00       		.byte	0
- 2051 00e8 0E       		.uleb128 0xe
- 2052 00e9 2E       		.uleb128 0x2e
- 2053 00ea 01       		.byte	0x1
- 2054 00eb 3F       		.uleb128 0x3f
- 2055 00ec 19       		.uleb128 0x19
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 52
+ 1999 00b1 13       		.uleb128 0x13
+ 2000 00b2 02       		.uleb128 0x2
+ 2001 00b3 18       		.uleb128 0x18
+ 2002 00b4 00       		.byte	0
+ 2003 00b5 00       		.byte	0
+ 2004 00b6 0C       		.uleb128 0xc
+ 2005 00b7 2E       		.uleb128 0x2e
+ 2006 00b8 01       		.byte	0x1
+ 2007 00b9 3F       		.uleb128 0x3f
+ 2008 00ba 19       		.uleb128 0x19
+ 2009 00bb 03       		.uleb128 0x3
+ 2010 00bc 0E       		.uleb128 0xe
+ 2011 00bd 3A       		.uleb128 0x3a
+ 2012 00be 0B       		.uleb128 0xb
+ 2013 00bf 3B       		.uleb128 0x3b
+ 2014 00c0 05       		.uleb128 0x5
+ 2015 00c1 27       		.uleb128 0x27
+ 2016 00c2 19       		.uleb128 0x19
+ 2017 00c3 11       		.uleb128 0x11
+ 2018 00c4 01       		.uleb128 0x1
+ 2019 00c5 12       		.uleb128 0x12
+ 2020 00c6 06       		.uleb128 0x6
+ 2021 00c7 40       		.uleb128 0x40
+ 2022 00c8 18       		.uleb128 0x18
+ 2023 00c9 9642     		.uleb128 0x2116
+ 2024 00cb 19       		.uleb128 0x19
+ 2025 00cc 01       		.uleb128 0x1
+ 2026 00cd 13       		.uleb128 0x13
+ 2027 00ce 00       		.byte	0
+ 2028 00cf 00       		.byte	0
+ 2029 00d0 0D       		.uleb128 0xd
+ 2030 00d1 2E       		.uleb128 0x2e
+ 2031 00d2 00       		.byte	0
+ 2032 00d3 3F       		.uleb128 0x3f
+ 2033 00d4 19       		.uleb128 0x19
+ 2034 00d5 03       		.uleb128 0x3
+ 2035 00d6 0E       		.uleb128 0xe
+ 2036 00d7 3A       		.uleb128 0x3a
+ 2037 00d8 0B       		.uleb128 0xb
+ 2038 00d9 3B       		.uleb128 0x3b
+ 2039 00da 05       		.uleb128 0x5
+ 2040 00db 27       		.uleb128 0x27
+ 2041 00dc 19       		.uleb128 0x19
+ 2042 00dd 11       		.uleb128 0x11
+ 2043 00de 01       		.uleb128 0x1
+ 2044 00df 12       		.uleb128 0x12
+ 2045 00e0 06       		.uleb128 0x6
+ 2046 00e1 40       		.uleb128 0x40
+ 2047 00e2 18       		.uleb128 0x18
+ 2048 00e3 9742     		.uleb128 0x2117
+ 2049 00e5 19       		.uleb128 0x19
+ 2050 00e6 00       		.byte	0
+ 2051 00e7 00       		.byte	0
+ 2052 00e8 0E       		.uleb128 0xe
+ 2053 00e9 2E       		.uleb128 0x2e
+ 2054 00ea 01       		.byte	0x1
+ 2055 00eb 3F       		.uleb128 0x3f
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 52
 
 
- 2056 00ed 03       		.uleb128 0x3
- 2057 00ee 0E       		.uleb128 0xe
- 2058 00ef 3A       		.uleb128 0x3a
- 2059 00f0 0B       		.uleb128 0xb
- 2060 00f1 3B       		.uleb128 0x3b
- 2061 00f2 05       		.uleb128 0x5
- 2062 00f3 27       		.uleb128 0x27
- 2063 00f4 19       		.uleb128 0x19
- 2064 00f5 49       		.uleb128 0x49
- 2065 00f6 13       		.uleb128 0x13
- 2066 00f7 11       		.uleb128 0x11
- 2067 00f8 01       		.uleb128 0x1
- 2068 00f9 12       		.uleb128 0x12
- 2069 00fa 06       		.uleb128 0x6
- 2070 00fb 40       		.uleb128 0x40
- 2071 00fc 18       		.uleb128 0x18
- 2072 00fd 9642     		.uleb128 0x2116
- 2073 00ff 19       		.uleb128 0x19
- 2074 0100 01       		.uleb128 0x1
- 2075 0101 13       		.uleb128 0x13
- 2076 0102 00       		.byte	0
- 2077 0103 00       		.byte	0
- 2078 0104 0F       		.uleb128 0xf
- 2079 0105 2E       		.uleb128 0x2e
- 2080 0106 00       		.byte	0
- 2081 0107 3F       		.uleb128 0x3f
- 2082 0108 19       		.uleb128 0x19
- 2083 0109 03       		.uleb128 0x3
- 2084 010a 0E       		.uleb128 0xe
- 2085 010b 3A       		.uleb128 0x3a
- 2086 010c 0B       		.uleb128 0xb
- 2087 010d 3B       		.uleb128 0x3b
- 2088 010e 05       		.uleb128 0x5
- 2089 010f 27       		.uleb128 0x27
- 2090 0110 19       		.uleb128 0x19
- 2091 0111 49       		.uleb128 0x49
- 2092 0112 13       		.uleb128 0x13
- 2093 0113 11       		.uleb128 0x11
- 2094 0114 01       		.uleb128 0x1
- 2095 0115 12       		.uleb128 0x12
- 2096 0116 06       		.uleb128 0x6
- 2097 0117 40       		.uleb128 0x40
- 2098 0118 18       		.uleb128 0x18
- 2099 0119 9742     		.uleb128 0x2117
- 2100 011b 19       		.uleb128 0x19
- 2101 011c 00       		.byte	0
- 2102 011d 00       		.byte	0
- 2103 011e 10       		.uleb128 0x10
- 2104 011f 2E       		.uleb128 0x2e
- 2105 0120 01       		.byte	0x1
- 2106 0121 3F       		.uleb128 0x3f
- 2107 0122 19       		.uleb128 0x19
- 2108 0123 03       		.uleb128 0x3
- 2109 0124 0E       		.uleb128 0xe
- 2110 0125 3A       		.uleb128 0x3a
- 2111 0126 0B       		.uleb128 0xb
- 2112 0127 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 53
+ 2056 00ec 19       		.uleb128 0x19
+ 2057 00ed 03       		.uleb128 0x3
+ 2058 00ee 0E       		.uleb128 0xe
+ 2059 00ef 3A       		.uleb128 0x3a
+ 2060 00f0 0B       		.uleb128 0xb
+ 2061 00f1 3B       		.uleb128 0x3b
+ 2062 00f2 05       		.uleb128 0x5
+ 2063 00f3 27       		.uleb128 0x27
+ 2064 00f4 19       		.uleb128 0x19
+ 2065 00f5 49       		.uleb128 0x49
+ 2066 00f6 13       		.uleb128 0x13
+ 2067 00f7 11       		.uleb128 0x11
+ 2068 00f8 01       		.uleb128 0x1
+ 2069 00f9 12       		.uleb128 0x12
+ 2070 00fa 06       		.uleb128 0x6
+ 2071 00fb 40       		.uleb128 0x40
+ 2072 00fc 18       		.uleb128 0x18
+ 2073 00fd 9642     		.uleb128 0x2116
+ 2074 00ff 19       		.uleb128 0x19
+ 2075 0100 01       		.uleb128 0x1
+ 2076 0101 13       		.uleb128 0x13
+ 2077 0102 00       		.byte	0
+ 2078 0103 00       		.byte	0
+ 2079 0104 0F       		.uleb128 0xf
+ 2080 0105 2E       		.uleb128 0x2e
+ 2081 0106 00       		.byte	0
+ 2082 0107 3F       		.uleb128 0x3f
+ 2083 0108 19       		.uleb128 0x19
+ 2084 0109 03       		.uleb128 0x3
+ 2085 010a 0E       		.uleb128 0xe
+ 2086 010b 3A       		.uleb128 0x3a
+ 2087 010c 0B       		.uleb128 0xb
+ 2088 010d 3B       		.uleb128 0x3b
+ 2089 010e 05       		.uleb128 0x5
+ 2090 010f 27       		.uleb128 0x27
+ 2091 0110 19       		.uleb128 0x19
+ 2092 0111 49       		.uleb128 0x49
+ 2093 0112 13       		.uleb128 0x13
+ 2094 0113 11       		.uleb128 0x11
+ 2095 0114 01       		.uleb128 0x1
+ 2096 0115 12       		.uleb128 0x12
+ 2097 0116 06       		.uleb128 0x6
+ 2098 0117 40       		.uleb128 0x40
+ 2099 0118 18       		.uleb128 0x18
+ 2100 0119 9742     		.uleb128 0x2117
+ 2101 011b 19       		.uleb128 0x19
+ 2102 011c 00       		.byte	0
+ 2103 011d 00       		.byte	0
+ 2104 011e 10       		.uleb128 0x10
+ 2105 011f 2E       		.uleb128 0x2e
+ 2106 0120 01       		.byte	0x1
+ 2107 0121 3F       		.uleb128 0x3f
+ 2108 0122 19       		.uleb128 0x19
+ 2109 0123 03       		.uleb128 0x3
+ 2110 0124 0E       		.uleb128 0xe
+ 2111 0125 3A       		.uleb128 0x3a
+ 2112 0126 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 53
 
 
- 2113 0128 05       		.uleb128 0x5
- 2114 0129 27       		.uleb128 0x27
- 2115 012a 19       		.uleb128 0x19
- 2116 012b 49       		.uleb128 0x49
- 2117 012c 13       		.uleb128 0x13
- 2118 012d 11       		.uleb128 0x11
- 2119 012e 01       		.uleb128 0x1
- 2120 012f 12       		.uleb128 0x12
- 2121 0130 06       		.uleb128 0x6
- 2122 0131 40       		.uleb128 0x40
- 2123 0132 18       		.uleb128 0x18
- 2124 0133 9742     		.uleb128 0x2117
- 2125 0135 19       		.uleb128 0x19
- 2126 0136 01       		.uleb128 0x1
- 2127 0137 13       		.uleb128 0x13
- 2128 0138 00       		.byte	0
- 2129 0139 00       		.byte	0
- 2130 013a 11       		.uleb128 0x11
- 2131 013b 34       		.uleb128 0x34
- 2132 013c 00       		.byte	0
- 2133 013d 03       		.uleb128 0x3
- 2134 013e 08       		.uleb128 0x8
- 2135 013f 3A       		.uleb128 0x3a
- 2136 0140 0B       		.uleb128 0xb
- 2137 0141 3B       		.uleb128 0x3b
- 2138 0142 05       		.uleb128 0x5
- 2139 0143 49       		.uleb128 0x49
- 2140 0144 13       		.uleb128 0x13
- 2141 0145 02       		.uleb128 0x2
- 2142 0146 18       		.uleb128 0x18
- 2143 0147 00       		.byte	0
- 2144 0148 00       		.byte	0
- 2145 0149 12       		.uleb128 0x12
- 2146 014a 2E       		.uleb128 0x2e
- 2147 014b 01       		.byte	0x1
- 2148 014c 03       		.uleb128 0x3
- 2149 014d 0E       		.uleb128 0xe
- 2150 014e 3A       		.uleb128 0x3a
- 2151 014f 0B       		.uleb128 0xb
- 2152 0150 3B       		.uleb128 0x3b
- 2153 0151 05       		.uleb128 0x5
- 2154 0152 27       		.uleb128 0x27
- 2155 0153 19       		.uleb128 0x19
- 2156 0154 11       		.uleb128 0x11
- 2157 0155 01       		.uleb128 0x1
- 2158 0156 12       		.uleb128 0x12
- 2159 0157 06       		.uleb128 0x6
- 2160 0158 40       		.uleb128 0x40
- 2161 0159 18       		.uleb128 0x18
- 2162 015a 9642     		.uleb128 0x2116
- 2163 015c 19       		.uleb128 0x19
- 2164 015d 01       		.uleb128 0x1
- 2165 015e 13       		.uleb128 0x13
- 2166 015f 00       		.byte	0
- 2167 0160 00       		.byte	0
- 2168 0161 13       		.uleb128 0x13
- 2169 0162 34       		.uleb128 0x34
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 54
+ 2113 0127 3B       		.uleb128 0x3b
+ 2114 0128 05       		.uleb128 0x5
+ 2115 0129 27       		.uleb128 0x27
+ 2116 012a 19       		.uleb128 0x19
+ 2117 012b 49       		.uleb128 0x49
+ 2118 012c 13       		.uleb128 0x13
+ 2119 012d 11       		.uleb128 0x11
+ 2120 012e 01       		.uleb128 0x1
+ 2121 012f 12       		.uleb128 0x12
+ 2122 0130 06       		.uleb128 0x6
+ 2123 0131 40       		.uleb128 0x40
+ 2124 0132 18       		.uleb128 0x18
+ 2125 0133 9742     		.uleb128 0x2117
+ 2126 0135 19       		.uleb128 0x19
+ 2127 0136 01       		.uleb128 0x1
+ 2128 0137 13       		.uleb128 0x13
+ 2129 0138 00       		.byte	0
+ 2130 0139 00       		.byte	0
+ 2131 013a 11       		.uleb128 0x11
+ 2132 013b 34       		.uleb128 0x34
+ 2133 013c 00       		.byte	0
+ 2134 013d 03       		.uleb128 0x3
+ 2135 013e 08       		.uleb128 0x8
+ 2136 013f 3A       		.uleb128 0x3a
+ 2137 0140 0B       		.uleb128 0xb
+ 2138 0141 3B       		.uleb128 0x3b
+ 2139 0142 05       		.uleb128 0x5
+ 2140 0143 49       		.uleb128 0x49
+ 2141 0144 13       		.uleb128 0x13
+ 2142 0145 02       		.uleb128 0x2
+ 2143 0146 18       		.uleb128 0x18
+ 2144 0147 00       		.byte	0
+ 2145 0148 00       		.byte	0
+ 2146 0149 12       		.uleb128 0x12
+ 2147 014a 2E       		.uleb128 0x2e
+ 2148 014b 01       		.byte	0x1
+ 2149 014c 03       		.uleb128 0x3
+ 2150 014d 0E       		.uleb128 0xe
+ 2151 014e 3A       		.uleb128 0x3a
+ 2152 014f 0B       		.uleb128 0xb
+ 2153 0150 3B       		.uleb128 0x3b
+ 2154 0151 05       		.uleb128 0x5
+ 2155 0152 27       		.uleb128 0x27
+ 2156 0153 19       		.uleb128 0x19
+ 2157 0154 11       		.uleb128 0x11
+ 2158 0155 01       		.uleb128 0x1
+ 2159 0156 12       		.uleb128 0x12
+ 2160 0157 06       		.uleb128 0x6
+ 2161 0158 40       		.uleb128 0x40
+ 2162 0159 18       		.uleb128 0x18
+ 2163 015a 9642     		.uleb128 0x2116
+ 2164 015c 19       		.uleb128 0x19
+ 2165 015d 01       		.uleb128 0x1
+ 2166 015e 13       		.uleb128 0x13
+ 2167 015f 00       		.byte	0
+ 2168 0160 00       		.byte	0
+ 2169 0161 13       		.uleb128 0x13
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 54
 
 
- 2170 0163 00       		.byte	0
- 2171 0164 03       		.uleb128 0x3
- 2172 0165 0E       		.uleb128 0xe
- 2173 0166 3A       		.uleb128 0x3a
- 2174 0167 0B       		.uleb128 0xb
- 2175 0168 3B       		.uleb128 0x3b
- 2176 0169 0B       		.uleb128 0xb
- 2177 016a 49       		.uleb128 0x49
- 2178 016b 13       		.uleb128 0x13
- 2179 016c 3F       		.uleb128 0x3f
- 2180 016d 19       		.uleb128 0x19
- 2181 016e 02       		.uleb128 0x2
- 2182 016f 18       		.uleb128 0x18
- 2183 0170 00       		.byte	0
- 2184 0171 00       		.byte	0
- 2185 0172 00       		.byte	0
- 2186              		.section	.debug_aranges,"",%progbits
- 2187 0000 A4000000 		.4byte	0xa4
- 2188 0004 0200     		.2byte	0x2
- 2189 0006 00000000 		.4byte	.Ldebug_info0
- 2190 000a 04       		.byte	0x4
- 2191 000b 00       		.byte	0
- 2192 000c 0000     		.2byte	0
- 2193 000e 0000     		.2byte	0
- 2194 0010 00000000 		.4byte	.LFB0
- 2195 0014 20000000 		.4byte	.LFE0-.LFB0
- 2196 0018 00000000 		.4byte	.LFB1
- 2197 001c 44000000 		.4byte	.LFE1-.LFB1
- 2198 0020 00000000 		.4byte	.LFB2
- 2199 0024 F4000000 		.4byte	.LFE2-.LFB2
- 2200 0028 00000000 		.4byte	.LFB3
- 2201 002c 80000000 		.4byte	.LFE3-.LFB3
- 2202 0030 00000000 		.4byte	.LFB4
- 2203 0034 40000000 		.4byte	.LFE4-.LFB4
- 2204 0038 00000000 		.4byte	.LFB5
- 2205 003c 50000000 		.4byte	.LFE5-.LFB5
- 2206 0040 00000000 		.4byte	.LFB6
- 2207 0044 20000000 		.4byte	.LFE6-.LFB6
- 2208 0048 00000000 		.4byte	.LFB7
- 2209 004c 20000000 		.4byte	.LFE7-.LFB7
- 2210 0050 00000000 		.4byte	.LFB8
- 2211 0054 40000000 		.4byte	.LFE8-.LFB8
- 2212 0058 00000000 		.4byte	.LFB9
- 2213 005c 2C000000 		.4byte	.LFE9-.LFB9
- 2214 0060 00000000 		.4byte	.LFB10
- 2215 0064 34000000 		.4byte	.LFE10-.LFB10
- 2216 0068 00000000 		.4byte	.LFB11
- 2217 006c 20000000 		.4byte	.LFE11-.LFB11
- 2218 0070 00000000 		.4byte	.LFB12
- 2219 0074 7C000000 		.4byte	.LFE12-.LFB12
- 2220 0078 00000000 		.4byte	.LFB13
- 2221 007c 2C000000 		.4byte	.LFE13-.LFB13
- 2222 0080 00000000 		.4byte	.LFB14
- 2223 0084 1C000000 		.4byte	.LFE14-.LFB14
- 2224 0088 00000000 		.4byte	.LFB15
- 2225 008c 8C000000 		.4byte	.LFE15-.LFB15
- 2226 0090 00000000 		.4byte	.LFB16
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 55
+ 2170 0162 34       		.uleb128 0x34
+ 2171 0163 00       		.byte	0
+ 2172 0164 03       		.uleb128 0x3
+ 2173 0165 0E       		.uleb128 0xe
+ 2174 0166 3A       		.uleb128 0x3a
+ 2175 0167 0B       		.uleb128 0xb
+ 2176 0168 3B       		.uleb128 0x3b
+ 2177 0169 0B       		.uleb128 0xb
+ 2178 016a 49       		.uleb128 0x49
+ 2179 016b 13       		.uleb128 0x13
+ 2180 016c 3F       		.uleb128 0x3f
+ 2181 016d 19       		.uleb128 0x19
+ 2182 016e 02       		.uleb128 0x2
+ 2183 016f 18       		.uleb128 0x18
+ 2184 0170 00       		.byte	0
+ 2185 0171 00       		.byte	0
+ 2186 0172 00       		.byte	0
+ 2187              		.section	.debug_aranges,"",%progbits
+ 2188 0000 A4000000 		.4byte	0xa4
+ 2189 0004 0200     		.2byte	0x2
+ 2190 0006 00000000 		.4byte	.Ldebug_info0
+ 2191 000a 04       		.byte	0x4
+ 2192 000b 00       		.byte	0
+ 2193 000c 0000     		.2byte	0
+ 2194 000e 0000     		.2byte	0
+ 2195 0010 00000000 		.4byte	.LFB0
+ 2196 0014 20000000 		.4byte	.LFE0-.LFB0
+ 2197 0018 00000000 		.4byte	.LFB1
+ 2198 001c 44000000 		.4byte	.LFE1-.LFB1
+ 2199 0020 00000000 		.4byte	.LFB2
+ 2200 0024 F4000000 		.4byte	.LFE2-.LFB2
+ 2201 0028 00000000 		.4byte	.LFB3
+ 2202 002c 80000000 		.4byte	.LFE3-.LFB3
+ 2203 0030 00000000 		.4byte	.LFB4
+ 2204 0034 40000000 		.4byte	.LFE4-.LFB4
+ 2205 0038 00000000 		.4byte	.LFB5
+ 2206 003c 50000000 		.4byte	.LFE5-.LFB5
+ 2207 0040 00000000 		.4byte	.LFB6
+ 2208 0044 20000000 		.4byte	.LFE6-.LFB6
+ 2209 0048 00000000 		.4byte	.LFB7
+ 2210 004c 20000000 		.4byte	.LFE7-.LFB7
+ 2211 0050 00000000 		.4byte	.LFB8
+ 2212 0054 40000000 		.4byte	.LFE8-.LFB8
+ 2213 0058 00000000 		.4byte	.LFB9
+ 2214 005c 2C000000 		.4byte	.LFE9-.LFB9
+ 2215 0060 00000000 		.4byte	.LFB10
+ 2216 0064 34000000 		.4byte	.LFE10-.LFB10
+ 2217 0068 00000000 		.4byte	.LFB11
+ 2218 006c 20000000 		.4byte	.LFE11-.LFB11
+ 2219 0070 00000000 		.4byte	.LFB12
+ 2220 0074 80000000 		.4byte	.LFE12-.LFB12
+ 2221 0078 00000000 		.4byte	.LFB13
+ 2222 007c 2C000000 		.4byte	.LFE13-.LFB13
+ 2223 0080 00000000 		.4byte	.LFB14
+ 2224 0084 1C000000 		.4byte	.LFE14-.LFB14
+ 2225 0088 00000000 		.4byte	.LFB15
+ 2226 008c 8C000000 		.4byte	.LFE15-.LFB15
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 55
 
 
- 2227 0094 94000000 		.4byte	.LFE16-.LFB16
- 2228 0098 00000000 		.4byte	.LFB17
- 2229 009c 84000000 		.4byte	.LFE17-.LFB17
- 2230 00a0 00000000 		.4byte	0
- 2231 00a4 00000000 		.4byte	0
- 2232              		.section	.debug_ranges,"",%progbits
- 2233              	.Ldebug_ranges0:
- 2234 0000 00000000 		.4byte	.LFB0
- 2235 0004 20000000 		.4byte	.LFE0
- 2236 0008 00000000 		.4byte	.LFB1
- 2237 000c 44000000 		.4byte	.LFE1
- 2238 0010 00000000 		.4byte	.LFB2
- 2239 0014 F4000000 		.4byte	.LFE2
- 2240 0018 00000000 		.4byte	.LFB3
- 2241 001c 80000000 		.4byte	.LFE3
- 2242 0020 00000000 		.4byte	.LFB4
- 2243 0024 40000000 		.4byte	.LFE4
- 2244 0028 00000000 		.4byte	.LFB5
- 2245 002c 50000000 		.4byte	.LFE5
- 2246 0030 00000000 		.4byte	.LFB6
- 2247 0034 20000000 		.4byte	.LFE6
- 2248 0038 00000000 		.4byte	.LFB7
- 2249 003c 20000000 		.4byte	.LFE7
- 2250 0040 00000000 		.4byte	.LFB8
- 2251 0044 40000000 		.4byte	.LFE8
- 2252 0048 00000000 		.4byte	.LFB9
- 2253 004c 2C000000 		.4byte	.LFE9
- 2254 0050 00000000 		.4byte	.LFB10
- 2255 0054 34000000 		.4byte	.LFE10
- 2256 0058 00000000 		.4byte	.LFB11
- 2257 005c 20000000 		.4byte	.LFE11
- 2258 0060 00000000 		.4byte	.LFB12
- 2259 0064 7C000000 		.4byte	.LFE12
- 2260 0068 00000000 		.4byte	.LFB13
- 2261 006c 2C000000 		.4byte	.LFE13
- 2262 0070 00000000 		.4byte	.LFB14
- 2263 0074 1C000000 		.4byte	.LFE14
- 2264 0078 00000000 		.4byte	.LFB15
- 2265 007c 8C000000 		.4byte	.LFE15
- 2266 0080 00000000 		.4byte	.LFB16
- 2267 0084 94000000 		.4byte	.LFE16
- 2268 0088 00000000 		.4byte	.LFB17
- 2269 008c 84000000 		.4byte	.LFE17
- 2270 0090 00000000 		.4byte	0
- 2271 0094 00000000 		.4byte	0
- 2272              		.section	.debug_line,"",%progbits
- 2273              	.Ldebug_line0:
- 2274 0000 09020000 		.section	.debug_str,"MS",%progbits,1
- 2274      02004800 
- 2274      00000201 
- 2274      FB0E0D00 
- 2274      01010101 
- 2275              	.LASF12:
- 2276 0000 75696E74 		.ascii	"uint16\000"
- 2276      313600
- 2277              	.LASF62:
- 2278 0007 4144435F 		.ascii	"ADC_SAR_1_GetResult8\000"
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 56
+ 2227 0090 00000000 		.4byte	.LFB16
+ 2228 0094 94000000 		.4byte	.LFE16-.LFB16
+ 2229 0098 00000000 		.4byte	.LFB17
+ 2230 009c 84000000 		.4byte	.LFE17-.LFB17
+ 2231 00a0 00000000 		.4byte	0
+ 2232 00a4 00000000 		.4byte	0
+ 2233              		.section	.debug_ranges,"",%progbits
+ 2234              	.Ldebug_ranges0:
+ 2235 0000 00000000 		.4byte	.LFB0
+ 2236 0004 20000000 		.4byte	.LFE0
+ 2237 0008 00000000 		.4byte	.LFB1
+ 2238 000c 44000000 		.4byte	.LFE1
+ 2239 0010 00000000 		.4byte	.LFB2
+ 2240 0014 F4000000 		.4byte	.LFE2
+ 2241 0018 00000000 		.4byte	.LFB3
+ 2242 001c 80000000 		.4byte	.LFE3
+ 2243 0020 00000000 		.4byte	.LFB4
+ 2244 0024 40000000 		.4byte	.LFE4
+ 2245 0028 00000000 		.4byte	.LFB5
+ 2246 002c 50000000 		.4byte	.LFE5
+ 2247 0030 00000000 		.4byte	.LFB6
+ 2248 0034 20000000 		.4byte	.LFE6
+ 2249 0038 00000000 		.4byte	.LFB7
+ 2250 003c 20000000 		.4byte	.LFE7
+ 2251 0040 00000000 		.4byte	.LFB8
+ 2252 0044 40000000 		.4byte	.LFE8
+ 2253 0048 00000000 		.4byte	.LFB9
+ 2254 004c 2C000000 		.4byte	.LFE9
+ 2255 0050 00000000 		.4byte	.LFB10
+ 2256 0054 34000000 		.4byte	.LFE10
+ 2257 0058 00000000 		.4byte	.LFB11
+ 2258 005c 20000000 		.4byte	.LFE11
+ 2259 0060 00000000 		.4byte	.LFB12
+ 2260 0064 80000000 		.4byte	.LFE12
+ 2261 0068 00000000 		.4byte	.LFB13
+ 2262 006c 2C000000 		.4byte	.LFE13
+ 2263 0070 00000000 		.4byte	.LFB14
+ 2264 0074 1C000000 		.4byte	.LFE14
+ 2265 0078 00000000 		.4byte	.LFB15
+ 2266 007c 8C000000 		.4byte	.LFE15
+ 2267 0080 00000000 		.4byte	.LFB16
+ 2268 0084 94000000 		.4byte	.LFE16
+ 2269 0088 00000000 		.4byte	.LFB17
+ 2270 008c 84000000 		.4byte	.LFE17
+ 2271 0090 00000000 		.4byte	0
+ 2272 0094 00000000 		.4byte	0
+ 2273              		.section	.debug_line,"",%progbits
+ 2274              	.Ldebug_line0:
+ 2275 0000 0B020000 		.section	.debug_str,"MS",%progbits,1
+ 2275      02004800 
+ 2275      00000201 
+ 2275      FB0E0D00 
+ 2275      01010101 
+ 2276              	.LASF12:
+ 2277 0000 75696E74 		.ascii	"uint16\000"
+ 2277      313600
+ 2278              	.LASF62:
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 56
 
 
- 2278      5341525F 
- 2278      315F4765 
- 2278      74526573 
- 2278      756C7438 
- 2279              	.LASF42:
- 2280 001c 636F756E 		.ascii	"counts\000"
- 2280      747300
- 2281              	.LASF63:
- 2282 0023 4144435F 		.ascii	"ADC_SAR_1_CalcGain\000"
- 2282      5341525F 
- 2282      315F4361 
- 2282      6C634761 
- 2282      696E00
- 2283              	.LASF60:
- 2284 0036 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\ADC_SAR_1.c\000"
- 2284      6E657261 
- 2284      7465645F 
- 2284      536F7572 
- 2284      63655C50 
- 2285              	.LASF8:
- 2286 005b 6C6F6E67 		.ascii	"long long unsigned int\000"
- 2286      206C6F6E 
- 2286      6720756E 
- 2286      7369676E 
- 2286      65642069 
- 2287              	.LASF7:
- 2288 0072 6C6F6E67 		.ascii	"long long int\000"
- 2288      206C6F6E 
- 2288      6720696E 
- 2288      7400
- 2289              	.LASF1:
- 2290 0080 7369676E 		.ascii	"signed char\000"
- 2290      65642063 
- 2290      68617200 
- 2291              	.LASF16:
- 2292 008c 696E7433 		.ascii	"int32\000"
- 2292      3200
- 2293              	.LASF5:
- 2294 0092 6C6F6E67 		.ascii	"long int\000"
- 2294      20696E74 
- 2294      00
- 2295              	.LASF55:
- 2296 009b 4144435F 		.ascii	"ADC_SAR_1_offset\000"
- 2296      5341525F 
- 2296      315F6F66 
- 2296      66736574 
- 2296      00
- 2297              	.LASF22:
- 2298 00ac 72656731 		.ascii	"reg16\000"
- 2298      3600
- 2299              	.LASF11:
- 2300 00b2 75696E74 		.ascii	"uint8\000"
- 2300      3800
- 2301              	.LASF19:
- 2302 00b8 646F7562 		.ascii	"double\000"
- 2302      6C6500
- 2303              	.LASF61:
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 57
+ 2279 0007 4144435F 		.ascii	"ADC_SAR_1_GetResult8\000"
+ 2279      5341525F 
+ 2279      315F4765 
+ 2279      74526573 
+ 2279      756C7438 
+ 2280              	.LASF42:
+ 2281 001c 636F756E 		.ascii	"counts\000"
+ 2281      747300
+ 2282              	.LASF63:
+ 2283 0023 4144435F 		.ascii	"ADC_SAR_1_CalcGain\000"
+ 2283      5341525F 
+ 2283      315F4361 
+ 2283      6C634761 
+ 2283      696E00
+ 2284              	.LASF60:
+ 2285 0036 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\ADC_SAR_1.c\000"
+ 2285      6E657261 
+ 2285      7465645F 
+ 2285      536F7572 
+ 2285      63655C50 
+ 2286              	.LASF8:
+ 2287 005b 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2287      206C6F6E 
+ 2287      6720756E 
+ 2287      7369676E 
+ 2287      65642069 
+ 2288              	.LASF7:
+ 2289 0072 6C6F6E67 		.ascii	"long long int\000"
+ 2289      206C6F6E 
+ 2289      6720696E 
+ 2289      7400
+ 2290              	.LASF1:
+ 2291 0080 7369676E 		.ascii	"signed char\000"
+ 2291      65642063 
+ 2291      68617200 
+ 2292              	.LASF16:
+ 2293 008c 696E7433 		.ascii	"int32\000"
+ 2293      3200
+ 2294              	.LASF5:
+ 2295 0092 6C6F6E67 		.ascii	"long int\000"
+ 2295      20696E74 
+ 2295      00
+ 2296              	.LASF55:
+ 2297 009b 4144435F 		.ascii	"ADC_SAR_1_offset\000"
+ 2297      5341525F 
+ 2297      315F6F66 
+ 2297      66736574 
+ 2297      00
+ 2298              	.LASF22:
+ 2299 00ac 72656731 		.ascii	"reg16\000"
+ 2299      3600
+ 2300              	.LASF11:
+ 2301 00b2 75696E74 		.ascii	"uint8\000"
+ 2301      3800
+ 2302              	.LASF19:
+ 2303 00b8 646F7562 		.ascii	"double\000"
+ 2303      6C6500
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 57
 
 
- 2304 00bf 453A5C44 		.ascii	"E:\\Documents\\PSoC Creator\\CE95352 Blinking LED\\"
- 2304      6F63756D 
- 2304      656E7473 
- 2304      5C50536F 
- 2304      43204372 
- 2305 00ee 4C616232 		.ascii	"Lab2_Software.cydsn\000"
- 2305      5F536F66 
- 2305      74776172 
- 2305      652E6379 
- 2305      64736E00 
- 2306              	.LASF13:
- 2307 0102 75696E74 		.ascii	"uint32\000"
- 2307      333200
- 2308              	.LASF49:
- 2309 0109 636F756E 		.ascii	"countsPer10Volt\000"
- 2309      74735065 
- 2309      72313056 
- 2309      6F6C7400 
- 2310              	.LASF36:
- 2311 0119 7265744D 		.ascii	"retMode\000"
- 2311      6F646500 
- 2312              	.LASF0:
- 2313 0121 756E7369 		.ascii	"unsigned int\000"
- 2313      676E6564 
- 2313      20696E74 
- 2313      00
- 2314              	.LASF51:
- 2315 012e 75566F6C 		.ascii	"uVolts\000"
- 2315      747300
- 2316              	.LASF6:
- 2317 0135 6C6F6E67 		.ascii	"long unsigned int\000"
- 2317      20756E73 
- 2317      69676E65 
- 2317      6420696E 
- 2317      7400
- 2318              	.LASF53:
- 2319 0147 766F6C74 		.ascii	"volts\000"
- 2319      7300
- 2320              	.LASF4:
- 2321 014d 73686F72 		.ascii	"short unsigned int\000"
- 2321      7420756E 
- 2321      7369676E 
- 2321      65642069 
- 2321      6E7400
- 2322              	.LASF25:
- 2323 0160 4144435F 		.ascii	"ADC_SAR_1_Init\000"
- 2323      5341525F 
- 2323      315F496E 
- 2323      697400
- 2324              	.LASF14:
- 2325 016f 696E7438 		.ascii	"int8\000"
- 2325      00
- 2326              	.LASF48:
- 2327 0174 6D566F6C 		.ascii	"mVolts\000"
- 2327      747300
- 2328              	.LASF23:
- 2329 017b 72656733 		.ascii	"reg32\000"
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 58
+ 2304              	.LASF13:
+ 2305 00bf 75696E74 		.ascii	"uint32\000"
+ 2305      333200
+ 2306              	.LASF49:
+ 2307 00c6 636F756E 		.ascii	"countsPer10Volt\000"
+ 2307      74735065 
+ 2307      72313056 
+ 2307      6F6C7400 
+ 2308              	.LASF36:
+ 2309 00d6 7265744D 		.ascii	"retMode\000"
+ 2309      6F646500 
+ 2310              	.LASF0:
+ 2311 00de 756E7369 		.ascii	"unsigned int\000"
+ 2311      676E6564 
+ 2311      20696E74 
+ 2311      00
+ 2312              	.LASF51:
+ 2313 00eb 75566F6C 		.ascii	"uVolts\000"
+ 2313      747300
+ 2314              	.LASF6:
+ 2315 00f2 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2315      20756E73 
+ 2315      69676E65 
+ 2315      6420696E 
+ 2315      7400
+ 2316              	.LASF53:
+ 2317 0104 766F6C74 		.ascii	"volts\000"
+ 2317      7300
+ 2318              	.LASF4:
+ 2319 010a 73686F72 		.ascii	"short unsigned int\000"
+ 2319      7420756E 
+ 2319      7369676E 
+ 2319      65642069 
+ 2319      6E7400
+ 2320              	.LASF25:
+ 2321 011d 4144435F 		.ascii	"ADC_SAR_1_Init\000"
+ 2321      5341525F 
+ 2321      315F496E 
+ 2321      697400
+ 2322              	.LASF14:
+ 2323 012c 696E7438 		.ascii	"int8\000"
+ 2323      00
+ 2324              	.LASF48:
+ 2325 0131 6D566F6C 		.ascii	"mVolts\000"
+ 2325      747300
+ 2326              	.LASF23:
+ 2327 0138 72656733 		.ascii	"reg32\000"
+ 2327      3200
+ 2328              	.LASF56:
+ 2329 013e 4144435F 		.ascii	"ADC_SAR_1_countsPerVolt\000"
+ 2329      5341525F 
+ 2329      315F636F 
+ 2329      756E7473 
+ 2329      50657256 
+ 2330              	.LASF17:
+ 2331 0156 666C6F61 		.ascii	"float32\000"
+ 2331      74333200 
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 58
 
 
- 2329      3200
- 2330              	.LASF56:
- 2331 0181 4144435F 		.ascii	"ADC_SAR_1_countsPerVolt\000"
- 2331      5341525F 
- 2331      315F636F 
- 2331      756E7473 
- 2331      50657256 
- 2332              	.LASF17:
- 2333 0199 666C6F61 		.ascii	"float32\000"
- 2333      74333200 
- 2334              	.LASF9:
- 2335 01a1 73697A65 		.ascii	"sizetype\000"
- 2335      74797065 
- 2335      00
- 2336              	.LASF31:
- 2337 01aa 4144435F 		.ascii	"ADC_SAR_1_SetResolution\000"
+ 2332              	.LASF9:
+ 2333 015e 73697A65 		.ascii	"sizetype\000"
+ 2333      74797065 
+ 2333      00
+ 2334              	.LASF31:
+ 2335 0167 4144435F 		.ascii	"ADC_SAR_1_SetResolution\000"
+ 2335      5341525F 
+ 2335      315F5365 
+ 2335      74526573 
+ 2335      6F6C7574 
+ 2336              	.LASF50:
+ 2337 017f 4144435F 		.ascii	"ADC_SAR_1_CountsTo_uVolts\000"
  2337      5341525F 
- 2337      315F5365 
- 2337      74526573 
- 2337      6F6C7574 
- 2338              	.LASF50:
- 2339 01c2 4144435F 		.ascii	"ADC_SAR_1_CountsTo_uVolts\000"
- 2339      5341525F 
- 2339      315F436F 
- 2339      756E7473 
- 2339      546F5F75 
- 2340              	.LASF59:
- 2341 01dc 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
- 2341      4320342E 
- 2341      392E3320 
- 2341      32303135 
- 2341      30333033 
- 2342 020f 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
- 2342      20726576 
- 2342      6973696F 
- 2342      6E203232 
- 2342      31323230 
- 2343 0242 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
- 2343      66756E63 
- 2343      74696F6E 
- 2343      2D736563 
- 2343      74696F6E 
- 2344              	.LASF24:
- 2345 026a 4144435F 		.ascii	"ADC_SAR_1_Start\000"
- 2345      5341525F 
- 2345      315F5374 
- 2345      61727400 
- 2346              	.LASF20:
- 2347 027a 696E7436 		.ascii	"int64\000"
- 2347      3400
- 2348              	.LASF40:
- 2349 0280 4144435F 		.ascii	"ADC_SAR_1_SetOffset\000"
- 2349      5341525F 
- 2349      315F5365 
- 2349      744F6666 
- 2349      73657400 
- 2350              	.LASF18:
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 59
+ 2337      315F436F 
+ 2337      756E7473 
+ 2337      546F5F75 
+ 2338              	.LASF61:
+ 2339 0199 453A5C44 		.ascii	"E:\\Documents\\PSoC Creator\\engr478labs\\Lab2_Soft"
+ 2339      6F63756D 
+ 2339      656E7473 
+ 2339      5C50536F 
+ 2339      43204372 
+ 2340 01c8 77617265 		.ascii	"ware.cydsn\000"
+ 2340      2E637964 
+ 2340      736E00
+ 2341              	.LASF59:
+ 2342 01d3 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 2342      4320342E 
+ 2342      392E3320 
+ 2342      32303135 
+ 2342      30333033 
+ 2343 0206 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 2343      20726576 
+ 2343      6973696F 
+ 2343      6E203232 
+ 2343      31323230 
+ 2344 0239 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 2344      66756E63 
+ 2344      74696F6E 
+ 2344      2D736563 
+ 2344      74696F6E 
+ 2345              	.LASF24:
+ 2346 0261 4144435F 		.ascii	"ADC_SAR_1_Start\000"
+ 2346      5341525F 
+ 2346      315F5374 
+ 2346      61727400 
+ 2347              	.LASF20:
+ 2348 0271 696E7436 		.ascii	"int64\000"
+ 2348      3400
+ 2349              	.LASF40:
+ 2350 0277 4144435F 		.ascii	"ADC_SAR_1_SetOffset\000"
+ 2350      5341525F 
+ 2350      315F5365 
+ 2350      744F6666 
+ 2350      73657400 
+ 2351              	.LASF18:
+ 2352 028b 666C6F61 		.ascii	"float\000"
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 59
 
 
- 2351 0294 666C6F61 		.ascii	"float\000"
- 2351      7400
- 2352              	.LASF54:
- 2353 029a 4144435F 		.ascii	"ADC_SAR_1_initVar\000"
- 2353      5341525F 
- 2353      315F696E 
- 2353      69745661 
- 2353      7200
- 2354              	.LASF32:
- 2355 02ac 706F7765 		.ascii	"power\000"
- 2355      7200
- 2356              	.LASF21:
- 2357 02b2 72656738 		.ascii	"reg8\000"
- 2357      00
- 2358              	.LASF2:
- 2359 02b7 756E7369 		.ascii	"unsigned char\000"
- 2359      676E6564 
- 2359      20636861 
- 2359      7200
- 2360              	.LASF46:
- 2361 02c5 4144435F 		.ascii	"ADC_SAR_1_CountsTo_mVolts\000"
- 2361      5341525F 
- 2361      315F436F 
- 2361      756E7473 
- 2361      546F5F6D 
- 2362              	.LASF3:
- 2363 02df 73686F72 		.ascii	"short int\000"
- 2363      7420696E 
- 2363      7400
- 2364              	.LASF44:
- 2365 02e9 61646347 		.ascii	"adcGain\000"
- 2365      61696E00 
- 2366              	.LASF28:
- 2367 02f1 4144435F 		.ascii	"ADC_SAR_1_Enable\000"
- 2367      5341525F 
- 2367      315F456E 
- 2367      61626C65 
- 2367      00
- 2368              	.LASF45:
- 2369 0302 4144435F 		.ascii	"ADC_SAR_1_SetScaledGain\000"
- 2369      5341525F 
- 2369      315F5365 
- 2369      74536361 
- 2369      6C656447 
- 2370              	.LASF39:
- 2371 031a 4144435F 		.ascii	"ADC_SAR_1_GetResult16\000"
- 2371      5341525F 
- 2371      315F4765 
- 2371      74526573 
- 2371      756C7431 
- 2372              	.LASF33:
- 2373 0330 7265736F 		.ascii	"resolution\000"
- 2373      6C757469 
- 2373      6F6E00
- 2374              	.LASF10:
- 2375 033b 63686172 		.ascii	"char\000"
- 2375      00
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 60
+ 2352      7400
+ 2353              	.LASF54:
+ 2354 0291 4144435F 		.ascii	"ADC_SAR_1_initVar\000"
+ 2354      5341525F 
+ 2354      315F696E 
+ 2354      69745661 
+ 2354      7200
+ 2355              	.LASF32:
+ 2356 02a3 706F7765 		.ascii	"power\000"
+ 2356      7200
+ 2357              	.LASF21:
+ 2358 02a9 72656738 		.ascii	"reg8\000"
+ 2358      00
+ 2359              	.LASF2:
+ 2360 02ae 756E7369 		.ascii	"unsigned char\000"
+ 2360      676E6564 
+ 2360      20636861 
+ 2360      7200
+ 2361              	.LASF46:
+ 2362 02bc 4144435F 		.ascii	"ADC_SAR_1_CountsTo_mVolts\000"
+ 2362      5341525F 
+ 2362      315F436F 
+ 2362      756E7473 
+ 2362      546F5F6D 
+ 2363              	.LASF3:
+ 2364 02d6 73686F72 		.ascii	"short int\000"
+ 2364      7420696E 
+ 2364      7400
+ 2365              	.LASF44:
+ 2366 02e0 61646347 		.ascii	"adcGain\000"
+ 2366      61696E00 
+ 2367              	.LASF28:
+ 2368 02e8 4144435F 		.ascii	"ADC_SAR_1_Enable\000"
+ 2368      5341525F 
+ 2368      315F456E 
+ 2368      61626C65 
+ 2368      00
+ 2369              	.LASF45:
+ 2370 02f9 4144435F 		.ascii	"ADC_SAR_1_SetScaledGain\000"
+ 2370      5341525F 
+ 2370      315F5365 
+ 2370      74536361 
+ 2370      6C656447 
+ 2371              	.LASF39:
+ 2372 0311 4144435F 		.ascii	"ADC_SAR_1_GetResult16\000"
+ 2372      5341525F 
+ 2372      315F4765 
+ 2372      74526573 
+ 2372      756C7431 
+ 2373              	.LASF33:
+ 2374 0327 7265736F 		.ascii	"resolution\000"
+ 2374      6C757469 
+ 2374      6F6E00
+ 2375              	.LASF10:
+ 2376 0332 63686172 		.ascii	"char\000"
+ 2376      00
+ 2377              	.LASF52:
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 60
 
 
- 2376              	.LASF52:
- 2377 0340 4144435F 		.ascii	"ADC_SAR_1_CountsTo_Volts\000"
- 2377      5341525F 
- 2377      315F436F 
- 2377      756E7473 
- 2377      546F5F56 
- 2378              	.LASF41:
- 2379 0359 6F666673 		.ascii	"offset\000"
- 2379      657400
- 2380              	.LASF35:
- 2381 0360 4144435F 		.ascii	"ADC_SAR_1_StopConvert\000"
- 2381      5341525F 
- 2381      315F5374 
- 2381      6F70436F 
- 2381      6E766572 
- 2382              	.LASF47:
- 2383 0376 61646343 		.ascii	"adcCounts\000"
- 2383      6F756E74 
- 2383      7300
- 2384              	.LASF27:
- 2385 0380 656E6162 		.ascii	"enableInterrupts\000"
- 2385      6C65496E 
- 2385      74657272 
- 2385      75707473 
- 2385      00
- 2386              	.LASF37:
- 2387 0391 73746174 		.ascii	"status\000"
- 2387      757300
- 2388              	.LASF38:
- 2389 0398 4144435F 		.ascii	"ADC_SAR_1_IsEndConversion\000"
- 2389      5341525F 
- 2389      315F4973 
- 2389      456E6443 
- 2389      6F6E7665 
- 2390              	.LASF30:
- 2391 03b2 4144435F 		.ascii	"ADC_SAR_1_SetPower\000"
- 2391      5341525F 
- 2391      315F5365 
- 2391      74506F77 
- 2391      657200
- 2392              	.LASF43:
- 2393 03c5 4144435F 		.ascii	"ADC_SAR_1_SetGain\000"
- 2393      5341525F 
- 2393      315F5365 
- 2393      74476169 
- 2393      6E00
- 2394              	.LASF15:
- 2395 03d7 696E7431 		.ascii	"int16\000"
- 2395      3600
- 2396              	.LASF57:
- 2397 03dd 4144435F 		.ascii	"ADC_SAR_1_countsPer10Volt\000"
- 2397      5341525F 
- 2397      315F636F 
- 2397      756E7473 
- 2397      50657231 
- 2398              	.LASF34:
- 2399 03f7 4144435F 		.ascii	"ADC_SAR_1_StartConvert\000"
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZvIufq.s 			page 61
+ 2378 0337 4144435F 		.ascii	"ADC_SAR_1_CountsTo_Volts\000"
+ 2378      5341525F 
+ 2378      315F436F 
+ 2378      756E7473 
+ 2378      546F5F56 
+ 2379              	.LASF41:
+ 2380 0350 6F666673 		.ascii	"offset\000"
+ 2380      657400
+ 2381              	.LASF35:
+ 2382 0357 4144435F 		.ascii	"ADC_SAR_1_StopConvert\000"
+ 2382      5341525F 
+ 2382      315F5374 
+ 2382      6F70436F 
+ 2382      6E766572 
+ 2383              	.LASF47:
+ 2384 036d 61646343 		.ascii	"adcCounts\000"
+ 2384      6F756E74 
+ 2384      7300
+ 2385              	.LASF27:
+ 2386 0377 656E6162 		.ascii	"enableInterrupts\000"
+ 2386      6C65496E 
+ 2386      74657272 
+ 2386      75707473 
+ 2386      00
+ 2387              	.LASF37:
+ 2388 0388 73746174 		.ascii	"status\000"
+ 2388      757300
+ 2389              	.LASF38:
+ 2390 038f 4144435F 		.ascii	"ADC_SAR_1_IsEndConversion\000"
+ 2390      5341525F 
+ 2390      315F4973 
+ 2390      456E6443 
+ 2390      6F6E7665 
+ 2391              	.LASF30:
+ 2392 03a9 4144435F 		.ascii	"ADC_SAR_1_SetPower\000"
+ 2392      5341525F 
+ 2392      315F5365 
+ 2392      74506F77 
+ 2392      657200
+ 2393              	.LASF43:
+ 2394 03bc 4144435F 		.ascii	"ADC_SAR_1_SetGain\000"
+ 2394      5341525F 
+ 2394      315F5365 
+ 2394      74476169 
+ 2394      6E00
+ 2395              	.LASF15:
+ 2396 03ce 696E7431 		.ascii	"int16\000"
+ 2396      3600
+ 2397              	.LASF57:
+ 2398 03d4 4144435F 		.ascii	"ADC_SAR_1_countsPer10Volt\000"
+ 2398      5341525F 
+ 2398      315F636F 
+ 2398      756E7473 
+ 2398      50657231 
+ 2399              	.LASF34:
+ 2400 03ee 4144435F 		.ascii	"ADC_SAR_1_StartConvert\000"
+ 2400      5341525F 
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc8pRWP0.s 			page 61
 
 
- 2399      5341525F 
- 2399      315F5374 
- 2399      61727443 
- 2399      6F6E7665 
- 2400              	.LASF26:
- 2401 040e 746D7052 		.ascii	"tmpReg\000"
- 2401      656700
- 2402              	.LASF58:
- 2403 0415 4144435F 		.ascii	"ADC_SAR_1_shift\000"
- 2403      5341525F 
- 2403      315F7368 
- 2403      69667400 
- 2404              	.LASF29:
- 2405 0425 4144435F 		.ascii	"ADC_SAR_1_Stop\000"
- 2405      5341525F 
- 2405      315F5374 
- 2405      6F7000
- 2406              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
+ 2400      315F5374 
+ 2400      61727443 
+ 2400      6F6E7665 
+ 2401              	.LASF26:
+ 2402 0405 746D7052 		.ascii	"tmpReg\000"
+ 2402      656700
+ 2403              	.LASF58:
+ 2404 040c 4144435F 		.ascii	"ADC_SAR_1_shift\000"
+ 2404      5341525F 
+ 2404      315F7368 
+ 2404      69667400 
+ 2405              	.LASF29:
+ 2406 041c 4144435F 		.ascii	"ADC_SAR_1_Stop\000"
+ 2406      5341525F 
+ 2406      315F5374 
+ 2406      6F7000
+ 2407              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

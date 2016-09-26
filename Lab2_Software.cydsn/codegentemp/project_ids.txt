@@ -1,6 +1,6 @@
-E:\Documents\PSoC Creator\CE95352 Blinking LED\Lab2_Software.cydsn\Lab2_Software.cyprj|b321fb26-1503-4463-a61d-612d733e3a11
-C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|bdeb864a-f767-4e61-89c2-88907d094cf3
-C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\default\CyReferenceLibrary\CyReferenceLibrary.cylib\CyReferenceLibrary.cyprj|3ce1fef7-2d56-43c8-bfc2-cdeb7218e348
-C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|002a5fd4-42b5-43d2-83ac-1ad6a1eef81f
-C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|a0fea2b6-dcf3-4175-9bbc-d8bc565f83c5
-C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|c4b0bf5e-a468-492d-939e-c271a37f781c
+E:\Documents\PSoC Creator\engr478labs\Lab2_Software.cydsn\Lab2_Software.cyprj|1cd9b82f-69da-4cdb-9215-b03dce0add26
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|1385c27b-9e3c-4897-b57e-9293167f5117
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\default\CyReferenceLibrary\CyReferenceLibrary.cylib\CyReferenceLibrary.cyprj|0aab1869-0ede-439f-9481-19d81e66130f
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|ce9bbb70-95c1-4944-99ae-75ef3f4bfd38
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|22279e47-1384-46f7-9819-fdb10a953312
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|175ff539-0cf0-4c5b-aad3-6cdbd97a6444
