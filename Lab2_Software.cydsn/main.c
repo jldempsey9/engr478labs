@@ -67,11 +67,12 @@ Partner Lab Group name: 3GL (3 Guys in a Lab)
 
 //CONSTANTS
 //settings
-#define USING_INTERRUPTS 1      //1 for using interrupts, 0 for polling
+#define USING_INTERRUPTS 0      //1 for using interrupts, 0 for polling
 #define HUMAN_EYE_FPS 60        //at 60hz, most people can't detect difference
-#define DEBOUNCE_TIME 50       //minimum time to wait for button to finish bouncing
+#define DEBOUNCE_TIME 50      //minimum time to wait for button to finish bouncing
 #define RAMP_RESOLUTION 50           //RAMP_RESOLUTION for duty cycle
 #define POT_MAX 4080            //max reading from DAC potentiometer @ 4V
+#define FREQUENCY_RATIO 4       //divide potentiometer result by this to get a max period.  frequency_ratio of 4 = 1 s max period
 
 //global constants
 #define on 1
@@ -99,9 +100,9 @@ enum pwmMode previousMode;
 
 //functions
 void write_led(int);
-void Software_PWM_Start();
-void PWM_Blink(uint32);
-void PWM_Ramp(uint32, uint32);
+//void Software_PWM_Start();  //attemps to start a new thread (not used)
+void PWM_Blink(uint32);     //always a 50% duty cycle
+void PWM_Ramp(uint32, uint32);  //different on/off times
 uint16_t GetPotentiometerValue();
 CY_ISR(ToggleModes) {
     if (currentMode == blink) {
@@ -140,7 +141,7 @@ int main()
     ADC_SAR_1_Start();
     
     //start running our PWM thread
-    Software_PWM_Start();           //runs in a separate thread than polling
+    //Software_PWM_Start();           //runs in a separate thread than polling
     
     
     //loop polls button for press if interrupts disabled
@@ -161,11 +162,9 @@ int main()
                         if (currentMode == blink) {
                             currentMode = ramp;
                             write_led(on);              //debugging to make sure polling was correct
-                            printf("current mode is blink");
                         } else if (currentMode == ramp){
                             currentMode = blink;
                             write_led(off);             //for debugging
-                            printf("current mode is ramp");
                         }
                         previousMode = currentMode;
                     }
@@ -177,7 +176,46 @@ int main()
             } else {
                 previousMode = !currentMode;   //if we're not pushing the button, we changed modes
             }
-        #endif      
+        #endif    
+        
+        
+        
+        
+        
+        
+        //if we're blinking, for this loop do a blink PWM cycle
+            if (currentMode == blink){
+                //sets toggle_light_time_ms to value proportional to pot.
+                toggle_light_time_ms = GetPotentiometerValue() / FREQUENCY_RATIO;      //min val=0, max val= 1second
+                PWM_Blink(toggle_light_time_ms);
+            }
+            else if (currentMode == ramp) {
+                //calculate current ramp duty_cycle
+                //PWM_Blink((float)toggle_light_time_ms / (float) 5);
+                
+                if (duty_cycle >= 1)    //we have reached full brightness, time to dim
+                {
+                    dimming = true;
+                } else if (duty_cycle <= 0) {
+                    dimming = false;
+                }
+                
+                //if we're supposed to dim, lessen the duty cycle
+                if (dimming) {
+                    duty_cycle -= 1.0 / (float) RAMP_RESOLUTION;   //duty cycle gets decremented by small fractions
+                } else {
+                    duty_cycle +=  1.0 / (float) RAMP_RESOLUTION;   //duty cycle is incremented by small fractions
+                }
+                
+                total_time_ms = (1.0 / (float) HUMAN_EYE_FPS) * 1000;       //could be a constant if real-time
+                on_time_ms = duty_cycle * total_time_ms;
+                off_time_ms = total_time_ms - on_time_ms;
+                
+                PWM_Ramp(on_time_ms, off_time_ms);
+            }
+            
+            
+            
     }
     
     return 0;
@@ -201,15 +239,11 @@ void write_led(int value) {
 
 //software PWM function runs in a separate thread.  
 //runs calculations for PWM parameters, then calls PWM_Blink for timing
+/*
 void Software_PWM_Start() {
     pid_t pid = fork();
-    int errsv = errno;
+    int errsv = errno;      //save the error code, errno is volatile
     
-    /*
-    if (pid < 0) {      //fork errored out
-        return;
-    } 
-    */
     
     if (pid > 0) {  //parent process returns to main loop
         return;   
@@ -235,9 +269,9 @@ void Software_PWM_Start() {
                 
                 //if we're supposed to dim, lessen the duty cycle
                 if (dimming) {
-                    duty_cycle -= 1.0 / (float) RAMP_RESOLUTION;   
+                    duty_cycle -= 1.0 / (float) RAMP_RESOLUTION;   //duty cycle gets decremented by small fractions
                 } else {
-                    duty_cycle +=  1.0 / (float) RAMP_RESOLUTION;
+                    duty_cycle +=  1.0 / (float) RAMP_RESOLUTION;   //duty cycle is incremented by small fractions
                 }
                 
                 total_time_ms = (1.0 / (float) HUMAN_EYE_FPS) * 1000;       //could be a constant if real-time
@@ -246,25 +280,12 @@ void Software_PWM_Start() {
                 
                 PWM_Ramp(on_time_ms, off_time_ms);
                 
-                
-                /*
-                if (duty_cycle >= 1)
-                {
-                 duty_cycle = 0;   
-                }
-                duty_cycle += 1 / (float) RAMP_RESOLUTION;
-                
-                
-                total_time_ms = ((float)1 / (float)userFrequency) * 1000;
-                on_time_ms = duty_cycle * total_time_ms;
-                off_time_ms = total_time_ms - on_time_ms;
-                
-                PWM_Ramp(0.5, 5000);
-                */
             }
         }
     }
 }
+
+*/
 
 //shorthand to wait for timing
 //evenly blinks LED with equal on/off times

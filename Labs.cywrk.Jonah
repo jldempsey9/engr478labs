@@ -215,6 +215,40 @@
 <VisibleNodeIds>
 <v>Labs</v>
 <v>Labs\Lab2_Software</v>
+<v>Labs\Lab2_Software\CortexM3</v>
+<v>Labs\Lab2_Software\CortexM3\ARM_GCC_493</v>
+<v>Labs\Lab2_Software\CortexM3\ARM_GCC_493\Debug</v>
+<v>Labs\Lab2_Software\CortexM3\ARM_GCC_493\Debug\Listing Files</v>
+<v>Labs\Lab2_Software\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_SAR_1.lst</v>
+<v>Labs\Lab2_Software\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_SAR_1_INT.lst</v>
+<v>Labs\Lab2_Software\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_SAR_1_IRQ.lst</v>
+<v>Labs\Lab2_Software\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_SAR_1_PM.lst</v>
+<v>Labs\Lab2_Software\CortexM3\ARM_GCC_493\Debug\Listing Files\ADC_SAR_1_theACLK.lst</v>
+<v>Labs\Lab2_Software\CortexM3\ARM_GCC_493\Debug\Listing Files\Clock_2.lst</v>
+<v>Labs\Lab2_Software\CortexM3\ARM_GCC_493\Debug\Listing Files\Cm3Start.lst</v>
+<v>Labs\Lab2_Software\CortexM3\ARM_GCC_493\Debug\Listing Files\Control_Reg_1.lst</v>
+<v>Labs\Lab2_Software\CortexM3\ARM_GCC_493\Debug\Listing Files\Control_Reg_1_PM.lst</v>
+<v>Labs\Lab2_Software\CortexM3\ARM_GCC_493\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>Labs\Lab2_Software\CortexM3\ARM_GCC_493\Debug\Listing Files\CyDmac.lst</v>
+<v>Labs\Lab2_Software\CortexM3\ARM_GCC_493\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>Labs\Lab2_Software\CortexM3\ARM_GCC_493\Debug\Listing Files\CyFlash.lst</v>
+<v>Labs\Lab2_Software\CortexM3\ARM_GCC_493\Debug\Listing Files\CyLib.lst</v>
+<v>Labs\Lab2_Software\CortexM3\ARM_GCC_493\Debug\Listing Files\cymetadata.lst</v>
+<v>Labs\Lab2_Software\CortexM3\ARM_GCC_493\Debug\Listing Files\cyPm.lst</v>
+<v>Labs\Lab2_Software\CortexM3\ARM_GCC_493\Debug\Listing Files\CySpc.lst</v>
+<v>Labs\Lab2_Software\CortexM3\ARM_GCC_493\Debug\Listing Files\cyutils.lst</v>
+<v>Labs\Lab2_Software\CortexM3\ARM_GCC_493\Debug\Listing Files\isr_1.lst</v>
+<v>Labs\Lab2_Software\CortexM3\ARM_GCC_493\Debug\Listing Files\Kill_Switch.lst</v>
+<v>Labs\Lab2_Software\CortexM3\ARM_GCC_493\Debug\Listing Files\main.lst</v>
+<v>Labs\Lab2_Software\CortexM3\ARM_GCC_493\Debug\Listing Files\Potentiometer_in.lst</v>
+<v>Labs\Lab2_Software\CortexM3\ARM_GCC_493\Debug\Listing Files\PWM_Out_1.lst</v>
+<v>Labs\Lab2_Software\CortexM3\ARM_GCC_493\Debug\Listing Files\Status_Reg_1.lst</v>
+<v>Labs\Lab2_Software\CortexM3\ARM_GCC_493\Debug\Listing Files\Status_Reg_2.lst</v>
+<v>Labs\Lab2_Software\CortexM3\ARM_GCC_493\Debug\Listing Files\VDAC8_1.lst</v>
+<v>Labs\Lab2_Software\CortexM3\ARM_GCC_493\Debug\Listing Files\VDAC8_1_PM.lst</v>
+<v>Labs\Lab2_Software\CortexM3\ARM_GCC_493\Debug\Lab2_Software.elf</v>
+<v>Labs\Lab2_Software\CortexM3\ARM_GCC_493\Debug\Lab2_Software.hex</v>
+<v>Labs\Lab2_Software\CortexM3\ARM_GCC_493\Debug\Lab2_Software.map</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -285,6 +319,9 @@
 <name v=".\Lab2_Software.cydsn\Lab2_Software.cydwr" />
 <name v=".\Lab2_Software.cydsn\main.c" />
 <name v=".\Lab2_Software.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\Lab2_Software.cydsn\Generated_Source\PSoC5\CyBootAsmGnu.s" />
+<name v=".\Lab2_Software.cydsn\Generated_Source\PSoC5\CyLib.c" />
+<name v=".\Lab2_Software.cydsn\Generated_Source\PSoC5\Status_Reg_1.c" />
 </OpenDocs>
 <config v="" />
 <AutoUpdate v="true" />
