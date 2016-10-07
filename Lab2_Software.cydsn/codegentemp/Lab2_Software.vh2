@@ -2,7 +2,7 @@
 --	Conversion of Lab2_Software.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Sun Sep 25 18:05:24 2016
+--	Thu Oct 06 19:32:02 2016
 --
 
 USE cypress.cypress.all;

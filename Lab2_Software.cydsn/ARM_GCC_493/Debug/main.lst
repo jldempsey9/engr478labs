@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccsWc8KH.s 			page 1
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZnvLT0.s 			page 1
 
 
    1              		.syntax unified
@@ -24,56 +24,61 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccsWc8KH.s 			page 1
   21              		.size	debounce_on, 1
   22              	debounce_on:
   23 0000 00       		.space	1
-  24              		.global	dimming
-  25              		.type	dimming, %object
-  26              		.size	dimming, 1
-  27              	dimming:
+  24              		.global	btn_can_change
+  25              		.type	btn_can_change, %object
+  26              		.size	btn_can_change, 1
+  27              	btn_can_change:
   28 0001 00       		.space	1
-  29              		.global	toggle_light_time_ms
-  30              		.data
-  31              		.align	2
-  32              		.type	toggle_light_time_ms, %object
-  33              		.size	toggle_light_time_ms, 4
-  34              	toggle_light_time_ms:
-  35 0000 F4010000 		.word	500
-  36              		.global	total_time_ms
-  37              		.align	2
-  38              		.type	total_time_ms, %object
-  39              		.size	total_time_ms, 4
-  40              	total_time_ms:
-  41 0004 F4010000 		.word	500
-  42              		.global	on_time_ms
-  43              		.align	2
-  44              		.type	on_time_ms, %object
-  45              		.size	on_time_ms, 4
-  46              	on_time_ms:
-  47 0008 FA000000 		.word	250
-  48              		.global	off_time_ms
-  49              		.align	2
-  50              		.type	off_time_ms, %object
-  51              		.size	off_time_ms, 4
-  52              	off_time_ms:
-  53 000c FA000000 		.word	250
-  54              		.global	duty_cycle
-  55              		.align	2
-  56              		.type	duty_cycle, %object
-  57              		.size	duty_cycle, 4
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccsWc8KH.s 			page 2
+  29              		.global	dimming
+  30              		.type	dimming, %object
+  31              		.size	dimming, 1
+  32              	dimming:
+  33 0002 00       		.space	1
+  34              		.global	toggle_light_time_ms
+  35              		.data
+  36              		.align	2
+  37              		.type	toggle_light_time_ms, %object
+  38              		.size	toggle_light_time_ms, 4
+  39              	toggle_light_time_ms:
+  40 0000 F4010000 		.word	500
+  41              		.global	total_time_ms
+  42              		.align	2
+  43              		.type	total_time_ms, %object
+  44              		.size	total_time_ms, 4
+  45              	total_time_ms:
+  46 0004 F4010000 		.word	500
+  47              		.global	on_time_ms
+  48              		.align	2
+  49              		.type	on_time_ms, %object
+  50              		.size	on_time_ms, 4
+  51              	on_time_ms:
+  52 0008 FA000000 		.word	250
+  53              		.global	off_time_ms
+  54              		.align	2
+  55              		.type	off_time_ms, %object
+  56              		.size	off_time_ms, 4
+  57              	off_time_ms:
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZnvLT0.s 			page 2
 
 
-  58              	duty_cycle:
-  59 0010 0000003F 		.word	1056964608
-  60              		.comm	currentMode,1,1
-  61              		.comm	previousMode,1,1
-  62              		.section	.text.ToggleModes,"ax",%progbits
-  63              		.align	2
-  64              		.global	ToggleModes
-  65              		.thumb
-  66              		.thumb_func
-  67              		.type	ToggleModes, %function
-  68              	ToggleModes:
-  69              	.LFB63:
-  70              		.file 1 ".\\main.c"
+  58 000c FA000000 		.word	250
+  59              		.global	duty_cycle
+  60              		.align	2
+  61              		.type	duty_cycle, %object
+  62              		.size	duty_cycle, 4
+  63              	duty_cycle:
+  64 0010 0000003F 		.word	1056964608
+  65              		.comm	currentMode,1,1
+  66              		.comm	previousMode,1,1
+  67              		.section	.text.ToggleModes,"ax",%progbits
+  68              		.align	2
+  69              		.global	ToggleModes
+  70              		.thumb
+  71              		.thumb_func
+  72              		.type	ToggleModes, %function
+  73              	ToggleModes:
+  74              	.LFB63:
+  75              		.file 1 ".\\main.c"
    1:.\main.c      **** /******************************************************************************
    2:.\main.c      **** * Project Name		: CE95352 Blinking LED
    3:.\main.c      **** * File Name			: main.c
@@ -113,14 +118,14 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccsWc8KH.s 			page 1
   37:.\main.c      **** *
   38:.\main.c      **** * Use of this Software may be limited by and subject to the applicable Cypress
   39:.\main.c      **** * software license agreement. 
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZnvLT0.s 			page 3
+
+
   40:.\main.c      **** *******************************************************************************/
   41:.\main.c      **** 
   42:.\main.c      **** #include <device.h>
   43:.\main.c      **** #include <stdio.h>
   44:.\main.c      **** #include <string.h>
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccsWc8KH.s 			page 3
-
-
   45:.\main.c      **** #include <unistd.h>
   46:.\main.c      **** #include <stdbool.h>
   47:.\main.c      **** #include <errno.h>
@@ -146,9 +151,9 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccsWc8KH.s 			page 1
   67:.\main.c      **** 
   68:.\main.c      **** //CONSTANTS
   69:.\main.c      **** //settings
-  70:.\main.c      **** #define USING_INTERRUPTS 0      //1 for using interrupts, 0 for polling
+  70:.\main.c      **** #define USING_INTERRUPTS 1      //1 for using interrupts, 0 for polling
   71:.\main.c      **** #define HUMAN_EYE_FPS 60        //at 60hz, most people can't detect difference
-  72:.\main.c      **** #define DEBOUNCE_TIME 50      //minimum time to wait for button to finish bouncing
+  72:.\main.c      **** #define DEBOUNCE_TIME 250      //minimum time to wait for button to finish bouncing
   73:.\main.c      **** #define RAMP_RESOLUTION 50           //RAMP_RESOLUTION for duty cycle
   74:.\main.c      **** #define POT_MAX 4080            //max reading from DAC potentiometer @ 4V
   75:.\main.c      **** #define FREQUENCY_RATIO 4       //divide potentiometer result by this to get a max period.  frequen
@@ -159,7 +164,7 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccsWc8KH.s 			page 1
   80:.\main.c      **** 
   81:.\main.c      **** //placeholder variables
   82:.\main.c      **** bool debounce_on = false;       //used to delay polling to debounce button
-  83:.\main.c      **** //float currentBrightness = 0;
+  83:.\main.c      **** bool btn_can_change = false;        //makes sure modes change after button press
   84:.\main.c      **** bool dimming = false;                   //used with the 'ramp' function
   85:.\main.c      **** uint32 toggle_light_time_ms = 500;      //how fast to blink LED in 'blink' mode, can adjust with Po
   86:.\main.c      ****                                         //default to blink the light every half second
@@ -173,104 +178,89 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccsWc8KH.s 			page 1
   94:.\main.c      **** 
   95:.\main.c      **** //possible modes for LED
   96:.\main.c      **** enum pwmMode {blink, ramp};
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZnvLT0.s 			page 4
+
+
   97:.\main.c      **** enum pwmMode currentMode;
   98:.\main.c      **** enum pwmMode previousMode;
   99:.\main.c      **** 
  100:.\main.c      **** 
  101:.\main.c      **** //functions
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccsWc8KH.s 			page 4
-
-
  102:.\main.c      **** void write_led(int);
- 103:.\main.c      **** void Software_PWM_Start();  //attemps to start a new thread (not used)
- 104:.\main.c      **** void PWM_Blink(uint32);     //always a 50% duty cycle
- 105:.\main.c      **** void PWM_Ramp(uint32, uint32);  //different on/off times
+ 103:.\main.c      **** void PWM_Blink(uint32);     //always a 50% duty cycle
+ 104:.\main.c      **** void PWM_Ramp(uint32, uint32);  //different on/off times
+ 105:.\main.c      **** void ToggleMode();
  106:.\main.c      **** uint16_t GetPotentiometerValue();
  107:.\main.c      **** CY_ISR(ToggleModes) {
-  71              		.loc 1 107 0
-  72              		.cfi_startproc
-  73              		@ args = 0, pretend = 0, frame = 0
-  74              		@ frame_needed = 1, uses_anonymous_args = 0
-  75 0000 80B5     		push	{r7, lr}
-  76              		.cfi_def_cfa_offset 8
-  77              		.cfi_offset 7, -8
-  78              		.cfi_offset 14, -4
-  79 0002 00AF     		add	r7, sp, #0
-  80              		.cfi_def_cfa_register 7
+  76              		.loc 1 107 0
+  77              		.cfi_startproc
+  78              		@ args = 0, pretend = 0, frame = 0
+  79              		@ frame_needed = 1, uses_anonymous_args = 0
+  80 0000 80B5     		push	{r7, lr}
+  81              		.cfi_def_cfa_offset 8
+  82              		.cfi_offset 7, -8
+  83              		.cfi_offset 14, -4
+  84 0002 00AF     		add	r7, sp, #0
+  85              		.cfi_def_cfa_register 7
  108:.\main.c      ****     if (currentMode == blink) {
-  81              		.loc 1 108 0
-  82 0004 084B     		ldr	r3, .L4
-  83 0006 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
-  84 0008 002B     		cmp	r3, #0
-  85 000a 06D1     		bne	.L2
+  86              		.loc 1 108 0
+  87 0004 084B     		ldr	r3, .L4
+  88 0006 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+  89 0008 002B     		cmp	r3, #0
+  90 000a 06D1     		bne	.L2
  109:.\main.c      ****         currentMode = ramp;
-  86              		.loc 1 109 0
-  87 000c 064B     		ldr	r3, .L4
-  88 000e 0122     		movs	r2, #1
-  89 0010 1A70     		strb	r2, [r3]
- 110:.\main.c      ****         write_led(on);      //for debugging
-  90              		.loc 1 110 0
-  91 0012 0120     		movs	r0, #1
-  92 0014 FFF7FEFF 		bl	write_led
-  93 0018 05E0     		b	.L1
-  94              	.L2:
+  91              		.loc 1 109 0
+  92 000c 064B     		ldr	r3, .L4
+  93 000e 0122     		movs	r2, #1
+  94 0010 1A70     		strb	r2, [r3]
+ 110:.\main.c      ****         write_led(on);      //user feedback
+  95              		.loc 1 110 0
+  96 0012 0120     		movs	r0, #1
+  97 0014 FFF7FEFF 		bl	write_led
+  98 0018 05E0     		b	.L1
+  99              	.L2:
  111:.\main.c      ****     } else {
  112:.\main.c      ****         currentMode = blink;
-  95              		.loc 1 112 0
-  96 001a 034B     		ldr	r3, .L4
-  97 001c 0022     		movs	r2, #0
-  98 001e 1A70     		strb	r2, [r3]
- 113:.\main.c      ****         write_led(off);     //for debugging
-  99              		.loc 1 113 0
- 100 0020 0020     		movs	r0, #0
- 101 0022 FFF7FEFF 		bl	write_led
- 102              	.L1:
+ 100              		.loc 1 112 0
+ 101 001a 034B     		ldr	r3, .L4
+ 102 001c 0022     		movs	r2, #0
+ 103 001e 1A70     		strb	r2, [r3]
+ 113:.\main.c      ****         write_led(off);     //user feedback
+ 104              		.loc 1 113 0
+ 105 0020 0020     		movs	r0, #0
+ 106 0022 FFF7FEFF 		bl	write_led
+ 107              	.L1:
  114:.\main.c      ****     }
  115:.\main.c      **** }
- 103              		.loc 1 115 0
- 104 0026 80BD     		pop	{r7, pc}
- 105              	.L5:
- 106              		.align	2
- 107              	.L4:
- 108 0028 00000000 		.word	currentMode
- 109              		.cfi_endproc
- 110              	.LFE63:
- 111              		.size	ToggleModes, .-ToggleModes
- 112              		.section	.rodata
- 113              		.align	2
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccsWc8KH.s 			page 5
+ 108              		.loc 1 115 0
+ 109 0026 80BD     		pop	{r7, pc}
+ 110              	.L5:
+ 111              		.align	2
+ 112              	.L4:
+ 113 0028 00000000 		.word	currentMode
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZnvLT0.s 			page 5
 
 
- 114              	.LC0:
- 115 0000 63757272 		.ascii	"current mode is blink\000"
- 115      656E7420 
- 115      6D6F6465 
- 115      20697320 
- 115      626C696E 
- 116 0016 0000     		.align	2
- 117              	.LC1:
- 118 0018 63757272 		.ascii	"current mode is ramp\000"
- 118      656E7420 
- 118      6D6F6465 
- 118      20697320 
- 118      72616D70 
- 119              		.global	__aeabi_fcmpge
- 120              		.global	__aeabi_fcmple
- 121              		.global	__aeabi_f2d
- 122              		.global	__aeabi_dsub
- 123              		.global	__aeabi_d2f
- 124              		.global	__aeabi_dadd
- 125              		.global	__aeabi_ui2f
- 126              		.global	__aeabi_fmul
- 127              		.global	__aeabi_f2uiz
- 128 002d 000000   		.section	.text.main,"ax",%progbits
- 129              		.align	2
- 130              		.global	main
- 131              		.thumb
- 132              		.thumb_func
- 133              		.type	main, %function
- 134              	main:
- 135              	.LFB64:
+ 114              		.cfi_endproc
+ 115              	.LFE63:
+ 116              		.size	ToggleModes, .-ToggleModes
+ 117              		.global	__aeabi_fcmpge
+ 118              		.global	__aeabi_fcmple
+ 119              		.global	__aeabi_f2d
+ 120              		.global	__aeabi_dsub
+ 121              		.global	__aeabi_d2f
+ 122              		.global	__aeabi_dadd
+ 123              		.global	__aeabi_ui2f
+ 124              		.global	__aeabi_fmul
+ 125              		.global	__aeabi_f2uiz
+ 126              		.section	.text.main,"ax",%progbits
+ 127              		.align	2
+ 128              		.global	main
+ 129              		.thumb
+ 130              		.thumb_func
+ 131              		.type	main, %function
+ 132              	main:
+ 133              	.LFB64:
  116:.\main.c      **** 
  117:.\main.c      **** 
  118:.\main.c      **** 
@@ -283,1847 +273,1473 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccsWc8KH.s 			page 1
  125:.\main.c      **** 
  126:.\main.c      **** int main()
  127:.\main.c      **** {
- 136              		.loc 1 127 0
- 137              		.cfi_startproc
- 138              		@ args = 0, pretend = 0, frame = 0
- 139              		@ frame_needed = 1, uses_anonymous_args = 0
- 140 0000 80B5     		push	{r7, lr}
- 141              		.cfi_def_cfa_offset 8
- 142              		.cfi_offset 7, -8
- 143              		.cfi_offset 14, -4
- 144 0002 00AF     		add	r7, sp, #0
- 145              		.cfi_def_cfa_register 7
+ 134              		.loc 1 127 0
+ 135              		.cfi_startproc
+ 136              		@ args = 0, pretend = 0, frame = 0
+ 137              		@ frame_needed = 1, uses_anonymous_args = 0
+ 138 0000 80B5     		push	{r7, lr}
+ 139              		.cfi_def_cfa_offset 8
+ 140              		.cfi_offset 7, -8
+ 141              		.cfi_offset 14, -4
+ 142 0002 00AF     		add	r7, sp, #0
+ 143              		.cfi_def_cfa_register 7
  128:.\main.c      **** 
  129:.\main.c      ****     #if USING_INTERRUPTS
  130:.\main.c      ****         //toggles the led mode by using an interrupt
  131:.\main.c      ****     isr_1_StartEx(ToggleModes);
+ 144              		.loc 1 131 0
+ 145 0004 4C48     		ldr	r0, .L19+8
+ 146 0006 FFF7FEFF 		bl	isr_1_StartEx
  132:.\main.c      ****     CYGlobalIntEnable;
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccsWc8KH.s 			page 6
-
-
+ 147              		.loc 1 132 0
+ 148              	@ 132 ".\main.c" 1
+ 149 000a 62B6     		CPSIE   i
+ 150              	@ 0 "" 2
  133:.\main.c      ****     
  134:.\main.c      ****     #endif
  135:.\main.c      ****     
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZnvLT0.s 			page 6
+
+
  136:.\main.c      ****     //set default currentMode
  137:.\main.c      ****     currentMode = blink;
- 146              		.loc 1 137 0
- 147 0004 704B     		ldr	r3, .L24+8
- 148 0006 0022     		movs	r2, #0
- 149 0008 1A70     		strb	r2, [r3]
+ 151              		.loc 1 137 0
+ 152              		.thumb
+ 153 000c 4B4B     		ldr	r3, .L19+12
+ 154 000e 0022     		movs	r2, #0
+ 155 0010 1A70     		strb	r2, [r3]
  138:.\main.c      ****     previousMode = ramp;
- 150              		.loc 1 138 0
- 151 000a 704B     		ldr	r3, .L24+12
- 152 000c 0122     		movs	r2, #1
- 153 000e 1A70     		strb	r2, [r3]
+ 156              		.loc 1 138 0
+ 157 0012 4B4B     		ldr	r3, .L19+16
+ 158 0014 0122     		movs	r2, #1
+ 159 0016 1A70     		strb	r2, [r3]
  139:.\main.c      ****     
  140:.\main.c      ****     //start ADC for potentiometer
  141:.\main.c      ****     ADC_SAR_1_Start();
- 154              		.loc 1 141 0
- 155 0010 FFF7FEFF 		bl	ADC_SAR_1_Start
- 156              	.L20:
- 142:.\main.c      ****     
- 143:.\main.c      ****     //start running our PWM thread
- 144:.\main.c      ****     //Software_PWM_Start();           //runs in a separate thread than polling
- 145:.\main.c      ****     
- 146:.\main.c      ****     
- 147:.\main.c      ****     //loop polls button for press if interrupts disabled
- 148:.\main.c      ****     //polls potentiometer for values for period of PWM
- 149:.\main.c      ****     //only runs if the threading implementation is successful
- 150:.\main.c      ****     while (true)
- 151:.\main.c      ****     {
- 152:.\main.c      ****         //have to poll the button every loop if not using interrupts
- 153:.\main.c      ****         #if !(USING_INTERRUPTS)
- 154:.\main.c      ****             if(Status_Reg_1_Read() && !debounce_on) { //if the button is pressed
- 157              		.loc 1 154 0
- 158 0014 FFF7FEFF 		bl	Status_Reg_1_Read
- 159 0018 0346     		mov	r3, r0
- 160 001a 002B     		cmp	r3, #0
- 161 001c 3AD0     		beq	.L7
- 162              		.loc 1 154 0 is_stmt 0 discriminator 1
- 163 001e 6C4B     		ldr	r3, .L24+16
- 164 0020 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 165 0022 83F00103 		eor	r3, r3, #1
- 166 0026 DBB2     		uxtb	r3, r3
- 167 0028 002B     		cmp	r3, #0
- 168 002a 33D0     		beq	.L7
- 155:.\main.c      ****                 debounce_on = true;
- 169              		.loc 1 155 0 is_stmt 1
- 170 002c 684B     		ldr	r3, .L24+16
- 171 002e 0122     		movs	r2, #1
- 172 0030 1A70     		strb	r2, [r3]
- 156:.\main.c      ****                 
- 157:.\main.c      ****                 //wait until button is debounced
- 158:.\main.c      ****                 CyDelay(DEBOUNCE_TIME);
- 173              		.loc 1 158 0
- 174 0032 3220     		movs	r0, #50
- 175 0034 FFF7FEFF 		bl	CyDelay
- 159:.\main.c      ****                 
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccsWc8KH.s 			page 7
+ 160              		.loc 1 141 0
+ 161 0018 FFF7FEFF 		bl	ADC_SAR_1_Start
+ 162              	.L15:
+ 142:.\main.c      **** 
+ 143:.\main.c      ****     //loop polls button for press if interrupts disabled
+ 144:.\main.c      ****     //polls potentiometer for values for period of PWM
+ 145:.\main.c      ****     //only runs if the threading implementation is successful
+ 146:.\main.c      ****     while (true)
+ 147:.\main.c      ****     {
+ 148:.\main.c      ****         //have to poll the button every loop if not using interrupts
+ 149:.\main.c      ****         #if !(USING_INTERRUPTS)
+ 150:.\main.c      ****             
+ 151:.\main.c      ****             //if the button is pressed and was LOW last time
+ 152:.\main.c      ****             if(Status_Reg_1_Read() && btn_can_change) {
+ 153:.\main.c      ****                 //wait until button is debounced
+ 154:.\main.c      ****                 CyDelay(DEBOUNCE_TIME);
+ 155:.\main.c      ****                 
+ 156:.\main.c      ****                 //if the button is still pressed, toggle modes
+ 157:.\main.c      ****                 if (Status_Reg_1_Read()) {
+ 158:.\main.c      ****                     ToggleMode();
+ 159:.\main.c      ****                     
+ 160:.\main.c      ****                     btn_can_change = false;
+ 161:.\main.c      ****                 }
+ 162:.\main.c      ****             } 
+ 163:.\main.c      ****             
+ 164:.\main.c      ****             //if the button is unpressed, we can toggle modes again
+ 165:.\main.c      ****             if (!Status_Reg_1_Read() && !btn_can_change) {
+ 166:.\main.c      ****                 CyDelay(DEBOUNCE_TIME);
+ 167:.\main.c      ****                 
+ 168:.\main.c      ****                 if (!Status_Reg_1_Read()) {
+ 169:.\main.c      ****                     btn_can_change = true;   
+ 170:.\main.c      ****                 }
+ 171:.\main.c      ****             }
+ 172:.\main.c      ****         #endif    
+ 173:.\main.c      ****         
+ 174:.\main.c      ****         
+ 175:.\main.c      ****         
+ 176:.\main.c      ****         //PWM CYCLE       
+ 177:.\main.c      ****         
+ 178:.\main.c      ****         //if we're blinking, for this loop do a blink PWM cycle
+ 179:.\main.c      ****             if (currentMode == blink){
+ 163              		.loc 1 179 0
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZnvLT0.s 			page 7
 
 
- 160:.\main.c      ****                 if (Status_Reg_1_Read()) {
- 176              		.loc 1 160 0
- 177 0038 FFF7FEFF 		bl	Status_Reg_1_Read
- 178 003c 0346     		mov	r3, r0
- 179 003e 002B     		cmp	r3, #0
- 180 0040 24D0     		beq	.L8
- 161:.\main.c      ****                     if(currentMode != previousMode) {   //if we are indeed toggling a different val
- 181              		.loc 1 161 0
- 182 0042 614B     		ldr	r3, .L24+8
- 183 0044 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
- 184 0046 614B     		ldr	r3, .L24+12
- 185 0048 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 186 004a 9A42     		cmp	r2, r3
- 187 004c 1ED0     		beq	.L8
- 162:.\main.c      ****                         if (currentMode == blink) {
- 188              		.loc 1 162 0
- 189 004e 5E4B     		ldr	r3, .L24+8
- 190 0050 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 191 0052 002B     		cmp	r3, #0
- 192 0054 09D1     		bne	.L9
- 163:.\main.c      ****                             currentMode = ramp;
- 193              		.loc 1 163 0
- 194 0056 5C4B     		ldr	r3, .L24+8
- 195 0058 0122     		movs	r2, #1
- 196 005a 1A70     		strb	r2, [r3]
- 164:.\main.c      ****                             write_led(on);              //debugging to make sure polling was correc
- 197              		.loc 1 164 0
- 198 005c 0120     		movs	r0, #1
- 199 005e FFF7FEFF 		bl	write_led
- 165:.\main.c      ****                             printf("current mode is blink");
- 200              		.loc 1 165 0
- 201 0062 5C48     		ldr	r0, .L24+20
- 202 0064 FFF7FEFF 		bl	printf
- 203 0068 0CE0     		b	.L10
- 204              	.L9:
- 166:.\main.c      ****                         } else if (currentMode == ramp){
- 205              		.loc 1 166 0
- 206 006a 574B     		ldr	r3, .L24+8
- 207 006c 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 208 006e 012B     		cmp	r3, #1
- 209 0070 08D1     		bne	.L10
- 167:.\main.c      ****                             currentMode = blink;
- 210              		.loc 1 167 0
- 211 0072 554B     		ldr	r3, .L24+8
- 212 0074 0022     		movs	r2, #0
- 213 0076 1A70     		strb	r2, [r3]
- 168:.\main.c      ****                             write_led(off);             //for debugging
- 214              		.loc 1 168 0
- 215 0078 0020     		movs	r0, #0
- 216 007a FFF7FEFF 		bl	write_led
- 169:.\main.c      ****                             printf("current mode is ramp");
- 217              		.loc 1 169 0
- 218 007e 5648     		ldr	r0, .L24+24
- 219 0080 FFF7FEFF 		bl	printf
- 220              	.L10:
- 170:.\main.c      ****                         }
- 171:.\main.c      ****                         previousMode = currentMode;
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccsWc8KH.s 			page 8
+ 164 001c 474B     		ldr	r3, .L19+12
+ 165 001e 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 166 0020 002B     		cmp	r3, #0
+ 167 0022 0DD1     		bne	.L7
+ 180:.\main.c      ****                 //sets toggle_light_time_ms to value proportional to pot.
+ 181:.\main.c      ****                 toggle_light_time_ms = GetPotentiometerValue() / FREQUENCY_RATIO;      //min val=0,
+ 168              		.loc 1 181 0
+ 169 0024 FFF7FEFF 		bl	GetPotentiometerValue
+ 170 0028 0346     		mov	r3, r0
+ 171 002a 9B08     		lsrs	r3, r3, #2
+ 172 002c 9BB2     		uxth	r3, r3
+ 173 002e 1A46     		mov	r2, r3
+ 174 0030 444B     		ldr	r3, .L19+20
+ 175 0032 1A60     		str	r2, [r3]
+ 182:.\main.c      ****                 PWM_Blink(toggle_light_time_ms);
+ 176              		.loc 1 182 0
+ 177 0034 434B     		ldr	r3, .L19+20
+ 178 0036 1B68     		ldr	r3, [r3]
+ 179 0038 1846     		mov	r0, r3
+ 180 003a FFF7FEFF 		bl	PWM_Blink
+ 181 003e 76E0     		b	.L8
+ 182              	.L7:
+ 183:.\main.c      ****             }
+ 184:.\main.c      ****             else if (currentMode == ramp) {
+ 183              		.loc 1 184 0
+ 184 0040 3E4B     		ldr	r3, .L19+12
+ 185 0042 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 186 0044 012B     		cmp	r3, #1
+ 187 0046 72D1     		bne	.L8
+ 185:.\main.c      ****                 //calculate current ramp duty_cycle
+ 186:.\main.c      **** 
+ 187:.\main.c      ****                 if (duty_cycle >= 1)    //we have reached full brightness, time to dim
+ 188              		.loc 1 187 0
+ 189 0048 3F4B     		ldr	r3, .L19+24
+ 190 004a 1B68     		ldr	r3, [r3]	@ float
+ 191 004c 1846     		mov	r0, r3
+ 192 004e 4FF07E51 		mov	r1, #1065353216
+ 193 0052 FFF7FEFF 		bl	__aeabi_fcmpge
+ 194 0056 0346     		mov	r3, r0
+ 195 0058 002B     		cmp	r3, #0
+ 196 005a 03D0     		beq	.L18
+ 188:.\main.c      ****                 {
+ 189:.\main.c      ****                     dimming = true;
+ 197              		.loc 1 189 0
+ 198 005c 3B4B     		ldr	r3, .L19+28
+ 199 005e 0122     		movs	r2, #1
+ 200 0060 1A70     		strb	r2, [r3]
+ 201 0062 0CE0     		b	.L11
+ 202              	.L18:
+ 190:.\main.c      ****                 } else if (duty_cycle <= 0) {
+ 203              		.loc 1 190 0
+ 204 0064 384B     		ldr	r3, .L19+24
+ 205 0066 1B68     		ldr	r3, [r3]	@ float
+ 206 0068 1846     		mov	r0, r3
+ 207 006a 4FF00001 		mov	r1, #0
+ 208 006e FFF7FEFF 		bl	__aeabi_fcmple
+ 209 0072 0346     		mov	r3, r0
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZnvLT0.s 			page 8
 
 
- 221              		.loc 1 171 0
- 222 0084 504B     		ldr	r3, .L24+8
- 223 0086 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
- 224 0088 504B     		ldr	r3, .L24+12
- 225 008a 1A70     		strb	r2, [r3]
- 226              	.L8:
- 172:.\main.c      ****                     }
- 173:.\main.c      ****                     
- 174:.\main.c      ****                     //debounce_on = false;
- 175:.\main.c      ****                 }
- 176:.\main.c      ****                 
- 177:.\main.c      ****                 debounce_on = false;
- 227              		.loc 1 177 0
- 228 008c 504B     		ldr	r3, .L24+16
- 229 008e 0022     		movs	r2, #0
- 230 0090 1A70     		strb	r2, [r3]
- 231 0092 09E0     		b	.L11
- 232              	.L7:
- 178:.\main.c      ****             } else {
- 179:.\main.c      ****                 previousMode = !currentMode;   //if we're not pushing the button, we changed modes
- 233              		.loc 1 179 0
- 234 0094 4C4B     		ldr	r3, .L24+8
- 235 0096 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 236 0098 002B     		cmp	r3, #0
- 237 009a 0CBF     		ite	eq
- 238 009c 0123     		moveq	r3, #1
- 239 009e 0023     		movne	r3, #0
- 240 00a0 DBB2     		uxtb	r3, r3
- 241 00a2 1A46     		mov	r2, r3
- 242 00a4 494B     		ldr	r3, .L24+12
- 243 00a6 1A70     		strb	r2, [r3]
- 244              	.L11:
- 180:.\main.c      ****             }
- 181:.\main.c      ****         #endif    
- 182:.\main.c      ****         
- 183:.\main.c      ****         
- 184:.\main.c      ****         
- 185:.\main.c      ****         
- 186:.\main.c      ****         
- 187:.\main.c      ****         
- 188:.\main.c      ****         //if we're blinking, for this loop do a blink PWM cycle
- 189:.\main.c      ****             if (currentMode == blink){
- 245              		.loc 1 189 0
- 246 00a8 474B     		ldr	r3, .L24+8
- 247 00aa 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 248 00ac 002B     		cmp	r3, #0
- 249 00ae 0DD1     		bne	.L12
- 190:.\main.c      ****                 //sets toggle_light_time_ms to value proportional to pot.
- 191:.\main.c      ****                 toggle_light_time_ms = GetPotentiometerValue() / FREQUENCY_RATIO;      //min val=0,
- 250              		.loc 1 191 0
- 251 00b0 FFF7FEFF 		bl	GetPotentiometerValue
- 252 00b4 0346     		mov	r3, r0
- 253 00b6 9B08     		lsrs	r3, r3, #2
- 254 00b8 9BB2     		uxth	r3, r3
- 255 00ba 1A46     		mov	r2, r3
- 256 00bc 474B     		ldr	r3, .L24+28
- 257 00be 1A60     		str	r2, [r3]
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccsWc8KH.s 			page 9
+ 210 0074 002B     		cmp	r3, #0
+ 211 0076 02D0     		beq	.L11
+ 191:.\main.c      ****                     dimming = false;
+ 212              		.loc 1 191 0
+ 213 0078 344B     		ldr	r3, .L19+28
+ 214 007a 0022     		movs	r2, #0
+ 215 007c 1A70     		strb	r2, [r3]
+ 216              	.L11:
+ 192:.\main.c      ****                 }
+ 193:.\main.c      ****                 
+ 194:.\main.c      ****                 //if we're supposed to dim, lessen the duty cycle
+ 195:.\main.c      ****                 if (dimming) {
+ 217              		.loc 1 195 0
+ 218 007e 334B     		ldr	r3, .L19+28
+ 219 0080 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 220 0082 002B     		cmp	r3, #0
+ 221 0084 17D0     		beq	.L13
+ 196:.\main.c      ****                     duty_cycle -= 1.0 / (float) RAMP_RESOLUTION;   //duty cycle gets decremented by
+ 222              		.loc 1 196 0
+ 223 0086 304B     		ldr	r3, .L19+24
+ 224 0088 1B68     		ldr	r3, [r3]	@ float
+ 225 008a 1846     		mov	r0, r3
+ 226 008c FFF7FEFF 		bl	__aeabi_f2d
+ 227 0090 0246     		mov	r2, r0
+ 228 0092 0B46     		mov	r3, r1
+ 229 0094 1046     		mov	r0, r2
+ 230 0096 1946     		mov	r1, r3
+ 231 0098 25A3     		adr	r3, .L19
+ 232 009a D3E90023 		ldrd	r2, [r3]
+ 233 009e FFF7FEFF 		bl	__aeabi_dsub
+ 234 00a2 0246     		mov	r2, r0
+ 235 00a4 0B46     		mov	r3, r1
+ 236 00a6 1046     		mov	r0, r2
+ 237 00a8 1946     		mov	r1, r3
+ 238 00aa FFF7FEFF 		bl	__aeabi_d2f
+ 239 00ae 0246     		mov	r2, r0
+ 240 00b0 254B     		ldr	r3, .L19+24
+ 241 00b2 1A60     		str	r2, [r3]	@ float
+ 242 00b4 16E0     		b	.L14
+ 243              	.L13:
+ 197:.\main.c      ****                 } else {
+ 198:.\main.c      ****                     duty_cycle +=  1.0 / (float) RAMP_RESOLUTION;   //duty cycle is incremented by 
+ 244              		.loc 1 198 0
+ 245 00b6 244B     		ldr	r3, .L19+24
+ 246 00b8 1B68     		ldr	r3, [r3]	@ float
+ 247 00ba 1846     		mov	r0, r3
+ 248 00bc FFF7FEFF 		bl	__aeabi_f2d
+ 249 00c0 0246     		mov	r2, r0
+ 250 00c2 0B46     		mov	r3, r1
+ 251 00c4 1046     		mov	r0, r2
+ 252 00c6 1946     		mov	r1, r3
+ 253 00c8 19A3     		adr	r3, .L19
+ 254 00ca D3E90023 		ldrd	r2, [r3]
+ 255 00ce FFF7FEFF 		bl	__aeabi_dadd
+ 256 00d2 0246     		mov	r2, r0
+ 257 00d4 0B46     		mov	r3, r1
+ 258 00d6 1046     		mov	r0, r2
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZnvLT0.s 			page 9
 
 
- 192:.\main.c      ****                 PWM_Blink(toggle_light_time_ms);
- 258              		.loc 1 192 0
- 259 00c0 464B     		ldr	r3, .L24+28
- 260 00c2 1B68     		ldr	r3, [r3]
- 261 00c4 1846     		mov	r0, r3
- 262 00c6 FFF7FEFF 		bl	PWM_Blink
- 263 00ca 76E0     		b	.L13
- 264              	.L12:
- 193:.\main.c      ****             }
- 194:.\main.c      ****             else if (currentMode == ramp) {
- 265              		.loc 1 194 0
- 266 00cc 3E4B     		ldr	r3, .L24+8
- 267 00ce 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 268 00d0 012B     		cmp	r3, #1
- 269 00d2 72D1     		bne	.L13
- 195:.\main.c      ****                 //calculate current ramp duty_cycle
- 196:.\main.c      ****                 //PWM_Blink((float)toggle_light_time_ms / (float) 5);
- 197:.\main.c      ****                 
- 198:.\main.c      ****                 if (duty_cycle >= 1)    //we have reached full brightness, time to dim
- 270              		.loc 1 198 0
- 271 00d4 424B     		ldr	r3, .L24+32
- 272 00d6 1B68     		ldr	r3, [r3]	@ float
- 273 00d8 1846     		mov	r0, r3
- 274 00da 4FF07E51 		mov	r1, #1065353216
- 275 00de FFF7FEFF 		bl	__aeabi_fcmpge
- 276 00e2 0346     		mov	r3, r0
- 277 00e4 002B     		cmp	r3, #0
- 278 00e6 03D0     		beq	.L23
- 199:.\main.c      ****                 {
- 200:.\main.c      ****                     dimming = true;
- 279              		.loc 1 200 0
- 280 00e8 3E4B     		ldr	r3, .L24+36
- 281 00ea 0122     		movs	r2, #1
- 282 00ec 1A70     		strb	r2, [r3]
- 283 00ee 0CE0     		b	.L16
- 284              	.L23:
- 201:.\main.c      ****                 } else if (duty_cycle <= 0) {
- 285              		.loc 1 201 0
- 286 00f0 3B4B     		ldr	r3, .L24+32
- 287 00f2 1B68     		ldr	r3, [r3]	@ float
- 288 00f4 1846     		mov	r0, r3
- 289 00f6 4FF00001 		mov	r1, #0
- 290 00fa FFF7FEFF 		bl	__aeabi_fcmple
- 291 00fe 0346     		mov	r3, r0
- 292 0100 002B     		cmp	r3, #0
- 293 0102 02D0     		beq	.L16
- 202:.\main.c      ****                     dimming = false;
- 294              		.loc 1 202 0
- 295 0104 374B     		ldr	r3, .L24+36
- 296 0106 0022     		movs	r2, #0
- 297 0108 1A70     		strb	r2, [r3]
- 298              	.L16:
- 203:.\main.c      ****                 }
+ 259 00d8 1946     		mov	r1, r3
+ 260 00da FFF7FEFF 		bl	__aeabi_d2f
+ 261 00de 0246     		mov	r2, r0
+ 262 00e0 194B     		ldr	r3, .L19+24
+ 263 00e2 1A60     		str	r2, [r3]	@ float
+ 264              	.L14:
+ 199:.\main.c      ****                 }
+ 200:.\main.c      ****                 
+ 201:.\main.c      ****                 total_time_ms = (1.0 / (float) HUMAN_EYE_FPS) * 1000;       //could be a constant i
+ 265              		.loc 1 201 0
+ 266 00e4 1A4B     		ldr	r3, .L19+32
+ 267 00e6 1022     		movs	r2, #16
+ 268 00e8 1A60     		str	r2, [r3]
+ 202:.\main.c      ****                 on_time_ms = duty_cycle * total_time_ms;
+ 269              		.loc 1 202 0
+ 270 00ea 194B     		ldr	r3, .L19+32
+ 271 00ec 1B68     		ldr	r3, [r3]
+ 272 00ee 1846     		mov	r0, r3
+ 273 00f0 FFF7FEFF 		bl	__aeabi_ui2f
+ 274 00f4 0246     		mov	r2, r0
+ 275 00f6 144B     		ldr	r3, .L19+24
+ 276 00f8 1B68     		ldr	r3, [r3]	@ float
+ 277 00fa 1046     		mov	r0, r2
+ 278 00fc 1946     		mov	r1, r3
+ 279 00fe FFF7FEFF 		bl	__aeabi_fmul
+ 280 0102 0346     		mov	r3, r0
+ 281 0104 1846     		mov	r0, r3
+ 282 0106 FFF7FEFF 		bl	__aeabi_f2uiz
+ 283 010a 0246     		mov	r2, r0
+ 284 010c 114B     		ldr	r3, .L19+36
+ 285 010e 1A60     		str	r2, [r3]
+ 203:.\main.c      ****                 off_time_ms = total_time_ms - on_time_ms;
+ 286              		.loc 1 203 0
+ 287 0110 0F4B     		ldr	r3, .L19+32
+ 288 0112 1A68     		ldr	r2, [r3]
+ 289 0114 0F4B     		ldr	r3, .L19+36
+ 290 0116 1B68     		ldr	r3, [r3]
+ 291 0118 D31A     		subs	r3, r2, r3
+ 292 011a 0F4A     		ldr	r2, .L19+40
+ 293 011c 1360     		str	r3, [r2]
  204:.\main.c      ****                 
- 205:.\main.c      ****                 //if we're supposed to dim, lessen the duty cycle
- 206:.\main.c      ****                 if (dimming) {
- 299              		.loc 1 206 0
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccsWc8KH.s 			page 10
+ 205:.\main.c      ****                 PWM_Ramp(on_time_ms, off_time_ms);
+ 294              		.loc 1 205 0
+ 295 011e 0D4B     		ldr	r3, .L19+36
+ 296 0120 1A68     		ldr	r2, [r3]
+ 297 0122 0D4B     		ldr	r3, .L19+40
+ 298 0124 1B68     		ldr	r3, [r3]
+ 299 0126 1046     		mov	r0, r2
+ 300 0128 1946     		mov	r1, r3
+ 301 012a FFF7FEFF 		bl	PWM_Ramp
+ 302              	.L8:
+ 206:.\main.c      ****             } 
+ 207:.\main.c      ****             
+ 208:.\main.c      ****             
+ 209:.\main.c      ****     }
+ 303              		.loc 1 209 0
+ 304 012e 75E7     		b	.L15
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZnvLT0.s 			page 10
 
 
- 300 010a 364B     		ldr	r3, .L24+36
- 301 010c 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 302 010e 002B     		cmp	r3, #0
- 303 0110 17D0     		beq	.L18
- 207:.\main.c      ****                     duty_cycle -= 1.0 / (float) RAMP_RESOLUTION;   //duty cycle gets decremented by
- 304              		.loc 1 207 0
- 305 0112 334B     		ldr	r3, .L24+32
- 306 0114 1B68     		ldr	r3, [r3]	@ float
- 307 0116 1846     		mov	r0, r3
- 308 0118 FFF7FEFF 		bl	__aeabi_f2d
- 309 011c 0246     		mov	r2, r0
- 310 011e 0B46     		mov	r3, r1
- 311 0120 1046     		mov	r0, r2
- 312 0122 1946     		mov	r1, r3
- 313 0124 26A3     		adr	r3, .L24
- 314 0126 D3E90023 		ldrd	r2, [r3]
- 315 012a FFF7FEFF 		bl	__aeabi_dsub
- 316 012e 0246     		mov	r2, r0
- 317 0130 0B46     		mov	r3, r1
- 318 0132 1046     		mov	r0, r2
- 319 0134 1946     		mov	r1, r3
- 320 0136 FFF7FEFF 		bl	__aeabi_d2f
- 321 013a 0246     		mov	r2, r0
- 322 013c 284B     		ldr	r3, .L24+32
- 323 013e 1A60     		str	r2, [r3]	@ float
- 324 0140 16E0     		b	.L19
- 325              	.L18:
- 208:.\main.c      ****                 } else {
- 209:.\main.c      ****                     duty_cycle +=  1.0 / (float) RAMP_RESOLUTION;   //duty cycle is incremented by 
- 326              		.loc 1 209 0
- 327 0142 274B     		ldr	r3, .L24+32
- 328 0144 1B68     		ldr	r3, [r3]	@ float
- 329 0146 1846     		mov	r0, r3
- 330 0148 FFF7FEFF 		bl	__aeabi_f2d
- 331 014c 0246     		mov	r2, r0
- 332 014e 0B46     		mov	r3, r1
- 333 0150 1046     		mov	r0, r2
- 334 0152 1946     		mov	r1, r3
- 335 0154 1AA3     		adr	r3, .L24
- 336 0156 D3E90023 		ldrd	r2, [r3]
- 337 015a FFF7FEFF 		bl	__aeabi_dadd
- 338 015e 0246     		mov	r2, r0
- 339 0160 0B46     		mov	r3, r1
- 340 0162 1046     		mov	r0, r2
- 341 0164 1946     		mov	r1, r3
- 342 0166 FFF7FEFF 		bl	__aeabi_d2f
- 343 016a 0246     		mov	r2, r0
- 344 016c 1C4B     		ldr	r3, .L24+32
- 345 016e 1A60     		str	r2, [r3]	@ float
- 346              	.L19:
- 210:.\main.c      ****                 }
- 211:.\main.c      ****                 
- 212:.\main.c      ****                 total_time_ms = (1.0 / (float) HUMAN_EYE_FPS) * 1000;       //could be a constant i
- 347              		.loc 1 212 0
- 348 0170 1D4B     		ldr	r3, .L24+40
- 349 0172 1022     		movs	r2, #16
- 350 0174 1A60     		str	r2, [r3]
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccsWc8KH.s 			page 11
+ 305              	.L20:
+ 306              		.align	3
+ 307              	.L19:
+ 308 0130 7B14AE47 		.word	1202590843
+ 309 0134 E17A943F 		.word	1066695393
+ 310 0138 00000000 		.word	ToggleModes
+ 311 013c 00000000 		.word	currentMode
+ 312 0140 00000000 		.word	previousMode
+ 313 0144 00000000 		.word	toggle_light_time_ms
+ 314 0148 00000000 		.word	duty_cycle
+ 315 014c 00000000 		.word	dimming
+ 316 0150 00000000 		.word	total_time_ms
+ 317 0154 00000000 		.word	on_time_ms
+ 318 0158 00000000 		.word	off_time_ms
+ 319              		.cfi_endproc
+ 320              	.LFE64:
+ 321              		.size	main, .-main
+ 322 015c AFF30080 		.section	.text.ToggleMode,"ax",%progbits
+ 323              		.align	2
+ 324              		.global	ToggleMode
+ 325              		.thumb
+ 326              		.thumb_func
+ 327              		.type	ToggleMode, %function
+ 328              	ToggleMode:
+ 329              	.LFB65:
+ 210:.\main.c      ****     
+ 211:.\main.c      ****     return 0;
+ 212:.\main.c      **** }
+ 213:.\main.c      **** 
+ 214:.\main.c      **** 
+ 215:.\main.c      **** void ToggleMode() {
+ 330              		.loc 1 215 0
+ 331              		.cfi_startproc
+ 332              		@ args = 0, pretend = 0, frame = 0
+ 333              		@ frame_needed = 1, uses_anonymous_args = 0
+ 334              		@ link register save eliminated.
+ 335 0000 80B4     		push	{r7}
+ 336              		.cfi_def_cfa_offset 4
+ 337              		.cfi_offset 7, -4
+ 338 0002 00AF     		add	r7, sp, #0
+ 339              		.cfi_def_cfa_register 7
+ 216:.\main.c      ****     if (currentMode == blink) {
+ 340              		.loc 1 216 0
+ 341 0004 094B     		ldr	r3, .L24
+ 342 0006 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 343 0008 002B     		cmp	r3, #0
+ 344 000a 03D1     		bne	.L22
+ 217:.\main.c      ****         currentMode = ramp;
+ 345              		.loc 1 217 0
+ 346 000c 074B     		ldr	r3, .L24
+ 347 000e 0122     		movs	r2, #1
+ 348 0010 1A70     		strb	r2, [r3]
+ 349 0012 06E0     		b	.L21
+ 350              	.L22:
+ 218:.\main.c      ****     } else if (currentMode == ramp){
+ 351              		.loc 1 218 0
+ 352 0014 054B     		ldr	r3, .L24
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZnvLT0.s 			page 11
 
 
- 213:.\main.c      ****                 on_time_ms = duty_cycle * total_time_ms;
- 351              		.loc 1 213 0
- 352 0176 1C4B     		ldr	r3, .L24+40
- 353 0178 1B68     		ldr	r3, [r3]
- 354 017a 1846     		mov	r0, r3
- 355 017c FFF7FEFF 		bl	__aeabi_ui2f
- 356 0180 0246     		mov	r2, r0
- 357 0182 174B     		ldr	r3, .L24+32
- 358 0184 1B68     		ldr	r3, [r3]	@ float
- 359 0186 1046     		mov	r0, r2
- 360 0188 1946     		mov	r1, r3
- 361 018a FFF7FEFF 		bl	__aeabi_fmul
- 362 018e 0346     		mov	r3, r0
- 363 0190 1846     		mov	r0, r3
- 364 0192 FFF7FEFF 		bl	__aeabi_f2uiz
- 365 0196 0246     		mov	r2, r0
- 366 0198 144B     		ldr	r3, .L24+44
- 367 019a 1A60     		str	r2, [r3]
- 214:.\main.c      ****                 off_time_ms = total_time_ms - on_time_ms;
- 368              		.loc 1 214 0
- 369 019c 124B     		ldr	r3, .L24+40
- 370 019e 1A68     		ldr	r2, [r3]
- 371 01a0 124B     		ldr	r3, .L24+44
- 372 01a2 1B68     		ldr	r3, [r3]
- 373 01a4 D31A     		subs	r3, r2, r3
- 374 01a6 124A     		ldr	r2, .L24+48
- 375 01a8 1360     		str	r3, [r2]
- 215:.\main.c      ****                 
- 216:.\main.c      ****                 PWM_Ramp(on_time_ms, off_time_ms);
- 376              		.loc 1 216 0
- 377 01aa 104B     		ldr	r3, .L24+44
- 378 01ac 1A68     		ldr	r2, [r3]
- 379 01ae 104B     		ldr	r3, .L24+48
- 380 01b0 1B68     		ldr	r3, [r3]
- 381 01b2 1046     		mov	r0, r2
- 382 01b4 1946     		mov	r1, r3
- 383 01b6 FFF7FEFF 		bl	PWM_Ramp
- 384              	.L13:
- 217:.\main.c      ****             }
- 218:.\main.c      ****             
- 219:.\main.c      ****             
- 220:.\main.c      ****             
- 221:.\main.c      ****     }
- 385              		.loc 1 221 0
- 386 01ba 2BE7     		b	.L20
- 387              	.L25:
- 388 01bc AFF30080 		.align	3
- 389              	.L24:
- 390 01c0 7B14AE47 		.word	1202590843
- 391 01c4 E17A943F 		.word	1066695393
- 392 01c8 00000000 		.word	currentMode
- 393 01cc 00000000 		.word	previousMode
- 394 01d0 00000000 		.word	debounce_on
- 395 01d4 00000000 		.word	.LC0
- 396 01d8 18000000 		.word	.LC1
- 397 01dc 00000000 		.word	toggle_light_time_ms
- 398 01e0 00000000 		.word	duty_cycle
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccsWc8KH.s 			page 12
+ 353 0016 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 354 0018 012B     		cmp	r3, #1
+ 355 001a 02D1     		bne	.L21
+ 219:.\main.c      ****         currentMode = blink;
+ 356              		.loc 1 219 0
+ 357 001c 034B     		ldr	r3, .L24
+ 358 001e 0022     		movs	r2, #0
+ 359 0020 1A70     		strb	r2, [r3]
+ 360              	.L21:
+ 220:.\main.c      ****     }
+ 221:.\main.c      **** 
+ 222:.\main.c      **** }
+ 361              		.loc 1 222 0
+ 362 0022 BD46     		mov	sp, r7
+ 363              		.cfi_def_cfa_register 13
+ 364              		@ sp needed
+ 365 0024 5DF8047B 		ldr	r7, [sp], #4
+ 366              		.cfi_restore 7
+ 367              		.cfi_def_cfa_offset 0
+ 368 0028 7047     		bx	lr
+ 369              	.L25:
+ 370 002a 00BF     		.align	2
+ 371              	.L24:
+ 372 002c 00000000 		.word	currentMode
+ 373              		.cfi_endproc
+ 374              	.LFE65:
+ 375              		.size	ToggleMode, .-ToggleMode
+ 376              		.section	.text.GetPotentiometerValue,"ax",%progbits
+ 377              		.align	2
+ 378              		.global	GetPotentiometerValue
+ 379              		.thumb
+ 380              		.thumb_func
+ 381              		.type	GetPotentiometerValue, %function
+ 382              	GetPotentiometerValue:
+ 383              	.LFB66:
+ 223:.\main.c      **** 
+ 224:.\main.c      **** 
+ 225:.\main.c      **** //returns the value from potentiometer
+ 226:.\main.c      **** uint16_t GetPotentiometerValue() {
+ 384              		.loc 1 226 0
+ 385              		.cfi_startproc
+ 386              		@ args = 0, pretend = 0, frame = 8
+ 387              		@ frame_needed = 1, uses_anonymous_args = 0
+ 388 0000 80B5     		push	{r7, lr}
+ 389              		.cfi_def_cfa_offset 8
+ 390              		.cfi_offset 7, -8
+ 391              		.cfi_offset 14, -4
+ 392 0002 82B0     		sub	sp, sp, #8
+ 393              		.cfi_def_cfa_offset 16
+ 394 0004 00AF     		add	r7, sp, #0
+ 395              		.cfi_def_cfa_register 7
+ 227:.\main.c      ****     //poll potentiometer
+ 228:.\main.c      ****         ADC_SAR_1_StartConvert(); 
+ 396              		.loc 1 228 0
+ 397 0006 FFF7FEFF 		bl	ADC_SAR_1_StartConvert
+ 229:.\main.c      ****         ADC_SAR_1_IsEndConversion(ADC_SAR_1_WAIT_FOR_RESULT);   //blocks until conversion complete
+ 398              		.loc 1 229 0
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZnvLT0.s 			page 12
 
 
- 399 01e4 00000000 		.word	dimming
- 400 01e8 00000000 		.word	total_time_ms
- 401 01ec 00000000 		.word	on_time_ms
- 402 01f0 00000000 		.word	off_time_ms
- 403              		.cfi_endproc
- 404              	.LFE64:
- 405              		.size	main, .-main
- 406              		.section	.text.GetPotentiometerValue,"ax",%progbits
- 407              		.align	2
- 408              		.global	GetPotentiometerValue
- 409              		.thumb
- 410              		.thumb_func
- 411              		.type	GetPotentiometerValue, %function
- 412              	GetPotentiometerValue:
- 413              	.LFB65:
- 222:.\main.c      ****     
- 223:.\main.c      ****     return 0;
- 224:.\main.c      **** }
- 225:.\main.c      **** 
- 226:.\main.c      **** //returns the value from potentiometer
- 227:.\main.c      **** uint16_t GetPotentiometerValue() {
- 414              		.loc 1 227 0
- 415              		.cfi_startproc
- 416              		@ args = 0, pretend = 0, frame = 8
- 417              		@ frame_needed = 1, uses_anonymous_args = 0
- 418 0000 80B5     		push	{r7, lr}
- 419              		.cfi_def_cfa_offset 8
- 420              		.cfi_offset 7, -8
- 421              		.cfi_offset 14, -4
- 422 0002 82B0     		sub	sp, sp, #8
- 423              		.cfi_def_cfa_offset 16
- 424 0004 00AF     		add	r7, sp, #0
- 425              		.cfi_def_cfa_register 7
- 228:.\main.c      ****     //poll potentiometer
- 229:.\main.c      ****         ADC_SAR_1_StartConvert(); 
- 426              		.loc 1 229 0
- 427 0006 FFF7FEFF 		bl	ADC_SAR_1_StartConvert
- 230:.\main.c      ****         ADC_SAR_1_IsEndConversion(ADC_SAR_1_WAIT_FOR_RESULT);   //blocks until conversion complete
- 428              		.loc 1 230 0
- 429 000a 0020     		movs	r0, #0
- 430 000c FFF7FEFF 		bl	ADC_SAR_1_IsEndConversion
- 231:.\main.c      ****         
- 232:.\main.c      ****         uint16_t result = ADC_SAR_1_GetResult16();
- 431              		.loc 1 232 0
- 432 0010 FFF7FEFF 		bl	ADC_SAR_1_GetResult16
- 433 0014 0346     		mov	r3, r0
- 434 0016 FB80     		strh	r3, [r7, #6]	@ movhi
- 233:.\main.c      ****         
- 234:.\main.c      ****         return result;
- 435              		.loc 1 234 0
- 436 0018 FB88     		ldrh	r3, [r7, #6]
- 235:.\main.c      **** }
- 437              		.loc 1 235 0
- 438 001a 1846     		mov	r0, r3
- 439 001c 0837     		adds	r7, r7, #8
- 440              		.cfi_def_cfa_offset 8
- 441 001e BD46     		mov	sp, r7
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccsWc8KH.s 			page 13
+ 399 000a 0020     		movs	r0, #0
+ 400 000c FFF7FEFF 		bl	ADC_SAR_1_IsEndConversion
+ 230:.\main.c      ****         
+ 231:.\main.c      ****         uint16_t result = ADC_SAR_1_GetResult16();
+ 401              		.loc 1 231 0
+ 402 0010 FFF7FEFF 		bl	ADC_SAR_1_GetResult16
+ 403 0014 0346     		mov	r3, r0
+ 404 0016 FB80     		strh	r3, [r7, #6]	@ movhi
+ 232:.\main.c      ****         
+ 233:.\main.c      ****         return result;
+ 405              		.loc 1 233 0
+ 406 0018 FB88     		ldrh	r3, [r7, #6]
+ 234:.\main.c      **** }
+ 407              		.loc 1 234 0
+ 408 001a 1846     		mov	r0, r3
+ 409 001c 0837     		adds	r7, r7, #8
+ 410              		.cfi_def_cfa_offset 8
+ 411 001e BD46     		mov	sp, r7
+ 412              		.cfi_def_cfa_register 13
+ 413              		@ sp needed
+ 414 0020 80BD     		pop	{r7, pc}
+ 415              		.cfi_endproc
+ 416              	.LFE66:
+ 417              		.size	GetPotentiometerValue, .-GetPotentiometerValue
+ 418 0022 00BF     		.section	.text.write_led,"ax",%progbits
+ 419              		.align	2
+ 420              		.global	write_led
+ 421              		.thumb
+ 422              		.thumb_func
+ 423              		.type	write_led, %function
+ 424              	write_led:
+ 425              	.LFB67:
+ 235:.\main.c      **** 
+ 236:.\main.c      **** //shorthand for writing to control register
+ 237:.\main.c      **** void write_led(int value) {
+ 426              		.loc 1 237 0
+ 427              		.cfi_startproc
+ 428              		@ args = 0, pretend = 0, frame = 8
+ 429              		@ frame_needed = 1, uses_anonymous_args = 0
+ 430 0000 80B5     		push	{r7, lr}
+ 431              		.cfi_def_cfa_offset 8
+ 432              		.cfi_offset 7, -8
+ 433              		.cfi_offset 14, -4
+ 434 0002 82B0     		sub	sp, sp, #8
+ 435              		.cfi_def_cfa_offset 16
+ 436 0004 00AF     		add	r7, sp, #0
+ 437              		.cfi_def_cfa_register 7
+ 438 0006 7860     		str	r0, [r7, #4]
+ 238:.\main.c      ****     Control_Reg_1_Write(value);   
+ 439              		.loc 1 238 0
+ 440 0008 7B68     		ldr	r3, [r7, #4]
+ 441 000a DBB2     		uxtb	r3, r3
+ 442 000c 1846     		mov	r0, r3
+ 443 000e FFF7FEFF 		bl	Control_Reg_1_Write
+ 239:.\main.c      **** }
+ 444              		.loc 1 239 0
+ 445 0012 0837     		adds	r7, r7, #8
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZnvLT0.s 			page 13
 
 
- 442              		.cfi_def_cfa_register 13
- 443              		@ sp needed
- 444 0020 80BD     		pop	{r7, pc}
- 445              		.cfi_endproc
- 446              	.LFE65:
- 447              		.size	GetPotentiometerValue, .-GetPotentiometerValue
- 448 0022 00BF     		.section	.text.write_led,"ax",%progbits
- 449              		.align	2
- 450              		.global	write_led
- 451              		.thumb
- 452              		.thumb_func
- 453              		.type	write_led, %function
- 454              	write_led:
- 455              	.LFB66:
- 236:.\main.c      **** 
- 237:.\main.c      **** //shorthand for writing to control register
- 238:.\main.c      **** void write_led(int value) {
- 456              		.loc 1 238 0
- 457              		.cfi_startproc
- 458              		@ args = 0, pretend = 0, frame = 8
- 459              		@ frame_needed = 1, uses_anonymous_args = 0
- 460 0000 80B5     		push	{r7, lr}
- 461              		.cfi_def_cfa_offset 8
- 462              		.cfi_offset 7, -8
- 463              		.cfi_offset 14, -4
- 464 0002 82B0     		sub	sp, sp, #8
- 465              		.cfi_def_cfa_offset 16
- 466 0004 00AF     		add	r7, sp, #0
- 467              		.cfi_def_cfa_register 7
- 468 0006 7860     		str	r0, [r7, #4]
- 239:.\main.c      ****     Control_Reg_1_Write(value);   
- 469              		.loc 1 239 0
- 470 0008 7B68     		ldr	r3, [r7, #4]
- 471 000a DBB2     		uxtb	r3, r3
- 472 000c 1846     		mov	r0, r3
- 473 000e FFF7FEFF 		bl	Control_Reg_1_Write
- 240:.\main.c      **** }
- 474              		.loc 1 240 0
- 475 0012 0837     		adds	r7, r7, #8
- 476              		.cfi_def_cfa_offset 8
- 477 0014 BD46     		mov	sp, r7
- 478              		.cfi_def_cfa_register 13
- 479              		@ sp needed
- 480 0016 80BD     		pop	{r7, pc}
- 481              		.cfi_endproc
- 482              	.LFE66:
- 483              		.size	write_led, .-write_led
- 484              		.section	.text.Software_PWM_Start,"ax",%progbits
- 485              		.align	2
- 486              		.global	Software_PWM_Start
- 487              		.thumb
- 488              		.thumb_func
- 489              		.type	Software_PWM_Start, %function
- 490              	Software_PWM_Start:
- 491              	.LFB67:
- 241:.\main.c      **** 
- 242:.\main.c      **** //software PWM function runs in a separate thread.  
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccsWc8KH.s 			page 14
+ 446              		.cfi_def_cfa_offset 8
+ 447 0014 BD46     		mov	sp, r7
+ 448              		.cfi_def_cfa_register 13
+ 449              		@ sp needed
+ 450 0016 80BD     		pop	{r7, pc}
+ 451              		.cfi_endproc
+ 452              	.LFE67:
+ 453              		.size	write_led, .-write_led
+ 454              		.section	.text.PWM_Blink,"ax",%progbits
+ 455              		.align	2
+ 456              		.global	PWM_Blink
+ 457              		.thumb
+ 458              		.thumb_func
+ 459              		.type	PWM_Blink, %function
+ 460              	PWM_Blink:
+ 461              	.LFB68:
+ 240:.\main.c      **** 
+ 241:.\main.c      **** //software PWM function runs in a separate thread.  
+ 242:.\main.c      **** //runs calculations for PWM parameters, then calls PWM_Blink for timing
+ 243:.\main.c      **** 
+ 244:.\main.c      **** //shorthand to wait for timing
+ 245:.\main.c      **** //evenly blinks LED with equal on/off times
+ 246:.\main.c      **** void PWM_Blink(uint32 halfPeriod) {
+ 462              		.loc 1 246 0
+ 463              		.cfi_startproc
+ 464              		@ args = 0, pretend = 0, frame = 8
+ 465              		@ frame_needed = 1, uses_anonymous_args = 0
+ 466 0000 80B5     		push	{r7, lr}
+ 467              		.cfi_def_cfa_offset 8
+ 468              		.cfi_offset 7, -8
+ 469              		.cfi_offset 14, -4
+ 470 0002 82B0     		sub	sp, sp, #8
+ 471              		.cfi_def_cfa_offset 16
+ 472 0004 00AF     		add	r7, sp, #0
+ 473              		.cfi_def_cfa_register 7
+ 474 0006 7860     		str	r0, [r7, #4]
+ 247:.\main.c      ****     write_led(on);
+ 475              		.loc 1 247 0
+ 476 0008 0120     		movs	r0, #1
+ 477 000a FFF7FEFF 		bl	write_led
+ 248:.\main.c      ****     CyDelay(halfPeriod);
+ 478              		.loc 1 248 0
+ 479 000e 7868     		ldr	r0, [r7, #4]
+ 480 0010 FFF7FEFF 		bl	CyDelay
+ 249:.\main.c      ****     write_led(off);
+ 481              		.loc 1 249 0
+ 482 0014 0020     		movs	r0, #0
+ 483 0016 FFF7FEFF 		bl	write_led
+ 250:.\main.c      ****     CyDelay(halfPeriod); 
+ 484              		.loc 1 250 0
+ 485 001a 7868     		ldr	r0, [r7, #4]
+ 486 001c FFF7FEFF 		bl	CyDelay
+ 251:.\main.c      **** }
+ 487              		.loc 1 251 0
+ 488 0020 0837     		adds	r7, r7, #8
+ 489              		.cfi_def_cfa_offset 8
+ 490 0022 BD46     		mov	sp, r7
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZnvLT0.s 			page 14
 
 
- 243:.\main.c      **** //runs calculations for PWM parameters, then calls PWM_Blink for timing
- 244:.\main.c      **** void Software_PWM_Start() {
- 492              		.loc 1 244 0
- 493              		.cfi_startproc
- 494              		@ args = 0, pretend = 0, frame = 8
- 495              		@ frame_needed = 1, uses_anonymous_args = 0
- 496 0000 80B5     		push	{r7, lr}
- 497              		.cfi_def_cfa_offset 8
- 498              		.cfi_offset 7, -8
- 499              		.cfi_offset 14, -4
- 500 0002 82B0     		sub	sp, sp, #8
- 501              		.cfi_def_cfa_offset 16
- 502 0004 00AF     		add	r7, sp, #0
- 503              		.cfi_def_cfa_register 7
- 245:.\main.c      ****     pid_t pid = fork();
- 504              		.loc 1 245 0
- 505 0006 FFF7FEFF 		bl	fork
- 506 000a 0346     		mov	r3, r0
- 507 000c 7B60     		str	r3, [r7, #4]
- 246:.\main.c      ****     int errsv = errno;      //save the error code, errno is volatile
- 508              		.loc 1 246 0
- 509 000e FFF7FEFF 		bl	__errno
- 510 0012 0346     		mov	r3, r0
- 511 0014 1B68     		ldr	r3, [r3]
- 512 0016 3B60     		str	r3, [r7]
- 247:.\main.c      ****     
- 248:.\main.c      ****     /*
- 249:.\main.c      ****     if (pid < 0) {      //fork errored out, try to debug later with proper threading techniques
- 250:.\main.c      ****         return;
- 251:.\main.c      ****     } 
- 252:.\main.c      ****     */
- 253:.\main.c      ****     
- 254:.\main.c      ****     if (pid > 0) {  //parent process returns to main loop
- 513              		.loc 1 254 0
- 514 0018 7B68     		ldr	r3, [r7, #4]
- 515 001a 002B     		cmp	r3, #0
- 516 001c 00DD     		ble	.L30
- 255:.\main.c      ****         return;   
- 517              		.loc 1 255 0
- 518 001e 89E0     		b	.L42
- 519              	.L30:
- 256:.\main.c      ****     } else {
- 257:.\main.c      ****         while(true) {  //child process continues forever blinking leds
- 258:.\main.c      ****             
- 259:.\main.c      ****             //if we're blinking, for this loop do a blink PWM cycle
- 260:.\main.c      ****             if (currentMode == blink){
- 520              		.loc 1 260 0
- 521 0020 494B     		ldr	r3, .L44+8
- 522 0022 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 523 0024 002B     		cmp	r3, #0
- 524 0026 0DD1     		bne	.L32
- 261:.\main.c      ****                 //sets toggle_light_time_ms to value proportional to pot.
- 262:.\main.c      ****                 toggle_light_time_ms = GetPotentiometerValue() / 4;      //min val=0, max val= 1sec
- 525              		.loc 1 262 0
- 526 0028 FFF7FEFF 		bl	GetPotentiometerValue
- 527 002c 0346     		mov	r3, r0
- 528 002e 9B08     		lsrs	r3, r3, #2
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccsWc8KH.s 			page 15
+ 491              		.cfi_def_cfa_register 13
+ 492              		@ sp needed
+ 493 0024 80BD     		pop	{r7, pc}
+ 494              		.cfi_endproc
+ 495              	.LFE68:
+ 496              		.size	PWM_Blink, .-PWM_Blink
+ 497 0026 00BF     		.section	.text.PWM_Ramp,"ax",%progbits
+ 498              		.align	2
+ 499              		.global	PWM_Ramp
+ 500              		.thumb
+ 501              		.thumb_func
+ 502              		.type	PWM_Ramp, %function
+ 503              	PWM_Ramp:
+ 504              	.LFB69:
+ 252:.\main.c      **** 
+ 253:.\main.c      **** //used for different duty cycle
+ 254:.\main.c      **** void PWM_Ramp(uint32 on_time, uint32 off_time) {
+ 505              		.loc 1 254 0
+ 506              		.cfi_startproc
+ 507              		@ args = 0, pretend = 0, frame = 8
+ 508              		@ frame_needed = 1, uses_anonymous_args = 0
+ 509 0000 80B5     		push	{r7, lr}
+ 510              		.cfi_def_cfa_offset 8
+ 511              		.cfi_offset 7, -8
+ 512              		.cfi_offset 14, -4
+ 513 0002 82B0     		sub	sp, sp, #8
+ 514              		.cfi_def_cfa_offset 16
+ 515 0004 00AF     		add	r7, sp, #0
+ 516              		.cfi_def_cfa_register 7
+ 517 0006 7860     		str	r0, [r7, #4]
+ 518 0008 3960     		str	r1, [r7]
+ 255:.\main.c      ****     write_led(on);
+ 519              		.loc 1 255 0
+ 520 000a 0120     		movs	r0, #1
+ 521 000c FFF7FEFF 		bl	write_led
+ 256:.\main.c      ****     CyDelay(on_time);
+ 522              		.loc 1 256 0
+ 523 0010 7868     		ldr	r0, [r7, #4]
+ 524 0012 FFF7FEFF 		bl	CyDelay
+ 257:.\main.c      ****     write_led(off);
+ 525              		.loc 1 257 0
+ 526 0016 0020     		movs	r0, #0
+ 527 0018 FFF7FEFF 		bl	write_led
+ 258:.\main.c      ****     CyDelay(off_time); 
+ 528              		.loc 1 258 0
+ 529 001c 3868     		ldr	r0, [r7]
+ 530 001e FFF7FEFF 		bl	CyDelay
+ 259:.\main.c      **** }
+ 531              		.loc 1 259 0
+ 532 0022 0837     		adds	r7, r7, #8
+ 533              		.cfi_def_cfa_offset 8
+ 534 0024 BD46     		mov	sp, r7
+ 535              		.cfi_def_cfa_register 13
+ 536              		@ sp needed
+ 537 0026 80BD     		pop	{r7, pc}
+ 538              		.cfi_endproc
+ 539              	.LFE69:
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZnvLT0.s 			page 15
 
 
- 529 0030 9BB2     		uxth	r3, r3
- 530 0032 1A46     		mov	r2, r3
- 531 0034 454B     		ldr	r3, .L44+12
- 532 0036 1A60     		str	r2, [r3]
- 263:.\main.c      ****                 PWM_Blink(toggle_light_time_ms);
- 533              		.loc 1 263 0
- 534 0038 444B     		ldr	r3, .L44+12
- 535 003a 1B68     		ldr	r3, [r3]
- 536 003c 1846     		mov	r0, r3
- 537 003e FFF7FEFF 		bl	PWM_Blink
- 538 0042 76E0     		b	.L33
- 539              	.L32:
- 264:.\main.c      ****             }
- 265:.\main.c      ****             else if (currentMode == ramp) {
- 540              		.loc 1 265 0
- 541 0044 404B     		ldr	r3, .L44+8
- 542 0046 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 543 0048 012B     		cmp	r3, #1
- 544 004a 72D1     		bne	.L33
- 266:.\main.c      ****                 //calculate current ramp duty_cycle
- 267:.\main.c      ****                 //PWM_Blink((float)toggle_light_time_ms / (float) 5);
- 268:.\main.c      ****                 
- 269:.\main.c      ****                 if (duty_cycle >= 1)    //we have reached full brightness, time to dim
- 545              		.loc 1 269 0
- 546 004c 404B     		ldr	r3, .L44+16
- 547 004e 1B68     		ldr	r3, [r3]	@ float
- 548 0050 1846     		mov	r0, r3
- 549 0052 4FF07E51 		mov	r1, #1065353216
- 550 0056 FFF7FEFF 		bl	__aeabi_fcmpge
- 551 005a 0346     		mov	r3, r0
- 552 005c 002B     		cmp	r3, #0
- 553 005e 03D0     		beq	.L43
- 270:.\main.c      ****                 {
- 271:.\main.c      ****                     dimming = true;
- 554              		.loc 1 271 0
- 555 0060 3C4B     		ldr	r3, .L44+20
- 556 0062 0122     		movs	r2, #1
- 557 0064 1A70     		strb	r2, [r3]
- 558 0066 0CE0     		b	.L36
- 559              	.L43:
- 272:.\main.c      ****                 } else if (duty_cycle <= 0) {
- 560              		.loc 1 272 0
- 561 0068 394B     		ldr	r3, .L44+16
- 562 006a 1B68     		ldr	r3, [r3]	@ float
- 563 006c 1846     		mov	r0, r3
- 564 006e 4FF00001 		mov	r1, #0
- 565 0072 FFF7FEFF 		bl	__aeabi_fcmple
- 566 0076 0346     		mov	r3, r0
- 567 0078 002B     		cmp	r3, #0
- 568 007a 02D0     		beq	.L36
- 273:.\main.c      ****                     dimming = false;
- 569              		.loc 1 273 0
- 570 007c 354B     		ldr	r3, .L44+20
- 571 007e 0022     		movs	r2, #0
- 572 0080 1A70     		strb	r2, [r3]
- 573              	.L36:
- 274:.\main.c      ****                 }
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccsWc8KH.s 			page 16
+ 540              		.size	PWM_Ramp, .-PWM_Ramp
+ 541              		.text
+ 542              	.Letext0:
+ 543              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\3.3\\psoc creator\\import\\gnu\\arm\\4.9.
+ 544              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\3.3\\psoc creator\\import\\gnu\\arm\\4.9.
+ 545              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 546              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 547              		.section	.debug_info,"",%progbits
+ 548              	.Ldebug_info0:
+ 549 0000 70020000 		.4byte	0x270
+ 550 0004 0400     		.2byte	0x4
+ 551 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 552 000a 04       		.byte	0x4
+ 553 000b 01       		.uleb128 0x1
+ 554 000c 47000000 		.4byte	.LASF42
+ 555 0010 01       		.byte	0x1
+ 556 0011 32010000 		.4byte	.LASF43
+ 557 0015 DD000000 		.4byte	.LASF44
+ 558 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 559 001d 00000000 		.4byte	0
+ 560 0021 00000000 		.4byte	.Ldebug_line0
+ 561 0025 02       		.uleb128 0x2
+ 562 0026 01       		.byte	0x1
+ 563 0027 06       		.byte	0x6
+ 564 0028 8B020000 		.4byte	.LASF0
+ 565 002c 02       		.uleb128 0x2
+ 566 002d 01       		.byte	0x1
+ 567 002e 08       		.byte	0x8
+ 568 002f 6C010000 		.4byte	.LASF1
+ 569 0033 02       		.uleb128 0x2
+ 570 0034 02       		.byte	0x2
+ 571 0035 05       		.byte	0x5
+ 572 0036 53020000 		.4byte	.LASF2
+ 573 003a 03       		.uleb128 0x3
+ 574 003b 7A010000 		.4byte	.LASF4
+ 575 003f 02       		.byte	0x2
+ 576 0040 2B       		.byte	0x2b
+ 577 0041 45000000 		.4byte	0x45
+ 578 0045 02       		.uleb128 0x2
+ 579 0046 02       		.byte	0x2
+ 580 0047 07       		.byte	0x7
+ 581 0048 97020000 		.4byte	.LASF3
+ 582 004c 03       		.uleb128 0x3
+ 583 004d 34000000 		.4byte	.LASF5
+ 584 0051 02       		.byte	0x2
+ 585 0052 3F       		.byte	0x3f
+ 586 0053 57000000 		.4byte	0x57
+ 587 0057 02       		.uleb128 0x2
+ 588 0058 04       		.byte	0x4
+ 589 0059 05       		.byte	0x5
+ 590 005a 3E000000 		.4byte	.LASF6
+ 591 005e 02       		.uleb128 0x2
+ 592 005f 04       		.byte	0x4
+ 593 0060 07       		.byte	0x7
+ 594 0061 3B010000 		.4byte	.LASF7
+ 595 0065 02       		.uleb128 0x2
+ 596 0066 08       		.byte	0x8
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZnvLT0.s 			page 16
 
 
- 275:.\main.c      ****                 
- 276:.\main.c      ****                 //if we're supposed to dim, lessen the duty cycle
- 277:.\main.c      ****                 if (dimming) {
- 574              		.loc 1 277 0
- 575 0082 344B     		ldr	r3, .L44+20
- 576 0084 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 577 0086 002B     		cmp	r3, #0
- 578 0088 17D0     		beq	.L38
- 278:.\main.c      ****                     duty_cycle -= 1.0 / (float) RAMP_RESOLUTION;   //duty cycle gets decremented by
- 579              		.loc 1 278 0
- 580 008a 314B     		ldr	r3, .L44+16
- 581 008c 1B68     		ldr	r3, [r3]	@ float
- 582 008e 1846     		mov	r0, r3
- 583 0090 FFF7FEFF 		bl	__aeabi_f2d
- 584 0094 0246     		mov	r2, r0
- 585 0096 0B46     		mov	r3, r1
- 586 0098 1046     		mov	r0, r2
- 587 009a 1946     		mov	r1, r3
- 588 009c 28A3     		adr	r3, .L44
- 589 009e D3E90023 		ldrd	r2, [r3]
- 590 00a2 FFF7FEFF 		bl	__aeabi_dsub
- 591 00a6 0246     		mov	r2, r0
- 592 00a8 0B46     		mov	r3, r1
- 593 00aa 1046     		mov	r0, r2
- 594 00ac 1946     		mov	r1, r3
- 595 00ae FFF7FEFF 		bl	__aeabi_d2f
- 596 00b2 0246     		mov	r2, r0
- 597 00b4 264B     		ldr	r3, .L44+16
- 598 00b6 1A60     		str	r2, [r3]	@ float
- 599 00b8 16E0     		b	.L39
- 600              	.L38:
- 279:.\main.c      ****                 } else {
- 280:.\main.c      ****                     duty_cycle +=  1.0 / (float) RAMP_RESOLUTION;   //duty cycle is incremented by 
- 601              		.loc 1 280 0
- 602 00ba 254B     		ldr	r3, .L44+16
- 603 00bc 1B68     		ldr	r3, [r3]	@ float
- 604 00be 1846     		mov	r0, r3
- 605 00c0 FFF7FEFF 		bl	__aeabi_f2d
- 606 00c4 0246     		mov	r2, r0
- 607 00c6 0B46     		mov	r3, r1
- 608 00c8 1046     		mov	r0, r2
- 609 00ca 1946     		mov	r1, r3
- 610 00cc 1CA3     		adr	r3, .L44
- 611 00ce D3E90023 		ldrd	r2, [r3]
- 612 00d2 FFF7FEFF 		bl	__aeabi_dadd
- 613 00d6 0246     		mov	r2, r0
- 614 00d8 0B46     		mov	r3, r1
- 615 00da 1046     		mov	r0, r2
- 616 00dc 1946     		mov	r1, r3
- 617 00de FFF7FEFF 		bl	__aeabi_d2f
- 618 00e2 0246     		mov	r2, r0
- 619 00e4 1A4B     		ldr	r3, .L44+16
- 620 00e6 1A60     		str	r2, [r3]	@ float
- 621              	.L39:
- 281:.\main.c      ****                 }
- 282:.\main.c      ****                 
- 283:.\main.c      ****                 total_time_ms = (1.0 / (float) HUMAN_EYE_FPS) * 1000;       //could be a constant i
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccsWc8KH.s 			page 17
+ 597 0067 05       		.byte	0x5
+ 598 0068 00000000 		.4byte	.LASF8
+ 599 006c 02       		.uleb128 0x2
+ 600 006d 08       		.byte	0x8
+ 601 006e 07       		.byte	0x7
+ 602 006f F2010000 		.4byte	.LASF9
+ 603 0073 04       		.uleb128 0x4
+ 604 0074 04       		.byte	0x4
+ 605 0075 05       		.byte	0x5
+ 606 0076 696E7400 		.ascii	"int\000"
+ 607 007a 02       		.uleb128 0x2
+ 608 007b 04       		.byte	0x4
+ 609 007c 07       		.byte	0x7
+ 610 007d D6010000 		.4byte	.LASF10
+ 611 0081 03       		.uleb128 0x3
+ 612 0082 68020000 		.4byte	.LASF11
+ 613 0086 03       		.byte	0x3
+ 614 0087 21       		.byte	0x21
+ 615 0088 3A000000 		.4byte	0x3a
+ 616 008c 03       		.uleb128 0x3
+ 617 008d 27020000 		.4byte	.LASF12
+ 618 0091 03       		.byte	0x3
+ 619 0092 2C       		.byte	0x2c
+ 620 0093 4C000000 		.4byte	0x4c
+ 621 0097 05       		.uleb128 0x5
+ 622 0098 BC010000 		.4byte	.LASF13
+ 623 009c 04       		.byte	0x4
+ 624 009d 9401     		.2byte	0x194
+ 625 009f 5E000000 		.4byte	0x5e
+ 626 00a3 02       		.uleb128 0x2
+ 627 00a4 04       		.byte	0x4
+ 628 00a5 04       		.byte	0x4
+ 629 00a6 17010000 		.4byte	.LASF14
+ 630 00aa 02       		.uleb128 0x2
+ 631 00ab 08       		.byte	0x8
+ 632 00ac 04       		.byte	0x4
+ 633 00ad 85010000 		.4byte	.LASF15
+ 634 00b1 02       		.uleb128 0x2
+ 635 00b2 01       		.byte	0x1
+ 636 00b3 08       		.byte	0x8
+ 637 00b4 4E020000 		.4byte	.LASF16
+ 638 00b8 02       		.uleb128 0x2
+ 639 00b9 04       		.byte	0x4
+ 640 00ba 07       		.byte	0x7
+ 641 00bb 2F020000 		.4byte	.LASF17
+ 642 00bf 06       		.uleb128 0x6
+ 643 00c0 10020000 		.4byte	.LASF45
+ 644 00c4 01       		.byte	0x1
+ 645 00c5 01       		.byte	0x1
+ 646 00c6 60       		.byte	0x60
+ 647 00c7 D8000000 		.4byte	0xd8
+ 648 00cb 07       		.uleb128 0x7
+ 649 00cc 59010000 		.4byte	.LASF18
+ 650 00d0 00       		.sleb128 0
+ 651 00d1 07       		.uleb128 0x7
+ 652 00d2 18020000 		.4byte	.LASF19
+ 653 00d6 01       		.sleb128 1
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZnvLT0.s 			page 17
 
 
- 622              		.loc 1 283 0
- 623 00e8 1B4B     		ldr	r3, .L44+24
- 624 00ea 1022     		movs	r2, #16
- 625 00ec 1A60     		str	r2, [r3]
- 284:.\main.c      ****                 on_time_ms = duty_cycle * total_time_ms;
- 626              		.loc 1 284 0
- 627 00ee 1A4B     		ldr	r3, .L44+24
- 628 00f0 1B68     		ldr	r3, [r3]
- 629 00f2 1846     		mov	r0, r3
- 630 00f4 FFF7FEFF 		bl	__aeabi_ui2f
- 631 00f8 0246     		mov	r2, r0
- 632 00fa 154B     		ldr	r3, .L44+16
- 633 00fc 1B68     		ldr	r3, [r3]	@ float
- 634 00fe 1046     		mov	r0, r2
- 635 0100 1946     		mov	r1, r3
- 636 0102 FFF7FEFF 		bl	__aeabi_fmul
- 637 0106 0346     		mov	r3, r0
- 638 0108 1846     		mov	r0, r3
- 639 010a FFF7FEFF 		bl	__aeabi_f2uiz
- 640 010e 0246     		mov	r2, r0
- 641 0110 124B     		ldr	r3, .L44+28
- 642 0112 1A60     		str	r2, [r3]
- 285:.\main.c      ****                 off_time_ms = total_time_ms - on_time_ms;
- 643              		.loc 1 285 0
- 644 0114 104B     		ldr	r3, .L44+24
- 645 0116 1A68     		ldr	r2, [r3]
- 646 0118 104B     		ldr	r3, .L44+28
- 647 011a 1B68     		ldr	r3, [r3]
- 648 011c D31A     		subs	r3, r2, r3
- 649 011e 104A     		ldr	r2, .L44+32
- 650 0120 1360     		str	r3, [r2]
- 286:.\main.c      ****                 
- 287:.\main.c      ****                 PWM_Ramp(on_time_ms, off_time_ms);
- 651              		.loc 1 287 0
- 652 0122 0E4B     		ldr	r3, .L44+28
- 653 0124 1A68     		ldr	r2, [r3]
- 654 0126 0E4B     		ldr	r3, .L44+32
- 655 0128 1B68     		ldr	r3, [r3]
- 656 012a 1046     		mov	r0, r2
- 657 012c 1946     		mov	r1, r3
- 658 012e FFF7FEFF 		bl	PWM_Ramp
- 659              	.L33:
- 288:.\main.c      ****                 
- 289:.\main.c      ****             }
- 290:.\main.c      ****         }
- 660              		.loc 1 290 0
- 661 0132 75E7     		b	.L30
- 662              	.L42:
- 291:.\main.c      ****     }
- 292:.\main.c      **** }
- 663              		.loc 1 292 0
- 664 0134 0837     		adds	r7, r7, #8
- 665              		.cfi_def_cfa_offset 8
- 666 0136 BD46     		mov	sp, r7
- 667              		.cfi_def_cfa_register 13
- 668              		@ sp needed
- 669 0138 80BD     		pop	{r7, pc}
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccsWc8KH.s 			page 18
+ 654 00d7 00       		.byte	0
+ 655 00d8 08       		.uleb128 0x8
+ 656 00d9 7F020000 		.4byte	.LASF20
+ 657 00dd 01       		.byte	0x1
+ 658 00de 6B       		.byte	0x6b
+ 659 00df 00000000 		.4byte	.LFB63
+ 660 00e3 2C000000 		.4byte	.LFE63-.LFB63
+ 661 00e7 01       		.uleb128 0x1
+ 662 00e8 9C       		.byte	0x9c
+ 663 00e9 09       		.uleb128 0x9
+ 664 00ea 97010000 		.4byte	.LASF21
+ 665 00ee 01       		.byte	0x1
+ 666 00ef 7E       		.byte	0x7e
+ 667 00f0 73000000 		.4byte	0x73
+ 668 00f4 00000000 		.4byte	.LFB64
+ 669 00f8 5C010000 		.4byte	.LFE64-.LFB64
+ 670 00fc 01       		.uleb128 0x1
+ 671 00fd 9C       		.byte	0x9c
+ 672 00fe 0A       		.uleb128 0xa
+ 673 00ff 8C010000 		.4byte	.LASF46
+ 674 0103 01       		.byte	0x1
+ 675 0104 D7       		.byte	0xd7
+ 676 0105 00000000 		.4byte	.LFB65
+ 677 0109 30000000 		.4byte	.LFE65-.LFB65
+ 678 010d 01       		.uleb128 0x1
+ 679 010e 9C       		.byte	0x9c
+ 680 010f 0B       		.uleb128 0xb
+ 681 0110 9C010000 		.4byte	.LASF22
+ 682 0114 01       		.byte	0x1
+ 683 0115 E2       		.byte	0xe2
+ 684 0116 81000000 		.4byte	0x81
+ 685 011a 00000000 		.4byte	.LFB66
+ 686 011e 22000000 		.4byte	.LFE66-.LFB66
+ 687 0122 01       		.uleb128 0x1
+ 688 0123 9C       		.byte	0x9c
+ 689 0124 37010000 		.4byte	0x137
+ 690 0128 0C       		.uleb128 0xc
+ 691 0129 09020000 		.4byte	.LASF47
+ 692 012d 01       		.byte	0x1
+ 693 012e E7       		.byte	0xe7
+ 694 012f 81000000 		.4byte	0x81
+ 695 0133 02       		.uleb128 0x2
+ 696 0134 91       		.byte	0x91
+ 697 0135 76       		.sleb128 -10
+ 698 0136 00       		.byte	0
+ 699 0137 0D       		.uleb128 0xd
+ 700 0138 B2010000 		.4byte	.LASF23
+ 701 013c 01       		.byte	0x1
+ 702 013d ED       		.byte	0xed
+ 703 013e 00000000 		.4byte	.LFB67
+ 704 0142 18000000 		.4byte	.LFE67-.LFB67
+ 705 0146 01       		.uleb128 0x1
+ 706 0147 9C       		.byte	0x9c
+ 707 0148 5B010000 		.4byte	0x15b
+ 708 014c 0E       		.uleb128 0xe
+ 709 014d 2E000000 		.4byte	.LASF25
+ 710 0151 01       		.byte	0x1
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZnvLT0.s 			page 18
 
 
- 670              	.L45:
- 671 013a 00BFAFF3 		.align	3
- 671      0080
- 672              	.L44:
- 673 0140 7B14AE47 		.word	1202590843
- 674 0144 E17A943F 		.word	1066695393
- 675 0148 00000000 		.word	currentMode
- 676 014c 00000000 		.word	toggle_light_time_ms
- 677 0150 00000000 		.word	duty_cycle
- 678 0154 00000000 		.word	dimming
- 679 0158 00000000 		.word	total_time_ms
- 680 015c 00000000 		.word	on_time_ms
- 681 0160 00000000 		.word	off_time_ms
- 682              		.cfi_endproc
- 683              	.LFE67:
- 684              		.size	Software_PWM_Start, .-Software_PWM_Start
- 685              		.section	.text.PWM_Blink,"ax",%progbits
- 686              		.align	2
- 687              		.global	PWM_Blink
- 688              		.thumb
- 689              		.thumb_func
- 690              		.type	PWM_Blink, %function
- 691              	PWM_Blink:
- 692              	.LFB68:
- 293:.\main.c      **** 
- 294:.\main.c      **** //shorthand to wait for timing
- 295:.\main.c      **** //evenly blinks LED with equal on/off times
- 296:.\main.c      **** void PWM_Blink(uint32 halfPeriod) {
- 693              		.loc 1 296 0
- 694              		.cfi_startproc
- 695              		@ args = 0, pretend = 0, frame = 8
- 696              		@ frame_needed = 1, uses_anonymous_args = 0
- 697 0000 80B5     		push	{r7, lr}
- 698              		.cfi_def_cfa_offset 8
- 699              		.cfi_offset 7, -8
- 700              		.cfi_offset 14, -4
- 701 0002 82B0     		sub	sp, sp, #8
- 702              		.cfi_def_cfa_offset 16
- 703 0004 00AF     		add	r7, sp, #0
- 704              		.cfi_def_cfa_register 7
- 705 0006 7860     		str	r0, [r7, #4]
- 297:.\main.c      ****     write_led(on);
- 706              		.loc 1 297 0
- 707 0008 0120     		movs	r0, #1
- 708 000a FFF7FEFF 		bl	write_led
- 298:.\main.c      ****     CyDelay(halfPeriod);
- 709              		.loc 1 298 0
- 710 000e 7868     		ldr	r0, [r7, #4]
- 711 0010 FFF7FEFF 		bl	CyDelay
- 299:.\main.c      ****     write_led(off);
- 712              		.loc 1 299 0
- 713 0014 0020     		movs	r0, #0
- 714 0016 FFF7FEFF 		bl	write_led
- 300:.\main.c      ****     CyDelay(halfPeriod); 
- 715              		.loc 1 300 0
- 716 001a 7868     		ldr	r0, [r7, #4]
- 717 001c FFF7FEFF 		bl	CyDelay
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccsWc8KH.s 			page 19
+ 711 0152 ED       		.byte	0xed
+ 712 0153 73000000 		.4byte	0x73
+ 713 0157 02       		.uleb128 0x2
+ 714 0158 91       		.byte	0x91
+ 715 0159 74       		.sleb128 -12
+ 716 015a 00       		.byte	0
+ 717 015b 0D       		.uleb128 0xd
+ 718 015c 1D020000 		.4byte	.LASF24
+ 719 0160 01       		.byte	0x1
+ 720 0161 F6       		.byte	0xf6
+ 721 0162 00000000 		.4byte	.LFB68
+ 722 0166 26000000 		.4byte	.LFE68-.LFB68
+ 723 016a 01       		.uleb128 0x1
+ 724 016b 9C       		.byte	0x9c
+ 725 016c 7F010000 		.4byte	0x17f
+ 726 0170 0E       		.uleb128 0xe
+ 727 0171 0E000000 		.4byte	.LASF26
+ 728 0175 01       		.byte	0x1
+ 729 0176 F6       		.byte	0xf6
+ 730 0177 97000000 		.4byte	0x97
+ 731 017b 02       		.uleb128 0x2
+ 732 017c 91       		.byte	0x91
+ 733 017d 74       		.sleb128 -12
+ 734 017e 00       		.byte	0
+ 735 017f 0D       		.uleb128 0xd
+ 736 0180 45020000 		.4byte	.LASF27
+ 737 0184 01       		.byte	0x1
+ 738 0185 FE       		.byte	0xfe
+ 739 0186 00000000 		.4byte	.LFB69
+ 740 018a 28000000 		.4byte	.LFE69-.LFB69
+ 741 018e 01       		.uleb128 0x1
+ 742 018f 9C       		.byte	0x9c
+ 743 0190 B1010000 		.4byte	0x1b1
+ 744 0194 0E       		.uleb128 0xe
+ 745 0195 C3010000 		.4byte	.LASF28
+ 746 0199 01       		.byte	0x1
+ 747 019a FE       		.byte	0xfe
+ 748 019b 97000000 		.4byte	0x97
+ 749 019f 02       		.uleb128 0x2
+ 750 01a0 91       		.byte	0x91
+ 751 01a1 74       		.sleb128 -12
+ 752 01a2 0E       		.uleb128 0xe
+ 753 01a3 29010000 		.4byte	.LASF29
+ 754 01a7 01       		.byte	0x1
+ 755 01a8 FE       		.byte	0xfe
+ 756 01a9 97000000 		.4byte	0x97
+ 757 01ad 02       		.uleb128 0x2
+ 758 01ae 91       		.byte	0x91
+ 759 01af 70       		.sleb128 -16
+ 760 01b0 00       		.byte	0
+ 761 01b1 0F       		.uleb128 0xf
+ 762 01b2 5F010000 		.4byte	.LASF30
+ 763 01b6 05       		.byte	0x5
+ 764 01b7 9606     		.2byte	0x696
+ 765 01b9 BD010000 		.4byte	0x1bd
+ 766 01bd 10       		.uleb128 0x10
+ 767 01be 8C000000 		.4byte	0x8c
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZnvLT0.s 			page 19
 
 
- 301:.\main.c      **** }
- 718              		.loc 1 301 0
- 719 0020 0837     		adds	r7, r7, #8
- 720              		.cfi_def_cfa_offset 8
- 721 0022 BD46     		mov	sp, r7
- 722              		.cfi_def_cfa_register 13
- 723              		@ sp needed
- 724 0024 80BD     		pop	{r7, pc}
- 725              		.cfi_endproc
- 726              	.LFE68:
- 727              		.size	PWM_Blink, .-PWM_Blink
- 728 0026 00BF     		.section	.text.PWM_Ramp,"ax",%progbits
- 729              		.align	2
- 730              		.global	PWM_Ramp
- 731              		.thumb
- 732              		.thumb_func
- 733              		.type	PWM_Ramp, %function
- 734              	PWM_Ramp:
- 735              	.LFB69:
- 302:.\main.c      **** 
- 303:.\main.c      **** //used for different duty cycle
- 304:.\main.c      **** void PWM_Ramp(uint32 on_time, uint32 off_time) {
- 736              		.loc 1 304 0
- 737              		.cfi_startproc
- 738              		@ args = 0, pretend = 0, frame = 8
- 739              		@ frame_needed = 1, uses_anonymous_args = 0
- 740 0000 80B5     		push	{r7, lr}
- 741              		.cfi_def_cfa_offset 8
- 742              		.cfi_offset 7, -8
- 743              		.cfi_offset 14, -4
- 744 0002 82B0     		sub	sp, sp, #8
- 745              		.cfi_def_cfa_offset 16
- 746 0004 00AF     		add	r7, sp, #0
- 747              		.cfi_def_cfa_register 7
- 748 0006 7860     		str	r0, [r7, #4]
- 749 0008 3960     		str	r1, [r7]
- 305:.\main.c      ****     write_led(on);
- 750              		.loc 1 305 0
- 751 000a 0120     		movs	r0, #1
- 752 000c FFF7FEFF 		bl	write_led
- 306:.\main.c      ****     CyDelay(on_time);
- 753              		.loc 1 306 0
- 754 0010 7868     		ldr	r0, [r7, #4]
- 755 0012 FFF7FEFF 		bl	CyDelay
- 307:.\main.c      ****     write_led(off);
- 756              		.loc 1 307 0
- 757 0016 0020     		movs	r0, #0
- 758 0018 FFF7FEFF 		bl	write_led
- 308:.\main.c      ****     CyDelay(off_time); 
- 759              		.loc 1 308 0
- 760 001c 3868     		ldr	r0, [r7]
- 761 001e FFF7FEFF 		bl	CyDelay
- 309:.\main.c      **** }
- 762              		.loc 1 309 0
- 763 0022 0837     		adds	r7, r7, #8
- 764              		.cfi_def_cfa_offset 8
- 765 0024 BD46     		mov	sp, r7
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccsWc8KH.s 			page 20
+ 768 01c2 11       		.uleb128 0x11
+ 769 01c3 4D010000 		.4byte	.LASF31
+ 770 01c7 01       		.byte	0x1
+ 771 01c8 52       		.byte	0x52
+ 772 01c9 D3010000 		.4byte	0x1d3
+ 773 01cd 05       		.uleb128 0x5
+ 774 01ce 03       		.byte	0x3
+ 775 01cf 00000000 		.4byte	debounce_on
+ 776 01d3 02       		.uleb128 0x2
+ 777 01d4 01       		.byte	0x1
+ 778 01d5 02       		.byte	0x2
+ 779 01d6 AA020000 		.4byte	.LASF32
+ 780 01da 11       		.uleb128 0x11
+ 781 01db E3010000 		.4byte	.LASF33
+ 782 01df 01       		.byte	0x1
+ 783 01e0 53       		.byte	0x53
+ 784 01e1 D3010000 		.4byte	0x1d3
+ 785 01e5 05       		.uleb128 0x5
+ 786 01e6 03       		.byte	0x3
+ 787 01e7 00000000 		.4byte	btn_can_change
+ 788 01eb 11       		.uleb128 0x11
+ 789 01ec D5000000 		.4byte	.LASF34
+ 790 01f0 01       		.byte	0x1
+ 791 01f1 54       		.byte	0x54
+ 792 01f2 D3010000 		.4byte	0x1d3
+ 793 01f6 05       		.uleb128 0x5
+ 794 01f7 03       		.byte	0x3
+ 795 01f8 00000000 		.4byte	dimming
+ 796 01fc 11       		.uleb128 0x11
+ 797 01fd 19000000 		.4byte	.LASF35
+ 798 0201 01       		.byte	0x1
+ 799 0202 55       		.byte	0x55
+ 800 0203 97000000 		.4byte	0x97
+ 801 0207 05       		.uleb128 0x5
+ 802 0208 03       		.byte	0x3
+ 803 0209 00000000 		.4byte	toggle_light_time_ms
+ 804 020d 11       		.uleb128 0x11
+ 805 020e 71020000 		.4byte	.LASF36
+ 806 0212 01       		.byte	0x1
+ 807 0213 59       		.byte	0x59
+ 808 0214 97000000 		.4byte	0x97
+ 809 0218 05       		.uleb128 0x5
+ 810 0219 03       		.byte	0x3
+ 811 021a 00000000 		.4byte	total_time_ms
+ 812 021e 11       		.uleb128 0x11
+ 813 021f 5D020000 		.4byte	.LASF37
+ 814 0223 01       		.byte	0x1
+ 815 0224 5A       		.byte	0x5a
+ 816 0225 97000000 		.4byte	0x97
+ 817 0229 05       		.uleb128 0x5
+ 818 022a 03       		.byte	0x3
+ 819 022b 00000000 		.4byte	on_time_ms
+ 820 022f 11       		.uleb128 0x11
+ 821 0230 1D010000 		.4byte	.LASF38
+ 822 0234 01       		.byte	0x1
+ 823 0235 5B       		.byte	0x5b
+ 824 0236 97000000 		.4byte	0x97
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZnvLT0.s 			page 20
 
 
- 766              		.cfi_def_cfa_register 13
- 767              		@ sp needed
- 768 0026 80BD     		pop	{r7, pc}
- 769              		.cfi_endproc
- 770              	.LFE69:
- 771              		.size	PWM_Ramp, .-PWM_Ramp
- 772              		.text
- 773              	.Letext0:
- 774              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\3.3\\psoc creator\\import\\gnu\\arm\\4.9.
- 775              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\3.3\\psoc creator\\import\\gnu\\arm\\4.9.
- 776              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
- 777              		.file 5 "c:\\program files (x86)\\cypress\\psoc creator\\3.3\\psoc creator\\import\\gnu\\arm\\4.9.
- 778              		.file 6 "Generated_Source\\PSoC5/core_cm3.h"
- 779              		.section	.debug_info,"",%progbits
- 780              	.Ldebug_info0:
- 781 0000 90020000 		.4byte	0x290
- 782 0004 0400     		.2byte	0x4
- 783 0006 00000000 		.4byte	.Ldebug_abbrev0
- 784 000a 04       		.byte	0x4
- 785 000b 01       		.uleb128 0x1
- 786 000c 47000000 		.4byte	.LASF44
- 787 0010 01       		.byte	0x1
- 788 0011 3F010000 		.4byte	.LASF45
- 789 0015 EA000000 		.4byte	.LASF46
- 790 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 791 001d 00000000 		.4byte	0
- 792 0021 00000000 		.4byte	.Ldebug_line0
- 793 0025 02       		.uleb128 0x2
- 794 0026 01       		.byte	0x1
- 795 0027 06       		.byte	0x6
- 796 0028 9C020000 		.4byte	.LASF0
- 797 002c 02       		.uleb128 0x2
- 798 002d 01       		.byte	0x1
- 799 002e 08       		.byte	0x8
- 800 002f 8C010000 		.4byte	.LASF1
- 801 0033 02       		.uleb128 0x2
- 802 0034 02       		.byte	0x2
- 803 0035 05       		.byte	0x5
- 804 0036 5E020000 		.4byte	.LASF2
- 805 003a 03       		.uleb128 0x3
- 806 003b 9A010000 		.4byte	.LASF4
- 807 003f 02       		.byte	0x2
- 808 0040 2B       		.byte	0x2b
- 809 0041 45000000 		.4byte	0x45
- 810 0045 02       		.uleb128 0x2
- 811 0046 02       		.byte	0x2
- 812 0047 07       		.byte	0x7
- 813 0048 A8020000 		.4byte	.LASF3
- 814 004c 03       		.uleb128 0x3
- 815 004d 34000000 		.4byte	.LASF5
- 816 0051 02       		.byte	0x2
- 817 0052 3F       		.byte	0x3f
- 818 0053 57000000 		.4byte	0x57
- 819 0057 02       		.uleb128 0x2
- 820 0058 04       		.byte	0x4
- 821 0059 05       		.byte	0x5
- 822 005a 3E000000 		.4byte	.LASF6
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccsWc8KH.s 			page 21
+ 825 023a 05       		.uleb128 0x5
+ 826 023b 03       		.byte	0x3
+ 827 023c 00000000 		.4byte	off_time_ms
+ 828 0240 11       		.uleb128 0x11
+ 829 0241 CB010000 		.4byte	.LASF39
+ 830 0245 01       		.byte	0x1
+ 831 0246 5C       		.byte	0x5c
+ 832 0247 A3000000 		.4byte	0xa3
+ 833 024b 05       		.uleb128 0x5
+ 834 024c 03       		.byte	0x3
+ 835 024d 00000000 		.4byte	duty_cycle
+ 836 0251 11       		.uleb128 0x11
+ 837 0252 B0020000 		.4byte	.LASF40
+ 838 0256 01       		.byte	0x1
+ 839 0257 61       		.byte	0x61
+ 840 0258 BF000000 		.4byte	0xbf
+ 841 025c 05       		.uleb128 0x5
+ 842 025d 03       		.byte	0x3
+ 843 025e 00000000 		.4byte	currentMode
+ 844 0262 11       		.uleb128 0x11
+ 845 0263 38020000 		.4byte	.LASF41
+ 846 0267 01       		.byte	0x1
+ 847 0268 62       		.byte	0x62
+ 848 0269 BF000000 		.4byte	0xbf
+ 849 026d 05       		.uleb128 0x5
+ 850 026e 03       		.byte	0x3
+ 851 026f 00000000 		.4byte	previousMode
+ 852 0273 00       		.byte	0
+ 853              		.section	.debug_abbrev,"",%progbits
+ 854              	.Ldebug_abbrev0:
+ 855 0000 01       		.uleb128 0x1
+ 856 0001 11       		.uleb128 0x11
+ 857 0002 01       		.byte	0x1
+ 858 0003 25       		.uleb128 0x25
+ 859 0004 0E       		.uleb128 0xe
+ 860 0005 13       		.uleb128 0x13
+ 861 0006 0B       		.uleb128 0xb
+ 862 0007 03       		.uleb128 0x3
+ 863 0008 0E       		.uleb128 0xe
+ 864 0009 1B       		.uleb128 0x1b
+ 865 000a 0E       		.uleb128 0xe
+ 866 000b 55       		.uleb128 0x55
+ 867 000c 17       		.uleb128 0x17
+ 868 000d 11       		.uleb128 0x11
+ 869 000e 01       		.uleb128 0x1
+ 870 000f 10       		.uleb128 0x10
+ 871 0010 17       		.uleb128 0x17
+ 872 0011 00       		.byte	0
+ 873 0012 00       		.byte	0
+ 874 0013 02       		.uleb128 0x2
+ 875 0014 24       		.uleb128 0x24
+ 876 0015 00       		.byte	0
+ 877 0016 0B       		.uleb128 0xb
+ 878 0017 0B       		.uleb128 0xb
+ 879 0018 3E       		.uleb128 0x3e
+ 880 0019 0B       		.uleb128 0xb
+ 881 001a 03       		.uleb128 0x3
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZnvLT0.s 			page 21
 
 
- 823 005e 02       		.uleb128 0x2
- 824 005f 04       		.byte	0x4
- 825 0060 07       		.byte	0x7
- 826 0061 48010000 		.4byte	.LASF7
- 827 0065 02       		.uleb128 0x2
- 828 0066 08       		.byte	0x8
- 829 0067 05       		.byte	0x5
- 830 0068 00000000 		.4byte	.LASF8
- 831 006c 02       		.uleb128 0x2
- 832 006d 08       		.byte	0x8
- 833 006e 07       		.byte	0x7
- 834 006f FD010000 		.4byte	.LASF9
- 835 0073 04       		.uleb128 0x4
- 836 0074 04       		.byte	0x4
- 837 0075 05       		.byte	0x5
- 838 0076 696E7400 		.ascii	"int\000"
- 839 007a 02       		.uleb128 0x2
- 840 007b 04       		.byte	0x4
- 841 007c 07       		.byte	0x7
- 842 007d F0010000 		.4byte	.LASF10
- 843 0081 03       		.uleb128 0x3
- 844 0082 73020000 		.4byte	.LASF11
- 845 0086 03       		.byte	0x3
- 846 0087 21       		.byte	0x21
- 847 0088 3A000000 		.4byte	0x3a
- 848 008c 03       		.uleb128 0x3
- 849 008d 32020000 		.4byte	.LASF12
- 850 0091 03       		.byte	0x3
- 851 0092 2C       		.byte	0x2c
- 852 0093 4C000000 		.4byte	0x4c
- 853 0097 05       		.uleb128 0x5
- 854 0098 D6010000 		.4byte	.LASF13
- 855 009c 04       		.byte	0x4
- 856 009d 9401     		.2byte	0x194
- 857 009f 5E000000 		.4byte	0x5e
- 858 00a3 02       		.uleb128 0x2
- 859 00a4 04       		.byte	0x4
- 860 00a5 04       		.byte	0x4
- 861 00a6 24010000 		.4byte	.LASF14
- 862 00aa 02       		.uleb128 0x2
- 863 00ab 08       		.byte	0x8
- 864 00ac 04       		.byte	0x4
- 865 00ad DD000000 		.4byte	.LASF15
- 866 00b1 02       		.uleb128 0x2
- 867 00b2 01       		.byte	0x1
- 868 00b3 08       		.byte	0x8
- 869 00b4 59020000 		.4byte	.LASF16
- 870 00b8 02       		.uleb128 0x2
- 871 00b9 04       		.byte	0x4
- 872 00ba 07       		.byte	0x7
- 873 00bb 3A020000 		.4byte	.LASF17
- 874 00bf 03       		.uleb128 0x3
- 875 00c0 E4000000 		.4byte	.LASF18
- 876 00c4 05       		.byte	0x5
- 877 00c5 C1       		.byte	0xc1
- 878 00c6 73000000 		.4byte	0x73
- 879 00ca 06       		.uleb128 0x6
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccsWc8KH.s 			page 22
+ 882 001b 0E       		.uleb128 0xe
+ 883 001c 00       		.byte	0
+ 884 001d 00       		.byte	0
+ 885 001e 03       		.uleb128 0x3
+ 886 001f 16       		.uleb128 0x16
+ 887 0020 00       		.byte	0
+ 888 0021 03       		.uleb128 0x3
+ 889 0022 0E       		.uleb128 0xe
+ 890 0023 3A       		.uleb128 0x3a
+ 891 0024 0B       		.uleb128 0xb
+ 892 0025 3B       		.uleb128 0x3b
+ 893 0026 0B       		.uleb128 0xb
+ 894 0027 49       		.uleb128 0x49
+ 895 0028 13       		.uleb128 0x13
+ 896 0029 00       		.byte	0
+ 897 002a 00       		.byte	0
+ 898 002b 04       		.uleb128 0x4
+ 899 002c 24       		.uleb128 0x24
+ 900 002d 00       		.byte	0
+ 901 002e 0B       		.uleb128 0xb
+ 902 002f 0B       		.uleb128 0xb
+ 903 0030 3E       		.uleb128 0x3e
+ 904 0031 0B       		.uleb128 0xb
+ 905 0032 03       		.uleb128 0x3
+ 906 0033 08       		.uleb128 0x8
+ 907 0034 00       		.byte	0
+ 908 0035 00       		.byte	0
+ 909 0036 05       		.uleb128 0x5
+ 910 0037 16       		.uleb128 0x16
+ 911 0038 00       		.byte	0
+ 912 0039 03       		.uleb128 0x3
+ 913 003a 0E       		.uleb128 0xe
+ 914 003b 3A       		.uleb128 0x3a
+ 915 003c 0B       		.uleb128 0xb
+ 916 003d 3B       		.uleb128 0x3b
+ 917 003e 05       		.uleb128 0x5
+ 918 003f 49       		.uleb128 0x49
+ 919 0040 13       		.uleb128 0x13
+ 920 0041 00       		.byte	0
+ 921 0042 00       		.byte	0
+ 922 0043 06       		.uleb128 0x6
+ 923 0044 04       		.uleb128 0x4
+ 924 0045 01       		.byte	0x1
+ 925 0046 03       		.uleb128 0x3
+ 926 0047 0E       		.uleb128 0xe
+ 927 0048 0B       		.uleb128 0xb
+ 928 0049 0B       		.uleb128 0xb
+ 929 004a 3A       		.uleb128 0x3a
+ 930 004b 0B       		.uleb128 0xb
+ 931 004c 3B       		.uleb128 0x3b
+ 932 004d 0B       		.uleb128 0xb
+ 933 004e 01       		.uleb128 0x1
+ 934 004f 13       		.uleb128 0x13
+ 935 0050 00       		.byte	0
+ 936 0051 00       		.byte	0
+ 937 0052 07       		.uleb128 0x7
+ 938 0053 28       		.uleb128 0x28
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZnvLT0.s 			page 22
 
 
- 880 00cb 1B020000 		.4byte	.LASF47
- 881 00cf 01       		.byte	0x1
- 882 00d0 01       		.byte	0x1
- 883 00d1 60       		.byte	0x60
- 884 00d2 E3000000 		.4byte	0xe3
- 885 00d6 07       		.uleb128 0x7
- 886 00d7 66010000 		.4byte	.LASF19
- 887 00db 00       		.sleb128 0
- 888 00dc 07       		.uleb128 0x7
- 889 00dd 23020000 		.4byte	.LASF20
- 890 00e1 01       		.sleb128 1
- 891 00e2 00       		.byte	0
- 892 00e3 08       		.uleb128 0x8
- 893 00e4 90020000 		.4byte	.LASF21
- 894 00e8 01       		.byte	0x1
- 895 00e9 6B       		.byte	0x6b
- 896 00ea 00000000 		.4byte	.LFB63
- 897 00ee 2C000000 		.4byte	.LFE63-.LFB63
- 898 00f2 01       		.uleb128 0x1
- 899 00f3 9C       		.byte	0x9c
- 900 00f4 09       		.uleb128 0x9
- 901 00f5 B1010000 		.4byte	.LASF22
- 902 00f9 01       		.byte	0x1
- 903 00fa 7E       		.byte	0x7e
- 904 00fb 73000000 		.4byte	0x73
- 905 00ff 00000000 		.4byte	.LFB64
- 906 0103 F4010000 		.4byte	.LFE64-.LFB64
- 907 0107 01       		.uleb128 0x1
- 908 0108 9C       		.byte	0x9c
- 909 0109 0A       		.uleb128 0xa
- 910 010a B6010000 		.4byte	.LASF23
- 911 010e 01       		.byte	0x1
- 912 010f E3       		.byte	0xe3
- 913 0110 81000000 		.4byte	0x81
- 914 0114 00000000 		.4byte	.LFB65
- 915 0118 22000000 		.4byte	.LFE65-.LFB65
- 916 011c 01       		.uleb128 0x1
- 917 011d 9C       		.byte	0x9c
- 918 011e 31010000 		.4byte	0x131
- 919 0122 0B       		.uleb128 0xb
- 920 0123 14020000 		.4byte	.LASF25
- 921 0127 01       		.byte	0x1
- 922 0128 E8       		.byte	0xe8
- 923 0129 81000000 		.4byte	0x81
- 924 012d 02       		.uleb128 0x2
- 925 012e 91       		.byte	0x91
- 926 012f 76       		.sleb128 -10
- 927 0130 00       		.byte	0
- 928 0131 0C       		.uleb128 0xc
- 929 0132 CC010000 		.4byte	.LASF24
- 930 0136 01       		.byte	0x1
- 931 0137 EE       		.byte	0xee
- 932 0138 00000000 		.4byte	.LFB66
- 933 013c 18000000 		.4byte	.LFE66-.LFB66
- 934 0140 01       		.uleb128 0x1
- 935 0141 9C       		.byte	0x9c
- 936 0142 55010000 		.4byte	0x155
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccsWc8KH.s 			page 23
+ 939 0054 00       		.byte	0
+ 940 0055 03       		.uleb128 0x3
+ 941 0056 0E       		.uleb128 0xe
+ 942 0057 1C       		.uleb128 0x1c
+ 943 0058 0D       		.uleb128 0xd
+ 944 0059 00       		.byte	0
+ 945 005a 00       		.byte	0
+ 946 005b 08       		.uleb128 0x8
+ 947 005c 2E       		.uleb128 0x2e
+ 948 005d 00       		.byte	0
+ 949 005e 3F       		.uleb128 0x3f
+ 950 005f 19       		.uleb128 0x19
+ 951 0060 03       		.uleb128 0x3
+ 952 0061 0E       		.uleb128 0xe
+ 953 0062 3A       		.uleb128 0x3a
+ 954 0063 0B       		.uleb128 0xb
+ 955 0064 3B       		.uleb128 0x3b
+ 956 0065 0B       		.uleb128 0xb
+ 957 0066 27       		.uleb128 0x27
+ 958 0067 19       		.uleb128 0x19
+ 959 0068 11       		.uleb128 0x11
+ 960 0069 01       		.uleb128 0x1
+ 961 006a 12       		.uleb128 0x12
+ 962 006b 06       		.uleb128 0x6
+ 963 006c 40       		.uleb128 0x40
+ 964 006d 18       		.uleb128 0x18
+ 965 006e 9642     		.uleb128 0x2116
+ 966 0070 19       		.uleb128 0x19
+ 967 0071 00       		.byte	0
+ 968 0072 00       		.byte	0
+ 969 0073 09       		.uleb128 0x9
+ 970 0074 2E       		.uleb128 0x2e
+ 971 0075 00       		.byte	0
+ 972 0076 3F       		.uleb128 0x3f
+ 973 0077 19       		.uleb128 0x19
+ 974 0078 03       		.uleb128 0x3
+ 975 0079 0E       		.uleb128 0xe
+ 976 007a 3A       		.uleb128 0x3a
+ 977 007b 0B       		.uleb128 0xb
+ 978 007c 3B       		.uleb128 0x3b
+ 979 007d 0B       		.uleb128 0xb
+ 980 007e 49       		.uleb128 0x49
+ 981 007f 13       		.uleb128 0x13
+ 982 0080 11       		.uleb128 0x11
+ 983 0081 01       		.uleb128 0x1
+ 984 0082 12       		.uleb128 0x12
+ 985 0083 06       		.uleb128 0x6
+ 986 0084 40       		.uleb128 0x40
+ 987 0085 18       		.uleb128 0x18
+ 988 0086 9642     		.uleb128 0x2116
+ 989 0088 19       		.uleb128 0x19
+ 990 0089 00       		.byte	0
+ 991 008a 00       		.byte	0
+ 992 008b 0A       		.uleb128 0xa
+ 993 008c 2E       		.uleb128 0x2e
+ 994 008d 00       		.byte	0
+ 995 008e 3F       		.uleb128 0x3f
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZnvLT0.s 			page 23
 
 
- 937 0146 0D       		.uleb128 0xd
- 938 0147 2E000000 		.4byte	.LASF28
- 939 014b 01       		.byte	0x1
- 940 014c EE       		.byte	0xee
- 941 014d 73000000 		.4byte	0x73
- 942 0151 02       		.uleb128 0x2
- 943 0152 91       		.byte	0x91
- 944 0153 74       		.sleb128 -12
- 945 0154 00       		.byte	0
- 946 0155 0E       		.uleb128 0xe
- 947 0156 79010000 		.4byte	.LASF48
- 948 015a 01       		.byte	0x1
- 949 015b F4       		.byte	0xf4
- 950 015c 00000000 		.4byte	.LFB67
- 951 0160 64010000 		.4byte	.LFE67-.LFB67
- 952 0164 01       		.uleb128 0x1
- 953 0165 9C       		.byte	0x9c
- 954 0166 87010000 		.4byte	0x187
- 955 016a 0F       		.uleb128 0xf
- 956 016b 70696400 		.ascii	"pid\000"
- 957 016f 01       		.byte	0x1
- 958 0170 F5       		.byte	0xf5
- 959 0171 BF000000 		.4byte	0xbf
- 960 0175 02       		.uleb128 0x2
- 961 0176 91       		.byte	0x91
- 962 0177 74       		.sleb128 -12
- 963 0178 0B       		.uleb128 0xb
- 964 0179 8A020000 		.4byte	.LASF26
- 965 017d 01       		.byte	0x1
- 966 017e F6       		.byte	0xf6
- 967 017f 73000000 		.4byte	0x73
- 968 0183 02       		.uleb128 0x2
- 969 0184 91       		.byte	0x91
- 970 0185 70       		.sleb128 -16
- 971 0186 00       		.byte	0
- 972 0187 10       		.uleb128 0x10
- 973 0188 28020000 		.4byte	.LASF27
- 974 018c 01       		.byte	0x1
- 975 018d 2801     		.2byte	0x128
- 976 018f 00000000 		.4byte	.LFB68
- 977 0193 26000000 		.4byte	.LFE68-.LFB68
- 978 0197 01       		.uleb128 0x1
- 979 0198 9C       		.byte	0x9c
- 980 0199 AD010000 		.4byte	0x1ad
- 981 019d 11       		.uleb128 0x11
- 982 019e 0E000000 		.4byte	.LASF29
- 983 01a2 01       		.byte	0x1
- 984 01a3 2801     		.2byte	0x128
- 985 01a5 97000000 		.4byte	0x97
- 986 01a9 02       		.uleb128 0x2
- 987 01aa 91       		.byte	0x91
- 988 01ab 74       		.sleb128 -12
- 989 01ac 00       		.byte	0
- 990 01ad 10       		.uleb128 0x10
- 991 01ae 50020000 		.4byte	.LASF30
- 992 01b2 01       		.byte	0x1
- 993 01b3 3001     		.2byte	0x130
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccsWc8KH.s 			page 24
+ 996 008f 19       		.uleb128 0x19
+ 997 0090 03       		.uleb128 0x3
+ 998 0091 0E       		.uleb128 0xe
+ 999 0092 3A       		.uleb128 0x3a
+ 1000 0093 0B       		.uleb128 0xb
+ 1001 0094 3B       		.uleb128 0x3b
+ 1002 0095 0B       		.uleb128 0xb
+ 1003 0096 11       		.uleb128 0x11
+ 1004 0097 01       		.uleb128 0x1
+ 1005 0098 12       		.uleb128 0x12
+ 1006 0099 06       		.uleb128 0x6
+ 1007 009a 40       		.uleb128 0x40
+ 1008 009b 18       		.uleb128 0x18
+ 1009 009c 9742     		.uleb128 0x2117
+ 1010 009e 19       		.uleb128 0x19
+ 1011 009f 00       		.byte	0
+ 1012 00a0 00       		.byte	0
+ 1013 00a1 0B       		.uleb128 0xb
+ 1014 00a2 2E       		.uleb128 0x2e
+ 1015 00a3 01       		.byte	0x1
+ 1016 00a4 3F       		.uleb128 0x3f
+ 1017 00a5 19       		.uleb128 0x19
+ 1018 00a6 03       		.uleb128 0x3
+ 1019 00a7 0E       		.uleb128 0xe
+ 1020 00a8 3A       		.uleb128 0x3a
+ 1021 00a9 0B       		.uleb128 0xb
+ 1022 00aa 3B       		.uleb128 0x3b
+ 1023 00ab 0B       		.uleb128 0xb
+ 1024 00ac 49       		.uleb128 0x49
+ 1025 00ad 13       		.uleb128 0x13
+ 1026 00ae 11       		.uleb128 0x11
+ 1027 00af 01       		.uleb128 0x1
+ 1028 00b0 12       		.uleb128 0x12
+ 1029 00b1 06       		.uleb128 0x6
+ 1030 00b2 40       		.uleb128 0x40
+ 1031 00b3 18       		.uleb128 0x18
+ 1032 00b4 9642     		.uleb128 0x2116
+ 1033 00b6 19       		.uleb128 0x19
+ 1034 00b7 01       		.uleb128 0x1
+ 1035 00b8 13       		.uleb128 0x13
+ 1036 00b9 00       		.byte	0
+ 1037 00ba 00       		.byte	0
+ 1038 00bb 0C       		.uleb128 0xc
+ 1039 00bc 34       		.uleb128 0x34
+ 1040 00bd 00       		.byte	0
+ 1041 00be 03       		.uleb128 0x3
+ 1042 00bf 0E       		.uleb128 0xe
+ 1043 00c0 3A       		.uleb128 0x3a
+ 1044 00c1 0B       		.uleb128 0xb
+ 1045 00c2 3B       		.uleb128 0x3b
+ 1046 00c3 0B       		.uleb128 0xb
+ 1047 00c4 49       		.uleb128 0x49
+ 1048 00c5 13       		.uleb128 0x13
+ 1049 00c6 02       		.uleb128 0x2
+ 1050 00c7 18       		.uleb128 0x18
+ 1051 00c8 00       		.byte	0
+ 1052 00c9 00       		.byte	0
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZnvLT0.s 			page 24
 
 
- 994 01b5 00000000 		.4byte	.LFB69
- 995 01b9 28000000 		.4byte	.LFE69-.LFB69
- 996 01bd 01       		.uleb128 0x1
- 997 01be 9C       		.byte	0x9c
- 998 01bf E2010000 		.4byte	0x1e2
- 999 01c3 11       		.uleb128 0x11
- 1000 01c4 DD010000 		.4byte	.LASF31
- 1001 01c8 01       		.byte	0x1
- 1002 01c9 3001     		.2byte	0x130
- 1003 01cb 97000000 		.4byte	0x97
- 1004 01cf 02       		.uleb128 0x2
- 1005 01d0 91       		.byte	0x91
- 1006 01d1 74       		.sleb128 -12
- 1007 01d2 11       		.uleb128 0x11
- 1008 01d3 36010000 		.4byte	.LASF32
- 1009 01d7 01       		.byte	0x1
- 1010 01d8 3001     		.2byte	0x130
- 1011 01da 97000000 		.4byte	0x97
- 1012 01de 02       		.uleb128 0x2
- 1013 01df 91       		.byte	0x91
- 1014 01e0 70       		.sleb128 -16
- 1015 01e1 00       		.byte	0
- 1016 01e2 12       		.uleb128 0x12
- 1017 01e3 6C010000 		.4byte	.LASF33
- 1018 01e7 06       		.byte	0x6
- 1019 01e8 9606     		.2byte	0x696
- 1020 01ea EE010000 		.4byte	0x1ee
- 1021 01ee 13       		.uleb128 0x13
- 1022 01ef 8C000000 		.4byte	0x8c
- 1023 01f3 14       		.uleb128 0x14
- 1024 01f4 5A010000 		.4byte	.LASF34
- 1025 01f8 01       		.byte	0x1
- 1026 01f9 52       		.byte	0x52
- 1027 01fa 04020000 		.4byte	0x204
- 1028 01fe 05       		.uleb128 0x5
- 1029 01ff 03       		.byte	0x3
- 1030 0200 00000000 		.4byte	debounce_on
- 1031 0204 02       		.uleb128 0x2
- 1032 0205 01       		.byte	0x1
- 1033 0206 02       		.byte	0x2
- 1034 0207 BB020000 		.4byte	.LASF35
- 1035 020b 14       		.uleb128 0x14
- 1036 020c D5000000 		.4byte	.LASF36
- 1037 0210 01       		.byte	0x1
- 1038 0211 54       		.byte	0x54
- 1039 0212 04020000 		.4byte	0x204
- 1040 0216 05       		.uleb128 0x5
- 1041 0217 03       		.byte	0x3
- 1042 0218 00000000 		.4byte	dimming
- 1043 021c 14       		.uleb128 0x14
- 1044 021d 19000000 		.4byte	.LASF37
- 1045 0221 01       		.byte	0x1
- 1046 0222 55       		.byte	0x55
- 1047 0223 97000000 		.4byte	0x97
- 1048 0227 05       		.uleb128 0x5
- 1049 0228 03       		.byte	0x3
- 1050 0229 00000000 		.4byte	toggle_light_time_ms
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccsWc8KH.s 			page 25
+ 1053 00ca 0D       		.uleb128 0xd
+ 1054 00cb 2E       		.uleb128 0x2e
+ 1055 00cc 01       		.byte	0x1
+ 1056 00cd 3F       		.uleb128 0x3f
+ 1057 00ce 19       		.uleb128 0x19
+ 1058 00cf 03       		.uleb128 0x3
+ 1059 00d0 0E       		.uleb128 0xe
+ 1060 00d1 3A       		.uleb128 0x3a
+ 1061 00d2 0B       		.uleb128 0xb
+ 1062 00d3 3B       		.uleb128 0x3b
+ 1063 00d4 0B       		.uleb128 0xb
+ 1064 00d5 27       		.uleb128 0x27
+ 1065 00d6 19       		.uleb128 0x19
+ 1066 00d7 11       		.uleb128 0x11
+ 1067 00d8 01       		.uleb128 0x1
+ 1068 00d9 12       		.uleb128 0x12
+ 1069 00da 06       		.uleb128 0x6
+ 1070 00db 40       		.uleb128 0x40
+ 1071 00dc 18       		.uleb128 0x18
+ 1072 00dd 9642     		.uleb128 0x2116
+ 1073 00df 19       		.uleb128 0x19
+ 1074 00e0 01       		.uleb128 0x1
+ 1075 00e1 13       		.uleb128 0x13
+ 1076 00e2 00       		.byte	0
+ 1077 00e3 00       		.byte	0
+ 1078 00e4 0E       		.uleb128 0xe
+ 1079 00e5 05       		.uleb128 0x5
+ 1080 00e6 00       		.byte	0
+ 1081 00e7 03       		.uleb128 0x3
+ 1082 00e8 0E       		.uleb128 0xe
+ 1083 00e9 3A       		.uleb128 0x3a
+ 1084 00ea 0B       		.uleb128 0xb
+ 1085 00eb 3B       		.uleb128 0x3b
+ 1086 00ec 0B       		.uleb128 0xb
+ 1087 00ed 49       		.uleb128 0x49
+ 1088 00ee 13       		.uleb128 0x13
+ 1089 00ef 02       		.uleb128 0x2
+ 1090 00f0 18       		.uleb128 0x18
+ 1091 00f1 00       		.byte	0
+ 1092 00f2 00       		.byte	0
+ 1093 00f3 0F       		.uleb128 0xf
+ 1094 00f4 34       		.uleb128 0x34
+ 1095 00f5 00       		.byte	0
+ 1096 00f6 03       		.uleb128 0x3
+ 1097 00f7 0E       		.uleb128 0xe
+ 1098 00f8 3A       		.uleb128 0x3a
+ 1099 00f9 0B       		.uleb128 0xb
+ 1100 00fa 3B       		.uleb128 0x3b
+ 1101 00fb 05       		.uleb128 0x5
+ 1102 00fc 49       		.uleb128 0x49
+ 1103 00fd 13       		.uleb128 0x13
+ 1104 00fe 3F       		.uleb128 0x3f
+ 1105 00ff 19       		.uleb128 0x19
+ 1106 0100 3C       		.uleb128 0x3c
+ 1107 0101 19       		.uleb128 0x19
+ 1108 0102 00       		.byte	0
+ 1109 0103 00       		.byte	0
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZnvLT0.s 			page 25
 
 
- 1051 022d 14       		.uleb128 0x14
- 1052 022e 7C020000 		.4byte	.LASF38
- 1053 0232 01       		.byte	0x1
- 1054 0233 59       		.byte	0x59
- 1055 0234 97000000 		.4byte	0x97
- 1056 0238 05       		.uleb128 0x5
- 1057 0239 03       		.byte	0x3
- 1058 023a 00000000 		.4byte	total_time_ms
- 1059 023e 14       		.uleb128 0x14
- 1060 023f 68020000 		.4byte	.LASF39
- 1061 0243 01       		.byte	0x1
- 1062 0244 5A       		.byte	0x5a
- 1063 0245 97000000 		.4byte	0x97
- 1064 0249 05       		.uleb128 0x5
- 1065 024a 03       		.byte	0x3
- 1066 024b 00000000 		.4byte	on_time_ms
- 1067 024f 14       		.uleb128 0x14
- 1068 0250 2A010000 		.4byte	.LASF40
- 1069 0254 01       		.byte	0x1
- 1070 0255 5B       		.byte	0x5b
- 1071 0256 97000000 		.4byte	0x97
- 1072 025a 05       		.uleb128 0x5
- 1073 025b 03       		.byte	0x3
- 1074 025c 00000000 		.4byte	off_time_ms
- 1075 0260 14       		.uleb128 0x14
- 1076 0261 E5010000 		.4byte	.LASF41
- 1077 0265 01       		.byte	0x1
- 1078 0266 5C       		.byte	0x5c
- 1079 0267 A3000000 		.4byte	0xa3
- 1080 026b 05       		.uleb128 0x5
- 1081 026c 03       		.byte	0x3
- 1082 026d 00000000 		.4byte	duty_cycle
- 1083 0271 14       		.uleb128 0x14
- 1084 0272 A5010000 		.4byte	.LASF42
- 1085 0276 01       		.byte	0x1
- 1086 0277 61       		.byte	0x61
- 1087 0278 CA000000 		.4byte	0xca
- 1088 027c 05       		.uleb128 0x5
- 1089 027d 03       		.byte	0x3
- 1090 027e 00000000 		.4byte	currentMode
- 1091 0282 14       		.uleb128 0x14
- 1092 0283 43020000 		.4byte	.LASF43
- 1093 0287 01       		.byte	0x1
- 1094 0288 62       		.byte	0x62
- 1095 0289 CA000000 		.4byte	0xca
- 1096 028d 05       		.uleb128 0x5
- 1097 028e 03       		.byte	0x3
- 1098 028f 00000000 		.4byte	previousMode
- 1099 0293 00       		.byte	0
- 1100              		.section	.debug_abbrev,"",%progbits
- 1101              	.Ldebug_abbrev0:
- 1102 0000 01       		.uleb128 0x1
- 1103 0001 11       		.uleb128 0x11
- 1104 0002 01       		.byte	0x1
- 1105 0003 25       		.uleb128 0x25
- 1106 0004 0E       		.uleb128 0xe
- 1107 0005 13       		.uleb128 0x13
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccsWc8KH.s 			page 26
+ 1110 0104 10       		.uleb128 0x10
+ 1111 0105 35       		.uleb128 0x35
+ 1112 0106 00       		.byte	0
+ 1113 0107 49       		.uleb128 0x49
+ 1114 0108 13       		.uleb128 0x13
+ 1115 0109 00       		.byte	0
+ 1116 010a 00       		.byte	0
+ 1117 010b 11       		.uleb128 0x11
+ 1118 010c 34       		.uleb128 0x34
+ 1119 010d 00       		.byte	0
+ 1120 010e 03       		.uleb128 0x3
+ 1121 010f 0E       		.uleb128 0xe
+ 1122 0110 3A       		.uleb128 0x3a
+ 1123 0111 0B       		.uleb128 0xb
+ 1124 0112 3B       		.uleb128 0x3b
+ 1125 0113 0B       		.uleb128 0xb
+ 1126 0114 49       		.uleb128 0x49
+ 1127 0115 13       		.uleb128 0x13
+ 1128 0116 3F       		.uleb128 0x3f
+ 1129 0117 19       		.uleb128 0x19
+ 1130 0118 02       		.uleb128 0x2
+ 1131 0119 18       		.uleb128 0x18
+ 1132 011a 00       		.byte	0
+ 1133 011b 00       		.byte	0
+ 1134 011c 00       		.byte	0
+ 1135              		.section	.debug_aranges,"",%progbits
+ 1136 0000 4C000000 		.4byte	0x4c
+ 1137 0004 0200     		.2byte	0x2
+ 1138 0006 00000000 		.4byte	.Ldebug_info0
+ 1139 000a 04       		.byte	0x4
+ 1140 000b 00       		.byte	0
+ 1141 000c 0000     		.2byte	0
+ 1142 000e 0000     		.2byte	0
+ 1143 0010 00000000 		.4byte	.LFB63
+ 1144 0014 2C000000 		.4byte	.LFE63-.LFB63
+ 1145 0018 00000000 		.4byte	.LFB64
+ 1146 001c 5C010000 		.4byte	.LFE64-.LFB64
+ 1147 0020 00000000 		.4byte	.LFB65
+ 1148 0024 30000000 		.4byte	.LFE65-.LFB65
+ 1149 0028 00000000 		.4byte	.LFB66
+ 1150 002c 22000000 		.4byte	.LFE66-.LFB66
+ 1151 0030 00000000 		.4byte	.LFB67
+ 1152 0034 18000000 		.4byte	.LFE67-.LFB67
+ 1153 0038 00000000 		.4byte	.LFB68
+ 1154 003c 26000000 		.4byte	.LFE68-.LFB68
+ 1155 0040 00000000 		.4byte	.LFB69
+ 1156 0044 28000000 		.4byte	.LFE69-.LFB69
+ 1157 0048 00000000 		.4byte	0
+ 1158 004c 00000000 		.4byte	0
+ 1159              		.section	.debug_ranges,"",%progbits
+ 1160              	.Ldebug_ranges0:
+ 1161 0000 00000000 		.4byte	.LFB63
+ 1162 0004 2C000000 		.4byte	.LFE63
+ 1163 0008 00000000 		.4byte	.LFB64
+ 1164 000c 5C010000 		.4byte	.LFE64
+ 1165 0010 00000000 		.4byte	.LFB65
+ 1166 0014 30000000 		.4byte	.LFE65
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZnvLT0.s 			page 26
 
 
- 1108 0006 0B       		.uleb128 0xb
- 1109 0007 03       		.uleb128 0x3
- 1110 0008 0E       		.uleb128 0xe
- 1111 0009 1B       		.uleb128 0x1b
- 1112 000a 0E       		.uleb128 0xe
- 1113 000b 55       		.uleb128 0x55
- 1114 000c 17       		.uleb128 0x17
- 1115 000d 11       		.uleb128 0x11
- 1116 000e 01       		.uleb128 0x1
- 1117 000f 10       		.uleb128 0x10
- 1118 0010 17       		.uleb128 0x17
- 1119 0011 00       		.byte	0
- 1120 0012 00       		.byte	0
- 1121 0013 02       		.uleb128 0x2
- 1122 0014 24       		.uleb128 0x24
- 1123 0015 00       		.byte	0
- 1124 0016 0B       		.uleb128 0xb
- 1125 0017 0B       		.uleb128 0xb
- 1126 0018 3E       		.uleb128 0x3e
- 1127 0019 0B       		.uleb128 0xb
- 1128 001a 03       		.uleb128 0x3
- 1129 001b 0E       		.uleb128 0xe
- 1130 001c 00       		.byte	0
- 1131 001d 00       		.byte	0
- 1132 001e 03       		.uleb128 0x3
- 1133 001f 16       		.uleb128 0x16
- 1134 0020 00       		.byte	0
- 1135 0021 03       		.uleb128 0x3
- 1136 0022 0E       		.uleb128 0xe
- 1137 0023 3A       		.uleb128 0x3a
- 1138 0024 0B       		.uleb128 0xb
- 1139 0025 3B       		.uleb128 0x3b
- 1140 0026 0B       		.uleb128 0xb
- 1141 0027 49       		.uleb128 0x49
- 1142 0028 13       		.uleb128 0x13
- 1143 0029 00       		.byte	0
- 1144 002a 00       		.byte	0
- 1145 002b 04       		.uleb128 0x4
- 1146 002c 24       		.uleb128 0x24
- 1147 002d 00       		.byte	0
- 1148 002e 0B       		.uleb128 0xb
- 1149 002f 0B       		.uleb128 0xb
- 1150 0030 3E       		.uleb128 0x3e
- 1151 0031 0B       		.uleb128 0xb
- 1152 0032 03       		.uleb128 0x3
- 1153 0033 08       		.uleb128 0x8
- 1154 0034 00       		.byte	0
- 1155 0035 00       		.byte	0
- 1156 0036 05       		.uleb128 0x5
- 1157 0037 16       		.uleb128 0x16
- 1158 0038 00       		.byte	0
- 1159 0039 03       		.uleb128 0x3
- 1160 003a 0E       		.uleb128 0xe
- 1161 003b 3A       		.uleb128 0x3a
- 1162 003c 0B       		.uleb128 0xb
- 1163 003d 3B       		.uleb128 0x3b
- 1164 003e 05       		.uleb128 0x5
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccsWc8KH.s 			page 27
+ 1167 0018 00000000 		.4byte	.LFB66
+ 1168 001c 22000000 		.4byte	.LFE66
+ 1169 0020 00000000 		.4byte	.LFB67
+ 1170 0024 18000000 		.4byte	.LFE67
+ 1171 0028 00000000 		.4byte	.LFB68
+ 1172 002c 26000000 		.4byte	.LFE68
+ 1173 0030 00000000 		.4byte	.LFB69
+ 1174 0034 28000000 		.4byte	.LFE69
+ 1175 0038 00000000 		.4byte	0
+ 1176 003c 00000000 		.4byte	0
+ 1177              		.section	.debug_line,"",%progbits
+ 1178              	.Ldebug_line0:
+ 1179 0000 F5010000 		.section	.debug_str,"MS",%progbits,1
+ 1179      02004901 
+ 1179      00000201 
+ 1179      FB0E0D00 
+ 1179      01010101 
+ 1180              	.LASF8:
+ 1181 0000 6C6F6E67 		.ascii	"long long int\000"
+ 1181      206C6F6E 
+ 1181      6720696E 
+ 1181      7400
+ 1182              	.LASF26:
+ 1183 000e 68616C66 		.ascii	"halfPeriod\000"
+ 1183      50657269 
+ 1183      6F6400
+ 1184              	.LASF35:
+ 1185 0019 746F6767 		.ascii	"toggle_light_time_ms\000"
+ 1185      6C655F6C 
+ 1185      69676874 
+ 1185      5F74696D 
+ 1185      655F6D73 
+ 1186              	.LASF25:
+ 1187 002e 76616C75 		.ascii	"value\000"
+ 1187      6500
+ 1188              	.LASF5:
+ 1189 0034 5F5F696E 		.ascii	"__int32_t\000"
+ 1189      7433325F 
+ 1189      7400
+ 1190              	.LASF6:
+ 1191 003e 6C6F6E67 		.ascii	"long int\000"
+ 1191      20696E74 
+ 1191      00
+ 1192              	.LASF42:
+ 1193 0047 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1193      4320342E 
+ 1193      392E3320 
+ 1193      32303135 
+ 1193      30333033 
+ 1194 007a 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 1194      20726576 
+ 1194      6973696F 
+ 1194      6E203232 
+ 1194      31323230 
+ 1195 00ad 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 1195      66756E63 
+ 1195      74696F6E 
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZnvLT0.s 			page 27
 
 
- 1165 003f 49       		.uleb128 0x49
- 1166 0040 13       		.uleb128 0x13
- 1167 0041 00       		.byte	0
- 1168 0042 00       		.byte	0
- 1169 0043 06       		.uleb128 0x6
- 1170 0044 04       		.uleb128 0x4
- 1171 0045 01       		.byte	0x1
- 1172 0046 03       		.uleb128 0x3
- 1173 0047 0E       		.uleb128 0xe
- 1174 0048 0B       		.uleb128 0xb
- 1175 0049 0B       		.uleb128 0xb
- 1176 004a 3A       		.uleb128 0x3a
- 1177 004b 0B       		.uleb128 0xb
- 1178 004c 3B       		.uleb128 0x3b
- 1179 004d 0B       		.uleb128 0xb
- 1180 004e 01       		.uleb128 0x1
- 1181 004f 13       		.uleb128 0x13
- 1182 0050 00       		.byte	0
- 1183 0051 00       		.byte	0
- 1184 0052 07       		.uleb128 0x7
- 1185 0053 28       		.uleb128 0x28
- 1186 0054 00       		.byte	0
- 1187 0055 03       		.uleb128 0x3
- 1188 0056 0E       		.uleb128 0xe
- 1189 0057 1C       		.uleb128 0x1c
- 1190 0058 0D       		.uleb128 0xd
- 1191 0059 00       		.byte	0
- 1192 005a 00       		.byte	0
- 1193 005b 08       		.uleb128 0x8
- 1194 005c 2E       		.uleb128 0x2e
- 1195 005d 00       		.byte	0
- 1196 005e 3F       		.uleb128 0x3f
- 1197 005f 19       		.uleb128 0x19
- 1198 0060 03       		.uleb128 0x3
- 1199 0061 0E       		.uleb128 0xe
- 1200 0062 3A       		.uleb128 0x3a
- 1201 0063 0B       		.uleb128 0xb
- 1202 0064 3B       		.uleb128 0x3b
- 1203 0065 0B       		.uleb128 0xb
- 1204 0066 27       		.uleb128 0x27
- 1205 0067 19       		.uleb128 0x19
- 1206 0068 11       		.uleb128 0x11
- 1207 0069 01       		.uleb128 0x1
- 1208 006a 12       		.uleb128 0x12
- 1209 006b 06       		.uleb128 0x6
- 1210 006c 40       		.uleb128 0x40
- 1211 006d 18       		.uleb128 0x18
- 1212 006e 9642     		.uleb128 0x2116
- 1213 0070 19       		.uleb128 0x19
- 1214 0071 00       		.byte	0
- 1215 0072 00       		.byte	0
- 1216 0073 09       		.uleb128 0x9
- 1217 0074 2E       		.uleb128 0x2e
- 1218 0075 00       		.byte	0
- 1219 0076 3F       		.uleb128 0x3f
- 1220 0077 19       		.uleb128 0x19
- 1221 0078 03       		.uleb128 0x3
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccsWc8KH.s 			page 28
+ 1195      2D736563 
+ 1195      74696F6E 
+ 1196              	.LASF34:
+ 1197 00d5 64696D6D 		.ascii	"dimming\000"
+ 1197      696E6700 
+ 1198              	.LASF44:
+ 1199 00dd 453A5C44 		.ascii	"E:\\Documents\\PSoC Creator\\engr478labs\\Lab2_Soft"
+ 1199      6F63756D 
+ 1199      656E7473 
+ 1199      5C50536F 
+ 1199      43204372 
+ 1200 010c 77617265 		.ascii	"ware.cydsn\000"
+ 1200      2E637964 
+ 1200      736E00
+ 1201              	.LASF14:
+ 1202 0117 666C6F61 		.ascii	"float\000"
+ 1202      7400
+ 1203              	.LASF38:
+ 1204 011d 6F66665F 		.ascii	"off_time_ms\000"
+ 1204      74696D65 
+ 1204      5F6D7300 
+ 1205              	.LASF29:
+ 1206 0129 6F66665F 		.ascii	"off_time\000"
+ 1206      74696D65 
+ 1206      00
+ 1207              	.LASF43:
+ 1208 0132 2E5C6D61 		.ascii	".\\main.c\000"
+ 1208      696E2E63 
+ 1208      00
+ 1209              	.LASF7:
+ 1210 013b 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1210      20756E73 
+ 1210      69676E65 
+ 1210      6420696E 
+ 1210      7400
+ 1211              	.LASF31:
+ 1212 014d 6465626F 		.ascii	"debounce_on\000"
+ 1212      756E6365 
+ 1212      5F6F6E00 
+ 1213              	.LASF18:
+ 1214 0159 626C696E 		.ascii	"blink\000"
+ 1214      6B00
+ 1215              	.LASF30:
+ 1216 015f 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1216      52784275 
+ 1216      66666572 
+ 1216      00
+ 1217              	.LASF1:
+ 1218 016c 756E7369 		.ascii	"unsigned char\000"
+ 1218      676E6564 
+ 1218      20636861 
+ 1218      7200
+ 1219              	.LASF4:
+ 1220 017a 5F5F7569 		.ascii	"__uint16_t\000"
+ 1220      6E743136 
+ 1220      5F7400
+ 1221              	.LASF15:
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZnvLT0.s 			page 28
 
 
- 1222 0079 0E       		.uleb128 0xe
- 1223 007a 3A       		.uleb128 0x3a
- 1224 007b 0B       		.uleb128 0xb
- 1225 007c 3B       		.uleb128 0x3b
- 1226 007d 0B       		.uleb128 0xb
- 1227 007e 49       		.uleb128 0x49
- 1228 007f 13       		.uleb128 0x13
- 1229 0080 11       		.uleb128 0x11
- 1230 0081 01       		.uleb128 0x1
- 1231 0082 12       		.uleb128 0x12
- 1232 0083 06       		.uleb128 0x6
- 1233 0084 40       		.uleb128 0x40
- 1234 0085 18       		.uleb128 0x18
- 1235 0086 9642     		.uleb128 0x2116
- 1236 0088 19       		.uleb128 0x19
- 1237 0089 00       		.byte	0
- 1238 008a 00       		.byte	0
- 1239 008b 0A       		.uleb128 0xa
- 1240 008c 2E       		.uleb128 0x2e
- 1241 008d 01       		.byte	0x1
- 1242 008e 3F       		.uleb128 0x3f
- 1243 008f 19       		.uleb128 0x19
- 1244 0090 03       		.uleb128 0x3
- 1245 0091 0E       		.uleb128 0xe
- 1246 0092 3A       		.uleb128 0x3a
- 1247 0093 0B       		.uleb128 0xb
- 1248 0094 3B       		.uleb128 0x3b
- 1249 0095 0B       		.uleb128 0xb
- 1250 0096 49       		.uleb128 0x49
- 1251 0097 13       		.uleb128 0x13
- 1252 0098 11       		.uleb128 0x11
- 1253 0099 01       		.uleb128 0x1
- 1254 009a 12       		.uleb128 0x12
- 1255 009b 06       		.uleb128 0x6
- 1256 009c 40       		.uleb128 0x40
- 1257 009d 18       		.uleb128 0x18
- 1258 009e 9642     		.uleb128 0x2116
- 1259 00a0 19       		.uleb128 0x19
- 1260 00a1 01       		.uleb128 0x1
- 1261 00a2 13       		.uleb128 0x13
- 1262 00a3 00       		.byte	0
- 1263 00a4 00       		.byte	0
- 1264 00a5 0B       		.uleb128 0xb
- 1265 00a6 34       		.uleb128 0x34
- 1266 00a7 00       		.byte	0
- 1267 00a8 03       		.uleb128 0x3
- 1268 00a9 0E       		.uleb128 0xe
- 1269 00aa 3A       		.uleb128 0x3a
- 1270 00ab 0B       		.uleb128 0xb
- 1271 00ac 3B       		.uleb128 0x3b
- 1272 00ad 0B       		.uleb128 0xb
- 1273 00ae 49       		.uleb128 0x49
- 1274 00af 13       		.uleb128 0x13
- 1275 00b0 02       		.uleb128 0x2
- 1276 00b1 18       		.uleb128 0x18
- 1277 00b2 00       		.byte	0
- 1278 00b3 00       		.byte	0
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccsWc8KH.s 			page 29
+ 1222 0185 646F7562 		.ascii	"double\000"
+ 1222      6C6500
+ 1223              	.LASF46:
+ 1224 018c 546F6767 		.ascii	"ToggleMode\000"
+ 1224      6C654D6F 
+ 1224      646500
+ 1225              	.LASF21:
+ 1226 0197 6D61696E 		.ascii	"main\000"
+ 1226      00
+ 1227              	.LASF22:
+ 1228 019c 47657450 		.ascii	"GetPotentiometerValue\000"
+ 1228      6F74656E 
+ 1228      74696F6D 
+ 1228      65746572 
+ 1228      56616C75 
+ 1229              	.LASF23:
+ 1230 01b2 77726974 		.ascii	"write_led\000"
+ 1230      655F6C65 
+ 1230      6400
+ 1231              	.LASF13:
+ 1232 01bc 75696E74 		.ascii	"uint32\000"
+ 1232      333200
+ 1233              	.LASF28:
+ 1234 01c3 6F6E5F74 		.ascii	"on_time\000"
+ 1234      696D6500 
+ 1235              	.LASF39:
+ 1236 01cb 64757479 		.ascii	"duty_cycle\000"
+ 1236      5F637963 
+ 1236      6C6500
+ 1237              	.LASF10:
+ 1238 01d6 756E7369 		.ascii	"unsigned int\000"
+ 1238      676E6564 
+ 1238      20696E74 
+ 1238      00
+ 1239              	.LASF33:
+ 1240 01e3 62746E5F 		.ascii	"btn_can_change\000"
+ 1240      63616E5F 
+ 1240      6368616E 
+ 1240      676500
+ 1241              	.LASF9:
+ 1242 01f2 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1242      206C6F6E 
+ 1242      6720756E 
+ 1242      7369676E 
+ 1242      65642069 
+ 1243              	.LASF47:
+ 1244 0209 72657375 		.ascii	"result\000"
+ 1244      6C7400
+ 1245              	.LASF45:
+ 1246 0210 70776D4D 		.ascii	"pwmMode\000"
+ 1246      6F646500 
+ 1247              	.LASF19:
+ 1248 0218 72616D70 		.ascii	"ramp\000"
+ 1248      00
+ 1249              	.LASF24:
+ 1250 021d 50574D5F 		.ascii	"PWM_Blink\000"
+ 1250      426C696E 
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZnvLT0.s 			page 29
 
 
- 1279 00b4 0C       		.uleb128 0xc
- 1280 00b5 2E       		.uleb128 0x2e
- 1281 00b6 01       		.byte	0x1
- 1282 00b7 3F       		.uleb128 0x3f
- 1283 00b8 19       		.uleb128 0x19
- 1284 00b9 03       		.uleb128 0x3
- 1285 00ba 0E       		.uleb128 0xe
- 1286 00bb 3A       		.uleb128 0x3a
- 1287 00bc 0B       		.uleb128 0xb
- 1288 00bd 3B       		.uleb128 0x3b
- 1289 00be 0B       		.uleb128 0xb
- 1290 00bf 27       		.uleb128 0x27
- 1291 00c0 19       		.uleb128 0x19
- 1292 00c1 11       		.uleb128 0x11
- 1293 00c2 01       		.uleb128 0x1
- 1294 00c3 12       		.uleb128 0x12
- 1295 00c4 06       		.uleb128 0x6
- 1296 00c5 40       		.uleb128 0x40
- 1297 00c6 18       		.uleb128 0x18
- 1298 00c7 9642     		.uleb128 0x2116
- 1299 00c9 19       		.uleb128 0x19
- 1300 00ca 01       		.uleb128 0x1
- 1301 00cb 13       		.uleb128 0x13
- 1302 00cc 00       		.byte	0
- 1303 00cd 00       		.byte	0
- 1304 00ce 0D       		.uleb128 0xd
- 1305 00cf 05       		.uleb128 0x5
- 1306 00d0 00       		.byte	0
- 1307 00d1 03       		.uleb128 0x3
- 1308 00d2 0E       		.uleb128 0xe
- 1309 00d3 3A       		.uleb128 0x3a
- 1310 00d4 0B       		.uleb128 0xb
- 1311 00d5 3B       		.uleb128 0x3b
- 1312 00d6 0B       		.uleb128 0xb
- 1313 00d7 49       		.uleb128 0x49
- 1314 00d8 13       		.uleb128 0x13
- 1315 00d9 02       		.uleb128 0x2
- 1316 00da 18       		.uleb128 0x18
- 1317 00db 00       		.byte	0
- 1318 00dc 00       		.byte	0
- 1319 00dd 0E       		.uleb128 0xe
- 1320 00de 2E       		.uleb128 0x2e
- 1321 00df 01       		.byte	0x1
- 1322 00e0 3F       		.uleb128 0x3f
- 1323 00e1 19       		.uleb128 0x19
- 1324 00e2 03       		.uleb128 0x3
- 1325 00e3 0E       		.uleb128 0xe
- 1326 00e4 3A       		.uleb128 0x3a
- 1327 00e5 0B       		.uleb128 0xb
- 1328 00e6 3B       		.uleb128 0x3b
- 1329 00e7 0B       		.uleb128 0xb
- 1330 00e8 11       		.uleb128 0x11
- 1331 00e9 01       		.uleb128 0x1
- 1332 00ea 12       		.uleb128 0x12
- 1333 00eb 06       		.uleb128 0x6
- 1334 00ec 40       		.uleb128 0x40
- 1335 00ed 18       		.uleb128 0x18
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccsWc8KH.s 			page 30
+ 1250      6B00
+ 1251              	.LASF12:
+ 1252 0227 696E7433 		.ascii	"int32_t\000"
+ 1252      325F7400 
+ 1253              	.LASF17:
+ 1254 022f 73697A65 		.ascii	"sizetype\000"
+ 1254      74797065 
+ 1254      00
+ 1255              	.LASF41:
+ 1256 0238 70726576 		.ascii	"previousMode\000"
+ 1256      696F7573 
+ 1256      4D6F6465 
+ 1256      00
+ 1257              	.LASF27:
+ 1258 0245 50574D5F 		.ascii	"PWM_Ramp\000"
+ 1258      52616D70 
+ 1258      00
+ 1259              	.LASF16:
+ 1260 024e 63686172 		.ascii	"char\000"
+ 1260      00
+ 1261              	.LASF2:
+ 1262 0253 73686F72 		.ascii	"short int\000"
+ 1262      7420696E 
+ 1262      7400
+ 1263              	.LASF37:
+ 1264 025d 6F6E5F74 		.ascii	"on_time_ms\000"
+ 1264      696D655F 
+ 1264      6D7300
+ 1265              	.LASF11:
+ 1266 0268 75696E74 		.ascii	"uint16_t\000"
+ 1266      31365F74 
+ 1266      00
+ 1267              	.LASF36:
+ 1268 0271 746F7461 		.ascii	"total_time_ms\000"
+ 1268      6C5F7469 
+ 1268      6D655F6D 
+ 1268      7300
+ 1269              	.LASF20:
+ 1270 027f 546F6767 		.ascii	"ToggleModes\000"
+ 1270      6C654D6F 
+ 1270      64657300 
+ 1271              	.LASF0:
+ 1272 028b 7369676E 		.ascii	"signed char\000"
+ 1272      65642063 
+ 1272      68617200 
+ 1273              	.LASF3:
+ 1274 0297 73686F72 		.ascii	"short unsigned int\000"
+ 1274      7420756E 
+ 1274      7369676E 
+ 1274      65642069 
+ 1274      6E7400
+ 1275              	.LASF32:
+ 1276 02aa 5F426F6F 		.ascii	"_Bool\000"
+ 1276      6C00
+ 1277              	.LASF40:
+ 1278 02b0 63757272 		.ascii	"currentMode\000"
+ 1278      656E744D 
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccZnvLT0.s 			page 30
 
 
- 1336 00ee 9642     		.uleb128 0x2116
- 1337 00f0 19       		.uleb128 0x19
- 1338 00f1 01       		.uleb128 0x1
- 1339 00f2 13       		.uleb128 0x13
- 1340 00f3 00       		.byte	0
- 1341 00f4 00       		.byte	0
- 1342 00f5 0F       		.uleb128 0xf
- 1343 00f6 34       		.uleb128 0x34
- 1344 00f7 00       		.byte	0
- 1345 00f8 03       		.uleb128 0x3
- 1346 00f9 08       		.uleb128 0x8
- 1347 00fa 3A       		.uleb128 0x3a
- 1348 00fb 0B       		.uleb128 0xb
- 1349 00fc 3B       		.uleb128 0x3b
- 1350 00fd 0B       		.uleb128 0xb
- 1351 00fe 49       		.uleb128 0x49
- 1352 00ff 13       		.uleb128 0x13
- 1353 0100 02       		.uleb128 0x2
- 1354 0101 18       		.uleb128 0x18
- 1355 0102 00       		.byte	0
- 1356 0103 00       		.byte	0
- 1357 0104 10       		.uleb128 0x10
- 1358 0105 2E       		.uleb128 0x2e
- 1359 0106 01       		.byte	0x1
- 1360 0107 3F       		.uleb128 0x3f
- 1361 0108 19       		.uleb128 0x19
- 1362 0109 03       		.uleb128 0x3
- 1363 010a 0E       		.uleb128 0xe
- 1364 010b 3A       		.uleb128 0x3a
- 1365 010c 0B       		.uleb128 0xb
- 1366 010d 3B       		.uleb128 0x3b
- 1367 010e 05       		.uleb128 0x5
- 1368 010f 27       		.uleb128 0x27
- 1369 0110 19       		.uleb128 0x19
- 1370 0111 11       		.uleb128 0x11
- 1371 0112 01       		.uleb128 0x1
- 1372 0113 12       		.uleb128 0x12
- 1373 0114 06       		.uleb128 0x6
- 1374 0115 40       		.uleb128 0x40
- 1375 0116 18       		.uleb128 0x18
- 1376 0117 9642     		.uleb128 0x2116
- 1377 0119 19       		.uleb128 0x19
- 1378 011a 01       		.uleb128 0x1
- 1379 011b 13       		.uleb128 0x13
- 1380 011c 00       		.byte	0
- 1381 011d 00       		.byte	0
- 1382 011e 11       		.uleb128 0x11
- 1383 011f 05       		.uleb128 0x5
- 1384 0120 00       		.byte	0
- 1385 0121 03       		.uleb128 0x3
- 1386 0122 0E       		.uleb128 0xe
- 1387 0123 3A       		.uleb128 0x3a
- 1388 0124 0B       		.uleb128 0xb
- 1389 0125 3B       		.uleb128 0x3b
- 1390 0126 05       		.uleb128 0x5
- 1391 0127 49       		.uleb128 0x49
- 1392 0128 13       		.uleb128 0x13
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccsWc8KH.s 			page 31
-
-
- 1393 0129 02       		.uleb128 0x2
- 1394 012a 18       		.uleb128 0x18
- 1395 012b 00       		.byte	0
- 1396 012c 00       		.byte	0
- 1397 012d 12       		.uleb128 0x12
- 1398 012e 34       		.uleb128 0x34
- 1399 012f 00       		.byte	0
- 1400 0130 03       		.uleb128 0x3
- 1401 0131 0E       		.uleb128 0xe
- 1402 0132 3A       		.uleb128 0x3a
- 1403 0133 0B       		.uleb128 0xb
- 1404 0134 3B       		.uleb128 0x3b
- 1405 0135 05       		.uleb128 0x5
- 1406 0136 49       		.uleb128 0x49
- 1407 0137 13       		.uleb128 0x13
- 1408 0138 3F       		.uleb128 0x3f
- 1409 0139 19       		.uleb128 0x19
- 1410 013a 3C       		.uleb128 0x3c
- 1411 013b 19       		.uleb128 0x19
- 1412 013c 00       		.byte	0
- 1413 013d 00       		.byte	0
- 1414 013e 13       		.uleb128 0x13
- 1415 013f 35       		.uleb128 0x35
- 1416 0140 00       		.byte	0
- 1417 0141 49       		.uleb128 0x49
- 1418 0142 13       		.uleb128 0x13
- 1419 0143 00       		.byte	0
- 1420 0144 00       		.byte	0
- 1421 0145 14       		.uleb128 0x14
- 1422 0146 34       		.uleb128 0x34
- 1423 0147 00       		.byte	0
- 1424 0148 03       		.uleb128 0x3
- 1425 0149 0E       		.uleb128 0xe
- 1426 014a 3A       		.uleb128 0x3a
- 1427 014b 0B       		.uleb128 0xb
- 1428 014c 3B       		.uleb128 0x3b
- 1429 014d 0B       		.uleb128 0xb
- 1430 014e 49       		.uleb128 0x49
- 1431 014f 13       		.uleb128 0x13
- 1432 0150 3F       		.uleb128 0x3f
- 1433 0151 19       		.uleb128 0x19
- 1434 0152 02       		.uleb128 0x2
- 1435 0153 18       		.uleb128 0x18
- 1436 0154 00       		.byte	0
- 1437 0155 00       		.byte	0
- 1438 0156 00       		.byte	0
- 1439              		.section	.debug_aranges,"",%progbits
- 1440 0000 4C000000 		.4byte	0x4c
- 1441 0004 0200     		.2byte	0x2
- 1442 0006 00000000 		.4byte	.Ldebug_info0
- 1443 000a 04       		.byte	0x4
- 1444 000b 00       		.byte	0
- 1445 000c 0000     		.2byte	0
- 1446 000e 0000     		.2byte	0
- 1447 0010 00000000 		.4byte	.LFB63
- 1448 0014 2C000000 		.4byte	.LFE63-.LFB63
- 1449 0018 00000000 		.4byte	.LFB64
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccsWc8KH.s 			page 32
-
-
- 1450 001c F4010000 		.4byte	.LFE64-.LFB64
- 1451 0020 00000000 		.4byte	.LFB65
- 1452 0024 22000000 		.4byte	.LFE65-.LFB65
- 1453 0028 00000000 		.4byte	.LFB66
- 1454 002c 18000000 		.4byte	.LFE66-.LFB66
- 1455 0030 00000000 		.4byte	.LFB67
- 1456 0034 64010000 		.4byte	.LFE67-.LFB67
- 1457 0038 00000000 		.4byte	.LFB68
- 1458 003c 26000000 		.4byte	.LFE68-.LFB68
- 1459 0040 00000000 		.4byte	.LFB69
- 1460 0044 28000000 		.4byte	.LFE69-.LFB69
- 1461 0048 00000000 		.4byte	0
- 1462 004c 00000000 		.4byte	0
- 1463              		.section	.debug_ranges,"",%progbits
- 1464              	.Ldebug_ranges0:
- 1465 0000 00000000 		.4byte	.LFB63
- 1466 0004 2C000000 		.4byte	.LFE63
- 1467 0008 00000000 		.4byte	.LFB64
- 1468 000c F4010000 		.4byte	.LFE64
- 1469 0010 00000000 		.4byte	.LFB65
- 1470 0014 22000000 		.4byte	.LFE65
- 1471 0018 00000000 		.4byte	.LFB66
- 1472 001c 18000000 		.4byte	.LFE66
- 1473 0020 00000000 		.4byte	.LFB67
- 1474 0024 64010000 		.4byte	.LFE67
- 1475 0028 00000000 		.4byte	.LFB68
- 1476 002c 26000000 		.4byte	.LFE68
- 1477 0030 00000000 		.4byte	.LFB69
- 1478 0034 28000000 		.4byte	.LFE69
- 1479 0038 00000000 		.4byte	0
- 1480 003c 00000000 		.4byte	0
- 1481              		.section	.debug_line,"",%progbits
- 1482              	.Ldebug_line0:
- 1483 0000 98020000 		.section	.debug_str,"MS",%progbits,1
- 1483      0200C001 
- 1483      00000201 
- 1483      FB0E0D00 
- 1483      01010101 
- 1484              	.LASF8:
- 1485 0000 6C6F6E67 		.ascii	"long long int\000"
- 1485      206C6F6E 
- 1485      6720696E 
- 1485      7400
- 1486              	.LASF29:
- 1487 000e 68616C66 		.ascii	"halfPeriod\000"
- 1487      50657269 
- 1487      6F6400
- 1488              	.LASF37:
- 1489 0019 746F6767 		.ascii	"toggle_light_time_ms\000"
- 1489      6C655F6C 
- 1489      69676874 
- 1489      5F74696D 
- 1489      655F6D73 
- 1490              	.LASF28:
- 1491 002e 76616C75 		.ascii	"value\000"
- 1491      6500
- 1492              	.LASF5:
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccsWc8KH.s 			page 33
-
-
- 1493 0034 5F5F696E 		.ascii	"__int32_t\000"
- 1493      7433325F 
- 1493      7400
- 1494              	.LASF6:
- 1495 003e 6C6F6E67 		.ascii	"long int\000"
- 1495      20696E74 
- 1495      00
- 1496              	.LASF44:
- 1497 0047 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
- 1497      4320342E 
- 1497      392E3320 
- 1497      32303135 
- 1497      30333033 
- 1498 007a 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
- 1498      20726576 
- 1498      6973696F 
- 1498      6E203232 
- 1498      31323230 
- 1499 00ad 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
- 1499      66756E63 
- 1499      74696F6E 
- 1499      2D736563 
- 1499      74696F6E 
- 1500              	.LASF36:
- 1501 00d5 64696D6D 		.ascii	"dimming\000"
- 1501      696E6700 
- 1502              	.LASF15:
- 1503 00dd 646F7562 		.ascii	"double\000"
- 1503      6C6500
- 1504              	.LASF18:
- 1505 00e4 7069645F 		.ascii	"pid_t\000"
- 1505      7400
- 1506              	.LASF46:
- 1507 00ea 453A5C44 		.ascii	"E:\\Documents\\PSoC Creator\\engr478labs\\Lab2_Soft"
- 1507      6F63756D 
- 1507      656E7473 
- 1507      5C50536F 
- 1507      43204372 
- 1508 0119 77617265 		.ascii	"ware.cydsn\000"
- 1508      2E637964 
- 1508      736E00
- 1509              	.LASF14:
- 1510 0124 666C6F61 		.ascii	"float\000"
- 1510      7400
- 1511              	.LASF40:
- 1512 012a 6F66665F 		.ascii	"off_time_ms\000"
- 1512      74696D65 
- 1512      5F6D7300 
- 1513              	.LASF32:
- 1514 0136 6F66665F 		.ascii	"off_time\000"
- 1514      74696D65 
- 1514      00
- 1515              	.LASF45:
- 1516 013f 2E5C6D61 		.ascii	".\\main.c\000"
- 1516      696E2E63 
- 1516      00
- 1517              	.LASF7:
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccsWc8KH.s 			page 34
-
-
- 1518 0148 6C6F6E67 		.ascii	"long unsigned int\000"
- 1518      20756E73 
- 1518      69676E65 
- 1518      6420696E 
- 1518      7400
- 1519              	.LASF34:
- 1520 015a 6465626F 		.ascii	"debounce_on\000"
- 1520      756E6365 
- 1520      5F6F6E00 
- 1521              	.LASF19:
- 1522 0166 626C696E 		.ascii	"blink\000"
- 1522      6B00
- 1523              	.LASF33:
- 1524 016c 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 1524      52784275 
- 1524      66666572 
- 1524      00
- 1525              	.LASF48:
- 1526 0179 536F6674 		.ascii	"Software_PWM_Start\000"
- 1526      77617265 
- 1526      5F50574D 
- 1526      5F537461 
- 1526      727400
- 1527              	.LASF1:
- 1528 018c 756E7369 		.ascii	"unsigned char\000"
- 1528      676E6564 
- 1528      20636861 
- 1528      7200
- 1529              	.LASF4:
- 1530 019a 5F5F7569 		.ascii	"__uint16_t\000"
- 1530      6E743136 
- 1530      5F7400
- 1531              	.LASF42:
- 1532 01a5 63757272 		.ascii	"currentMode\000"
- 1532      656E744D 
- 1532      6F646500 
- 1533              	.LASF22:
- 1534 01b1 6D61696E 		.ascii	"main\000"
- 1534      00
- 1535              	.LASF23:
- 1536 01b6 47657450 		.ascii	"GetPotentiometerValue\000"
- 1536      6F74656E 
- 1536      74696F6D 
- 1536      65746572 
- 1536      56616C75 
- 1537              	.LASF24:
- 1538 01cc 77726974 		.ascii	"write_led\000"
- 1538      655F6C65 
- 1538      6400
- 1539              	.LASF13:
- 1540 01d6 75696E74 		.ascii	"uint32\000"
- 1540      333200
- 1541              	.LASF31:
- 1542 01dd 6F6E5F74 		.ascii	"on_time\000"
- 1542      696D6500 
- 1543              	.LASF41:
- 1544 01e5 64757479 		.ascii	"duty_cycle\000"
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccsWc8KH.s 			page 35
-
-
- 1544      5F637963 
- 1544      6C6500
- 1545              	.LASF10:
- 1546 01f0 756E7369 		.ascii	"unsigned int\000"
- 1546      676E6564 
- 1546      20696E74 
- 1546      00
- 1547              	.LASF9:
- 1548 01fd 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1548      206C6F6E 
- 1548      6720756E 
- 1548      7369676E 
- 1548      65642069 
- 1549              	.LASF25:
- 1550 0214 72657375 		.ascii	"result\000"
- 1550      6C7400
- 1551              	.LASF47:
- 1552 021b 70776D4D 		.ascii	"pwmMode\000"
- 1552      6F646500 
- 1553              	.LASF20:
- 1554 0223 72616D70 		.ascii	"ramp\000"
- 1554      00
- 1555              	.LASF27:
- 1556 0228 50574D5F 		.ascii	"PWM_Blink\000"
- 1556      426C696E 
- 1556      6B00
- 1557              	.LASF12:
- 1558 0232 696E7433 		.ascii	"int32_t\000"
- 1558      325F7400 
- 1559              	.LASF17:
- 1560 023a 73697A65 		.ascii	"sizetype\000"
- 1560      74797065 
- 1560      00
- 1561              	.LASF43:
- 1562 0243 70726576 		.ascii	"previousMode\000"
- 1562      696F7573 
- 1562      4D6F6465 
- 1562      00
- 1563              	.LASF30:
- 1564 0250 50574D5F 		.ascii	"PWM_Ramp\000"
- 1564      52616D70 
- 1564      00
- 1565              	.LASF16:
- 1566 0259 63686172 		.ascii	"char\000"
- 1566      00
- 1567              	.LASF2:
- 1568 025e 73686F72 		.ascii	"short int\000"
- 1568      7420696E 
- 1568      7400
- 1569              	.LASF39:
- 1570 0268 6F6E5F74 		.ascii	"on_time_ms\000"
- 1570      696D655F 
- 1570      6D7300
- 1571              	.LASF11:
- 1572 0273 75696E74 		.ascii	"uint16_t\000"
- 1572      31365F74 
- 1572      00
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccsWc8KH.s 			page 36
-
-
- 1573              	.LASF38:
- 1574 027c 746F7461 		.ascii	"total_time_ms\000"
- 1574      6C5F7469 
- 1574      6D655F6D 
- 1574      7300
- 1575              	.LASF26:
- 1576 028a 65727273 		.ascii	"errsv\000"
- 1576      7600
- 1577              	.LASF21:
- 1578 0290 546F6767 		.ascii	"ToggleModes\000"
- 1578      6C654D6F 
- 1578      64657300 
- 1579              	.LASF0:
- 1580 029c 7369676E 		.ascii	"signed char\000"
- 1580      65642063 
- 1580      68617200 
- 1581              	.LASF3:
- 1582 02a8 73686F72 		.ascii	"short unsigned int\000"
- 1582      7420756E 
- 1582      7369676E 
- 1582      65642069 
- 1582      6E7400
- 1583              	.LASF35:
- 1584 02bb 5F426F6F 		.ascii	"_Bool\000"
- 1584      6C00
- 1585              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
+ 1278      6F646500 
+ 1279              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
