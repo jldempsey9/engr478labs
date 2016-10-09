@@ -1,5 +1,5 @@
 -- Project:   Lab3
--- Generated: 10/06/2016 20:27:28
+-- Generated: 10/08/2016 22:10:06
 -- PSoC Creator  3.3 CP3
 
 ENTITY Lab3 IS
@@ -31,13 +31,13 @@ ARCHITECTURE __DEFAULT__ OF Lab3 IS
     SIGNAL ClockBlock_XTAL : bit;
     SIGNAL ClockBlock_XTAL_32KHZ : bit;
     SIGNAL Net_101 : bit;
+    SIGNAL Net_140 : bit;
     SIGNAL Net_20 : bit;
     SIGNAL Net_25 : bit;
     SIGNAL Net_254 : bit;
     SIGNAL Net_45 : bit;
     SIGNAL Net_89 : bit;
     SIGNAL Net_90 : bit;
-    SIGNAL Net_91 : bit;
     SIGNAL PWM_Out_1(0)__PA : bit;
     SIGNAL Rx_1(0)__PA : bit;
     SIGNAL Tx_1(0)__PA : bit;
@@ -63,13 +63,6 @@ ARCHITECTURE __DEFAULT__ OF Lab3 IS
     SIGNAL \ADC_DelSig_1:mod_dat_2\ : bit;
     SIGNAL \ADC_DelSig_1:mod_dat_3\ : bit;
     SIGNAL \ADC_DelSig_1:mod_reset\ : bit;
-    SIGNAL \Control_Reg_1:control_0\ : bit;
-    SIGNAL \Control_Reg_1:control_2\ : bit;
-    SIGNAL \Control_Reg_1:control_3\ : bit;
-    SIGNAL \Control_Reg_1:control_4\ : bit;
-    SIGNAL \Control_Reg_1:control_5\ : bit;
-    SIGNAL \Control_Reg_1:control_6\ : bit;
-    SIGNAL \Control_Reg_1:control_7\ : bit;
     SIGNAL \Debug_LED_ctrl:control_1\ : bit;
     SIGNAL \Debug_LED_ctrl:control_2\ : bit;
     SIGNAL \Debug_LED_ctrl:control_3\ : bit;
@@ -125,6 +118,13 @@ ARCHITECTURE __DEFAULT__ OF Lab3 IS
     SIGNAL \WaveDAC8_1:Net_279\ : bit;
     ATTRIBUTE global_signal OF \WaveDAC8_1:Net_279\ : SIGNAL IS true;
     SIGNAL \WaveDAC8_1:Net_279_local\ : bit;
+    SIGNAL \Waveform_Reg:control_1\ : bit;
+    SIGNAL \Waveform_Reg:control_2\ : bit;
+    SIGNAL \Waveform_Reg:control_3\ : bit;
+    SIGNAL \Waveform_Reg:control_4\ : bit;
+    SIGNAL \Waveform_Reg:control_5\ : bit;
+    SIGNAL \Waveform_Reg:control_6\ : bit;
+    SIGNAL \Waveform_Reg:control_7\ : bit;
     SIGNAL __ONE__ : bit;
     ATTRIBUTE POWER OF __ONE__ : SIGNAL IS true;
     SIGNAL __ZERO__ : bit;
@@ -158,7 +158,7 @@ ARCHITECTURE __DEFAULT__ OF Lab3 IS
     ATTRIBUTE lib_model OF \UART_1:BUART:sTX:TxSts\ : LABEL IS "statusicell1";
     ATTRIBUTE lib_model OF \UART_1:BUART:sRX:RxShifter:u0\ : LABEL IS "datapathcell3";
     ATTRIBUTE lib_model OF \UART_1:BUART:sRX:RxSts\ : LABEL IS "statusicell2";
-    ATTRIBUTE lib_model OF \Control_Reg_1:Sync:ctrl_reg\ : LABEL IS "controlcell1";
+    ATTRIBUTE lib_model OF \Waveform_Reg:Sync:ctrl_reg\ : LABEL IS "controlcell1";
     ATTRIBUTE lib_model OF \WaveDAC8_1:Wave1_DMA\ : LABEL IS "drqcell1";
     ATTRIBUTE lib_model OF \WaveDAC8_1:Wave2_DMA\ : LABEL IS "drqcell2";
     ATTRIBUTE Location OF \WaveDAC8_1:VDAC8:viDAC8\ : LABEL IS "F(VIDAC,3)";
@@ -1208,7 +1208,7 @@ BEGIN
             interrupt => Net_101,
             clock => ClockBlock_BUS_CLK);
 
-    \Control_Reg_1:Sync:ctrl_reg\:controlcell
+    \Waveform_Reg:Sync:ctrl_reg\:controlcell
         GENERIC MAP(
             cy_ctrl_mode_0 => "00000000",
             cy_ctrl_mode_1 => "00000000",
@@ -1217,14 +1217,14 @@ BEGIN
             cy_init_value => "00000000",
             clken_mode => 1)
         PORT MAP(
-            control_7 => \Control_Reg_1:control_7\,
-            control_6 => \Control_Reg_1:control_6\,
-            control_5 => \Control_Reg_1:control_5\,
-            control_4 => \Control_Reg_1:control_4\,
-            control_3 => \Control_Reg_1:control_3\,
-            control_2 => \Control_Reg_1:control_2\,
-            control_1 => Net_91,
-            control_0 => \Control_Reg_1:control_0\,
+            control_7 => \Waveform_Reg:control_7\,
+            control_6 => \Waveform_Reg:control_6\,
+            control_5 => \Waveform_Reg:control_5\,
+            control_4 => \Waveform_Reg:control_4\,
+            control_3 => \Waveform_Reg:control_3\,
+            control_2 => \Waveform_Reg:control_2\,
+            control_1 => \Waveform_Reg:control_1\,
+            control_0 => Net_140,
             busclk => ClockBlock_BUS_CLK);
 
     \WaveDAC8_1:Wave1_DMA\:drqcell
@@ -1520,6 +1520,6 @@ BEGIN
         PORT MAP(
             q => \WaveDAC8_1:Net_134\,
             clock_0 => \WaveDAC8_1:Net_279\,
-            main_0 => Net_91);
+            main_0 => Net_140);
 
 END __DEFAULT__;

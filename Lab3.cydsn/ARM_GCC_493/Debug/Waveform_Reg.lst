@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccTDawic.s 			page 1
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccFg9aZr.s 			page 1
 
 
    1              		.syntax unified
@@ -14,60 +14,60 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccTDawic.s 			page 1
   11              		.eabi_attribute 34, 1
   12              		.eabi_attribute 18, 4
   13              		.thumb
-  14              		.file	"Debug_LED_ctrl.c"
+  14              		.file	"Waveform_Reg.c"
   15              		.text
   16              	.Ltext0:
   17              		.cfi_sections	.debug_frame
-  18              		.section	.text.Debug_LED_ctrl_Write,"ax",%progbits
+  18              		.section	.text.Waveform_Reg_Write,"ax",%progbits
   19              		.align	2
-  20              		.global	Debug_LED_ctrl_Write
+  20              		.global	Waveform_Reg_Write
   21              		.thumb
   22              		.thumb_func
-  23              		.type	Debug_LED_ctrl_Write, %function
-  24              	Debug_LED_ctrl_Write:
+  23              		.type	Waveform_Reg_Write, %function
+  24              	Waveform_Reg_Write:
   25              	.LFB0:
-  26              		.file 1 ".\\Generated_Source\\PSoC5\\Debug_LED_ctrl.c"
-   1:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** /*******************************************************************************
-   2:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** * File Name: Debug_LED_ctrl.c  
-   3:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** * Version 1.80
-   4:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** *
-   5:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** * Description:
-   6:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** *  This file contains API to enable firmware control of a Control Register.
-   7:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** *
-   8:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** * Note:
-   9:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** *
-  10:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** ********************************************************************************
-  11:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** * Copyright 2008-2015, Cypress Semiconductor Corporation.  All rights reserved.
-  12:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** * You may use this file only in accordance with the license, terms, conditions, 
-  13:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** * disclaimers, and limitations in the end user license agreement accompanying 
-  14:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** * the software package with which this file was provided.
-  15:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** *******************************************************************************/
-  16:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** 
-  17:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** #include "Debug_LED_ctrl.h"
-  18:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** 
-  19:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** /* Check for removal by optimization */
-  20:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** #if !defined(Debug_LED_ctrl_Sync_ctrl_reg__REMOVED)
-  21:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** 
-  22:.\Generated_Source\PSoC5/Debug_LED_ctrl.c ****     
-  23:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** /*******************************************************************************
-  24:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** * Function Name: Debug_LED_ctrl_Write
-  25:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** ********************************************************************************
-  26:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** *
-  27:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** * Summary:
-  28:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** *  Write a byte to the Control Register.
-  29:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** *
-  30:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** * Parameters:
-  31:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** *  control:  The value to be assigned to the Control Register.
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccTDawic.s 			page 2
+  26              		.file 1 ".\\Generated_Source\\PSoC5\\Waveform_Reg.c"
+   1:.\Generated_Source\PSoC5/Waveform_Reg.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC5/Waveform_Reg.c **** * File Name: Waveform_Reg.c  
+   3:.\Generated_Source\PSoC5/Waveform_Reg.c **** * Version 1.80
+   4:.\Generated_Source\PSoC5/Waveform_Reg.c **** *
+   5:.\Generated_Source\PSoC5/Waveform_Reg.c **** * Description:
+   6:.\Generated_Source\PSoC5/Waveform_Reg.c **** *  This file contains API to enable firmware control of a Control Register.
+   7:.\Generated_Source\PSoC5/Waveform_Reg.c **** *
+   8:.\Generated_Source\PSoC5/Waveform_Reg.c **** * Note:
+   9:.\Generated_Source\PSoC5/Waveform_Reg.c **** *
+  10:.\Generated_Source\PSoC5/Waveform_Reg.c **** ********************************************************************************
+  11:.\Generated_Source\PSoC5/Waveform_Reg.c **** * Copyright 2008-2015, Cypress Semiconductor Corporation.  All rights reserved.
+  12:.\Generated_Source\PSoC5/Waveform_Reg.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  13:.\Generated_Source\PSoC5/Waveform_Reg.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  14:.\Generated_Source\PSoC5/Waveform_Reg.c **** * the software package with which this file was provided.
+  15:.\Generated_Source\PSoC5/Waveform_Reg.c **** *******************************************************************************/
+  16:.\Generated_Source\PSoC5/Waveform_Reg.c **** 
+  17:.\Generated_Source\PSoC5/Waveform_Reg.c **** #include "Waveform_Reg.h"
+  18:.\Generated_Source\PSoC5/Waveform_Reg.c **** 
+  19:.\Generated_Source\PSoC5/Waveform_Reg.c **** /* Check for removal by optimization */
+  20:.\Generated_Source\PSoC5/Waveform_Reg.c **** #if !defined(Waveform_Reg_Sync_ctrl_reg__REMOVED)
+  21:.\Generated_Source\PSoC5/Waveform_Reg.c **** 
+  22:.\Generated_Source\PSoC5/Waveform_Reg.c ****     
+  23:.\Generated_Source\PSoC5/Waveform_Reg.c **** /*******************************************************************************
+  24:.\Generated_Source\PSoC5/Waveform_Reg.c **** * Function Name: Waveform_Reg_Write
+  25:.\Generated_Source\PSoC5/Waveform_Reg.c **** ********************************************************************************
+  26:.\Generated_Source\PSoC5/Waveform_Reg.c **** *
+  27:.\Generated_Source\PSoC5/Waveform_Reg.c **** * Summary:
+  28:.\Generated_Source\PSoC5/Waveform_Reg.c **** *  Write a byte to the Control Register.
+  29:.\Generated_Source\PSoC5/Waveform_Reg.c **** *
+  30:.\Generated_Source\PSoC5/Waveform_Reg.c **** * Parameters:
+  31:.\Generated_Source\PSoC5/Waveform_Reg.c **** *  control:  The value to be assigned to the Control Register.
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccFg9aZr.s 			page 2
 
 
-  32:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** *
-  33:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** * Return:
-  34:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** *  None.
-  35:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** *
-  36:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** *******************************************************************************/
-  37:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** void Debug_LED_ctrl_Write(uint8 control) 
-  38:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** {
+  32:.\Generated_Source\PSoC5/Waveform_Reg.c **** *
+  33:.\Generated_Source\PSoC5/Waveform_Reg.c **** * Return:
+  34:.\Generated_Source\PSoC5/Waveform_Reg.c **** *  None.
+  35:.\Generated_Source\PSoC5/Waveform_Reg.c **** *
+  36:.\Generated_Source\PSoC5/Waveform_Reg.c **** *******************************************************************************/
+  37:.\Generated_Source\PSoC5/Waveform_Reg.c **** void Waveform_Reg_Write(uint8 control) 
+  38:.\Generated_Source\PSoC5/Waveform_Reg.c **** {
   27              		.loc 1 38 0
   28              		.cfi_startproc
   29              		@ args = 0, pretend = 0, frame = 8
@@ -82,12 +82,12 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccTDawic.s 			page 1
   38              		.cfi_def_cfa_register 7
   39 0006 0346     		mov	r3, r0
   40 0008 FB71     		strb	r3, [r7, #7]
-  39:.\Generated_Source\PSoC5/Debug_LED_ctrl.c ****     Debug_LED_ctrl_Control = control;
+  39:.\Generated_Source\PSoC5/Waveform_Reg.c ****     Waveform_Reg_Control = control;
   41              		.loc 1 39 0
   42 000a 044A     		ldr	r2, .L2
   43 000c FB79     		ldrb	r3, [r7, #7]
   44 000e 1370     		strb	r3, [r2]
-  40:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** }
+  40:.\Generated_Source\PSoC5/Waveform_Reg.c **** }
   45              		.loc 1 40 0
   46 0010 0C37     		adds	r7, r7, #12
   47              		.cfi_def_cfa_offset 4
@@ -101,39 +101,39 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccTDawic.s 			page 1
   55              	.L3:
   56 001a 00BF     		.align	2
   57              	.L2:
-  58 001c 79640040 		.word	1073767545
+  58 001c 78650040 		.word	1073767800
   59              		.cfi_endproc
   60              	.LFE0:
-  61              		.size	Debug_LED_ctrl_Write, .-Debug_LED_ctrl_Write
-  62              		.section	.text.Debug_LED_ctrl_Read,"ax",%progbits
+  61              		.size	Waveform_Reg_Write, .-Waveform_Reg_Write
+  62              		.section	.text.Waveform_Reg_Read,"ax",%progbits
   63              		.align	2
-  64              		.global	Debug_LED_ctrl_Read
+  64              		.global	Waveform_Reg_Read
   65              		.thumb
   66              		.thumb_func
-  67              		.type	Debug_LED_ctrl_Read, %function
-  68              	Debug_LED_ctrl_Read:
+  67              		.type	Waveform_Reg_Read, %function
+  68              	Waveform_Reg_Read:
   69              	.LFB1:
-  41:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** 
-  42:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** 
-  43:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** /*******************************************************************************
-  44:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** * Function Name: Debug_LED_ctrl_Read
-  45:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** ********************************************************************************
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccTDawic.s 			page 3
+  41:.\Generated_Source\PSoC5/Waveform_Reg.c **** 
+  42:.\Generated_Source\PSoC5/Waveform_Reg.c **** 
+  43:.\Generated_Source\PSoC5/Waveform_Reg.c **** /*******************************************************************************
+  44:.\Generated_Source\PSoC5/Waveform_Reg.c **** * Function Name: Waveform_Reg_Read
+  45:.\Generated_Source\PSoC5/Waveform_Reg.c **** ********************************************************************************
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccFg9aZr.s 			page 3
 
 
-  46:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** *
-  47:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** * Summary:
-  48:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** *  Reads the current value assigned to the Control Register.
-  49:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** *
-  50:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** * Parameters:
-  51:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** *  None.
-  52:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** *
-  53:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** * Return:
-  54:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** *  Returns the current value in the Control Register.
-  55:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** *
-  56:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** *******************************************************************************/
-  57:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** uint8 Debug_LED_ctrl_Read(void) 
-  58:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** {
+  46:.\Generated_Source\PSoC5/Waveform_Reg.c **** *
+  47:.\Generated_Source\PSoC5/Waveform_Reg.c **** * Summary:
+  48:.\Generated_Source\PSoC5/Waveform_Reg.c **** *  Reads the current value assigned to the Control Register.
+  49:.\Generated_Source\PSoC5/Waveform_Reg.c **** *
+  50:.\Generated_Source\PSoC5/Waveform_Reg.c **** * Parameters:
+  51:.\Generated_Source\PSoC5/Waveform_Reg.c **** *  None.
+  52:.\Generated_Source\PSoC5/Waveform_Reg.c **** *
+  53:.\Generated_Source\PSoC5/Waveform_Reg.c **** * Return:
+  54:.\Generated_Source\PSoC5/Waveform_Reg.c **** *  Returns the current value in the Control Register.
+  55:.\Generated_Source\PSoC5/Waveform_Reg.c **** *
+  56:.\Generated_Source\PSoC5/Waveform_Reg.c **** *******************************************************************************/
+  57:.\Generated_Source\PSoC5/Waveform_Reg.c **** uint8 Waveform_Reg_Read(void) 
+  58:.\Generated_Source\PSoC5/Waveform_Reg.c **** {
   70              		.loc 1 58 0
   71              		.cfi_startproc
   72              		@ args = 0, pretend = 0, frame = 0
@@ -144,12 +144,12 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccTDawic.s 			page 1
   77              		.cfi_offset 7, -4
   78 0002 00AF     		add	r7, sp, #0
   79              		.cfi_def_cfa_register 7
-  59:.\Generated_Source\PSoC5/Debug_LED_ctrl.c ****     return Debug_LED_ctrl_Control;
+  59:.\Generated_Source\PSoC5/Waveform_Reg.c ****     return Waveform_Reg_Control;
   80              		.loc 1 59 0
   81 0004 034B     		ldr	r3, .L6
   82 0006 1B78     		ldrb	r3, [r3]
   83 0008 DBB2     		uxtb	r3, r3
-  60:.\Generated_Source\PSoC5/Debug_LED_ctrl.c **** }
+  60:.\Generated_Source\PSoC5/Waveform_Reg.c **** }
   84              		.loc 1 60 0
   85 000a 1846     		mov	r0, r3
   86 000c BD46     		mov	sp, r7
@@ -162,10 +162,10 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccTDawic.s 			page 1
   93              	.L7:
   94              		.align	2
   95              	.L6:
-  96 0014 79640040 		.word	1073767545
+  96 0014 78650040 		.word	1073767800
   97              		.cfi_endproc
   98              	.LFE1:
-  99              		.size	Debug_LED_ctrl_Read, .-Debug_LED_ctrl_Read
+  99              		.size	Waveform_Reg_Read, .-Waveform_Reg_Read
  100              		.text
  101              	.Letext0:
  102              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
@@ -176,48 +176,48 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccTDawic.s 			page 1
  107 0006 00000000 		.4byte	.Ldebug_abbrev0
  108 000a 04       		.byte	0x4
  109 000b 01       		.uleb128 0x1
- 110 000c 2A000000 		.4byte	.LASF14
+ 110 000c 12000000 		.4byte	.LASF14
  111 0010 01       		.byte	0x1
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccTDawic.s 			page 4
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccFg9aZr.s 			page 4
 
 
- 112 0011 00000000 		.4byte	.LASF15
- 113 0015 BE000000 		.4byte	.LASF16
+ 112 0011 A0000000 		.4byte	.LASF15
+ 113 0015 CE000000 		.4byte	.LASF16
  114 0019 00000000 		.4byte	.Ldebug_ranges0+0
  115 001d 00000000 		.4byte	0
  116 0021 00000000 		.4byte	.Ldebug_line0
  117 0025 02       		.uleb128 0x2
  118 0026 01       		.byte	0x1
  119 0027 06       		.byte	0x6
- 120 0028 AF010000 		.4byte	.LASF0
+ 120 0028 A9010000 		.4byte	.LASF0
  121 002c 02       		.uleb128 0x2
  122 002d 01       		.byte	0x1
  123 002e 08       		.byte	0x8
- 124 002f 21010000 		.4byte	.LASF1
+ 124 002f 31010000 		.4byte	.LASF1
  125 0033 02       		.uleb128 0x2
  126 0034 02       		.byte	0x2
  127 0035 05       		.byte	0x5
- 128 0036 82010000 		.4byte	.LASF2
+ 128 0036 90010000 		.4byte	.LASF2
  129 003a 02       		.uleb128 0x2
  130 003b 02       		.byte	0x2
  131 003c 07       		.byte	0x7
- 132 003d 06010000 		.4byte	.LASF3
+ 132 003d 16010000 		.4byte	.LASF3
  133 0041 02       		.uleb128 0x2
  134 0042 04       		.byte	0x4
  135 0043 05       		.byte	0x5
- 136 0044 A6010000 		.4byte	.LASF4
+ 136 0044 A0010000 		.4byte	.LASF4
  137 0048 02       		.uleb128 0x2
  138 0049 04       		.byte	0x4
  139 004a 07       		.byte	0x7
- 140 004b F4000000 		.4byte	.LASF5
+ 140 004b 04010000 		.4byte	.LASF5
  141 004f 02       		.uleb128 0x2
  142 0050 08       		.byte	0x8
  143 0051 05       		.byte	0x5
- 144 0052 6F010000 		.4byte	.LASF6
+ 144 0052 7D010000 		.4byte	.LASF6
  145 0056 02       		.uleb128 0x2
  146 0057 08       		.byte	0x8
  147 0058 07       		.byte	0x7
- 148 0059 58010000 		.4byte	.LASF7
+ 148 0059 66010000 		.4byte	.LASF7
  149 005d 03       		.uleb128 0x3
  150 005e 04       		.byte	0x4
  151 005f 05       		.byte	0x5
@@ -225,36 +225,36 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccTDawic.s 			page 1
  153 0064 02       		.uleb128 0x2
  154 0065 04       		.byte	0x4
  155 0066 07       		.byte	0x7
- 156 0067 4B010000 		.4byte	.LASF8
+ 156 0067 59010000 		.4byte	.LASF8
  157 006b 04       		.uleb128 0x4
- 158 006c A0010000 		.4byte	.LASF12
+ 158 006c 9A010000 		.4byte	.LASF12
  159 0070 02       		.byte	0x2
  160 0071 9201     		.2byte	0x192
  161 0073 2C000000 		.4byte	0x2c
  162 0077 02       		.uleb128 0x2
  163 0078 04       		.byte	0x4
  164 0079 04       		.byte	0x4
- 165 007a B8000000 		.4byte	.LASF9
+ 165 007a C8000000 		.4byte	.LASF9
  166 007e 02       		.uleb128 0x2
  167 007f 08       		.byte	0x8
  168 0080 04       		.byte	0x4
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccTDawic.s 			page 5
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccFg9aZr.s 			page 5
 
 
- 169 0081 2F010000 		.4byte	.LASF10
+ 169 0081 3F010000 		.4byte	.LASF10
  170 0085 02       		.uleb128 0x2
  171 0086 01       		.byte	0x1
  172 0087 08       		.byte	0x8
- 173 0088 7D010000 		.4byte	.LASF11
+ 173 0088 8B010000 		.4byte	.LASF11
  174 008c 04       		.uleb128 0x4
- 175 008d EF000000 		.4byte	.LASF13
+ 175 008d FF000000 		.4byte	.LASF13
  176 0091 02       		.byte	0x2
  177 0092 3C02     		.2byte	0x23c
  178 0094 98000000 		.4byte	0x98
  179 0098 05       		.uleb128 0x5
  180 0099 6B000000 		.4byte	0x6b
  181 009d 06       		.uleb128 0x6
- 182 009e 36010000 		.4byte	.LASF17
+ 182 009e 46010000 		.4byte	.LASF17
  183 00a2 01       		.byte	0x1
  184 00a3 25       		.byte	0x25
  185 00a4 00000000 		.4byte	.LFB0
@@ -263,7 +263,7 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccTDawic.s 			page 1
  188 00ad 9C       		.byte	0x9c
  189 00ae C1000000 		.4byte	0xc1
  190 00b2 07       		.uleb128 0x7
- 191 00b3 19010000 		.4byte	.LASF18
+ 191 00b3 29010000 		.4byte	.LASF18
  192 00b7 01       		.byte	0x1
  193 00b8 25       		.byte	0x25
  194 00b9 6B000000 		.4byte	0x6b
@@ -272,7 +272,7 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccTDawic.s 			page 1
  197 00bf 77       		.sleb128 -9
  198 00c0 00       		.byte	0
  199 00c1 08       		.uleb128 0x8
- 200 00c2 8C010000 		.4byte	.LASF19
+ 200 00c2 00000000 		.4byte	.LASF19
  201 00c6 01       		.byte	0x1
  202 00c7 39       		.byte	0x39
  203 00c8 6B000000 		.4byte	0x6b
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccTDawic.s 			page 1
  223 000c 17       		.uleb128 0x17
  224 000d 11       		.uleb128 0x11
  225 000e 01       		.uleb128 0x1
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccTDawic.s 			page 6
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccFg9aZr.s 			page 6
 
 
  226 000f 10       		.uleb128 0x10
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccTDawic.s 			page 1
  280 0045 0B       		.uleb128 0xb
  281 0046 3B       		.uleb128 0x3b
  282 0047 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccTDawic.s 			page 7
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccFg9aZr.s 			page 7
 
 
  283 0048 27       		.uleb128 0x27
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccTDawic.s 			page 1
  337 0080 00       		.byte	0
  338              		.section	.debug_aranges,"",%progbits
  339 0000 24000000 		.4byte	0x24
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccTDawic.s 			page 8
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccFg9aZr.s 			page 8
 
 
  340 0004 0200     		.2byte	0x2
@@ -443,119 +443,119 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccTDawic.s 			page 1
  359 0014 00000000 		.4byte	0
  360              		.section	.debug_line,"",%progbits
  361              	.Ldebug_line0:
- 362 0000 75000000 		.section	.debug_str,"MS",%progbits,1
- 362      02004D00 
+ 362 0000 73000000 		.section	.debug_str,"MS",%progbits,1
+ 362      02004B00 
  362      00000201 
  362      FB0E0D00 
  362      01010101 
- 363              	.LASF15:
- 364 0000 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\Debug_LED_ctrl.c\000"
- 364      6E657261 
- 364      7465645F 
- 364      536F7572 
- 364      63655C50 
+ 363              	.LASF19:
+ 364 0000 57617665 		.ascii	"Waveform_Reg_Read\000"
+ 364      666F726D 
+ 364      5F526567 
+ 364      5F526561 
+ 364      6400
  365              	.LASF14:
- 366 002a 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 366 0012 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
  366      4320342E 
  366      392E3320 
  366      32303135 
  366      30333033 
- 367 005d 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 367 0045 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
  367      20726576 
  367      6973696F 
  367      6E203232 
  367      31323230 
- 368 0090 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 368 0078 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
  368      66756E63 
  368      74696F6E 
  368      2D736563 
  368      74696F6E 
- 369              	.LASF9:
- 370 00b8 666C6F61 		.ascii	"float\000"
- 370      7400
- 371              	.LASF16:
- 372 00be 453A5C44 		.ascii	"E:\\Documents\\PSoC Creator\\engr478labs\\Lab3.cyds"
- 372      6F63756D 
- 372      656E7473 
- 372      5C50536F 
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccTDawic.s 			page 9
+ 369              	.LASF15:
+ 370 00a0 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\Waveform_Reg.c\000"
+ 370      6E657261 
+ 370      7465645F 
+ 370      536F7572 
+ 370      63655C50 
+ 371              	.LASF9:
+ 372 00c8 666C6F61 		.ascii	"float\000"
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccFg9aZr.s 			page 9
 
 
- 372      43204372 
- 373 00ed 6E00     		.ascii	"n\000"
- 374              	.LASF13:
- 375 00ef 72656738 		.ascii	"reg8\000"
- 375      00
- 376              	.LASF5:
- 377 00f4 6C6F6E67 		.ascii	"long unsigned int\000"
- 377      20756E73 
- 377      69676E65 
- 377      6420696E 
- 377      7400
- 378              	.LASF3:
- 379 0106 73686F72 		.ascii	"short unsigned int\000"
- 379      7420756E 
- 379      7369676E 
- 379      65642069 
- 379      6E7400
- 380              	.LASF18:
- 381 0119 636F6E74 		.ascii	"control\000"
- 381      726F6C00 
- 382              	.LASF1:
- 383 0121 756E7369 		.ascii	"unsigned char\000"
- 383      676E6564 
- 383      20636861 
- 383      7200
- 384              	.LASF10:
- 385 012f 646F7562 		.ascii	"double\000"
- 385      6C6500
- 386              	.LASF17:
- 387 0136 44656275 		.ascii	"Debug_LED_ctrl_Write\000"
- 387      675F4C45 
- 387      445F6374 
- 387      726C5F57 
- 387      72697465 
- 388              	.LASF8:
- 389 014b 756E7369 		.ascii	"unsigned int\000"
- 389      676E6564 
- 389      20696E74 
- 389      00
- 390              	.LASF7:
- 391 0158 6C6F6E67 		.ascii	"long long unsigned int\000"
- 391      206C6F6E 
- 391      6720756E 
- 391      7369676E 
- 391      65642069 
- 392              	.LASF6:
- 393 016f 6C6F6E67 		.ascii	"long long int\000"
+ 372      7400
+ 373              	.LASF16:
+ 374 00ce 453A5C44 		.ascii	"E:\\Documents\\PSoC Creator\\engr478labs\\Lab3.cyds"
+ 374      6F63756D 
+ 374      656E7473 
+ 374      5C50536F 
+ 374      43204372 
+ 375 00fd 6E00     		.ascii	"n\000"
+ 376              	.LASF13:
+ 377 00ff 72656738 		.ascii	"reg8\000"
+ 377      00
+ 378              	.LASF5:
+ 379 0104 6C6F6E67 		.ascii	"long unsigned int\000"
+ 379      20756E73 
+ 379      69676E65 
+ 379      6420696E 
+ 379      7400
+ 380              	.LASF3:
+ 381 0116 73686F72 		.ascii	"short unsigned int\000"
+ 381      7420756E 
+ 381      7369676E 
+ 381      65642069 
+ 381      6E7400
+ 382              	.LASF18:
+ 383 0129 636F6E74 		.ascii	"control\000"
+ 383      726F6C00 
+ 384              	.LASF1:
+ 385 0131 756E7369 		.ascii	"unsigned char\000"
+ 385      676E6564 
+ 385      20636861 
+ 385      7200
+ 386              	.LASF10:
+ 387 013f 646F7562 		.ascii	"double\000"
+ 387      6C6500
+ 388              	.LASF17:
+ 389 0146 57617665 		.ascii	"Waveform_Reg_Write\000"
+ 389      666F726D 
+ 389      5F526567 
+ 389      5F577269 
+ 389      746500
+ 390              	.LASF8:
+ 391 0159 756E7369 		.ascii	"unsigned int\000"
+ 391      676E6564 
+ 391      20696E74 
+ 391      00
+ 392              	.LASF7:
+ 393 0166 6C6F6E67 		.ascii	"long long unsigned int\000"
  393      206C6F6E 
- 393      6720696E 
- 393      7400
- 394              	.LASF11:
- 395 017d 63686172 		.ascii	"char\000"
- 395      00
- 396              	.LASF2:
- 397 0182 73686F72 		.ascii	"short int\000"
- 397      7420696E 
- 397      7400
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccTDawic.s 			page 10
+ 393      6720756E 
+ 393      7369676E 
+ 393      65642069 
+ 394              	.LASF6:
+ 395 017d 6C6F6E67 		.ascii	"long long int\000"
+ 395      206C6F6E 
+ 395      6720696E 
+ 395      7400
+ 396              	.LASF11:
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccFg9aZr.s 			page 10
 
 
- 398              	.LASF19:
- 399 018c 44656275 		.ascii	"Debug_LED_ctrl_Read\000"
- 399      675F4C45 
- 399      445F6374 
- 399      726C5F52 
- 399      65616400 
+ 397 018b 63686172 		.ascii	"char\000"
+ 397      00
+ 398              	.LASF2:
+ 399 0190 73686F72 		.ascii	"short int\000"
+ 399      7420696E 
+ 399      7400
  400              	.LASF12:
- 401 01a0 75696E74 		.ascii	"uint8\000"
+ 401 019a 75696E74 		.ascii	"uint8\000"
  401      3800
  402              	.LASF4:
- 403 01a6 6C6F6E67 		.ascii	"long int\000"
+ 403 01a0 6C6F6E67 		.ascii	"long int\000"
  403      20696E74 
  403      00
  404              	.LASF0:
- 405 01af 7369676E 		.ascii	"signed char\000"
+ 405 01a9 7369676E 		.ascii	"signed char\000"
  405      65642063 
  405      68617200 
  406              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

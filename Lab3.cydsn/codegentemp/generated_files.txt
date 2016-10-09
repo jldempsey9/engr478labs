@@ -34,9 +34,9 @@
   <file name="E:\Documents\PSoC Creator\engr478labs\Lab3.cydsn\codegentemp\UART_1_BOOT.c" value="ARM_C_FILE;UART_1" />
   <file name="E:\Documents\PSoC Creator\engr478labs\Lab3.cydsn\codegentemp\isr_1.c" value="ARM_C_FILE;isr_1" />
   <file name="E:\Documents\PSoC Creator\engr478labs\Lab3.cydsn\codegentemp\isr_1.h" value="NONE;isr_1" />
-  <file name="E:\Documents\PSoC Creator\engr478labs\Lab3.cydsn\codegentemp\Control_Reg_1.h" value="NONE;Control_Reg_1" />
-  <file name="E:\Documents\PSoC Creator\engr478labs\Lab3.cydsn\codegentemp\Control_Reg_1.c" value="ARM_C_FILE;Control_Reg_1" />
-  <file name="E:\Documents\PSoC Creator\engr478labs\Lab3.cydsn\codegentemp\Control_Reg_1_PM.c" value="ARM_C_FILE;Control_Reg_1" />
+  <file name="E:\Documents\PSoC Creator\engr478labs\Lab3.cydsn\codegentemp\Waveform_Reg.h" value="NONE;Waveform_Reg" />
+  <file name="E:\Documents\PSoC Creator\engr478labs\Lab3.cydsn\codegentemp\Waveform_Reg.c" value="ARM_C_FILE;Waveform_Reg" />
+  <file name="E:\Documents\PSoC Creator\engr478labs\Lab3.cydsn\codegentemp\Waveform_Reg_PM.c" value="ARM_C_FILE;Waveform_Reg" />
   <file name="E:\Documents\PSoC Creator\engr478labs\Lab3.cydsn\codegentemp\WaveDAC8_1.c" value="ARM_C_FILE;WaveDAC8_1" />
   <file name="E:\Documents\PSoC Creator\engr478labs\Lab3.cydsn\codegentemp\WaveDAC8_1.h" value="NONE;WaveDAC8_1" />
   <file name="E:\Documents\PSoC Creator\engr478labs\Lab3.cydsn\codegentemp\WaveDAC8_1_PM.c" value="ARM_C_FILE;WaveDAC8_1" />

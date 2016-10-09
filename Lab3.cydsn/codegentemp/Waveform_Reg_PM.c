@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: Control_Reg_1_PM.c
+* File Name: Waveform_Reg_PM.c
 * Version 1.80
 *
 * Description:
@@ -15,16 +15,16 @@
 * the software package with which this file was provided.
 *******************************************************************************/
 
-#include "Control_Reg_1.h"
+#include "Waveform_Reg.h"
 
 /* Check for removal by optimization */
-#if !defined(Control_Reg_1_Sync_ctrl_reg__REMOVED)
+#if !defined(Waveform_Reg_Sync_ctrl_reg__REMOVED)
 
-static Control_Reg_1_BACKUP_STRUCT  Control_Reg_1_backup = {0u};
+static Waveform_Reg_BACKUP_STRUCT  Waveform_Reg_backup = {0u};
 
     
 /*******************************************************************************
-* Function Name: Control_Reg_1_SaveConfig
+* Function Name: Waveform_Reg_SaveConfig
 ********************************************************************************
 *
 * Summary:
@@ -37,14 +37,14 @@ static Control_Reg_1_BACKUP_STRUCT  Control_Reg_1_backup = {0u};
 *  None
 *
 *******************************************************************************/
-void Control_Reg_1_SaveConfig(void) 
+void Waveform_Reg_SaveConfig(void) 
 {
-    Control_Reg_1_backup.controlState = Control_Reg_1_Control;
+    Waveform_Reg_backup.controlState = Waveform_Reg_Control;
 }
 
 
 /*******************************************************************************
-* Function Name: Control_Reg_1_RestoreConfig
+* Function Name: Waveform_Reg_RestoreConfig
 ********************************************************************************
 *
 * Summary:
@@ -58,14 +58,14 @@ void Control_Reg_1_SaveConfig(void)
 *
 *
 *******************************************************************************/
-void Control_Reg_1_RestoreConfig(void) 
+void Waveform_Reg_RestoreConfig(void) 
 {
-     Control_Reg_1_Control = Control_Reg_1_backup.controlState;
+     Waveform_Reg_Control = Waveform_Reg_backup.controlState;
 }
 
 
 /*******************************************************************************
-* Function Name: Control_Reg_1_Sleep
+* Function Name: Waveform_Reg_Sleep
 ********************************************************************************
 *
 * Summary:
@@ -78,14 +78,14 @@ void Control_Reg_1_RestoreConfig(void)
 *  None
 *
 *******************************************************************************/
-void Control_Reg_1_Sleep(void) 
+void Waveform_Reg_Sleep(void) 
 {
-    Control_Reg_1_SaveConfig();
+    Waveform_Reg_SaveConfig();
 }
 
 
 /*******************************************************************************
-* Function Name: Control_Reg_1_Wakeup
+* Function Name: Waveform_Reg_Wakeup
 ********************************************************************************
 *
 * Summary:
@@ -98,9 +98,9 @@ void Control_Reg_1_Sleep(void)
 *  None
 *
 *******************************************************************************/
-void Control_Reg_1_Wakeup(void)  
+void Waveform_Reg_Wakeup(void)  
 {
-    Control_Reg_1_RestoreConfig();
+    Waveform_Reg_RestoreConfig();
 }
 
 #endif /* End check for removal by optimization */

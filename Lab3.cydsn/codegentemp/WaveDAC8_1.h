@@ -28,7 +28,7 @@
 ***************************************/
 
 #define WaveDAC8_1_WAVE1_TYPE     (0u)     /* Waveform for wave1 */
-#define WaveDAC8_1_WAVE2_TYPE     (2u)     /* Waveform for wave2 */
+#define WaveDAC8_1_WAVE2_TYPE     (0u)     /* Waveform for wave2 */
 #define WaveDAC8_1_SINE_WAVE      (0u)
 #define WaveDAC8_1_SQUARE_WAVE    (1u)
 #define WaveDAC8_1_TRIANGLE_WAVE  (2u)
@@ -36,8 +36,8 @@
 #define WaveDAC8_1_ARB_DRAW_WAVE  (10u) /* Arbitrary (draw) */
 #define WaveDAC8_1_ARB_FILE_WAVE  (11u) /* Arbitrary (from file) */
 
-#define WaveDAC8_1_WAVE1_LENGTH   (100u)   /* Length for wave1 */
-#define WaveDAC8_1_WAVE2_LENGTH   (100u)   /* Length for wave2 */
+#define WaveDAC8_1_WAVE1_LENGTH   (25u)   /* Length for wave1 */
+#define WaveDAC8_1_WAVE2_LENGTH   (1000u)   /* Length for wave2 */
 	
 #define WaveDAC8_1_DEFAULT_RANGE    (0u) /* Default DAC range */
 #define WaveDAC8_1_DAC_RANGE_1V     (0u)

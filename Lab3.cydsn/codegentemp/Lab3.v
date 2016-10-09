@@ -1,6 +1,6 @@
 // ======================================================================
 // Lab3.v generated from TopDesign.cysch
-// 10/06/2016 at 20:27
+// 10/08/2016 at 22:10
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -612,7 +612,7 @@ endmodule
 `include "C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cydff_v1_30\cydff_v1_30.v"
 `endif
 
-// WaveDAC8_v2_10(Clock_SRC=1, DAC_Range=0, DacModeReplString=VDAC8, Sample_Clock_Freq=100000, Wave1_Amplitude=1, Wave1_Data=128u,135u,143u,151u,159u,166u,174u,181u,188u,194u,201u,207u,213u,219u,224u,229u,233u,237u,241u,244u,246u,249u,250u,252u,252u,252u,252u,252u,250u,249u,246u,244u,241u,237u,233u,229u,224u,219u,213u,207u,201u,194u,188u,181u,174u,166u,159u,151u,143u,135u,128u,120u,112u,104u,96u,89u,81u,74u,67u,61u,54u,48u,42u,36u,31u,26u,22u,18u,14u,11u,9u,6u,5u,3u,3u,3u,3u,3u,5u,6u,9u,11u,14u,18u,22u,26u,31u,36u,42u,48u,54u,61u,67u,74u,81u,89u,96u,104u,112u,120u, Wave1_DCOffset=0.51, Wave1_Length=100, Wave1_PhaseShift=0, Wave1_Type=0, Wave2_Amplitude=1, Wave2_Data=128u,133u,138u,143u,148u,153u,158u,163u,168u,173u,178u,184u,189u,194u,199u,204u,209u,214u,219u,224u,230u,235u,240u,245u,250u,255u,250u,245u,240u,235u,230u,224u,219u,214u,209u,204u,199u,194u,189u,184u,178u,173u,168u,163u,158u,153u,148u,143u,138u,133u,128u,122u,117u,112u,107u,102u,97u,92u,87u,82u,76u,71u,66u,61u,56u,51u,46u,41u,36u,31u,25u,20u,15u,10u,5u,0u,5u,10u,15u,20u,25u,31u,36u,41u,46u,51u,56u,61u,66u,71u,77u,82u,87u,92u,97u,102u,107u,112u,117u,122u, Wave2_DCOffset=0.51, Wave2_Length=100, Wave2_PhaseShift=0, Wave2_Type=2, CY_API_CALLBACK_HEADER_INCLUDE=, CY_COMPONENT_NAME=WaveDAC8_v2_10, CY_CONTROL_FILE=<:default:>, CY_DATASHEET_FILE=<:default:>, CY_FITTER_NAME=WaveDAC8_1, CY_INSTANCE_SHORT_NAME=WaveDAC8_1, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=10, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=PSoC Creator  3.3 CP3, INSTANCE_NAME=WaveDAC8_1, )
+// WaveDAC8_v2_10(Clock_SRC=1, DAC_Range=0, DacModeReplString=VDAC8, Sample_Clock_Freq=100000, Wave1_Amplitude=1, Wave1_Data=128u,159u,188u,213u,233u,246u,252u,250u,241u,224u,201u,174u,143u,112u,81u,54u,31u,14u,5u,3u,9u,22u,42u,67u,96u, Wave1_DCOffset=0.51, Wave1_Length=25, Wave1_PhaseShift=0, Wave1_Type=0, Wave2_Amplitude=0.2, Wave2_Data=125u,125u,125u,125u,126u,126u,126u,126u,126u,126u,127u,127u,127u,127u,127u,127u,128u,128u,128u,128u,128u,128u,128u,129u,129u,129u,129u,129u,129u,130u,130u,130u,130u,130u,130u,130u,131u,131u,131u,131u,131u,131u,132u,132u,132u,132u,132u,132u,132u,133u,133u,133u,133u,133u,133u,133u,134u,134u,134u,134u,134u,134u,134u,135u,135u,135u,135u,135u,135u,136u,136u,136u,136u,136u,136u,136u,136u,137u,137u,137u,137u,137u,137u,137u,138u,138u,138u,138u,138u,138u,138u,139u,139u,139u,139u,139u,139u,139u,139u,140u,140u,140u,140u,140u,140u,140u,140u,141u,141u,141u,141u,141u,141u,141u,141u,142u,142u,142u,142u,142u,142u,142u,142u,142u,143u,143u,143u,143u,143u,143u,143u,143u,143u,144u,144u,144u,144u,144u,144u,144u,144u,144u,144u,145u,145u,145u,145u,145u,145u,145u,145u,145u,145u,145u,146u,146u,146u,146u,146u,146u,146u,146u,146u,146u,146u,147u,147u,147u,147u,147u,147u,147u,147u,147u,147u,147u,147u,147u,147u,148u,148u,148u,148u,148u,148u,148u,148u,148u,148u,148u,148u,148u,148u,148u,148u,149u,149u,149u,149u,149u,149u,149u,149u,149u,149u,149u,149u,149u,149u,149u,149u,149u,149u,149u,149u,149u,149u,149u,149u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,150u,149u,149u,149u,149u,149u,149u,149u,149u,149u,149u,149u,149u,149u,149u,149u,149u,149u,149u,149u,149u,149u,149u,149u,149u,148u,148u,148u,148u,148u,148u,148u,148u,148u,148u,148u,148u,148u,148u,148u,148u,147u,147u,147u,147u,147u,147u,147u,147u,147u,147u,147u,147u,147u,147u,146u,146u,146u,146u,146u,146u,146u,146u,146u,146u,146u,145u,145u,145u,145u,145u,145u,145u,145u,145u,145u,145u,144u,144u,144u,144u,144u,144u,144u,144u,144u,144u,143u,143u,143u,143u,143u,143u,143u,143u,143u,142u,142u,142u,142u,142u,142u,142u,142u,142u,141u,141u,141u,141u,141u,141u,141u,141u,140u,140u,140u,140u,140u,140u,140u,140u,139u,139u,139u,139u,139u,139u,139u,139u,138u,138u,138u,138u,138u,138u,138u,137u,137u,137u,137u,137u,137u,137u,136u,136u,136u,136u,136u,136u,136u,136u,135u,135u,135u,135u,135u,135u,134u,134u,134u,134u,134u,134u,134u,133u,133u,133u,133u,133u,133u,133u,132u,132u,132u,132u,132u,132u,132u,131u,131u,131u,131u,131u,131u,130u,130u,130u,130u,130u,130u,130u,129u,129u,129u,129u,129u,129u,128u,128u,128u,128u,128u,128u,128u,127u,127u,127u,127u,127u,127u,126u,126u,126u,126u,126u,126u,125u,125u,125u,125u,125u,125u,125u,124u,124u,124u,124u,124u,124u,123u,123u,123u,123u,123u,123u,122u,122u,122u,122u,122u,122u,122u,121u,121u,121u,121u,121u,121u,120u,120u,120u,120u,120u,120u,120u,119u,119u,119u,119u,119u,119u,118u,118u,118u,118u,118u,118u,118u,117u,117u,117u,117u,117u,117u,117u,116u,116u,116u,116u,116u,116u,116u,115u,115u,115u,115u,115u,115u,114u,114u,114u,114u,114u,114u,114u,114u,113u,113u,113u,113u,113u,113u,113u,112u,112u,112u,112u,112u,112u,112u,111u,111u,111u,111u,111u,111u,111u,111u,110u,110u,110u,110u,110u,110u,110u,110u,109u,109u,109u,109u,109u,109u,109u,109u,108u,108u,108u,108u,108u,108u,108u,108u,108u,107u,107u,107u,107u,107u,107u,107u,107u,107u,106u,106u,106u,106u,106u,106u,106u,106u,106u,106u,105u,105u,105u,105u,105u,105u,105u,105u,105u,105u,105u,104u,104u,104u,104u,104u,104u,104u,104u,104u,104u,104u,103u,103u,103u,103u,103u,103u,103u,103u,103u,103u,103u,103u,103u,103u,102u,102u,102u,102u,102u,102u,102u,102u,102u,102u,102u,102u,102u,102u,102u,102u,101u,101u,101u,101u,101u,101u,101u,101u,101u,101u,101u,101u,101u,101u,101u,101u,101u,101u,101u,101u,101u,101u,101u,101u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,100u,101u,101u,101u,101u,101u,101u,101u,101u,101u,101u,101u,101u,101u,101u,101u,101u,101u,101u,101u,101u,101u,101u,101u,101u,102u,102u,102u,102u,102u,102u,102u,102u,102u,102u,102u,102u,102u,102u,102u,102u,103u,103u,103u,103u,103u,103u,103u,103u,103u,103u,103u,103u,103u,103u,104u,104u,104u,104u,104u,104u,104u,104u,104u,104u,104u,105u,105u,105u,105u,105u,105u,105u,105u,105u,105u,105u,106u,106u,106u,106u,106u,106u,106u,106u,106u,106u,107u,107u,107u,107u,107u,107u,107u,107u,107u,108u,108u,108u,108u,108u,108u,108u,108u,108u,109u,109u,109u,109u,109u,109u,109u,109u,110u,110u,110u,110u,110u,110u,110u,110u,111u,111u,111u,111u,111u,111u,111u,111u,112u,112u,112u,112u,112u,112u,112u,113u,113u,113u,113u,113u,113u,113u,114u,114u,114u,114u,114u,114u,114u,114u,115u,115u,115u,115u,115u,115u,116u,116u,116u,116u,116u,116u,116u,117u,117u,117u,117u,117u,117u,117u,118u,118u,118u,118u,118u,118u,118u,119u,119u,119u,119u,119u,119u,120u,120u,120u,120u,120u,120u,120u,121u,121u,121u,121u,121u,121u,122u,122u,122u,122u,122u,122u,122u,123u,123u,123u,123u,123u,123u,124u,124u,124u,124u,124u,124u,125u,125u,125u, Wave2_DCOffset=0.5, Wave2_Length=1000, Wave2_PhaseShift=0, Wave2_Type=0, CY_API_CALLBACK_HEADER_INCLUDE=, CY_COMPONENT_NAME=WaveDAC8_v2_10, CY_CONTROL_FILE=<:default:>, CY_DATASHEET_FILE=<:default:>, CY_FITTER_NAME=WaveDAC8_1, CY_INSTANCE_SHORT_NAME=WaveDAC8_1, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=10, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=PSoC Creator  3.3 CP3, INSTANCE_NAME=WaveDAC8_1, )
 module WaveDAC8_v2_10_4 (
     Wave,
     ws,
@@ -774,9 +774,9 @@ module top ;
           wire  Net_96;
           wire  Net_95;
           wire  Net_94;
-          wire  Net_65;
           wire  Net_93;
           wire  Net_92;
+          wire  Net_91;
           wire  Net_42;
           wire  Net_41;
           wire  Net_40;
@@ -797,17 +797,17 @@ module top ;
           wire  Net_45;
           wire  Net_44;
     electrical  Net_43;
-    electrical  Net_63;
-          wire  Net_91;
     electrical  Net_62;
+    electrical  Net_142;
+          wire  Net_140;
     electrical  Net_1283;
     electrical  Net_1281;
           wire  Net_254;
           wire  Net_101;
-    electrical  Net_123;
+    electrical  Net_141;
 
     ADC_DelSig_v3_20_0 ADC_DelSig_1 (
-        .vplus(Net_123),
+        .vplus(Net_141),
         .vminus(Net_43),
         .soc(1'b1),
         .eoc(Net_45),
@@ -1006,33 +1006,33 @@ module top ;
 		 (.int_signal(Net_101));
 
 
-    CyControlReg_v1_80 Control_Reg_1 (
+    CyControlReg_v1_80 Waveform_Reg (
         .control_1(Net_91),
         .control_2(Net_92),
         .control_3(Net_93),
-        .control_0(Net_65),
+        .control_0(Net_140),
         .control_4(Net_94),
         .control_5(Net_95),
         .control_6(Net_96),
         .control_7(Net_97),
         .clock(1'b0),
         .reset(1'b0));
-    defparam Control_Reg_1.Bit0Mode = 0;
-    defparam Control_Reg_1.Bit1Mode = 0;
-    defparam Control_Reg_1.Bit2Mode = 0;
-    defparam Control_Reg_1.Bit3Mode = 0;
-    defparam Control_Reg_1.Bit4Mode = 0;
-    defparam Control_Reg_1.Bit5Mode = 0;
-    defparam Control_Reg_1.Bit6Mode = 0;
-    defparam Control_Reg_1.Bit7Mode = 0;
-    defparam Control_Reg_1.BitValue = 0;
-    defparam Control_Reg_1.BusDisplay = 0;
-    defparam Control_Reg_1.ExtrReset = 0;
-    defparam Control_Reg_1.NumOutputs = 2;
+    defparam Waveform_Reg.Bit0Mode = 0;
+    defparam Waveform_Reg.Bit1Mode = 0;
+    defparam Waveform_Reg.Bit2Mode = 0;
+    defparam Waveform_Reg.Bit3Mode = 0;
+    defparam Waveform_Reg.Bit4Mode = 0;
+    defparam Waveform_Reg.Bit5Mode = 0;
+    defparam Waveform_Reg.Bit6Mode = 0;
+    defparam Waveform_Reg.Bit7Mode = 0;
+    defparam Waveform_Reg.BitValue = 0;
+    defparam Waveform_Reg.BusDisplay = 0;
+    defparam Waveform_Reg.ExtrReset = 0;
+    defparam Waveform_Reg.NumOutputs = 1;
 
     WaveDAC8_v2_10_4 WaveDAC8_1 (
-        .Wave(Net_63),
-        .ws(Net_91),
+        .Wave(Net_142),
+        .ws(Net_140),
         .clock(1'b0),
         .wc1(Net_89),
         .wc2(Net_90));
@@ -1171,10 +1171,10 @@ module top ;
     
     cy_psoc3_amux_v1_0 AMux_1(
         .muxin({
-            Net_63,
+            Net_142,
             Net_62
             }),
-        .vout(Net_123)
+        .vout(Net_141)
         );
     
     defparam AMux_1.muxin_width = 2;

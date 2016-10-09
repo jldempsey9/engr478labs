@@ -23,7 +23,7 @@
 #include "VDAC8_1.h"
 #include "UART_1.h"
 #include "isr_1.h"
-#include "Control_Reg_1.h"
+#include "Waveform_Reg.h"
 #include "WaveDAC8_1.h"
 #include "PWM_Out_1_aliases.h"
 #include "PWM_Out_1.h"

@@ -2,7 +2,7 @@
 --	Conversion of Lab3.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Thu Oct 06 20:27:21 2016
+--	Sat Oct 08 22:10:03 2016
 --
 
 USE cypress.cypress.all;
@@ -20,7 +20,7 @@ TERMINAL \ADC_DelSig_1:Net_677\ : bit;
 SIGNAL zero : bit;
 TERMINAL \ADC_DelSig_1:Net_20\ : bit;
 SIGNAL \ADC_DelSig_1:Net_488\ : bit;
-TERMINAL Net_123 : bit;
+TERMINAL Net_141 : bit;
 TERMINAL \ADC_DelSig_1:Net_520\ : bit;
 SIGNAL \ADC_DelSig_1:Net_481\ : bit;
 SIGNAL \ADC_DelSig_1:Net_482\ : bit;
@@ -404,32 +404,32 @@ SIGNAL tmpFB_0__Tx_1_net_0 : bit;
 SIGNAL tmpIO_0__Tx_1_net_0 : bit;
 TERMINAL tmpSIOVREF__Tx_1_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__Tx_1_net_0 : bit;
-SIGNAL \Control_Reg_1:clk\ : bit;
-SIGNAL \Control_Reg_1:rst\ : bit;
-SIGNAL Net_65 : bit;
-SIGNAL \Control_Reg_1:control_out_0\ : bit;
+SIGNAL \Waveform_Reg:clk\ : bit;
+SIGNAL \Waveform_Reg:rst\ : bit;
+SIGNAL Net_140 : bit;
+SIGNAL \Waveform_Reg:control_out_0\ : bit;
 SIGNAL Net_91 : bit;
-SIGNAL \Control_Reg_1:control_out_1\ : bit;
+SIGNAL \Waveform_Reg:control_out_1\ : bit;
 SIGNAL Net_92 : bit;
-SIGNAL \Control_Reg_1:control_out_2\ : bit;
+SIGNAL \Waveform_Reg:control_out_2\ : bit;
 SIGNAL Net_93 : bit;
-SIGNAL \Control_Reg_1:control_out_3\ : bit;
+SIGNAL \Waveform_Reg:control_out_3\ : bit;
 SIGNAL Net_94 : bit;
-SIGNAL \Control_Reg_1:control_out_4\ : bit;
+SIGNAL \Waveform_Reg:control_out_4\ : bit;
 SIGNAL Net_95 : bit;
-SIGNAL \Control_Reg_1:control_out_5\ : bit;
+SIGNAL \Waveform_Reg:control_out_5\ : bit;
 SIGNAL Net_96 : bit;
-SIGNAL \Control_Reg_1:control_out_6\ : bit;
+SIGNAL \Waveform_Reg:control_out_6\ : bit;
 SIGNAL Net_97 : bit;
-SIGNAL \Control_Reg_1:control_out_7\ : bit;
-SIGNAL \Control_Reg_1:control_7\ : bit;
-SIGNAL \Control_Reg_1:control_6\ : bit;
-SIGNAL \Control_Reg_1:control_5\ : bit;
-SIGNAL \Control_Reg_1:control_4\ : bit;
-SIGNAL \Control_Reg_1:control_3\ : bit;
-SIGNAL \Control_Reg_1:control_2\ : bit;
-SIGNAL \Control_Reg_1:control_1\ : bit;
-SIGNAL \Control_Reg_1:control_0\ : bit;
+SIGNAL \Waveform_Reg:control_out_7\ : bit;
+SIGNAL \Waveform_Reg:control_7\ : bit;
+SIGNAL \Waveform_Reg:control_6\ : bit;
+SIGNAL \Waveform_Reg:control_5\ : bit;
+SIGNAL \Waveform_Reg:control_4\ : bit;
+SIGNAL \Waveform_Reg:control_3\ : bit;
+SIGNAL \Waveform_Reg:control_2\ : bit;
+SIGNAL \Waveform_Reg:control_1\ : bit;
+SIGNAL \Waveform_Reg:control_0\ : bit;
 TERMINAL \WaveDAC8_1:Net_211\ : bit;
 SIGNAL \WaveDAC8_1:Net_279\ : bit;
 TERMINAL \WaveDAC8_1:Net_189\ : bit;
@@ -448,7 +448,7 @@ SIGNAL \WaveDAC8_1:VDAC8:Net_83\ : bit;
 SIGNAL \WaveDAC8_1:VDAC8:Net_81\ : bit;
 SIGNAL \WaveDAC8_1:VDAC8:Net_82\ : bit;
 TERMINAL \WaveDAC8_1:VDAC8:Net_77\ : bit;
-TERMINAL Net_63 : bit;
+TERMINAL Net_142 : bit;
 SIGNAL \WaveDAC8_1:Net_280\ : bit;
 SIGNAL \WaveDAC8_1:Net_80\ : bit;
 SIGNAL \WaveDAC8_1:cydff_1\ : bit;
@@ -667,7 +667,7 @@ Net_34D <= ((not \UART_1:BUART:reset_reg\ and \UART_1:BUART:tx_state_2\)
 	GENERIC MAP(cy_registers=>"",
 		resolution=>8)
 	PORT MAP(aclock=>\ADC_DelSig_1:Net_488\,
-		vplus=>Net_123,
+		vplus=>Net_141,
 		vminus=>\ADC_DelSig_1:Net_520\,
 		modbit=>zero,
 		reset_udb=>zero,
@@ -1204,7 +1204,7 @@ Tx_1:cy_psoc3_pins_v1_10
 isr_1:cy_isr_v1_0
 	GENERIC MAP(int_type=>"10")
 	PORT MAP(int_signal=>Net_101);
-\Control_Reg_1:Sync:ctrl_reg\:cy_psoc3_control
+\Waveform_Reg:Sync:ctrl_reg\:cy_psoc3_control
 	GENERIC MAP(cy_init_value=>"00000000",
 		cy_force_order=>'1',
 		cy_ctrl_mode_1=>"00000000",
@@ -1212,8 +1212,8 @@ isr_1:cy_isr_v1_0
 		cy_ext_reset=>'0')
 	PORT MAP(reset=>zero,
 		clock=>zero,
-		control=>(\Control_Reg_1:control_7\, \Control_Reg_1:control_6\, \Control_Reg_1:control_5\, \Control_Reg_1:control_4\,
-			\Control_Reg_1:control_3\, \Control_Reg_1:control_2\, Net_91, \Control_Reg_1:control_0\));
+		control=>(\Waveform_Reg:control_7\, \Waveform_Reg:control_6\, \Waveform_Reg:control_5\, \Waveform_Reg:control_4\,
+			\Waveform_Reg:control_3\, \Waveform_Reg:control_2\, \Waveform_Reg:control_1\, Net_140));
 \WaveDAC8_1:cy_analog_noconnect_1\:cy_analog_noconnect_v1_0
 	PORT MAP(noconnect=>\WaveDAC8_1:Net_211\);
 \WaveDAC8_1:DacClk\:cy_clock_v1_0
@@ -1268,7 +1268,7 @@ isr_1:cy_isr_v1_0
 \WaveDAC8_1:cy_analog_virtualmux_3_connect\:cy_connect_v1_0
 	GENERIC MAP(sig_width=>1,
 		is_net_join=>'0')
-	PORT MAP(signal1=>Net_63,
+	PORT MAP(signal1=>Net_142,
 		signal2=>\WaveDAC8_1:Net_256\);
 R_2:cy_annotation_universal_v1_0
 	GENERIC MAP(comp_name=>"Resistor_v1_0",
@@ -1373,9 +1373,9 @@ AMux_1:cy_psoc3_amux_v1_0
 		init_mux_sel=>"00",
 		api_type=>0,
 		connect_mode=>1)
-	PORT MAP(muxin=>(Net_63, Net_62),
+	PORT MAP(muxin=>(Net_142, Net_62),
 		hw_ctrl_en=>(others => zero),
-		vout=>Net_123);
+		vout=>Net_141);
 \UART_1:BUART:reset_reg\:cy_dff
 	PORT MAP(d=>zero,
 		clk=>\UART_1:BUART:clock_op\,
@@ -1493,7 +1493,7 @@ Net_34:cy_dff
 		clk=>\UART_1:BUART:clock_op\,
 		q=>\UART_1:BUART:rx_parity_bit\);
 \WaveDAC8_1:cydff_1\:cy_dff
-	PORT MAP(d=>Net_91,
+	PORT MAP(d=>Net_140,
 		clk=>\WaveDAC8_1:Net_279\,
 		q=>\WaveDAC8_1:Net_134\);
 

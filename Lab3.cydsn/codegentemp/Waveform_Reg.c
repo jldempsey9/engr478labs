@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: Control_Reg_1.c  
+* File Name: Waveform_Reg.c  
 * Version 1.80
 *
 * Description:
@@ -14,14 +14,14 @@
 * the software package with which this file was provided.
 *******************************************************************************/
 
-#include "Control_Reg_1.h"
+#include "Waveform_Reg.h"
 
 /* Check for removal by optimization */
-#if !defined(Control_Reg_1_Sync_ctrl_reg__REMOVED)
+#if !defined(Waveform_Reg_Sync_ctrl_reg__REMOVED)
 
     
 /*******************************************************************************
-* Function Name: Control_Reg_1_Write
+* Function Name: Waveform_Reg_Write
 ********************************************************************************
 *
 * Summary:
@@ -34,14 +34,14 @@
 *  None.
 *
 *******************************************************************************/
-void Control_Reg_1_Write(uint8 control) 
+void Waveform_Reg_Write(uint8 control) 
 {
-    Control_Reg_1_Control = control;
+    Waveform_Reg_Control = control;
 }
 
 
 /*******************************************************************************
-* Function Name: Control_Reg_1_Read
+* Function Name: Waveform_Reg_Read
 ********************************************************************************
 *
 * Summary:
@@ -54,9 +54,9 @@ void Control_Reg_1_Write(uint8 control)
 *  Returns the current value in the Control Register.
 *
 *******************************************************************************/
-uint8 Control_Reg_1_Read(void) 
+uint8 Waveform_Reg_Read(void) 
 {
-    return Control_Reg_1_Control;
+    return Waveform_Reg_Control;
 }
 
 #endif /* End check for removal by optimization */

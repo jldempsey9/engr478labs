@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc1coCFd.s 			page 1
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccIfg6TG.s 			page 1
 
 
    1              		.syntax unified
@@ -18,31 +18,83 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc1coCFd.s 			page 1
   15              		.text
   16              	.Ltext0:
   17              		.cfi_sections	.debug_frame
-  18              		.comm	recvChar,1,1
-  19              		.comm	ledState,1,1
-  20              		.comm	adcOut,4,4
-  21              		.comm	EmulatedData,1,1
-  22              		.comm	ContinuouslySendData,1,1
-  23              		.comm	SendSingleByte,1,1
-  24              		.comm	SendEmulatedData,1,1
-  25              		.comm	TransmitBuffer,16,4
-  26              		.section	.rodata
-  27              		.align	2
-  28              	.LC0:
-  29 0000 61646320 		.ascii	"adc reads: %lu\015\012\000"
-  29      72656164 
-  29      733A2025 
-  29      6C750D0A 
-  29      00
-  30              		.section	.text.ReadSerial,"ax",%progbits
-  31              		.align	2
-  32              		.global	ReadSerial
-  33              		.thumb
-  34              		.thumb_func
-  35              		.type	ReadSerial, %function
-  36              	ReadSerial:
-  37              	.LFB63:
-  38              		.file 1 ".\\main.c"
+  18              		.global	recvChar
+  19              		.bss
+  20              		.type	recvChar, %object
+  21              		.size	recvChar, 1
+  22              	recvChar:
+  23 0000 00       		.space	1
+  24              		.global	adcOut
+  25 0001 000000   		.align	2
+  26              		.type	adcOut, %object
+  27              		.size	adcOut, 4
+  28              	adcOut:
+  29 0004 00000000 		.space	4
+  30              		.global	continuousSending
+  31              		.type	continuousSending, %object
+  32              		.size	continuousSending, 1
+  33              	continuousSending:
+  34 0008 00       		.space	1
+  35              		.global	dacState
+  36              		.type	dacState, %object
+  37              		.size	dacState, 1
+  38              	dacState:
+  39 0009 00       		.space	1
+  40              		.global	waveForm
+  41              		.type	waveForm, %object
+  42              		.size	waveForm, 1
+  43              	waveForm:
+  44 000a 00       		.space	1
+  45              		.global	TransmitBuffer
+  46 000b 00       		.align	2
+  47              		.type	TransmitBuffer, %object
+  48              		.size	TransmitBuffer, 16
+  49              	TransmitBuffer:
+  50 000c 00000000 		.space	16
+  50      00000000 
+  50      00000000 
+  50      00000000 
+  51              		.section	.rodata
+  52              		.align	2
+  53              	.LC0:
+  54 0000 54686973 		.ascii	"This is dacState: %d\015\012\000"
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccIfg6TG.s 			page 2
+
+
+  54      20697320 
+  54      64616353 
+  54      74617465 
+  54      3A202564 
+  55 0017 00       		.align	2
+  56              	.LC1:
+  57 0018 53696E67 		.ascii	"Single ADC Read: %lu\015\012\000"
+  57      6C652041 
+  57      44432052 
+  57      6561643A 
+  57      20256C75 
+  58 002f 00       		.align	2
+  59              	.LC2:
+  60 0030 54686973 		.ascii	"This is waveForm: %d\015\012\000"
+  60      20697320 
+  60      77617665 
+  60      466F726D 
+  60      3A202564 
+  61 0047 00       		.align	2
+  62              	.LC3:
+  63 0048 496E7661 		.ascii	"Invalid command!\015\012\000"
+  63      6C696420 
+  63      636F6D6D 
+  63      616E6421 
+  63      0D0A00
+  64              		.section	.text.ReadSerial,"ax",%progbits
+  65              		.align	2
+  66              		.global	ReadSerial
+  67              		.thumb
+  68              		.thumb_func
+  69              		.type	ReadSerial, %function
+  70              	ReadSerial:
+  71              	.LFB63:
+  72              		.file 1 ".\\main.c"
    1:.\main.c      **** /******************************************************************************
    2:.\main.c      **** * Project Name		: Lab 3
    3:.\main.c      **** * File Name			: main.c
@@ -58,9 +110,6 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc1coCFd.s 			page 1
   13:.\main.c      **** ********************************************************************************
   14:.\main.c      **** * This software is owned by Cypress Semiconductor Corporation (Cypress)
   15:.\main.c      **** * and is protected by and subject to worldwide patent protection (United
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc1coCFd.s 			page 2
-
-
   16:.\main.c      **** * States and foreign), United States copyright laws and international treaty
   17:.\main.c      **** * provisions. Cypress hereby grants to licensee a personal, non-exclusive,
   18:.\main.c      **** * non-transferable license to copy, use, modify, create derivative works of,
@@ -69,6 +118,9 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc1coCFd.s 			page 1
   21:.\main.c      **** * used only in conjunction with a Cypress integrated circuit as specified in
   22:.\main.c      **** * the applicable agreement. Any reproduction, modification, translation,
   23:.\main.c      **** * compilation, or representation of this software except as specified above 
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccIfg6TG.s 			page 3
+
+
   24:.\main.c      **** * is prohibited without the express written permission of Cypress.
   25:.\main.c      **** *
   26:.\main.c      **** * Disclaimer: CYPRESS MAKES NO WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, WITH 
@@ -92,127 +144,134 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc1coCFd.s 			page 1
   44:.\main.c      **** 
   45:.\main.c      **** #include <device.h>
   46:.\main.c      **** #include "stdio.h"
-  47:.\main.c      **** 
-  48:.\main.c      **** /* Project Defines */
-  49:.\main.c      **** #define FALSE  0
-  50:.\main.c      **** #define TRUE   1
-  51:.\main.c      **** #define TRANSMIT_BUFFER_SIZE  16
-  52:.\main.c      **** 
-  53:.\main.c      **** 
-  54:.\main.c      **** /*******************************************************************************
-  55:.\main.c      **** * Function Name: main
-  56:.\main.c      **** ********************************************************************************
-  57:.\main.c      **** *
-  58:.\main.c      **** * Summary:
-  59:.\main.c      **** *  main() performs following functions:
-  60:.\main.c      **** *  1: Starts the ADC and UART components.
-  61:.\main.c      **** *  2: Checks for ADC end of conversion.  Stores latest result in output
-  62:.\main.c      **** *     if conversion complete.
-  63:.\main.c      **** *  3: Checks for UART input.
-  64:.\main.c      **** *     On 'C' or 'c' received: transmits the last sample via the UART.
-  65:.\main.c      **** *     On 'S' or 's' received: continuously transmits samples as they are completed.
-  66:.\main.c      **** *     On 'X' or 'x' received: stops continuously transmitting samples.
-  67:.\main.c      **** *     On 'E' or 'e' received: transmits a dummy byte of data.
+  47:.\main.c      **** #include <stdbool.h>
+  48:.\main.c      **** 
+  49:.\main.c      **** 
+  50:.\main.c      **** 
+  51:.\main.c      **** 
+  52:.\main.c      **** /*******************************************************************************
+  53:.\main.c      **** * Function Name: main
+  54:.\main.c      **** ********************************************************************************
+  55:.\main.c      **** *
+  56:.\main.c      **** * Summary:
+  57:.\main.c      **** *  main() performs following functions:
+  58:.\main.c      **** *  1: Starts the ADC, UART, and 2 different DAC components.
+  59:.\main.c      **** *  2: Receives UART Input to sample ADC and return sample to UART
+  60:.\main.c      **** *     On 'C' or 'c' received: continuously transmits samples as they are completed.
+  61:.\main.c      **** *     On 'R' or 'r' received: single Read command, polls ADC and prints reading.
+  62:.\main.c      **** *     On 'X' or 'x' received: stops continuously transmitting samples.
+  63:.\main.c      **** *     On 'S' or 's' received: Switches between waveform DAC and constant voltage DAC
+  64:.\main.c      ****       On 'W' or 'w' received: toggle waveform generated by waveform DAC
+  65:.\main.c      **** *
+  66:.\main.c      **** * Parameters:
+  67:.\main.c      **** *  None.
   68:.\main.c      **** *
-  69:.\main.c      **** * Parameters:
+  69:.\main.c      **** * Return:
   70:.\main.c      **** *  None.
   71:.\main.c      **** *
-  72:.\main.c      **** * Return:
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc1coCFd.s 			page 3
-
-
-  73:.\main.c      **** *  None.
-  74:.\main.c      **** *
-  75:.\main.c      **** *******************************************************************************/
+  72:.\main.c      **** *******************************************************************************/
+  73:.\main.c      **** 
+  74:.\main.c      **** 
+  75:.\main.c      **** #define TRANSMIT_BUFFER_SIZE  16
   76:.\main.c      **** 
   77:.\main.c      **** 
-  78:.\main.c      **** 
-  79:.\main.c      **** uint8 recvChar;     //stores received char from UART on interrupt
-  80:.\main.c      **** uint8 ledState;     //turns on and off the LED
-  81:.\main.c      **** uint32 adcOut;      //stores ADC result
-  82:.\main.c      **** 
-  83:.\main.c      **** /* Variable used to send emulated data */
-  84:.\main.c      **** uint8 EmulatedData;
-  85:.\main.c      **** /* Flags used to store transmit data commands */
-  86:.\main.c      **** uint8 ContinuouslySendData;
-  87:.\main.c      **** uint8 SendSingleByte;
-  88:.\main.c      **** uint8 SendEmulatedData;
-  89:.\main.c      **** /* Transmit Buffer */
-  90:.\main.c      **** char TransmitBuffer[TRANSMIT_BUFFER_SIZE];
-  91:.\main.c      **** 
-  92:.\main.c      **** 
-  93:.\main.c      **** CY_ISR(ReadSerial) {
-  39              		.loc 1 93 0
-  40              		.cfi_startproc
-  41              		@ args = 0, pretend = 0, frame = 0
-  42              		@ frame_needed = 1, uses_anonymous_args = 0
-  43 0000 80B5     		push	{r7, lr}
-  44              		.cfi_def_cfa_offset 8
-  45              		.cfi_offset 7, -8
-  46              		.cfi_offset 14, -4
-  47 0002 00AF     		add	r7, sp, #0
-  48              		.cfi_def_cfa_register 7
-  94:.\main.c      ****     //interpret the data
-  95:.\main.c      ****     //S or s = switch between waveform and constant Voltage
-  96:.\main.c      ****     //R or r = read voltage
-  97:.\main.c      ****     //C or c = constant output data
-  98:.\main.c      ****     //X or x = stop constantly outputting data
-  99:.\main.c      ****     
- 100:.\main.c      ****     
+  78:.\main.c      **** uint8 recvChar = 0;     //stores received char from UART on interrupt
+  79:.\main.c      **** uint32 adcOut = 0;      //stores ADC result
+  80:.\main.c      **** bool continuousSending = false;     //polls ADC and sends Serial data continuously
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccIfg6TG.s 			page 4
+
+
+  81:.\main.c      **** uint8 dacState = 0;     //0 or 1 to choose between waveform DAC or constant voltage DAC
+  82:.\main.c      **** uint8 waveForm = 0;     //changes the waveform generated by waveform DAC
+  83:.\main.c      **** 
+  84:.\main.c      **** char TransmitBuffer[TRANSMIT_BUFFER_SIZE] = {0};  //transmit buffer for sending strings
+  85:.\main.c      **** 
+  86:.\main.c      **** 
+  87:.\main.c      **** //ISR triggered upon UART receiving data
+  88:.\main.c      **** CY_ISR(ReadSerial) {
+  73              		.loc 1 88 0
+  74              		.cfi_startproc
+  75              		@ args = 0, pretend = 0, frame = 0
+  76              		@ frame_needed = 1, uses_anonymous_args = 0
+  77 0000 80B5     		push	{r7, lr}
+  78              		.cfi_def_cfa_offset 8
+  79              		.cfi_offset 7, -8
+  80              		.cfi_offset 14, -4
+  81 0002 00AF     		add	r7, sp, #0
+  82              		.cfi_def_cfa_register 7
+  89:.\main.c      ****     //interpret the data
+  90:.\main.c      ****     //S or s = switch between waveform and constant Voltage
+  91:.\main.c      ****     //R or r = read voltage
+  92:.\main.c      ****     //C or c = constant output data
+  93:.\main.c      ****     //X or x = stop constantly outputting data
+  94:.\main.c      ****     //W or w = switch waveform
+  95:.\main.c      ****     
+  96:.\main.c      ****     isr_1_ClearPending();   //apparently do this at beginning of ISR
+  83              		.loc 1 96 0
+  84 0004 FFF7FEFF 		bl	isr_1_ClearPending
+  97:.\main.c      ****     
+  98:.\main.c      ****     
+  99:.\main.c      ****     //for debugging to make sure interrupt went through
+ 100:.\main.c      ****     /*
  101:.\main.c      ****     Debug_LED_ctrl_Write(ledState);
-  49              		.loc 1 101 0
-  50 0004 2D4B     		ldr	r3, .L15
-  51 0006 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
-  52 0008 1846     		mov	r0, r3
-  53 000a FFF7FEFF 		bl	Debug_LED_ctrl_Write
  102:.\main.c      ****     if (ledState) {
-  54              		.loc 1 102 0
-  55 000e 2B4B     		ldr	r3, .L15
-  56 0010 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
-  57 0012 002B     		cmp	r3, #0
-  58 0014 03D0     		beq	.L2
  103:.\main.c      ****         ledState = 0;   
-  59              		.loc 1 103 0
-  60 0016 294B     		ldr	r3, .L15
-  61 0018 0022     		movs	r2, #0
-  62 001a 1A70     		strb	r2, [r3]
-  63 001c 02E0     		b	.L3
-  64              	.L2:
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc1coCFd.s 			page 4
-
-
  104:.\main.c      ****     } else {
  105:.\main.c      ****         ledState = 1;   
-  65              		.loc 1 105 0
-  66 001e 274B     		ldr	r3, .L15
-  67 0020 0122     		movs	r2, #1
-  68 0022 1A70     		strb	r2, [r3]
-  69              	.L3:
  106:.\main.c      ****     }
- 107:.\main.c      ****     
+ 107:.\main.c      ****     */
  108:.\main.c      ****     
  109:.\main.c      ****     
  110:.\main.c      ****     recvChar = UART_1_GetChar();
-  70              		.loc 1 110 0
-  71 0024 FFF7FEFF 		bl	UART_1_GetChar
-  72 0028 0346     		mov	r3, r0
-  73 002a 1A46     		mov	r2, r3
-  74 002c 244B     		ldr	r3, .L15+4
-  75 002e 1A70     		strb	r2, [r3]
+  85              		.loc 1 110 0
+  86 0008 FFF7FEFF 		bl	UART_1_GetChar
+  87 000c 0346     		mov	r3, r0
+  88 000e 1A46     		mov	r2, r3
+  89 0010 3E4B     		ldr	r3, .L15
+  90 0012 1A70     		strb	r2, [r3]
  111:.\main.c      ****     switch(recvChar)
-  76              		.loc 1 111 0
-  77 0030 234B     		ldr	r3, .L15+4
-  78 0032 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
-  79 0034 582B     		cmp	r3, #88
-  80 0036 3BD0     		beq	.L5
-  81 0038 582B     		cmp	r3, #88
-  82 003a 0BDC     		bgt	.L6
-  83 003c 432B     		cmp	r3, #67
-  84 003e 33D0     		beq	.L7
-  85 0040 432B     		cmp	r3, #67
-  86 0042 02DC     		bgt	.L8
-  87 0044 002B     		cmp	r3, #0
-  88 0046 37D0     		beq	.L14
+  91              		.loc 1 111 0
+  92 0014 3D4B     		ldr	r3, .L15
+  93 0016 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+  94 0018 582B     		cmp	r3, #88
+  95 001a 54D0     		beq	.L3
+  96 001c 582B     		cmp	r3, #88
+  97 001e 0DDC     		bgt	.L4
+  98 0020 522B     		cmp	r3, #82
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccIfg6TG.s 			page 5
+
+
+  99 0022 30D0     		beq	.L5
+ 100 0024 522B     		cmp	r3, #82
+ 101 0026 04DC     		bgt	.L6
+ 102 0028 002B     		cmp	r3, #0
+ 103 002a 6CD0     		beq	.L14
+ 104 002c 432B     		cmp	r3, #67
+ 105 002e 46D0     		beq	.L8
+ 106 0030 64E0     		b	.L2
+ 107              	.L6:
+ 108 0032 532B     		cmp	r3, #83
+ 109 0034 10D0     		beq	.L9
+ 110 0036 572B     		cmp	r3, #87
+ 111 0038 49D0     		beq	.L10
+ 112 003a 5FE0     		b	.L2
+ 113              	.L4:
+ 114 003c 732B     		cmp	r3, #115
+ 115 003e 0BD0     		beq	.L9
+ 116 0040 732B     		cmp	r3, #115
+ 117 0042 04DC     		bgt	.L11
+ 118 0044 632B     		cmp	r3, #99
+ 119 0046 3AD0     		beq	.L8
+ 120 0048 722B     		cmp	r3, #114
+ 121 004a 1CD0     		beq	.L5
+ 122 004c 56E0     		b	.L2
+ 123              	.L11:
+ 124 004e 772B     		cmp	r3, #119
+ 125 0050 3DD0     		beq	.L10
+ 126 0052 782B     		cmp	r3, #120
+ 127 0054 37D0     		beq	.L3
+ 128 0056 51E0     		b	.L2
+ 129              	.L9:
  112:.\main.c      ****     {
  113:.\main.c      ****         case 0:
  114:.\main.c      ****             //no new data
@@ -220,860 +279,931 @@ ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc1coCFd.s 			page 1
  116:.\main.c      ****         case 'S':
  117:.\main.c      ****         case 's':
  118:.\main.c      ****             //Switches between waveform DAC and voltage DAC
- 119:.\main.c      ****             AMux_1_Select(ledState);
- 120:.\main.c      ****             break;
- 121:.\main.c      ****         case 'R':
- 122:.\main.c      ****         case 'r':
- 123:.\main.c      ****             //Reads data and sends it to UART
- 124:.\main.c      ****             Control_Reg_1_Write(1);
- 125:.\main.c      ****             
- 126:.\main.c      ****             adcOut = ADC_DelSig_1_CountsTo_mVolts(ADC_DelSig_1_GetResult16());
- 127:.\main.c      ****             sprintf(TransmitBuffer, "adc reads: %lu\r\n", adcOut);
- 128:.\main.c      ****             UART_1_PutString(TransmitBuffer);
- 129:.\main.c      ****             break;
- 130:.\main.c      ****         case 'C':
- 131:.\main.c      ****         case 'c':
- 132:.\main.c      ****             //Continuously sends data
- 133:.\main.c      ****             Control_Reg_1_Write(1);
- 134:.\main.c      ****             break;
- 135:.\main.c      ****         case 'X':
- 136:.\main.c      ****         case 'x':
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc1coCFd.s 			page 5
+ 119:.\main.c      ****             dacState ^= 1;      //XOR with 1 toggles dacState between 0 and 1
+ 130              		.loc 1 119 0
+ 131 0058 2D4B     		ldr	r3, .L15+4
+ 132 005a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 133 005c 83F00103 		eor	r3, r3, #1
+ 134 0060 DAB2     		uxtb	r2, r3
+ 135 0062 2B4B     		ldr	r3, .L15+4
+ 136 0064 1A70     		strb	r2, [r3]
+ 120:.\main.c      ****             AMux_1_Select(dacState);
+ 137              		.loc 1 120 0
+ 138 0066 2A4B     		ldr	r3, .L15+4
+ 139 0068 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 140 006a 1846     		mov	r0, r3
+ 141 006c FFF7FEFF 		bl	AMux_1_FastSelect
+ 121:.\main.c      ****             sprintf(TransmitBuffer, "This is dacState: %d\r\n", dacState);
+ 142              		.loc 1 121 0
+ 143 0070 274B     		ldr	r3, .L15+4
+ 144 0072 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 145 0074 2748     		ldr	r0, .L15+8
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccIfg6TG.s 			page 6
 
 
- 137:.\main.c      ****             //Cancels continuously sending data
- 138:.\main.c      ****             Control_Reg_1_Write(1);
- 139:.\main.c      ****             break;
- 140:.\main.c      ****         default:
- 141:.\main.c      ****             // Place error handling code here
- 142:.\main.c      ****             //lol no
- 143:.\main.c      ****             break;    
-  89              		.loc 1 143 0
-  90 0048 37E0     		b	.L1
-  91              	.L8:
- 111:.\main.c      ****     switch(recvChar)
-  92              		.loc 1 111 0
-  93 004a 522B     		cmp	r3, #82
-  94 004c 14D0     		beq	.L10
-  95 004e 532B     		cmp	r3, #83
-  96 0050 0CD0     		beq	.L11
-  97              		.loc 1 143 0
-  98 0052 32E0     		b	.L1
-  99              	.L6:
- 111:.\main.c      ****     switch(recvChar)
- 100              		.loc 1 111 0
- 101 0054 722B     		cmp	r3, #114
- 102 0056 0FD0     		beq	.L10
- 103 0058 722B     		cmp	r3, #114
- 104 005a 02DC     		bgt	.L12
- 105 005c 632B     		cmp	r3, #99
- 106 005e 23D0     		beq	.L7
- 107              		.loc 1 143 0
- 108 0060 2BE0     		b	.L1
- 109              	.L12:
- 111:.\main.c      ****     switch(recvChar)
- 110              		.loc 1 111 0
- 111 0062 732B     		cmp	r3, #115
- 112 0064 02D0     		beq	.L11
- 113 0066 782B     		cmp	r3, #120
- 114 0068 22D0     		beq	.L5
- 115              		.loc 1 143 0
- 116 006a 26E0     		b	.L1
- 117              	.L11:
- 119:.\main.c      ****             break;
- 118              		.loc 1 119 0
- 119 006c 134B     		ldr	r3, .L15
- 120 006e 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 121 0070 1846     		mov	r0, r3
- 122 0072 FFF7FEFF 		bl	AMux_1_FastSelect
- 120:.\main.c      ****         case 'R':
- 123              		.loc 1 120 0
- 124 0076 20E0     		b	.L1
- 125              	.L10:
- 124:.\main.c      ****             
- 126              		.loc 1 124 0
- 127 0078 0120     		movs	r0, #1
- 128 007a FFF7FEFF 		bl	Control_Reg_1_Write
- 126:.\main.c      ****             sprintf(TransmitBuffer, "adc reads: %lu\r\n", adcOut);
- 129              		.loc 1 126 0
- 130 007e FFF7FEFF 		bl	ADC_DelSig_1_GetResult16
- 131 0082 0346     		mov	r3, r0
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc1coCFd.s 			page 6
-
-
- 132 0084 1846     		mov	r0, r3
- 133 0086 FFF7FEFF 		bl	ADC_DelSig_1_CountsTo_mVolts
- 134 008a 0346     		mov	r3, r0
- 135 008c 1A46     		mov	r2, r3
- 136 008e 0D4B     		ldr	r3, .L15+8
- 137 0090 1A60     		str	r2, [r3]
- 127:.\main.c      ****             UART_1_PutString(TransmitBuffer);
- 138              		.loc 1 127 0
- 139 0092 0C4B     		ldr	r3, .L15+8
- 140 0094 1B68     		ldr	r3, [r3]
- 141 0096 0C48     		ldr	r0, .L15+12
- 142 0098 0C49     		ldr	r1, .L15+16
- 143 009a 1A46     		mov	r2, r3
- 144 009c FFF7FEFF 		bl	sprintf
- 128:.\main.c      ****             break;
- 145              		.loc 1 128 0
- 146 00a0 0948     		ldr	r0, .L15+12
- 147 00a2 FFF7FEFF 		bl	UART_1_PutString
- 129:.\main.c      ****         case 'C':
- 148              		.loc 1 129 0
- 149 00a6 08E0     		b	.L1
- 150              	.L7:
+ 146 0076 2849     		ldr	r1, .L15+12
+ 147 0078 1A46     		mov	r2, r3
+ 148 007a FFF7FEFF 		bl	sprintf
+ 122:.\main.c      ****             UART_1_PutString(TransmitBuffer);
+ 149              		.loc 1 122 0
+ 150 007e 2548     		ldr	r0, .L15+8
+ 151 0080 FFF7FEFF 		bl	UART_1_PutString
+ 123:.\main.c      ****             break;
+ 152              		.loc 1 123 0
+ 153 0084 40E0     		b	.L1
+ 154              	.L5:
+ 124:.\main.c      ****         case 'R':
+ 125:.\main.c      ****         case 'r':
+ 126:.\main.c      ****             //Reads data and sends it to UART
+ 127:.\main.c      ****             if(ADC_DelSig_1_IsEndConversion(ADC_DelSig_1_RETURN_STATUS)) {
+ 155              		.loc 1 127 0
+ 156 0086 0120     		movs	r0, #1
+ 157 0088 FFF7FEFF 		bl	ADC_DelSig_1_IsEndConversion
+ 158 008c 0346     		mov	r3, r0
+ 159 008e 002B     		cmp	r3, #0
+ 160 0090 14D0     		beq	.L13
+ 128:.\main.c      ****                 //adcOut = ADC_DelSig_1_CountsTo_mVolts(ADC_DelSig_1_GetResult16());
+ 129:.\main.c      ****                 adcOut = ADC_DelSig_1_CountsTo_mVolts(ADC_DelSig_1_GetResult8());
+ 161              		.loc 1 129 0
+ 162 0092 FFF7FEFF 		bl	ADC_DelSig_1_GetResult8
+ 163 0096 0346     		mov	r3, r0
+ 164 0098 1846     		mov	r0, r3
+ 165 009a FFF7FEFF 		bl	ADC_DelSig_1_CountsTo_mVolts
+ 166 009e 0346     		mov	r3, r0
+ 167 00a0 1A46     		mov	r2, r3
+ 168 00a2 1E4B     		ldr	r3, .L15+16
+ 169 00a4 1A60     		str	r2, [r3]
+ 130:.\main.c      ****                 sprintf(TransmitBuffer, "Single ADC Read: %lu\r\n", adcOut);
+ 170              		.loc 1 130 0
+ 171 00a6 1D4B     		ldr	r3, .L15+16
+ 172 00a8 1B68     		ldr	r3, [r3]
+ 173 00aa 1A48     		ldr	r0, .L15+8
+ 174 00ac 1C49     		ldr	r1, .L15+20
+ 175 00ae 1A46     		mov	r2, r3
+ 176 00b0 FFF7FEFF 		bl	sprintf
+ 131:.\main.c      ****                 UART_1_PutString(TransmitBuffer);
+ 177              		.loc 1 131 0
+ 178 00b4 1748     		ldr	r0, .L15+8
+ 179 00b6 FFF7FEFF 		bl	UART_1_PutString
+ 132:.\main.c      ****             }
  133:.\main.c      ****             break;
- 151              		.loc 1 133 0
- 152 00a8 0120     		movs	r0, #1
- 153 00aa FFF7FEFF 		bl	Control_Reg_1_Write
- 134:.\main.c      ****         case 'X':
- 154              		.loc 1 134 0
- 155 00ae 04E0     		b	.L1
- 156              	.L5:
+ 180              		.loc 1 133 0
+ 181 00ba 25E0     		b	.L1
+ 182              	.L13:
+ 183 00bc 24E0     		b	.L1
+ 184              	.L8:
+ 134:.\main.c      ****         case 'C':
+ 135:.\main.c      ****         case 'c':
+ 136:.\main.c      ****             //Continuously sends data
+ 137:.\main.c      ****             continuousSending = true;
+ 185              		.loc 1 137 0
+ 186 00be 194B     		ldr	r3, .L15+24
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccIfg6TG.s 			page 7
+
+
+ 187 00c0 0122     		movs	r2, #1
+ 188 00c2 1A70     		strb	r2, [r3]
  138:.\main.c      ****             break;
- 157              		.loc 1 138 0
- 158 00b0 0120     		movs	r0, #1
- 159 00b2 FFF7FEFF 		bl	Control_Reg_1_Write
- 139:.\main.c      ****         default:
- 160              		.loc 1 139 0
- 161 00b6 00E0     		b	.L1
- 162              	.L14:
+ 189              		.loc 1 138 0
+ 190 00c4 20E0     		b	.L1
+ 191              	.L3:
+ 139:.\main.c      ****         case 'X':
+ 140:.\main.c      ****         case 'x':
+ 141:.\main.c      ****             //Cancels continuously sending data
+ 142:.\main.c      ****             continuousSending = false;
+ 192              		.loc 1 142 0
+ 193 00c6 174B     		ldr	r3, .L15+24
+ 194 00c8 0022     		movs	r2, #0
+ 195 00ca 1A70     		strb	r2, [r3]
+ 143:.\main.c      ****             break;
+ 196              		.loc 1 143 0
+ 197 00cc 1CE0     		b	.L1
+ 198              	.L10:
+ 144:.\main.c      ****         case 'W':
+ 145:.\main.c      ****         case 'w':
+ 146:.\main.c      ****             //toggles waveform dac input wavesignal
+ 147:.\main.c      ****             waveForm ^= 1;      //XOR with 1 toggles dacState between 0 and 1
+ 199              		.loc 1 147 0
+ 200 00ce 164B     		ldr	r3, .L15+28
+ 201 00d0 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 202 00d2 83F00103 		eor	r3, r3, #1
+ 203 00d6 DAB2     		uxtb	r2, r3
+ 204 00d8 134B     		ldr	r3, .L15+28
+ 205 00da 1A70     		strb	r2, [r3]
+ 148:.\main.c      ****             Waveform_Reg_Write(waveForm);
+ 206              		.loc 1 148 0
+ 207 00dc 124B     		ldr	r3, .L15+28
+ 208 00de 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 209 00e0 1846     		mov	r0, r3
+ 210 00e2 FFF7FEFF 		bl	Waveform_Reg_Write
+ 149:.\main.c      ****             sprintf(TransmitBuffer, "This is waveForm: %d\r\n", waveForm);
+ 211              		.loc 1 149 0
+ 212 00e6 104B     		ldr	r3, .L15+28
+ 213 00e8 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 214 00ea 0A48     		ldr	r0, .L15+8
+ 215 00ec 0F49     		ldr	r1, .L15+32
+ 216 00ee 1A46     		mov	r2, r3
+ 217 00f0 FFF7FEFF 		bl	sprintf
+ 150:.\main.c      ****             UART_1_PutString(TransmitBuffer);
+ 218              		.loc 1 150 0
+ 219 00f4 0748     		ldr	r0, .L15+8
+ 220 00f6 FFF7FEFF 		bl	UART_1_PutString
+ 151:.\main.c      ****             break;
+ 221              		.loc 1 151 0
+ 222 00fa 05E0     		b	.L1
+ 223              	.L2:
+ 152:.\main.c      ****         default:
+ 153:.\main.c      ****             // Place error handling code here
+ 154:.\main.c      ****             //lol no
+ 155:.\main.c      ****             
+ 156:.\main.c      ****             
+ 157:.\main.c      ****             //ok maybe we'll print something
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccIfg6TG.s 			page 8
+
+
+ 158:.\main.c      ****             UART_1_PutString("Invalid command!\r\n");
+ 224              		.loc 1 158 0
+ 225 00fc 0C48     		ldr	r0, .L15+36
+ 226 00fe FFF7FEFF 		bl	UART_1_PutString
+ 159:.\main.c      ****             break;    
+ 227              		.loc 1 159 0
+ 228 0102 00BF     		nop
+ 229 0104 00E0     		b	.L1
+ 230              	.L14:
  115:.\main.c      ****         case 'S':
- 163              		.loc 1 115 0
- 164 00b8 00BF     		nop
- 165              	.L1:
- 144:.\main.c      ****     }
- 145:.\main.c      ****         
- 146:.\main.c      **** }
- 166              		.loc 1 146 0
- 167 00ba 80BD     		pop	{r7, pc}
- 168              	.L16:
- 169              		.align	2
- 170              	.L15:
- 171 00bc 00000000 		.word	ledState
- 172 00c0 00000000 		.word	recvChar
- 173 00c4 00000000 		.word	adcOut
- 174 00c8 00000000 		.word	TransmitBuffer
- 175 00cc 00000000 		.word	.LC0
- 176              		.cfi_endproc
- 177              	.LFE63:
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc1coCFd.s 			page 7
+ 231              		.loc 1 115 0
+ 232 0106 00BF     		nop
+ 233              	.L1:
+ 160:.\main.c      ****     }
+ 161:.\main.c      ****         
+ 162:.\main.c      **** }
+ 234              		.loc 1 162 0
+ 235 0108 80BD     		pop	{r7, pc}
+ 236              	.L16:
+ 237 010a 00BF     		.align	2
+ 238              	.L15:
+ 239 010c 00000000 		.word	recvChar
+ 240 0110 00000000 		.word	dacState
+ 241 0114 00000000 		.word	TransmitBuffer
+ 242 0118 00000000 		.word	.LC0
+ 243 011c 00000000 		.word	adcOut
+ 244 0120 18000000 		.word	.LC1
+ 245 0124 00000000 		.word	continuousSending
+ 246 0128 00000000 		.word	waveForm
+ 247 012c 30000000 		.word	.LC2
+ 248 0130 48000000 		.word	.LC3
+ 249              		.cfi_endproc
+ 250              	.LFE63:
+ 251              		.size	ReadSerial, .-ReadSerial
+ 252              		.section	.rodata
+ 253 005b 00       		.align	2
+ 254              	.LC4:
+ 255 005c 434F4D20 		.ascii	"COM Port Open\015\012\000"
+ 255      506F7274 
+ 255      204F7065 
+ 255      6E0D0A00 
+ 256              		.align	2
+ 257              	.LC5:
+ 258 006c 496E6974 		.ascii	"Initialized read: %lu mV\015\012\000"
+ 258      69616C69 
+ 258      7A656420 
+ 258      72656164 
+ 258      3A20256C 
+ 259 0087 00       		.align	2
+ 260              	.LC6:
+ 261 0088 436F6E74 		.ascii	"Continuous ADC Read: %lu mV\015\012\000"
+ 261      696E756F 
+ 261      75732041 
+ 261      44432052 
+ 261      6561643A 
+ 262 00a6 0000     		.section	.text.main,"ax",%progbits
+ 263              		.align	2
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccIfg6TG.s 			page 9
 
 
- 178              		.size	ReadSerial, .-ReadSerial
- 179              		.section	.rodata
- 180 0011 000000   		.align	2
- 181              	.LC1:
- 182 0014 434F4D20 		.ascii	"COM Port Open\000"
- 182      506F7274 
- 182      204F7065 
- 182      6E00
- 183 0022 0000     		.section	.text.main,"ax",%progbits
- 184              		.align	2
- 185              		.global	main
- 186              		.thumb
- 187              		.thumb_func
- 188              		.type	main, %function
- 189              	main:
- 190              	.LFB64:
- 147:.\main.c      **** 
- 148:.\main.c      **** 
- 149:.\main.c      **** 
- 150:.\main.c      **** int main()
- 151:.\main.c      **** {
- 191              		.loc 1 151 0
- 192              		.cfi_startproc
- 193              		@ args = 0, pretend = 0, frame = 0
- 194              		@ frame_needed = 1, uses_anonymous_args = 0
- 195 0000 80B5     		push	{r7, lr}
- 196              		.cfi_def_cfa_offset 8
- 197              		.cfi_offset 7, -8
- 198              		.cfi_offset 14, -4
- 199 0002 00AF     		add	r7, sp, #0
- 200              		.cfi_def_cfa_register 7
- 152:.\main.c      ****     
- 153:.\main.c      ****    
- 154:.\main.c      ****     isr_1_StartEx(ReadSerial);      //attach the interrupt
- 201              		.loc 1 154 0
- 202 0004 1048     		ldr	r0, .L19
- 203 0006 FFF7FEFF 		bl	isr_1_StartEx
- 155:.\main.c      ****     CYGlobalIntEnable;              //this one line wasted like an hour
- 204              		.loc 1 155 0
- 205              	@ 155 ".\main.c" 1
- 206 000a 62B6     		CPSIE   i
- 207              	@ 0 "" 2
- 156:.\main.c      ****     
- 157:.\main.c      ****     /* Start the components */
- 158:.\main.c      ****     ADC_DelSig_1_Start();
- 208              		.loc 1 158 0
- 209              		.thumb
- 210 000c FFF7FEFF 		bl	ADC_DelSig_1_Start
- 159:.\main.c      ****     UART_1_Start();
- 211              		.loc 1 159 0
- 212 0010 FFF7FEFF 		bl	UART_1_Start
- 160:.\main.c      ****     UART_1_SetRxInterruptMode(UART_1_RX_STS_FIFO_NOTEMPTY);     //enable interrupts via software
- 213              		.loc 1 160 0
- 214 0014 2020     		movs	r0, #32
- 215 0016 FFF7FEFF 		bl	UART_1_SetRxInterruptMode
- 161:.\main.c      ****     VDAC8_1_Start();
- 216              		.loc 1 161 0
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc1coCFd.s 			page 8
+ 264              		.global	main
+ 265              		.thumb
+ 266              		.thumb_func
+ 267              		.type	main, %function
+ 268              	main:
+ 269              	.LFB64:
+ 163:.\main.c      **** 
+ 164:.\main.c      **** 
+ 165:.\main.c      **** 
+ 166:.\main.c      **** int main()
+ 167:.\main.c      **** {
+ 270              		.loc 1 167 0
+ 271              		.cfi_startproc
+ 272              		@ args = 0, pretend = 0, frame = 0
+ 273              		@ frame_needed = 1, uses_anonymous_args = 0
+ 274 0000 80B5     		push	{r7, lr}
+ 275              		.cfi_def_cfa_offset 8
+ 276              		.cfi_offset 7, -8
+ 277              		.cfi_offset 14, -4
+ 278 0002 00AF     		add	r7, sp, #0
+ 279              		.cfi_def_cfa_register 7
+ 168:.\main.c      ****     isr_1_StartEx(ReadSerial);      //attach the interrupt
+ 280              		.loc 1 168 0
+ 281 0004 2848     		ldr	r0, .L20
+ 282 0006 FFF7FEFF 		bl	isr_1_StartEx
+ 169:.\main.c      ****     CYGlobalIntEnable;              //this one line wasted like an hour
+ 283              		.loc 1 169 0
+ 284              	@ 169 ".\main.c" 1
+ 285 000a 62B6     		CPSIE   i
+ 286              	@ 0 "" 2
+ 170:.\main.c      ****     
+ 171:.\main.c      ****     //start the stupid hardware thingies
+ 172:.\main.c      ****     ADC_DelSig_1_Start();
+ 287              		.loc 1 172 0
+ 288              		.thumb
+ 289 000c FFF7FEFF 		bl	ADC_DelSig_1_Start
+ 173:.\main.c      ****     UART_1_Start();                             //does anyone even read these?
+ 290              		.loc 1 173 0
+ 291 0010 FFF7FEFF 		bl	UART_1_Start
+ 174:.\main.c      ****     UART_1_SetRxInterruptMode(UART_1_RX_STS_FIFO_NOTEMPTY);     //enable interrupts via software
+ 292              		.loc 1 174 0
+ 293 0014 2020     		movs	r0, #32
+ 294 0016 FFF7FEFF 		bl	UART_1_SetRxInterruptMode
+ 175:.\main.c      ****     VDAC8_1_Start();
+ 295              		.loc 1 175 0
+ 296 001a FFF7FEFF 		bl	VDAC8_1_Start
+ 176:.\main.c      ****     WaveDAC8_1_Start();
+ 297              		.loc 1 176 0
+ 298 001e FFF7FEFF 		bl	WaveDAC8_1_Start
+ 177:.\main.c      ****     AMux_1_Start();
+ 299              		.loc 1 177 0
+ 300 0022 FFF7FEFF 		bl	AMux_1_Start
+ 178:.\main.c      ****     AMux_1_Select(0);       //start at constant voltage
+ 301              		.loc 1 178 0
+ 302 0026 0020     		movs	r0, #0
+ 303 0028 FFF7FEFF 		bl	AMux_1_FastSelect
+ 179:.\main.c      ****     
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccIfg6TG.s 			page 10
 
 
- 217 001a FFF7FEFF 		bl	VDAC8_1_Start
- 162:.\main.c      ****     WaveDAC8_1_Start();
- 218              		.loc 1 162 0
- 219 001e FFF7FEFF 		bl	WaveDAC8_1_Start
- 163:.\main.c      ****     AMux_1_Start();
- 220              		.loc 1 163 0
- 221 0022 FFF7FEFF 		bl	AMux_1_Start
- 164:.\main.c      ****     AMux_1_Select(1);
- 222              		.loc 1 164 0
- 223 0026 0120     		movs	r0, #1
- 224 0028 FFF7FEFF 		bl	AMux_1_FastSelect
- 165:.\main.c      ****     //amux_1_
- 166:.\main.c      ****     
- 167:.\main.c      ****     //initialize variables
- 168:.\main.c      ****     ledState = 1;
- 225              		.loc 1 168 0
- 226 002c 074B     		ldr	r3, .L19+4
- 227 002e 0122     		movs	r2, #1
- 228 0030 1A70     		strb	r2, [r3]
- 169:.\main.c      ****     
- 170:.\main.c      ****     Debug_LED_ctrl_Write(ledState);
- 229              		.loc 1 170 0
- 230 0032 064B     		ldr	r3, .L19+4
- 231 0034 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 232 0036 1846     		mov	r0, r3
- 233 0038 FFF7FEFF 		bl	Debug_LED_ctrl_Write
- 171:.\main.c      ****     
- 172:.\main.c      ****     
- 173:.\main.c      **** 
- 174:.\main.c      ****     
- 175:.\main.c      ****     
- 176:.\main.c      ****     /* Start the ADC conversion */
- 177:.\main.c      ****     ADC_DelSig_1_StartConvert();
- 234              		.loc 1 177 0
- 235 003c FFF7FEFF 		bl	ADC_DelSig_1_StartConvert
- 178:.\main.c      ****     
- 179:.\main.c      ****     /* Send message to verify COM port is connected properly */
- 180:.\main.c      ****     UART_1_PutString("COM Port Open");
- 236              		.loc 1 180 0
- 237 0040 0348     		ldr	r0, .L19+8
- 238 0042 FFF7FEFF 		bl	UART_1_PutString
- 239              	.L18:
+ 180:.\main.c      ****     //initialize variables
  181:.\main.c      ****     
- 182:.\main.c      ****     for(;;)
- 183:.\main.c      ****     {     
- 184:.\main.c      ****         
- 185:.\main.c      ****         /*
- 186:.\main.c      ****         //UART_1_PutString("COM Port Open");
- 187:.\main.c      ****         if(ADC_DelSig_1_IsEndConversion(ADC_DelSig_1_RETURN_STATUS))
- 188:.\main.c      ****         {
- 189:.\main.c      **** 
- 190:.\main.c      ****             Output = ADC_DelSig_1_CountsTo_mVolts(ADC_DelSig_1_GetResult16());
- 191:.\main.c      ****             
- 192:.\main.c      ****             if(SendSingleByte || ContinuouslySendData)
- 193:.\main.c      ****             {
- 194:.\main.c      ****                 sprintf(TransmitBuffer, "Sample: %lu mV\r\n", Output);
- 195:.\main.c      ****                 UART_1_PutString(TransmitBuffer);
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc1coCFd.s 			page 9
+ 182:.\main.c      ****     
+ 183:.\main.c      ****     //Start ADC Conversion(s)
+ 184:.\main.c      ****     ADC_DelSig_1_StartConvert();
+ 304              		.loc 1 184 0
+ 305 002c FFF7FEFF 		bl	ADC_DelSig_1_StartConvert
+ 185:.\main.c      ****     Waveform_Reg_Write(waveForm);         //initialize wavesignal for waveform DAC
+ 306              		.loc 1 185 0
+ 307 0030 1E4B     		ldr	r3, .L20+4
+ 308 0032 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 309 0034 1846     		mov	r0, r3
+ 310 0036 FFF7FEFF 		bl	Waveform_Reg_Write
+ 186:.\main.c      **** 
+ 187:.\main.c      ****     
+ 188:.\main.c      ****     // Send message to verify COM port is connected properly 
+ 189:.\main.c      ****     UART_1_PutString("COM Port Open\r\n");
+ 311              		.loc 1 189 0
+ 312 003a 1D48     		ldr	r0, .L20+8
+ 313 003c FFF7FEFF 		bl	UART_1_PutString
+ 190:.\main.c      ****     
+ 191:.\main.c      ****     adcOut = ADC_DelSig_1_CountsTo_mVolts(ADC_DelSig_1_GetResult8());
+ 314              		.loc 1 191 0
+ 315 0040 FFF7FEFF 		bl	ADC_DelSig_1_GetResult8
+ 316 0044 0346     		mov	r3, r0
+ 317 0046 1846     		mov	r0, r3
+ 318 0048 FFF7FEFF 		bl	ADC_DelSig_1_CountsTo_mVolts
+ 319 004c 0346     		mov	r3, r0
+ 320 004e 1A46     		mov	r2, r3
+ 321 0050 184B     		ldr	r3, .L20+12
+ 322 0052 1A60     		str	r2, [r3]
+ 192:.\main.c      ****     sprintf(TransmitBuffer, "Initialized read: %lu mV\r\n", adcOut);
+ 323              		.loc 1 192 0
+ 324 0054 174B     		ldr	r3, .L20+12
+ 325 0056 1B68     		ldr	r3, [r3]
+ 326 0058 1748     		ldr	r0, .L20+16
+ 327 005a 1849     		ldr	r1, .L20+20
+ 328 005c 1A46     		mov	r2, r3
+ 329 005e FFF7FEFF 		bl	sprintf
+ 193:.\main.c      ****     UART_1_PutString(TransmitBuffer);
+ 330              		.loc 1 193 0
+ 331 0062 1548     		ldr	r0, .L20+16
+ 332 0064 FFF7FEFF 		bl	UART_1_PutString
+ 333              	.L19:
+ 194:.\main.c      ****     
+ 195:.\main.c      ****     //for loop polls ADC continuously if the proper mode is selected
+ 196:.\main.c      ****     for(;;)
+ 197:.\main.c      ****     {     
+ 198:.\main.c      ****         //check for proper mode
+ 199:.\main.c      ****         if(continuousSending) {
+ 334              		.loc 1 199 0
+ 335 0068 154B     		ldr	r3, .L20+24
+ 336 006a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 337 006c 002B     		cmp	r3, #0
+ 338 006e 19D0     		beq	.L18
+ 200:.\main.c      ****             if(ADC_DelSig_1_IsEndConversion(ADC_DelSig_1_RETURN_STATUS))    //poll ADC
+ 339              		.loc 1 200 0
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccIfg6TG.s 			page 11
 
 
- 196:.\main.c      ****                 SendSingleByte = FALSE;
- 197:.\main.c      ****             }
- 198:.\main.c      ****             else if(SendEmulatedData)
- 199:.\main.c      ****             {
- 200:.\main.c      ****                 sprintf(TransmitBuffer, "Emulated Data: %x \r\n", EmulatedData);
- 201:.\main.c      **** 
- 202:.\main.c      ****                 UART_1_PutString(TransmitBuffer);
- 203:.\main.c      ****                 EmulatedData++;
- 204:.\main.c      ****                 SendEmulatedData = FALSE;   
- 205:.\main.c      ****             }
- 206:.\main.c      ****         }
- 207:.\main.c      ****         */
- 208:.\main.c      ****     }
- 240              		.loc 1 208 0 discriminator 1
- 241 0046 FEE7     		b	.L18
- 242              	.L20:
- 243              		.align	2
- 244              	.L19:
- 245 0048 00000000 		.word	ReadSerial
- 246 004c 00000000 		.word	ledState
- 247 0050 14000000 		.word	.LC1
- 248              		.cfi_endproc
- 249              	.LFE64:
- 250              		.size	main, .-main
- 251              		.text
- 252              	.Letext0:
- 253              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\3.3\\psoc creator\\import\\gnu\\arm\\4.9.
- 254              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\3.3\\psoc creator\\import\\gnu\\arm\\4.9.
- 255              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
- 256              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
- 257              		.section	.debug_info,"",%progbits
- 258              	.Ldebug_info0:
- 259 0000 81010000 		.4byte	0x181
- 260 0004 0400     		.2byte	0x4
- 261 0006 00000000 		.4byte	.Ldebug_abbrev0
- 262 000a 04       		.byte	0x4
- 263 000b 01       		.uleb128 0x1
- 264 000c 20000000 		.4byte	.LASF28
- 265 0010 01       		.byte	0x1
- 266 0011 DD000000 		.4byte	.LASF29
- 267 0015 B8010000 		.4byte	.LASF30
- 268 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 269 001d 00000000 		.4byte	0
- 270 0021 00000000 		.4byte	.Ldebug_line0
- 271 0025 02       		.uleb128 0x2
- 272 0026 01       		.byte	0x1
- 273 0027 06       		.byte	0x6
- 274 0028 F2010000 		.4byte	.LASF0
- 275 002c 02       		.uleb128 0x2
- 276 002d 01       		.byte	0x1
- 277 002e 08       		.byte	0x8
- 278 002f CF000000 		.4byte	.LASF1
- 279 0033 02       		.uleb128 0x2
- 280 0034 02       		.byte	0x2
- 281 0035 05       		.byte	0x5
- 282 0036 A8010000 		.4byte	.LASF2
- 283 003a 02       		.uleb128 0x2
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc1coCFd.s 			page 10
+ 340 0070 0120     		movs	r0, #1
+ 341 0072 FFF7FEFF 		bl	ADC_DelSig_1_IsEndConversion
+ 342 0076 0346     		mov	r3, r0
+ 343 0078 002B     		cmp	r3, #0
+ 344 007a 13D0     		beq	.L18
+ 201:.\main.c      ****             {
+ 202:.\main.c      **** 
+ 203:.\main.c      ****                 //adcOut = ADC_DelSig_1_CountsTo_mVolts(ADC_DelSig_1_GetResult16());  //save output
+ 204:.\main.c      ****                 adcOut = ADC_DelSig_1_CountsTo_mVolts(ADC_DelSig_1_GetResult8());
+ 345              		.loc 1 204 0
+ 346 007c FFF7FEFF 		bl	ADC_DelSig_1_GetResult8
+ 347 0080 0346     		mov	r3, r0
+ 348 0082 1846     		mov	r0, r3
+ 349 0084 FFF7FEFF 		bl	ADC_DelSig_1_CountsTo_mVolts
+ 350 0088 0346     		mov	r3, r0
+ 351 008a 1A46     		mov	r2, r3
+ 352 008c 094B     		ldr	r3, .L20+12
+ 353 008e 1A60     		str	r2, [r3]
+ 205:.\main.c      ****                 //print data to UART
+ 206:.\main.c      ****                 sprintf(TransmitBuffer, "Continuous ADC Read: %lu mV\r\n", adcOut);
+ 354              		.loc 1 206 0
+ 355 0090 084B     		ldr	r3, .L20+12
+ 356 0092 1B68     		ldr	r3, [r3]
+ 357 0094 0848     		ldr	r0, .L20+16
+ 358 0096 0B49     		ldr	r1, .L20+28
+ 359 0098 1A46     		mov	r2, r3
+ 360 009a FFF7FEFF 		bl	sprintf
+ 207:.\main.c      ****                 UART_1_PutString(TransmitBuffer);
+ 361              		.loc 1 207 0
+ 362 009e 0648     		ldr	r0, .L20+16
+ 363 00a0 FFF7FEFF 		bl	UART_1_PutString
+ 364              	.L18:
+ 208:.\main.c      ****                 
+ 209:.\main.c      ****             }
+ 210:.\main.c      ****         }
+ 211:.\main.c      ****     }
+ 365              		.loc 1 211 0
+ 366 00a4 E0E7     		b	.L19
+ 367              	.L21:
+ 368 00a6 00BF     		.align	2
+ 369              	.L20:
+ 370 00a8 00000000 		.word	ReadSerial
+ 371 00ac 00000000 		.word	waveForm
+ 372 00b0 5C000000 		.word	.LC4
+ 373 00b4 00000000 		.word	adcOut
+ 374 00b8 00000000 		.word	TransmitBuffer
+ 375 00bc 6C000000 		.word	.LC5
+ 376 00c0 00000000 		.word	continuousSending
+ 377 00c4 88000000 		.word	.LC6
+ 378              		.cfi_endproc
+ 379              	.LFE64:
+ 380              		.size	main, .-main
+ 381              		.text
+ 382              	.Letext0:
+ 383              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\3.3\\psoc creator\\import\\gnu\\arm\\4.9.
+ 384              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\3.3\\psoc creator\\import\\gnu\\arm\\4.9.
+ 385              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccIfg6TG.s 			page 12
 
 
- 284 003b 02       		.byte	0x2
- 285 003c 07       		.byte	0x7
- 286 003d F8000000 		.4byte	.LASF3
- 287 0041 03       		.uleb128 0x3
- 288 0042 0D000000 		.4byte	.LASF9
- 289 0046 02       		.byte	0x2
- 290 0047 3F       		.byte	0x3f
- 291 0048 4C000000 		.4byte	0x4c
- 292 004c 02       		.uleb128 0x2
- 293 004d 04       		.byte	0x4
- 294 004e 05       		.byte	0x5
- 295 004f E9010000 		.4byte	.LASF4
- 296 0053 02       		.uleb128 0x2
- 297 0054 04       		.byte	0x4
- 298 0055 07       		.byte	0x7
- 299 0056 E6000000 		.4byte	.LASF5
- 300 005a 02       		.uleb128 0x2
- 301 005b 08       		.byte	0x8
- 302 005c 05       		.byte	0x5
- 303 005d 95010000 		.4byte	.LASF6
- 304 0061 02       		.uleb128 0x2
- 305 0062 08       		.byte	0x8
- 306 0063 07       		.byte	0x7
- 307 0064 49010000 		.4byte	.LASF7
- 308 0068 04       		.uleb128 0x4
- 309 0069 04       		.byte	0x4
- 310 006a 05       		.byte	0x5
- 311 006b 696E7400 		.ascii	"int\000"
- 312 006f 02       		.uleb128 0x2
- 313 0070 04       		.byte	0x4
- 314 0071 07       		.byte	0x7
- 315 0072 3C010000 		.4byte	.LASF8
- 316 0076 03       		.uleb128 0x3
- 317 0077 75010000 		.4byte	.LASF10
- 318 007b 03       		.byte	0x3
- 319 007c 2C       		.byte	0x2c
- 320 007d 41000000 		.4byte	0x41
- 321 0081 05       		.uleb128 0x5
- 322 0082 B2010000 		.4byte	.LASF11
- 323 0086 04       		.byte	0x4
- 324 0087 9201     		.2byte	0x192
- 325 0089 2C000000 		.4byte	0x2c
- 326 008d 05       		.uleb128 0x5
- 327 008e 35010000 		.4byte	.LASF12
- 328 0092 04       		.byte	0x4
- 329 0093 9401     		.2byte	0x194
- 330 0095 53000000 		.4byte	0x53
- 331 0099 02       		.uleb128 0x2
- 332 009a 04       		.byte	0x4
- 333 009b 04       		.byte	0x4
- 334 009c C2000000 		.4byte	.LASF13
- 335 00a0 02       		.uleb128 0x2
- 336 00a1 08       		.byte	0x8
- 337 00a2 04       		.byte	0x4
- 338 00a3 29010000 		.4byte	.LASF14
- 339 00a7 02       		.uleb128 0x2
- 340 00a8 01       		.byte	0x1
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc1coCFd.s 			page 11
+ 386              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 387              		.section	.debug_info,"",%progbits
+ 388              	.Ldebug_info0:
+ 389 0000 66010000 		.4byte	0x166
+ 390 0004 0400     		.2byte	0x4
+ 391 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 392 000a 04       		.byte	0x4
+ 393 000b 01       		.uleb128 0x1
+ 394 000c 25000000 		.4byte	.LASF27
+ 395 0010 01       		.byte	0x1
+ 396 0011 E2000000 		.4byte	.LASF28
+ 397 0015 A0010000 		.4byte	.LASF29
+ 398 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 399 001d 00000000 		.4byte	0
+ 400 0021 00000000 		.4byte	.Ldebug_line0
+ 401 0025 02       		.uleb128 0x2
+ 402 0026 01       		.byte	0x1
+ 403 0027 06       		.byte	0x6
+ 404 0028 DA010000 		.4byte	.LASF0
+ 405 002c 02       		.uleb128 0x2
+ 406 002d 01       		.byte	0x1
+ 407 002e 08       		.byte	0x8
+ 408 002f D4000000 		.4byte	.LASF1
+ 409 0033 02       		.uleb128 0x2
+ 410 0034 02       		.byte	0x2
+ 411 0035 05       		.byte	0x5
+ 412 0036 90010000 		.4byte	.LASF2
+ 413 003a 02       		.uleb128 0x2
+ 414 003b 02       		.byte	0x2
+ 415 003c 07       		.byte	0x7
+ 416 003d 06010000 		.4byte	.LASF3
+ 417 0041 03       		.uleb128 0x3
+ 418 0042 1B000000 		.4byte	.LASF9
+ 419 0046 02       		.byte	0x2
+ 420 0047 3F       		.byte	0x3f
+ 421 0048 4C000000 		.4byte	0x4c
+ 422 004c 02       		.uleb128 0x2
+ 423 004d 04       		.byte	0x4
+ 424 004e 05       		.byte	0x5
+ 425 004f D1010000 		.4byte	.LASF4
+ 426 0053 02       		.uleb128 0x2
+ 427 0054 04       		.byte	0x4
+ 428 0055 07       		.byte	0x7
+ 429 0056 EB000000 		.4byte	.LASF5
+ 430 005a 02       		.uleb128 0x2
+ 431 005b 08       		.byte	0x8
+ 432 005c 05       		.byte	0x5
+ 433 005d 7D010000 		.4byte	.LASF6
+ 434 0061 02       		.uleb128 0x2
+ 435 0062 08       		.byte	0x8
+ 436 0063 07       		.byte	0x7
+ 437 0064 46010000 		.4byte	.LASF7
+ 438 0068 04       		.uleb128 0x4
+ 439 0069 04       		.byte	0x4
+ 440 006a 05       		.byte	0x5
+ 441 006b 696E7400 		.ascii	"int\000"
+ 442 006f 02       		.uleb128 0x2
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccIfg6TG.s 			page 13
 
 
- 341 00a9 08       		.byte	0x8
- 342 00aa A3010000 		.4byte	.LASF15
- 343 00ae 02       		.uleb128 0x2
- 344 00af 04       		.byte	0x4
- 345 00b0 07       		.byte	0x7
- 346 00b1 8C010000 		.4byte	.LASF16
- 347 00b5 06       		.uleb128 0x6
- 348 00b6 AE000000 		.4byte	.LASF17
- 349 00ba 01       		.byte	0x1
- 350 00bb 5D       		.byte	0x5d
- 351 00bc 00000000 		.4byte	.LFB63
- 352 00c0 D0000000 		.4byte	.LFE63-.LFB63
- 353 00c4 01       		.uleb128 0x1
- 354 00c5 9C       		.byte	0x9c
- 355 00c6 07       		.uleb128 0x7
- 356 00c7 30010000 		.4byte	.LASF18
- 357 00cb 01       		.byte	0x1
- 358 00cc 96       		.byte	0x96
- 359 00cd 68000000 		.4byte	0x68
- 360 00d1 00000000 		.4byte	.LFB64
- 361 00d5 54000000 		.4byte	.LFE64-.LFB64
- 362 00d9 01       		.uleb128 0x1
- 363 00da 9C       		.byte	0x9c
- 364 00db 08       		.uleb128 0x8
- 365 00dc 0B010000 		.4byte	.LASF19
- 366 00e0 05       		.byte	0x5
- 367 00e1 9606     		.2byte	0x696
- 368 00e3 E7000000 		.4byte	0xe7
- 369 00e7 09       		.uleb128 0x9
- 370 00e8 76000000 		.4byte	0x76
- 371 00ec 0A       		.uleb128 0xa
- 372 00ed B9000000 		.4byte	.LASF20
- 373 00f1 01       		.byte	0x1
- 374 00f2 4F       		.byte	0x4f
- 375 00f3 81000000 		.4byte	0x81
- 376 00f7 05       		.uleb128 0x5
- 377 00f8 03       		.byte	0x3
- 378 00f9 00000000 		.4byte	recvChar
- 379 00fd 0A       		.uleb128 0xa
- 380 00fe 17000000 		.4byte	.LASF21
- 381 0102 01       		.byte	0x1
- 382 0103 50       		.byte	0x50
- 383 0104 81000000 		.4byte	0x81
- 384 0108 05       		.uleb128 0x5
- 385 0109 03       		.byte	0x3
- 386 010a 00000000 		.4byte	ledState
- 387 010e 0A       		.uleb128 0xa
- 388 010f C8000000 		.4byte	.LASF22
- 389 0113 01       		.byte	0x1
- 390 0114 51       		.byte	0x51
- 391 0115 8D000000 		.4byte	0x8d
- 392 0119 05       		.uleb128 0x5
- 393 011a 03       		.byte	0x3
- 394 011b 00000000 		.4byte	adcOut
- 395 011f 0A       		.uleb128 0xa
- 396 0120 00000000 		.4byte	.LASF23
- 397 0124 01       		.byte	0x1
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc1coCFd.s 			page 12
+ 443 0070 04       		.byte	0x4
+ 444 0071 07       		.byte	0x7
+ 445 0072 39010000 		.4byte	.LASF8
+ 446 0076 03       		.uleb128 0x3
+ 447 0077 5D010000 		.4byte	.LASF10
+ 448 007b 03       		.byte	0x3
+ 449 007c 2C       		.byte	0x2c
+ 450 007d 41000000 		.4byte	0x41
+ 451 0081 05       		.uleb128 0x5
+ 452 0082 9A010000 		.4byte	.LASF11
+ 453 0086 04       		.byte	0x4
+ 454 0087 9201     		.2byte	0x192
+ 455 0089 2C000000 		.4byte	0x2c
+ 456 008d 05       		.uleb128 0x5
+ 457 008e 32010000 		.4byte	.LASF12
+ 458 0092 04       		.byte	0x4
+ 459 0093 9401     		.2byte	0x194
+ 460 0095 53000000 		.4byte	0x53
+ 461 0099 02       		.uleb128 0x2
+ 462 009a 04       		.byte	0x4
+ 463 009b 04       		.byte	0x4
+ 464 009c C7000000 		.4byte	.LASF13
+ 465 00a0 02       		.uleb128 0x2
+ 466 00a1 08       		.byte	0x8
+ 467 00a2 04       		.byte	0x4
+ 468 00a3 26010000 		.4byte	.LASF14
+ 469 00a7 02       		.uleb128 0x2
+ 470 00a8 01       		.byte	0x1
+ 471 00a9 08       		.byte	0x8
+ 472 00aa 8B010000 		.4byte	.LASF15
+ 473 00ae 02       		.uleb128 0x2
+ 474 00af 04       		.byte	0x4
+ 475 00b0 07       		.byte	0x7
+ 476 00b1 74010000 		.4byte	.LASF16
+ 477 00b5 06       		.uleb128 0x6
+ 478 00b6 B3000000 		.4byte	.LASF17
+ 479 00ba 01       		.byte	0x1
+ 480 00bb 58       		.byte	0x58
+ 481 00bc 00000000 		.4byte	.LFB63
+ 482 00c0 34010000 		.4byte	.LFE63-.LFB63
+ 483 00c4 01       		.uleb128 0x1
+ 484 00c5 9C       		.byte	0x9c
+ 485 00c6 07       		.uleb128 0x7
+ 486 00c7 2D010000 		.4byte	.LASF18
+ 487 00cb 01       		.byte	0x1
+ 488 00cc A6       		.byte	0xa6
+ 489 00cd 68000000 		.4byte	0x68
+ 490 00d1 00000000 		.4byte	.LFB64
+ 491 00d5 C8000000 		.4byte	.LFE64-.LFB64
+ 492 00d9 01       		.uleb128 0x1
+ 493 00da 9C       		.byte	0x9c
+ 494 00db 08       		.uleb128 0x8
+ 495 00dc 19010000 		.4byte	.LASF19
+ 496 00e0 05       		.byte	0x5
+ 497 00e1 9606     		.2byte	0x696
+ 498 00e3 E7000000 		.4byte	0xe7
+ 499 00e7 09       		.uleb128 0x9
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccIfg6TG.s 			page 14
 
 
- 398 0125 54       		.byte	0x54
- 399 0126 81000000 		.4byte	0x81
- 400 012a 05       		.uleb128 0x5
- 401 012b 03       		.byte	0x3
- 402 012c 00000000 		.4byte	EmulatedData
- 403 0130 0A       		.uleb128 0xa
- 404 0131 60010000 		.4byte	.LASF24
- 405 0135 01       		.byte	0x1
- 406 0136 56       		.byte	0x56
- 407 0137 81000000 		.4byte	0x81
- 408 013b 05       		.uleb128 0x5
- 409 013c 03       		.byte	0x3
- 410 013d 00000000 		.4byte	ContinuouslySendData
- 411 0141 0A       		.uleb128 0xa
- 412 0142 FE010000 		.4byte	.LASF25
- 413 0146 01       		.byte	0x1
- 414 0147 57       		.byte	0x57
- 415 0148 81000000 		.4byte	0x81
- 416 014c 05       		.uleb128 0x5
- 417 014d 03       		.byte	0x3
- 418 014e 00000000 		.4byte	SendSingleByte
- 419 0152 0A       		.uleb128 0xa
- 420 0153 18010000 		.4byte	.LASF26
- 421 0157 01       		.byte	0x1
- 422 0158 58       		.byte	0x58
- 423 0159 81000000 		.4byte	0x81
- 424 015d 05       		.uleb128 0x5
- 425 015e 03       		.byte	0x3
- 426 015f 00000000 		.4byte	SendEmulatedData
- 427 0163 0B       		.uleb128 0xb
- 428 0164 A7000000 		.4byte	0xa7
- 429 0168 73010000 		.4byte	0x173
- 430 016c 0C       		.uleb128 0xc
- 431 016d AE000000 		.4byte	0xae
- 432 0171 0F       		.byte	0xf
- 433 0172 00       		.byte	0
- 434 0173 0A       		.uleb128 0xa
- 435 0174 7D010000 		.4byte	.LASF27
- 436 0178 01       		.byte	0x1
- 437 0179 5A       		.byte	0x5a
- 438 017a 63010000 		.4byte	0x163
- 439 017e 05       		.uleb128 0x5
- 440 017f 03       		.byte	0x3
- 441 0180 00000000 		.4byte	TransmitBuffer
- 442 0184 00       		.byte	0
- 443              		.section	.debug_abbrev,"",%progbits
- 444              	.Ldebug_abbrev0:
- 445 0000 01       		.uleb128 0x1
- 446 0001 11       		.uleb128 0x11
- 447 0002 01       		.byte	0x1
- 448 0003 25       		.uleb128 0x25
- 449 0004 0E       		.uleb128 0xe
- 450 0005 13       		.uleb128 0x13
- 451 0006 0B       		.uleb128 0xb
- 452 0007 03       		.uleb128 0x3
- 453 0008 0E       		.uleb128 0xe
- 454 0009 1B       		.uleb128 0x1b
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc1coCFd.s 			page 13
+ 500 00e8 76000000 		.4byte	0x76
+ 501 00ec 0A       		.uleb128 0xa
+ 502 00ed BE000000 		.4byte	.LASF20
+ 503 00f1 01       		.byte	0x1
+ 504 00f2 4E       		.byte	0x4e
+ 505 00f3 81000000 		.4byte	0x81
+ 506 00f7 05       		.uleb128 0x5
+ 507 00f8 03       		.byte	0x3
+ 508 00f9 00000000 		.4byte	recvChar
+ 509 00fd 0A       		.uleb128 0xa
+ 510 00fe CD000000 		.4byte	.LASF21
+ 511 0102 01       		.byte	0x1
+ 512 0103 4F       		.byte	0x4f
+ 513 0104 8D000000 		.4byte	0x8d
+ 514 0108 05       		.uleb128 0x5
+ 515 0109 03       		.byte	0x3
+ 516 010a 00000000 		.4byte	adcOut
+ 517 010e 0A       		.uleb128 0xa
+ 518 010f 09000000 		.4byte	.LASF22
+ 519 0113 01       		.byte	0x1
+ 520 0114 50       		.byte	0x50
+ 521 0115 1F010000 		.4byte	0x11f
+ 522 0119 05       		.uleb128 0x5
+ 523 011a 03       		.byte	0x3
+ 524 011b 00000000 		.4byte	continuousSending
+ 525 011f 02       		.uleb128 0x2
+ 526 0120 01       		.byte	0x1
+ 527 0121 02       		.byte	0x2
+ 528 0122 E6010000 		.4byte	.LASF23
+ 529 0126 0A       		.uleb128 0xa
+ 530 0127 00000000 		.4byte	.LASF24
+ 531 012b 01       		.byte	0x1
+ 532 012c 51       		.byte	0x51
+ 533 012d 81000000 		.4byte	0x81
+ 534 0131 05       		.uleb128 0x5
+ 535 0132 03       		.byte	0x3
+ 536 0133 00000000 		.4byte	dacState
+ 537 0137 0A       		.uleb128 0xa
+ 538 0138 FD000000 		.4byte	.LASF25
+ 539 013c 01       		.byte	0x1
+ 540 013d 52       		.byte	0x52
+ 541 013e 81000000 		.4byte	0x81
+ 542 0142 05       		.uleb128 0x5
+ 543 0143 03       		.byte	0x3
+ 544 0144 00000000 		.4byte	waveForm
+ 545 0148 0B       		.uleb128 0xb
+ 546 0149 A7000000 		.4byte	0xa7
+ 547 014d 58010000 		.4byte	0x158
+ 548 0151 0C       		.uleb128 0xc
+ 549 0152 AE000000 		.4byte	0xae
+ 550 0156 0F       		.byte	0xf
+ 551 0157 00       		.byte	0
+ 552 0158 0A       		.uleb128 0xa
+ 553 0159 65010000 		.4byte	.LASF26
+ 554 015d 01       		.byte	0x1
+ 555 015e 54       		.byte	0x54
+ 556 015f 48010000 		.4byte	0x148
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccIfg6TG.s 			page 15
 
 
- 455 000a 0E       		.uleb128 0xe
- 456 000b 55       		.uleb128 0x55
- 457 000c 17       		.uleb128 0x17
- 458 000d 11       		.uleb128 0x11
- 459 000e 01       		.uleb128 0x1
- 460 000f 10       		.uleb128 0x10
- 461 0010 17       		.uleb128 0x17
- 462 0011 00       		.byte	0
- 463 0012 00       		.byte	0
- 464 0013 02       		.uleb128 0x2
- 465 0014 24       		.uleb128 0x24
- 466 0015 00       		.byte	0
- 467 0016 0B       		.uleb128 0xb
- 468 0017 0B       		.uleb128 0xb
- 469 0018 3E       		.uleb128 0x3e
- 470 0019 0B       		.uleb128 0xb
- 471 001a 03       		.uleb128 0x3
- 472 001b 0E       		.uleb128 0xe
- 473 001c 00       		.byte	0
- 474 001d 00       		.byte	0
- 475 001e 03       		.uleb128 0x3
- 476 001f 16       		.uleb128 0x16
- 477 0020 00       		.byte	0
- 478 0021 03       		.uleb128 0x3
- 479 0022 0E       		.uleb128 0xe
- 480 0023 3A       		.uleb128 0x3a
- 481 0024 0B       		.uleb128 0xb
- 482 0025 3B       		.uleb128 0x3b
- 483 0026 0B       		.uleb128 0xb
- 484 0027 49       		.uleb128 0x49
- 485 0028 13       		.uleb128 0x13
- 486 0029 00       		.byte	0
- 487 002a 00       		.byte	0
- 488 002b 04       		.uleb128 0x4
- 489 002c 24       		.uleb128 0x24
- 490 002d 00       		.byte	0
- 491 002e 0B       		.uleb128 0xb
- 492 002f 0B       		.uleb128 0xb
- 493 0030 3E       		.uleb128 0x3e
- 494 0031 0B       		.uleb128 0xb
- 495 0032 03       		.uleb128 0x3
- 496 0033 08       		.uleb128 0x8
- 497 0034 00       		.byte	0
- 498 0035 00       		.byte	0
- 499 0036 05       		.uleb128 0x5
- 500 0037 16       		.uleb128 0x16
- 501 0038 00       		.byte	0
- 502 0039 03       		.uleb128 0x3
- 503 003a 0E       		.uleb128 0xe
- 504 003b 3A       		.uleb128 0x3a
- 505 003c 0B       		.uleb128 0xb
- 506 003d 3B       		.uleb128 0x3b
- 507 003e 05       		.uleb128 0x5
- 508 003f 49       		.uleb128 0x49
- 509 0040 13       		.uleb128 0x13
- 510 0041 00       		.byte	0
- 511 0042 00       		.byte	0
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc1coCFd.s 			page 14
+ 557 0163 05       		.uleb128 0x5
+ 558 0164 03       		.byte	0x3
+ 559 0165 00000000 		.4byte	TransmitBuffer
+ 560 0169 00       		.byte	0
+ 561              		.section	.debug_abbrev,"",%progbits
+ 562              	.Ldebug_abbrev0:
+ 563 0000 01       		.uleb128 0x1
+ 564 0001 11       		.uleb128 0x11
+ 565 0002 01       		.byte	0x1
+ 566 0003 25       		.uleb128 0x25
+ 567 0004 0E       		.uleb128 0xe
+ 568 0005 13       		.uleb128 0x13
+ 569 0006 0B       		.uleb128 0xb
+ 570 0007 03       		.uleb128 0x3
+ 571 0008 0E       		.uleb128 0xe
+ 572 0009 1B       		.uleb128 0x1b
+ 573 000a 0E       		.uleb128 0xe
+ 574 000b 55       		.uleb128 0x55
+ 575 000c 17       		.uleb128 0x17
+ 576 000d 11       		.uleb128 0x11
+ 577 000e 01       		.uleb128 0x1
+ 578 000f 10       		.uleb128 0x10
+ 579 0010 17       		.uleb128 0x17
+ 580 0011 00       		.byte	0
+ 581 0012 00       		.byte	0
+ 582 0013 02       		.uleb128 0x2
+ 583 0014 24       		.uleb128 0x24
+ 584 0015 00       		.byte	0
+ 585 0016 0B       		.uleb128 0xb
+ 586 0017 0B       		.uleb128 0xb
+ 587 0018 3E       		.uleb128 0x3e
+ 588 0019 0B       		.uleb128 0xb
+ 589 001a 03       		.uleb128 0x3
+ 590 001b 0E       		.uleb128 0xe
+ 591 001c 00       		.byte	0
+ 592 001d 00       		.byte	0
+ 593 001e 03       		.uleb128 0x3
+ 594 001f 16       		.uleb128 0x16
+ 595 0020 00       		.byte	0
+ 596 0021 03       		.uleb128 0x3
+ 597 0022 0E       		.uleb128 0xe
+ 598 0023 3A       		.uleb128 0x3a
+ 599 0024 0B       		.uleb128 0xb
+ 600 0025 3B       		.uleb128 0x3b
+ 601 0026 0B       		.uleb128 0xb
+ 602 0027 49       		.uleb128 0x49
+ 603 0028 13       		.uleb128 0x13
+ 604 0029 00       		.byte	0
+ 605 002a 00       		.byte	0
+ 606 002b 04       		.uleb128 0x4
+ 607 002c 24       		.uleb128 0x24
+ 608 002d 00       		.byte	0
+ 609 002e 0B       		.uleb128 0xb
+ 610 002f 0B       		.uleb128 0xb
+ 611 0030 3E       		.uleb128 0x3e
+ 612 0031 0B       		.uleb128 0xb
+ 613 0032 03       		.uleb128 0x3
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccIfg6TG.s 			page 16
 
 
- 512 0043 06       		.uleb128 0x6
- 513 0044 2E       		.uleb128 0x2e
- 514 0045 00       		.byte	0
- 515 0046 3F       		.uleb128 0x3f
- 516 0047 19       		.uleb128 0x19
- 517 0048 03       		.uleb128 0x3
- 518 0049 0E       		.uleb128 0xe
- 519 004a 3A       		.uleb128 0x3a
- 520 004b 0B       		.uleb128 0xb
- 521 004c 3B       		.uleb128 0x3b
- 522 004d 0B       		.uleb128 0xb
- 523 004e 27       		.uleb128 0x27
- 524 004f 19       		.uleb128 0x19
- 525 0050 11       		.uleb128 0x11
- 526 0051 01       		.uleb128 0x1
- 527 0052 12       		.uleb128 0x12
- 528 0053 06       		.uleb128 0x6
- 529 0054 40       		.uleb128 0x40
- 530 0055 18       		.uleb128 0x18
- 531 0056 9642     		.uleb128 0x2116
- 532 0058 19       		.uleb128 0x19
- 533 0059 00       		.byte	0
- 534 005a 00       		.byte	0
- 535 005b 07       		.uleb128 0x7
- 536 005c 2E       		.uleb128 0x2e
- 537 005d 00       		.byte	0
- 538 005e 3F       		.uleb128 0x3f
- 539 005f 19       		.uleb128 0x19
- 540 0060 03       		.uleb128 0x3
- 541 0061 0E       		.uleb128 0xe
- 542 0062 3A       		.uleb128 0x3a
- 543 0063 0B       		.uleb128 0xb
- 544 0064 3B       		.uleb128 0x3b
- 545 0065 0B       		.uleb128 0xb
- 546 0066 49       		.uleb128 0x49
- 547 0067 13       		.uleb128 0x13
- 548 0068 11       		.uleb128 0x11
- 549 0069 01       		.uleb128 0x1
- 550 006a 12       		.uleb128 0x12
- 551 006b 06       		.uleb128 0x6
- 552 006c 40       		.uleb128 0x40
- 553 006d 18       		.uleb128 0x18
- 554 006e 9642     		.uleb128 0x2116
- 555 0070 19       		.uleb128 0x19
- 556 0071 00       		.byte	0
- 557 0072 00       		.byte	0
- 558 0073 08       		.uleb128 0x8
- 559 0074 34       		.uleb128 0x34
- 560 0075 00       		.byte	0
- 561 0076 03       		.uleb128 0x3
- 562 0077 0E       		.uleb128 0xe
- 563 0078 3A       		.uleb128 0x3a
- 564 0079 0B       		.uleb128 0xb
- 565 007a 3B       		.uleb128 0x3b
- 566 007b 05       		.uleb128 0x5
- 567 007c 49       		.uleb128 0x49
- 568 007d 13       		.uleb128 0x13
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc1coCFd.s 			page 15
+ 614 0033 08       		.uleb128 0x8
+ 615 0034 00       		.byte	0
+ 616 0035 00       		.byte	0
+ 617 0036 05       		.uleb128 0x5
+ 618 0037 16       		.uleb128 0x16
+ 619 0038 00       		.byte	0
+ 620 0039 03       		.uleb128 0x3
+ 621 003a 0E       		.uleb128 0xe
+ 622 003b 3A       		.uleb128 0x3a
+ 623 003c 0B       		.uleb128 0xb
+ 624 003d 3B       		.uleb128 0x3b
+ 625 003e 05       		.uleb128 0x5
+ 626 003f 49       		.uleb128 0x49
+ 627 0040 13       		.uleb128 0x13
+ 628 0041 00       		.byte	0
+ 629 0042 00       		.byte	0
+ 630 0043 06       		.uleb128 0x6
+ 631 0044 2E       		.uleb128 0x2e
+ 632 0045 00       		.byte	0
+ 633 0046 3F       		.uleb128 0x3f
+ 634 0047 19       		.uleb128 0x19
+ 635 0048 03       		.uleb128 0x3
+ 636 0049 0E       		.uleb128 0xe
+ 637 004a 3A       		.uleb128 0x3a
+ 638 004b 0B       		.uleb128 0xb
+ 639 004c 3B       		.uleb128 0x3b
+ 640 004d 0B       		.uleb128 0xb
+ 641 004e 27       		.uleb128 0x27
+ 642 004f 19       		.uleb128 0x19
+ 643 0050 11       		.uleb128 0x11
+ 644 0051 01       		.uleb128 0x1
+ 645 0052 12       		.uleb128 0x12
+ 646 0053 06       		.uleb128 0x6
+ 647 0054 40       		.uleb128 0x40
+ 648 0055 18       		.uleb128 0x18
+ 649 0056 9642     		.uleb128 0x2116
+ 650 0058 19       		.uleb128 0x19
+ 651 0059 00       		.byte	0
+ 652 005a 00       		.byte	0
+ 653 005b 07       		.uleb128 0x7
+ 654 005c 2E       		.uleb128 0x2e
+ 655 005d 00       		.byte	0
+ 656 005e 3F       		.uleb128 0x3f
+ 657 005f 19       		.uleb128 0x19
+ 658 0060 03       		.uleb128 0x3
+ 659 0061 0E       		.uleb128 0xe
+ 660 0062 3A       		.uleb128 0x3a
+ 661 0063 0B       		.uleb128 0xb
+ 662 0064 3B       		.uleb128 0x3b
+ 663 0065 0B       		.uleb128 0xb
+ 664 0066 49       		.uleb128 0x49
+ 665 0067 13       		.uleb128 0x13
+ 666 0068 11       		.uleb128 0x11
+ 667 0069 01       		.uleb128 0x1
+ 668 006a 12       		.uleb128 0x12
+ 669 006b 06       		.uleb128 0x6
+ 670 006c 40       		.uleb128 0x40
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccIfg6TG.s 			page 17
 
 
- 569 007e 3F       		.uleb128 0x3f
- 570 007f 19       		.uleb128 0x19
- 571 0080 3C       		.uleb128 0x3c
- 572 0081 19       		.uleb128 0x19
- 573 0082 00       		.byte	0
- 574 0083 00       		.byte	0
- 575 0084 09       		.uleb128 0x9
- 576 0085 35       		.uleb128 0x35
- 577 0086 00       		.byte	0
- 578 0087 49       		.uleb128 0x49
- 579 0088 13       		.uleb128 0x13
- 580 0089 00       		.byte	0
- 581 008a 00       		.byte	0
- 582 008b 0A       		.uleb128 0xa
- 583 008c 34       		.uleb128 0x34
- 584 008d 00       		.byte	0
- 585 008e 03       		.uleb128 0x3
- 586 008f 0E       		.uleb128 0xe
- 587 0090 3A       		.uleb128 0x3a
- 588 0091 0B       		.uleb128 0xb
- 589 0092 3B       		.uleb128 0x3b
- 590 0093 0B       		.uleb128 0xb
- 591 0094 49       		.uleb128 0x49
- 592 0095 13       		.uleb128 0x13
- 593 0096 3F       		.uleb128 0x3f
- 594 0097 19       		.uleb128 0x19
- 595 0098 02       		.uleb128 0x2
- 596 0099 18       		.uleb128 0x18
- 597 009a 00       		.byte	0
- 598 009b 00       		.byte	0
- 599 009c 0B       		.uleb128 0xb
- 600 009d 01       		.uleb128 0x1
- 601 009e 01       		.byte	0x1
- 602 009f 49       		.uleb128 0x49
- 603 00a0 13       		.uleb128 0x13
- 604 00a1 01       		.uleb128 0x1
- 605 00a2 13       		.uleb128 0x13
- 606 00a3 00       		.byte	0
- 607 00a4 00       		.byte	0
- 608 00a5 0C       		.uleb128 0xc
- 609 00a6 21       		.uleb128 0x21
- 610 00a7 00       		.byte	0
- 611 00a8 49       		.uleb128 0x49
- 612 00a9 13       		.uleb128 0x13
- 613 00aa 2F       		.uleb128 0x2f
- 614 00ab 0B       		.uleb128 0xb
- 615 00ac 00       		.byte	0
- 616 00ad 00       		.byte	0
- 617 00ae 00       		.byte	0
- 618              		.section	.debug_aranges,"",%progbits
- 619 0000 24000000 		.4byte	0x24
- 620 0004 0200     		.2byte	0x2
- 621 0006 00000000 		.4byte	.Ldebug_info0
- 622 000a 04       		.byte	0x4
- 623 000b 00       		.byte	0
- 624 000c 0000     		.2byte	0
- 625 000e 0000     		.2byte	0
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc1coCFd.s 			page 16
+ 671 006d 18       		.uleb128 0x18
+ 672 006e 9642     		.uleb128 0x2116
+ 673 0070 19       		.uleb128 0x19
+ 674 0071 00       		.byte	0
+ 675 0072 00       		.byte	0
+ 676 0073 08       		.uleb128 0x8
+ 677 0074 34       		.uleb128 0x34
+ 678 0075 00       		.byte	0
+ 679 0076 03       		.uleb128 0x3
+ 680 0077 0E       		.uleb128 0xe
+ 681 0078 3A       		.uleb128 0x3a
+ 682 0079 0B       		.uleb128 0xb
+ 683 007a 3B       		.uleb128 0x3b
+ 684 007b 05       		.uleb128 0x5
+ 685 007c 49       		.uleb128 0x49
+ 686 007d 13       		.uleb128 0x13
+ 687 007e 3F       		.uleb128 0x3f
+ 688 007f 19       		.uleb128 0x19
+ 689 0080 3C       		.uleb128 0x3c
+ 690 0081 19       		.uleb128 0x19
+ 691 0082 00       		.byte	0
+ 692 0083 00       		.byte	0
+ 693 0084 09       		.uleb128 0x9
+ 694 0085 35       		.uleb128 0x35
+ 695 0086 00       		.byte	0
+ 696 0087 49       		.uleb128 0x49
+ 697 0088 13       		.uleb128 0x13
+ 698 0089 00       		.byte	0
+ 699 008a 00       		.byte	0
+ 700 008b 0A       		.uleb128 0xa
+ 701 008c 34       		.uleb128 0x34
+ 702 008d 00       		.byte	0
+ 703 008e 03       		.uleb128 0x3
+ 704 008f 0E       		.uleb128 0xe
+ 705 0090 3A       		.uleb128 0x3a
+ 706 0091 0B       		.uleb128 0xb
+ 707 0092 3B       		.uleb128 0x3b
+ 708 0093 0B       		.uleb128 0xb
+ 709 0094 49       		.uleb128 0x49
+ 710 0095 13       		.uleb128 0x13
+ 711 0096 3F       		.uleb128 0x3f
+ 712 0097 19       		.uleb128 0x19
+ 713 0098 02       		.uleb128 0x2
+ 714 0099 18       		.uleb128 0x18
+ 715 009a 00       		.byte	0
+ 716 009b 00       		.byte	0
+ 717 009c 0B       		.uleb128 0xb
+ 718 009d 01       		.uleb128 0x1
+ 719 009e 01       		.byte	0x1
+ 720 009f 49       		.uleb128 0x49
+ 721 00a0 13       		.uleb128 0x13
+ 722 00a1 01       		.uleb128 0x1
+ 723 00a2 13       		.uleb128 0x13
+ 724 00a3 00       		.byte	0
+ 725 00a4 00       		.byte	0
+ 726 00a5 0C       		.uleb128 0xc
+ 727 00a6 21       		.uleb128 0x21
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccIfg6TG.s 			page 18
 
 
- 626 0010 00000000 		.4byte	.LFB63
- 627 0014 D0000000 		.4byte	.LFE63-.LFB63
- 628 0018 00000000 		.4byte	.LFB64
- 629 001c 54000000 		.4byte	.LFE64-.LFB64
- 630 0020 00000000 		.4byte	0
- 631 0024 00000000 		.4byte	0
- 632              		.section	.debug_ranges,"",%progbits
- 633              	.Ldebug_ranges0:
- 634 0000 00000000 		.4byte	.LFB63
- 635 0004 D0000000 		.4byte	.LFE63
- 636 0008 00000000 		.4byte	.LFB64
- 637 000c 54000000 		.4byte	.LFE64
- 638 0010 00000000 		.4byte	0
- 639 0014 00000000 		.4byte	0
- 640              		.section	.debug_line,"",%progbits
- 641              	.Ldebug_line0:
- 642 0000 B1010000 		.section	.debug_str,"MS",%progbits,1
- 642      02004901 
- 642      00000201 
- 642      FB0E0D00 
- 642      01010101 
- 643              	.LASF23:
- 644 0000 456D756C 		.ascii	"EmulatedData\000"
- 644      61746564 
- 644      44617461 
- 644      00
- 645              	.LASF9:
- 646 000d 5F5F696E 		.ascii	"__int32_t\000"
- 646      7433325F 
- 646      7400
- 647              	.LASF21:
- 648 0017 6C656453 		.ascii	"ledState\000"
- 648      74617465 
- 648      00
- 649              	.LASF28:
- 650 0020 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
- 650      4320342E 
- 650      392E3320 
- 650      32303135 
- 650      30333033 
- 651 0053 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
- 651      20726576 
- 651      6973696F 
- 651      6E203232 
- 651      31323230 
- 652 0086 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
- 652      66756E63 
- 652      74696F6E 
- 652      2D736563 
- 652      74696F6E 
- 653              	.LASF17:
- 654 00ae 52656164 		.ascii	"ReadSerial\000"
- 654      53657269 
- 654      616C00
- 655              	.LASF20:
- 656 00b9 72656376 		.ascii	"recvChar\000"
- 656      43686172 
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc1coCFd.s 			page 17
+ 728 00a7 00       		.byte	0
+ 729 00a8 49       		.uleb128 0x49
+ 730 00a9 13       		.uleb128 0x13
+ 731 00aa 2F       		.uleb128 0x2f
+ 732 00ab 0B       		.uleb128 0xb
+ 733 00ac 00       		.byte	0
+ 734 00ad 00       		.byte	0
+ 735 00ae 00       		.byte	0
+ 736              		.section	.debug_aranges,"",%progbits
+ 737 0000 24000000 		.4byte	0x24
+ 738 0004 0200     		.2byte	0x2
+ 739 0006 00000000 		.4byte	.Ldebug_info0
+ 740 000a 04       		.byte	0x4
+ 741 000b 00       		.byte	0
+ 742 000c 0000     		.2byte	0
+ 743 000e 0000     		.2byte	0
+ 744 0010 00000000 		.4byte	.LFB63
+ 745 0014 34010000 		.4byte	.LFE63-.LFB63
+ 746 0018 00000000 		.4byte	.LFB64
+ 747 001c C8000000 		.4byte	.LFE64-.LFB64
+ 748 0020 00000000 		.4byte	0
+ 749 0024 00000000 		.4byte	0
+ 750              		.section	.debug_ranges,"",%progbits
+ 751              	.Ldebug_ranges0:
+ 752 0000 00000000 		.4byte	.LFB63
+ 753 0004 34010000 		.4byte	.LFE63
+ 754 0008 00000000 		.4byte	.LFB64
+ 755 000c C8000000 		.4byte	.LFE64
+ 756 0010 00000000 		.4byte	0
+ 757 0014 00000000 		.4byte	0
+ 758              		.section	.debug_line,"",%progbits
+ 759              	.Ldebug_line0:
+ 760 0000 A6010000 		.section	.debug_str,"MS",%progbits,1
+ 760      02004901 
+ 760      00000201 
+ 760      FB0E0D00 
+ 760      01010101 
+ 761              	.LASF24:
+ 762 0000 64616353 		.ascii	"dacState\000"
+ 762      74617465 
+ 762      00
+ 763              	.LASF22:
+ 764 0009 636F6E74 		.ascii	"continuousSending\000"
+ 764      696E756F 
+ 764      75735365 
+ 764      6E64696E 
+ 764      6700
+ 765              	.LASF9:
+ 766 001b 5F5F696E 		.ascii	"__int32_t\000"
+ 766      7433325F 
+ 766      7400
+ 767              	.LASF27:
+ 768 0025 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 768      4320342E 
+ 768      392E3320 
+ 768      32303135 
+ 768      30333033 
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccIfg6TG.s 			page 19
 
 
- 656      00
- 657              	.LASF13:
- 658 00c2 666C6F61 		.ascii	"float\000"
- 658      7400
- 659              	.LASF22:
- 660 00c8 6164634F 		.ascii	"adcOut\000"
- 660      757400
- 661              	.LASF1:
- 662 00cf 756E7369 		.ascii	"unsigned char\000"
- 662      676E6564 
- 662      20636861 
- 662      7200
- 663              	.LASF29:
- 664 00dd 2E5C6D61 		.ascii	".\\main.c\000"
- 664      696E2E63 
- 664      00
- 665              	.LASF5:
- 666 00e6 6C6F6E67 		.ascii	"long unsigned int\000"
- 666      20756E73 
- 666      69676E65 
- 666      6420696E 
- 666      7400
- 667              	.LASF3:
- 668 00f8 73686F72 		.ascii	"short unsigned int\000"
- 668      7420756E 
- 668      7369676E 
- 668      65642069 
- 668      6E7400
- 669              	.LASF19:
- 670 010b 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 670      52784275 
- 670      66666572 
- 670      00
- 671              	.LASF26:
- 672 0118 53656E64 		.ascii	"SendEmulatedData\000"
- 672      456D756C 
- 672      61746564 
- 672      44617461 
- 672      00
- 673              	.LASF14:
- 674 0129 646F7562 		.ascii	"double\000"
- 674      6C6500
- 675              	.LASF18:
- 676 0130 6D61696E 		.ascii	"main\000"
- 676      00
- 677              	.LASF12:
- 678 0135 75696E74 		.ascii	"uint32\000"
- 678      333200
- 679              	.LASF8:
- 680 013c 756E7369 		.ascii	"unsigned int\000"
- 680      676E6564 
- 680      20696E74 
- 680      00
- 681              	.LASF7:
- 682 0149 6C6F6E67 		.ascii	"long long unsigned int\000"
- 682      206C6F6E 
- 682      6720756E 
-ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc1coCFd.s 			page 18
+ 769 0058 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 769      20726576 
+ 769      6973696F 
+ 769      6E203232 
+ 769      31323230 
+ 770 008b 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 770      66756E63 
+ 770      74696F6E 
+ 770      2D736563 
+ 770      74696F6E 
+ 771              	.LASF17:
+ 772 00b3 52656164 		.ascii	"ReadSerial\000"
+ 772      53657269 
+ 772      616C00
+ 773              	.LASF20:
+ 774 00be 72656376 		.ascii	"recvChar\000"
+ 774      43686172 
+ 774      00
+ 775              	.LASF13:
+ 776 00c7 666C6F61 		.ascii	"float\000"
+ 776      7400
+ 777              	.LASF21:
+ 778 00cd 6164634F 		.ascii	"adcOut\000"
+ 778      757400
+ 779              	.LASF1:
+ 780 00d4 756E7369 		.ascii	"unsigned char\000"
+ 780      676E6564 
+ 780      20636861 
+ 780      7200
+ 781              	.LASF28:
+ 782 00e2 2E5C6D61 		.ascii	".\\main.c\000"
+ 782      696E2E63 
+ 782      00
+ 783              	.LASF5:
+ 784 00eb 6C6F6E67 		.ascii	"long unsigned int\000"
+ 784      20756E73 
+ 784      69676E65 
+ 784      6420696E 
+ 784      7400
+ 785              	.LASF25:
+ 786 00fd 77617665 		.ascii	"waveForm\000"
+ 786      466F726D 
+ 786      00
+ 787              	.LASF3:
+ 788 0106 73686F72 		.ascii	"short unsigned int\000"
+ 788      7420756E 
+ 788      7369676E 
+ 788      65642069 
+ 788      6E7400
+ 789              	.LASF19:
+ 790 0119 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 790      52784275 
+ 790      66666572 
+ 790      00
+ 791              	.LASF14:
+ 792 0126 646F7562 		.ascii	"double\000"
+ 792      6C6500
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccIfg6TG.s 			page 20
 
 
- 682      7369676E 
- 682      65642069 
- 683              	.LASF24:
- 684 0160 436F6E74 		.ascii	"ContinuouslySendData\000"
- 684      696E756F 
- 684      75736C79 
- 684      53656E64 
- 684      44617461 
- 685              	.LASF10:
- 686 0175 696E7433 		.ascii	"int32_t\000"
- 686      325F7400 
- 687              	.LASF27:
- 688 017d 5472616E 		.ascii	"TransmitBuffer\000"
- 688      736D6974 
- 688      42756666 
- 688      657200
- 689              	.LASF16:
- 690 018c 73697A65 		.ascii	"sizetype\000"
- 690      74797065 
- 690      00
- 691              	.LASF6:
- 692 0195 6C6F6E67 		.ascii	"long long int\000"
- 692      206C6F6E 
- 692      6720696E 
- 692      7400
- 693              	.LASF15:
- 694 01a3 63686172 		.ascii	"char\000"
- 694      00
- 695              	.LASF2:
- 696 01a8 73686F72 		.ascii	"short int\000"
- 696      7420696E 
- 696      7400
- 697              	.LASF11:
- 698 01b2 75696E74 		.ascii	"uint8\000"
- 698      3800
- 699              	.LASF30:
- 700 01b8 453A5C44 		.ascii	"E:\\Documents\\PSoC Creator\\engr478labs\\Lab3.cyds"
- 700      6F63756D 
- 700      656E7473 
- 700      5C50536F 
- 700      43204372 
- 701 01e7 6E00     		.ascii	"n\000"
- 702              	.LASF4:
- 703 01e9 6C6F6E67 		.ascii	"long int\000"
- 703      20696E74 
- 703      00
- 704              	.LASF0:
- 705 01f2 7369676E 		.ascii	"signed char\000"
- 705      65642063 
- 705      68617200 
- 706              	.LASF25:
- 707 01fe 53656E64 		.ascii	"SendSingleByte\000"
- 707      53696E67 
- 707      6C654279 
- 707      746500
- 708              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
+ 793              	.LASF18:
+ 794 012d 6D61696E 		.ascii	"main\000"
+ 794      00
+ 795              	.LASF12:
+ 796 0132 75696E74 		.ascii	"uint32\000"
+ 796      333200
+ 797              	.LASF8:
+ 798 0139 756E7369 		.ascii	"unsigned int\000"
+ 798      676E6564 
+ 798      20696E74 
+ 798      00
+ 799              	.LASF7:
+ 800 0146 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 800      206C6F6E 
+ 800      6720756E 
+ 800      7369676E 
+ 800      65642069 
+ 801              	.LASF10:
+ 802 015d 696E7433 		.ascii	"int32_t\000"
+ 802      325F7400 
+ 803              	.LASF26:
+ 804 0165 5472616E 		.ascii	"TransmitBuffer\000"
+ 804      736D6974 
+ 804      42756666 
+ 804      657200
+ 805              	.LASF16:
+ 806 0174 73697A65 		.ascii	"sizetype\000"
+ 806      74797065 
+ 806      00
+ 807              	.LASF6:
+ 808 017d 6C6F6E67 		.ascii	"long long int\000"
+ 808      206C6F6E 
+ 808      6720696E 
+ 808      7400
+ 809              	.LASF15:
+ 810 018b 63686172 		.ascii	"char\000"
+ 810      00
+ 811              	.LASF2:
+ 812 0190 73686F72 		.ascii	"short int\000"
+ 812      7420696E 
+ 812      7400
+ 813              	.LASF11:
+ 814 019a 75696E74 		.ascii	"uint8\000"
+ 814      3800
+ 815              	.LASF29:
+ 816 01a0 453A5C44 		.ascii	"E:\\Documents\\PSoC Creator\\engr478labs\\Lab3.cyds"
+ 816      6F63756D 
+ 816      656E7473 
+ 816      5C50536F 
+ 816      43204372 
+ 817 01cf 6E00     		.ascii	"n\000"
+ 818              	.LASF4:
+ 819 01d1 6C6F6E67 		.ascii	"long int\000"
+ 819      20696E74 
+ 819      00
+ 820              	.LASF0:
+ 821 01da 7369676E 		.ascii	"signed char\000"
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccIfg6TG.s 			page 21
+
+
+ 821      65642063 
+ 821      68617200 
+ 822              	.LASF23:
+ 823 01e6 5F426F6F 		.ascii	"_Bool\000"
+ 823      6C00
+ 824              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
