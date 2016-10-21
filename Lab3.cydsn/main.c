@@ -96,16 +96,6 @@ CY_ISR(ReadSerial) {
     isr_1_ClearPending();   //apparently do this at beginning of ISR
     
     
-    //for debugging to make sure interrupt went through
-    /*
-    Debug_LED_ctrl_Write(ledState);
-    if (ledState) {
-        ledState = 0;   
-    } else {
-        ledState = 1;   
-    }
-    */
-    
     
     recvChar = UART_1_GetChar();
     switch(recvChar)
