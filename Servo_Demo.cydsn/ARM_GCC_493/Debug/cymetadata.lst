@@ -1,0 +1,1651 @@
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc25khXo.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"cymetadata.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.global	cy_meta_configecc
+  19              		.section	.cyconfigecc,"a",%progbits
+  20              		.align	2
+  21              		.type	cy_meta_configecc, %object
+  22              		.size	cy_meta_configecc, 1100
+  23              	cy_meta_configecc:
+  24 0000 02       		.byte	2
+  25 0001 52       		.byte	82
+  26 0002 00       		.byte	0
+  27 0003 40       		.byte	64
+  28 0004 01       		.byte	1
+  29 0005 64       		.byte	100
+  30 0006 00       		.byte	0
+  31 0007 40       		.byte	64
+  32 0008 03       		.byte	3
+  33 0009 65       		.byte	101
+  34 000a 00       		.byte	0
+  35 000b 40       		.byte	64
+  36 000c 66       		.byte	102
+  37 000d 08       		.byte	8
+  38 000e 01       		.byte	1
+  39 000f 40       		.byte	64
+  40 0010 33       		.byte	51
+  41 0011 09       		.byte	9
+  42 0012 01       		.byte	1
+  43 0013 40       		.byte	64
+  44 0014 02       		.byte	2
+  45 0015 15       		.byte	21
+  46 0016 01       		.byte	1
+  47 0017 40       		.byte	64
+  48 0018 0B       		.byte	11
+  49 0019 18       		.byte	24
+  50 001a 01       		.byte	1
+  51 001b 40       		.byte	64
+  52 001c 41       		.byte	65
+  53 001d 19       		.byte	25
+  54 001e 01       		.byte	1
+  55 001f 40       		.byte	64
+  56 0020 4D       		.byte	77
+  57 0021 1A       		.byte	26
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc25khXo.s 			page 2
+
+
+  58 0022 01       		.byte	1
+  59 0023 40       		.byte	64
+  60 0024 4B       		.byte	75
+  61 0025 1B       		.byte	27
+  62 0026 01       		.byte	1
+  63 0027 40       		.byte	64
+  64 0028 03       		.byte	3
+  65 0029 40       		.byte	64
+  66 002a 01       		.byte	1
+  67 002b 40       		.byte	64
+  68 002c 01       		.byte	1
+  69 002d 41       		.byte	65
+  70 002e 01       		.byte	1
+  71 002f 40       		.byte	64
+  72 0030 01       		.byte	1
+  73 0031 42       		.byte	66
+  74 0032 01       		.byte	1
+  75 0033 40       		.byte	64
+  76 0034 01       		.byte	1
+  77 0035 43       		.byte	67
+  78 0036 01       		.byte	1
+  79 0037 40       		.byte	64
+  80 0038 02       		.byte	2
+  81 0039 45       		.byte	69
+  82 003a 01       		.byte	1
+  83 003b 40       		.byte	64
+  84 003c 01       		.byte	1
+  85 003d 46       		.byte	70
+  86 003e 01       		.byte	1
+  87 003f 40       		.byte	64
+  88 0040 01       		.byte	1
+  89 0041 47       		.byte	71
+  90 0042 01       		.byte	1
+  91 0043 40       		.byte	64
+  92 0044 01       		.byte	1
+  93 0045 48       		.byte	72
+  94 0046 01       		.byte	1
+  95 0047 40       		.byte	64
+  96 0048 08       		.byte	8
+  97 0049 49       		.byte	73
+  98 004a 01       		.byte	1
+  99 004b 40       		.byte	64
+ 100 004c 01       		.byte	1
+ 101 004d 4C       		.byte	76
+ 102 004e 01       		.byte	1
+ 103 004f 40       		.byte	64
+ 104 0050 0B       		.byte	11
+ 105 0051 4D       		.byte	77
+ 106 0052 01       		.byte	1
+ 107 0053 40       		.byte	64
+ 108 0054 04       		.byte	4
+ 109 0055 50       		.byte	80
+ 110 0056 01       		.byte	1
+ 111 0057 40       		.byte	64
+ 112 0058 01       		.byte	1
+ 113 0059 51       		.byte	81
+ 114 005a 01       		.byte	1
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc25khXo.s 			page 3
+
+
+ 115 005b 40       		.byte	64
+ 116 005c 10       		.byte	16
+ 117 005d 02       		.byte	2
+ 118 005e 11       		.byte	17
+ 119 005f 02       		.byte	2
+ 120 0060 89       		.byte	-119
+ 121 0061 0F       		.byte	15
+ 122 0062 89       		.byte	-119
+ 123 0063 72       		.byte	114
+ 124 0064 8A       		.byte	-118
+ 125 0065 38       		.byte	56
+ 126 0066 8B       		.byte	-117
+ 127 0067 0F       		.byte	15
+ 128 0068 03       		.byte	3
+ 129 0069 08       		.byte	8
+ 130 006a 05       		.byte	5
+ 131 006b 80       		.byte	-128
+ 132 006c 07       		.byte	7
+ 133 006d 13       		.byte	19
+ 134 006e 0A       		.byte	10
+ 135 006f 08       		.byte	8
+ 136 0070 0C       		.byte	12
+ 137 0071 0A       		.byte	10
+ 138 0072 0E       		.byte	14
+ 139 0073 04       		.byte	4
+ 140 0074 11       		.byte	17
+ 141 0075 2C       		.byte	44
+ 142 0076 13       		.byte	19
+ 143 0077 43       		.byte	67
+ 144 0078 14       		.byte	20
+ 145 0079 03       		.byte	3
+ 146 007a 16       		.byte	22
+ 147 007b 0C       		.byte	12
+ 148 007c 17       		.byte	23
+ 149 007d 0C       		.byte	12
+ 150 007e 1A       		.byte	26
+ 151 007f 05       		.byte	5
+ 152 0080 1C       		.byte	28
+ 153 0081 03       		.byte	3
+ 154 0082 1E       		.byte	30
+ 155 0083 04       		.byte	4
+ 156 0084 25       		.byte	37
+ 157 0085 71       		.byte	113
+ 158 0086 27       		.byte	39
+ 159 0087 0E       		.byte	14
+ 160 0088 28       		.byte	40
+ 161 0089 03       		.byte	3
+ 162 008a 29       		.byte	41
+ 163 008b 71       		.byte	113
+ 164 008c 2A       		.byte	42
+ 165 008d 04       		.byte	4
+ 166 008e 2B       		.byte	43
+ 167 008f 06       		.byte	6
+ 168 0090 32       		.byte	50
+ 169 0091 0F       		.byte	15
+ 170 0092 33       		.byte	51
+ 171 0093 30       		.byte	48
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc25khXo.s 			page 4
+
+
+ 172 0094 35       		.byte	53
+ 173 0095 C0       		.byte	-64
+ 174 0096 37       		.byte	55
+ 175 0097 0F       		.byte	15
+ 176 0098 39       		.byte	57
+ 177 0099 28       		.byte	40
+ 178 009a 3A       		.byte	58
+ 179 009b 08       		.byte	8
+ 180 009c 3B       		.byte	59
+ 181 009d 80       		.byte	-128
+ 182 009e 3F       		.byte	63
+ 183 009f 04       		.byte	4
+ 184 00a0 40       		.byte	64
+ 185 00a1 02       		.byte	2
+ 186 00a2 47       		.byte	71
+ 187 00a3 40       		.byte	64
+ 188 00a4 49       		.byte	73
+ 189 00a5 FF       		.byte	-1
+ 190 00a6 4A       		.byte	74
+ 191 00a7 07       		.byte	7
+ 192 00a8 4B       		.byte	75
+ 193 00a9 FF       		.byte	-1
+ 194 00aa 4C       		.byte	76
+ 195 00ab 40       		.byte	64
+ 196 00ac 4D       		.byte	77
+ 197 00ad 20       		.byte	32
+ 198 00ae 4E       		.byte	78
+ 199 00af F0       		.byte	-16
+ 200 00b0 4F       		.byte	79
+ 201 00b1 05       		.byte	5
+ 202 00b2 50       		.byte	80
+ 203 00b3 08       		.byte	8
+ 204 00b4 58       		.byte	88
+ 205 00b5 04       		.byte	4
+ 206 00b6 59       		.byte	89
+ 207 00b7 04       		.byte	4
+ 208 00b8 5A       		.byte	90
+ 209 00b9 04       		.byte	4
+ 210 00ba 5C       		.byte	92
+ 211 00bb 11       		.byte	17
+ 212 00bc 5D       		.byte	93
+ 213 00bd 01       		.byte	1
+ 214 00be 5F       		.byte	95
+ 215 00bf 01       		.byte	1
+ 216 00c0 60       		.byte	96
+ 217 00c1 40       		.byte	64
+ 218 00c2 61       		.byte	97
+ 219 00c3 A8       		.byte	-88
+ 220 00c4 62       		.byte	98
+ 221 00c5 40       		.byte	64
+ 222 00c6 63       		.byte	99
+ 223 00c7 20       		.byte	32
+ 224 00c8 84       		.byte	-124
+ 225 00c9 01       		.byte	1
+ 226 00ca 88       		.byte	-120
+ 227 00cb 06       		.byte	6
+ 228 00cc 8B       		.byte	-117
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc25khXo.s 			page 5
+
+
+ 229 00cd 0C       		.byte	12
+ 230 00ce 8C       		.byte	-116
+ 231 00cf 01       		.byte	1
+ 232 00d0 8F       		.byte	-113
+ 233 00d1 01       		.byte	1
+ 234 00d2 90       		.byte	-112
+ 235 00d3 04       		.byte	4
+ 236 00d4 92       		.byte	-110
+ 237 00d5 02       		.byte	2
+ 238 00d6 95       		.byte	-107
+ 239 00d7 04       		.byte	4
+ 240 00d8 98       		.byte	-104
+ 241 00d9 06       		.byte	6
+ 242 00da 9F       		.byte	-97
+ 243 00db 02       		.byte	2
+ 244 00dc A4       		.byte	-92
+ 245 00dd 01       		.byte	1
+ 246 00de A7       		.byte	-89
+ 247 00df 02       		.byte	2
+ 248 00e0 A8       		.byte	-88
+ 249 00e1 04       		.byte	4
+ 250 00e2 AA       		.byte	-86
+ 251 00e3 02       		.byte	2
+ 252 00e4 AD       		.byte	-83
+ 253 00e5 01       		.byte	1
+ 254 00e6 B0       		.byte	-80
+ 255 00e7 04       		.byte	4
+ 256 00e8 B1       		.byte	-79
+ 257 00e9 01       		.byte	1
+ 258 00ea B2       		.byte	-78
+ 259 00eb 01       		.byte	1
+ 260 00ec B3       		.byte	-77
+ 261 00ed 08       		.byte	8
+ 262 00ee B4       		.byte	-76
+ 263 00ef 02       		.byte	2
+ 264 00f0 B5       		.byte	-75
+ 265 00f1 04       		.byte	4
+ 266 00f2 B7       		.byte	-73
+ 267 00f3 02       		.byte	2
+ 268 00f4 B8       		.byte	-72
+ 269 00f5 20       		.byte	32
+ 270 00f6 BE       		.byte	-66
+ 271 00f7 01       		.byte	1
+ 272 00f8 BF       		.byte	-65
+ 273 00f9 40       		.byte	64
+ 274 00fa C0       		.byte	-64
+ 275 00fb 30       		.byte	48
+ 276 00fc C1       		.byte	-63
+ 277 00fd 06       		.byte	6
+ 278 00fe C5       		.byte	-59
+ 279 00ff D0       		.byte	-48
+ 280 0100 C6       		.byte	-58
+ 281 0101 51       		.byte	81
+ 282 0102 C7       		.byte	-57
+ 283 0103 02       		.byte	2
+ 284 0104 C8       		.byte	-56
+ 285 0105 1E       		.byte	30
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc25khXo.s 			page 6
+
+
+ 286 0106 C9       		.byte	-55
+ 287 0107 FF       		.byte	-1
+ 288 0108 CA       		.byte	-54
+ 289 0109 FF       		.byte	-1
+ 290 010a CB       		.byte	-53
+ 291 010b FF       		.byte	-1
+ 292 010c CD       		.byte	-51
+ 293 010d A0       		.byte	-96
+ 294 010e CF       		.byte	-49
+ 295 010f 04       		.byte	4
+ 296 0110 D0       		.byte	-48
+ 297 0111 18       		.byte	24
+ 298 0112 D2       		.byte	-46
+ 299 0113 80       		.byte	-128
+ 300 0114 D4       		.byte	-44
+ 301 0115 07       		.byte	7
+ 302 0116 D8       		.byte	-40
+ 303 0117 04       		.byte	4
+ 304 0118 D9       		.byte	-39
+ 305 0119 04       		.byte	4
+ 306 011a DA       		.byte	-38
+ 307 011b 04       		.byte	4
+ 308 011c DB       		.byte	-37
+ 309 011d 04       		.byte	4
+ 310 011e DC       		.byte	-36
+ 311 011f 01       		.byte	1
+ 312 0120 DF       		.byte	-33
+ 313 0121 01       		.byte	1
+ 314 0122 E0       		.byte	-32
+ 315 0123 40       		.byte	64
+ 316 0124 E2       		.byte	-30
+ 317 0125 C0       		.byte	-64
+ 318 0126 E4       		.byte	-28
+ 319 0127 40       		.byte	64
+ 320 0128 E5       		.byte	-27
+ 321 0129 40       		.byte	64
+ 322 012a E6       		.byte	-26
+ 323 012b C0       		.byte	-64
+ 324 012c E8       		.byte	-24
+ 325 012d C0       		.byte	-64
+ 326 012e EA       		.byte	-22
+ 327 012f C0       		.byte	-64
+ 328 0130 EC       		.byte	-20
+ 329 0131 C0       		.byte	-64
+ 330 0132 EE       		.byte	-18
+ 331 0133 C0       		.byte	-64
+ 332 0134 01       		.byte	1
+ 333 0135 24       		.byte	36
+ 334 0136 03       		.byte	3
+ 335 0137 01       		.byte	1
+ 336 0138 07       		.byte	7
+ 337 0139 06       		.byte	6
+ 338 013a 0A       		.byte	10
+ 339 013b 80       		.byte	-128
+ 340 013c 0B       		.byte	11
+ 341 013d 04       		.byte	4
+ 342 013e 0E       		.byte	14
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc25khXo.s 			page 7
+
+
+ 343 013f 20       		.byte	32
+ 344 0140 0F       		.byte	15
+ 345 0141 0A       		.byte	10
+ 346 0142 12       		.byte	18
+ 347 0143 08       		.byte	8
+ 348 0144 13       		.byte	19
+ 349 0145 08       		.byte	8
+ 350 0146 16       		.byte	22
+ 351 0147 08       		.byte	8
+ 352 0148 19       		.byte	25
+ 353 0149 12       		.byte	18
+ 354 014a 1A       		.byte	26
+ 355 014b 10       		.byte	16
+ 356 014c 1E       		.byte	30
+ 357 014d 20       		.byte	32
+ 358 014e 1F       		.byte	31
+ 359 014f 08       		.byte	8
+ 360 0150 21       		.byte	33
+ 361 0151 0A       		.byte	10
+ 362 0152 22       		.byte	34
+ 363 0153 90       		.byte	-112
+ 364 0154 27       		.byte	39
+ 365 0155 26       		.byte	38
+ 366 0156 29       		.byte	41
+ 367 0157 04       		.byte	4
+ 368 0158 2B       		.byte	43
+ 369 0159 02       		.byte	2
+ 370 015a 2E       		.byte	46
+ 371 015b 08       		.byte	8
+ 372 015c 2F       		.byte	47
+ 373 015d 18       		.byte	24
+ 374 015e 31       		.byte	49
+ 375 015f 88       		.byte	-120
+ 376 0160 37       		.byte	55
+ 377 0161 06       		.byte	6
+ 378 0162 38       		.byte	56
+ 379 0163 20       		.byte	32
+ 380 0164 39       		.byte	57
+ 381 0165 80       		.byte	-128
+ 382 0166 3E       		.byte	62
+ 383 0167 02       		.byte	2
+ 384 0168 3F       		.byte	63
+ 385 0169 08       		.byte	8
+ 386 016a 40       		.byte	64
+ 387 016b 10       		.byte	16
+ 388 016c 44       		.byte	68
+ 389 016d 40       		.byte	64
+ 390 016e 45       		.byte	69
+ 391 016f 02       		.byte	2
+ 392 0170 47       		.byte	71
+ 393 0171 20       		.byte	32
+ 394 0172 48       		.byte	72
+ 395 0173 08       		.byte	8
+ 396 0174 49       		.byte	73
+ 397 0175 01       		.byte	1
+ 398 0176 4F       		.byte	79
+ 399 0177 08       		.byte	8
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc25khXo.s 			page 8
+
+
+ 400 0178 50       		.byte	80
+ 401 0179 18       		.byte	24
+ 402 017a 51       		.byte	81
+ 403 017b 40       		.byte	64
+ 404 017c 52       		.byte	82
+ 405 017d 04       		.byte	4
+ 406 017e 56       		.byte	86
+ 407 017f 02       		.byte	2
+ 408 0180 58       		.byte	88
+ 409 0181 40       		.byte	64
+ 410 0182 59       		.byte	89
+ 411 0183 01       		.byte	1
+ 412 0184 5A       		.byte	90
+ 413 0185 24       		.byte	36
+ 414 0186 72       		.byte	114
+ 415 0187 40       		.byte	64
+ 416 0188 C0       		.byte	-64
+ 417 0189 C7       		.byte	-57
+ 418 018a C2       		.byte	-62
+ 419 018b EA       		.byte	-22
+ 420 018c C4       		.byte	-60
+ 421 018d 46       		.byte	70
+ 422 018e CA       		.byte	-54
+ 423 018f 6A       		.byte	106
+ 424 0190 CC       		.byte	-52
+ 425 0191 CA       		.byte	-54
+ 426 0192 CE       		.byte	-50
+ 427 0193 CC       		.byte	-52
+ 428 0194 D0       		.byte	-48
+ 429 0195 22       		.byte	34
+ 430 0196 D2       		.byte	-46
+ 431 0197 04       		.byte	4
+ 432 0198 D6       		.byte	-42
+ 433 0199 0F       		.byte	15
+ 434 019a E6       		.byte	-26
+ 435 019b 02       		.byte	2
+ 436 019c EE       		.byte	-18
+ 437 019d 01       		.byte	1
+ 438 019e 0B       		.byte	11
+ 439 019f 01       		.byte	1
+ 440 01a0 1C       		.byte	28
+ 441 01a1 02       		.byte	2
+ 442 01a2 2E       		.byte	46
+ 443 01a3 01       		.byte	1
+ 444 01a4 2F       		.byte	47
+ 445 01a5 01       		.byte	1
+ 446 01a6 30       		.byte	48
+ 447 01a7 01       		.byte	1
+ 448 01a8 31       		.byte	49
+ 449 01a9 01       		.byte	1
+ 450 01aa 34       		.byte	52
+ 451 01ab 02       		.byte	2
+ 452 01ac 3E       		.byte	62
+ 453 01ad 10       		.byte	16
+ 454 01ae 58       		.byte	88
+ 455 01af 04       		.byte	4
+ 456 01b0 59       		.byte	89
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc25khXo.s 			page 9
+
+
+ 457 01b1 04       		.byte	4
+ 458 01b2 5F       		.byte	95
+ 459 01b3 01       		.byte	1
+ 460 01b4 00       		.byte	0
+ 461 01b5 04       		.byte	4
+ 462 01b6 02       		.byte	2
+ 463 01b7 02       		.byte	2
+ 464 01b8 03       		.byte	3
+ 465 01b9 80       		.byte	-128
+ 466 01ba 09       		.byte	9
+ 467 01bb 28       		.byte	40
+ 468 01bc 0A       		.byte	10
+ 469 01bd 82       		.byte	-126
+ 470 01be 0F       		.byte	15
+ 471 01bf 01       		.byte	1
+ 472 01c0 10       		.byte	16
+ 473 01c1 A9       		.byte	-87
+ 474 01c2 13       		.byte	19
+ 475 01c3 80       		.byte	-128
+ 476 01c4 15       		.byte	21
+ 477 01c5 C0       		.byte	-64
+ 478 01c6 18       		.byte	24
+ 479 01c7 04       		.byte	4
+ 480 01c8 19       		.byte	25
+ 481 01c9 25       		.byte	37
+ 482 01ca 1E       		.byte	30
+ 483 01cb 08       		.byte	8
+ 484 01cc 1F       		.byte	31
+ 485 01cd 02       		.byte	2
+ 486 01ce 21       		.byte	33
+ 487 01cf 29       		.byte	41
+ 488 01d0 22       		.byte	34
+ 489 01d1 48       		.byte	72
+ 490 01d2 23       		.byte	35
+ 491 01d3 04       		.byte	4
+ 492 01d4 27       		.byte	39
+ 493 01d5 40       		.byte	64
+ 494 01d6 28       		.byte	40
+ 495 01d7 01       		.byte	1
+ 496 01d8 29       		.byte	41
+ 497 01d9 20       		.byte	32
+ 498 01da 2B       		.byte	43
+ 499 01db 80       		.byte	-128
+ 500 01dc 2D       		.byte	45
+ 501 01dd 40       		.byte	64
+ 502 01de 31       		.byte	49
+ 503 01df 28       		.byte	40
+ 504 01e0 32       		.byte	50
+ 505 01e1 40       		.byte	64
+ 506 01e2 38       		.byte	56
+ 507 01e3 A8       		.byte	-88
+ 508 01e4 39       		.byte	57
+ 509 01e5 02       		.byte	2
+ 510 01e6 3C       		.byte	60
+ 511 01e7 10       		.byte	16
+ 512 01e8 40       		.byte	64
+ 513 01e9 01       		.byte	1
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc25khXo.s 			page 10
+
+
+ 514 01ea 41       		.byte	65
+ 515 01eb 20       		.byte	32
+ 516 01ec 42       		.byte	66
+ 517 01ed 10       		.byte	16
+ 518 01ee 49       		.byte	73
+ 519 01ef 20       		.byte	32
+ 520 01f0 4A       		.byte	74
+ 521 01f1 01       		.byte	1
+ 522 01f2 51       		.byte	81
+ 523 01f3 80       		.byte	-128
+ 524 01f4 53       		.byte	83
+ 525 01f5 20       		.byte	32
+ 526 01f6 59       		.byte	89
+ 527 01f7 02       		.byte	2
+ 528 01f8 69       		.byte	105
+ 529 01f9 24       		.byte	36
+ 530 01fa 6B       		.byte	107
+ 531 01fb 09       		.byte	9
+ 532 01fc 70       		.byte	112
+ 533 01fd FC       		.byte	-4
+ 534 01fe 8D       		.byte	-115
+ 535 01ff 04       		.byte	4
+ 536 0200 8E       		.byte	-114
+ 537 0201 11       		.byte	17
+ 538 0202 8F       		.byte	-113
+ 539 0203 80       		.byte	-128
+ 540 0204 91       		.byte	-111
+ 541 0205 80       		.byte	-128
+ 542 0206 92       		.byte	-110
+ 543 0207 50       		.byte	80
+ 544 0208 94       		.byte	-108
+ 545 0209 10       		.byte	16
+ 546 020a 95       		.byte	-107
+ 547 020b 04       		.byte	4
+ 548 020c 96       		.byte	-106
+ 549 020d 84       		.byte	-124
+ 550 020e 97       		.byte	-105
+ 551 020f 24       		.byte	36
+ 552 0210 99       		.byte	-103
+ 553 0211 12       		.byte	18
+ 554 0212 9A       		.byte	-102
+ 555 0213 06       		.byte	6
+ 556 0214 9B       		.byte	-101
+ 557 0215 06       		.byte	6
+ 558 0216 9D       		.byte	-99
+ 559 0217 24       		.byte	36
+ 560 0218 9F       		.byte	-97
+ 561 0219 09       		.byte	9
+ 562 021a A2       		.byte	-94
+ 563 021b 80       		.byte	-128
+ 564 021c A3       		.byte	-93
+ 565 021d 0C       		.byte	12
+ 566 021e A5       		.byte	-91
+ 567 021f 80       		.byte	-128
+ 568 0220 A6       		.byte	-90
+ 569 0221 08       		.byte	8
+ 570 0222 A7       		.byte	-89
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc25khXo.s 			page 11
+
+
+ 571 0223 03       		.byte	3
+ 572 0224 C0       		.byte	-64
+ 573 0225 0D       		.byte	13
+ 574 0226 C2       		.byte	-62
+ 575 0227 8F       		.byte	-113
+ 576 0228 C4       		.byte	-60
+ 577 0229 8F       		.byte	-113
+ 578 022a CA       		.byte	-54
+ 579 022b 1D       		.byte	29
+ 580 022c CC       		.byte	-52
+ 581 022d 0E       		.byte	14
+ 582 022e CE       		.byte	-50
+ 583 022f 2F       		.byte	47
+ 584 0230 D0       		.byte	-48
+ 585 0231 0E       		.byte	14
+ 586 0232 D2       		.byte	-46
+ 587 0233 0C       		.byte	12
+ 588 0234 D6       		.byte	-42
+ 589 0235 01       		.byte	1
+ 590 0236 01       		.byte	1
+ 591 0237 22       		.byte	34
+ 592 0238 03       		.byte	3
+ 593 0239 51       		.byte	81
+ 594 023a 05       		.byte	5
+ 595 023b 67       		.byte	103
+ 596 023c 09       		.byte	9
+ 597 023d 67       		.byte	103
+ 598 023e 0A       		.byte	10
+ 599 023f 02       		.byte	2
+ 600 0240 11       		.byte	17
+ 601 0241 01       		.byte	1
+ 602 0242 12       		.byte	18
+ 603 0243 01       		.byte	1
+ 604 0244 13       		.byte	19
+ 605 0245 0E       		.byte	14
+ 606 0246 14       		.byte	20
+ 607 0247 04       		.byte	4
+ 608 0248 15       		.byte	21
+ 609 0249 44       		.byte	68
+ 610 024a 17       		.byte	23
+ 611 024b 31       		.byte	49
+ 612 024c 27       		.byte	39
+ 613 024d 80       		.byte	-128
+ 614 024e 2A       		.byte	42
+ 615 024f 02       		.byte	2
+ 616 0250 2B       		.byte	43
+ 617 0251 80       		.byte	-128
+ 618 0252 31       		.byte	49
+ 619 0253 07       		.byte	7
+ 620 0254 32       		.byte	50
+ 621 0255 01       		.byte	1
+ 622 0256 33       		.byte	51
+ 623 0257 60       		.byte	96
+ 624 0258 34       		.byte	52
+ 625 0259 02       		.byte	2
+ 626 025a 35       		.byte	53
+ 627 025b 80       		.byte	-128
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc25khXo.s 			page 12
+
+
+ 628 025c 36       		.byte	54
+ 629 025d 04       		.byte	4
+ 630 025e 37       		.byte	55
+ 631 025f 18       		.byte	24
+ 632 0260 3E       		.byte	62
+ 633 0261 50       		.byte	80
+ 634 0262 3F       		.byte	63
+ 635 0263 50       		.byte	80
+ 636 0264 54       		.byte	84
+ 637 0265 18       		.byte	24
+ 638 0266 56       		.byte	86
+ 639 0267 04       		.byte	4
+ 640 0268 58       		.byte	88
+ 641 0269 04       		.byte	4
+ 642 026a 59       		.byte	89
+ 643 026b 04       		.byte	4
+ 644 026c 5B       		.byte	91
+ 645 026d 04       		.byte	4
+ 646 026e 5C       		.byte	92
+ 647 026f 10       		.byte	16
+ 648 0270 5D       		.byte	93
+ 649 0271 10       		.byte	16
+ 650 0272 5F       		.byte	95
+ 651 0273 01       		.byte	1
+ 652 0274 80       		.byte	-128
+ 653 0275 14       		.byte	20
+ 654 0276 83       		.byte	-125
+ 655 0277 01       		.byte	1
+ 656 0278 84       		.byte	-124
+ 657 0279 10       		.byte	16
+ 658 027a 86       		.byte	-122
+ 659 027b AC       		.byte	-84
+ 660 027c 87       		.byte	-121
+ 661 027d 01       		.byte	1
+ 662 027e 8A       		.byte	-118
+ 663 027f 20       		.byte	32
+ 664 0280 8C       		.byte	-116
+ 665 0281 10       		.byte	16
+ 666 0282 8E       		.byte	-114
+ 667 0283 40       		.byte	64
+ 668 0284 93       		.byte	-109
+ 669 0285 01       		.byte	1
+ 670 0286 96       		.byte	-106
+ 671 0287 03       		.byte	3
+ 672 0288 98       		.byte	-104
+ 673 0289 0C       		.byte	12
+ 674 028a 9A       		.byte	-102
+ 675 028b 71       		.byte	113
+ 676 028c A0       		.byte	-96
+ 677 028d DC       		.byte	-36
+ 678 028e A2       		.byte	-94
+ 679 028f 22       		.byte	34
+ 680 0290 A4       		.byte	-92
+ 681 0291 09       		.byte	9
+ 682 0292 A5       		.byte	-91
+ 683 0293 01       		.byte	1
+ 684 0294 A6       		.byte	-90
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc25khXo.s 			page 13
+
+
+ 685 0295 D0       		.byte	-48
+ 686 0296 A9       		.byte	-87
+ 687 0297 01       		.byte	1
+ 688 0298 B1       		.byte	-79
+ 689 0299 01       		.byte	1
+ 690 029a B2       		.byte	-78
+ 691 029b 1F       		.byte	31
+ 692 029c B4       		.byte	-76
+ 693 029d E0       		.byte	-32
+ 694 029e BA       		.byte	-70
+ 695 029f 20       		.byte	32
+ 696 02a0 BF       		.byte	-65
+ 697 02a1 01       		.byte	1
+ 698 02a2 C0       		.byte	-64
+ 699 02a3 63       		.byte	99
+ 700 02a4 C1       		.byte	-63
+ 701 02a5 02       		.byte	2
+ 702 02a6 C5       		.byte	-59
+ 703 02a7 E0       		.byte	-32
+ 704 02a8 C6       		.byte	-58
+ 705 02a9 0B       		.byte	11
+ 706 02aa C7       		.byte	-57
+ 707 02ab C0       		.byte	-64
+ 708 02ac C8       		.byte	-56
+ 709 02ad 26       		.byte	38
+ 710 02ae C9       		.byte	-55
+ 711 02af FF       		.byte	-1
+ 712 02b0 CA       		.byte	-54
+ 713 02b1 FF       		.byte	-1
+ 714 02b2 CB       		.byte	-53
+ 715 02b3 FF       		.byte	-1
+ 716 02b4 CE       		.byte	-50
+ 717 02b5 F0       		.byte	-16
+ 718 02b6 CF       		.byte	-49
+ 719 02b7 44       		.byte	68
+ 720 02b8 D0       		.byte	-48
+ 721 02b9 0C       		.byte	12
+ 722 02ba D4       		.byte	-44
+ 723 02bb 01       		.byte	1
+ 724 02bc D8       		.byte	-40
+ 725 02bd 04       		.byte	4
+ 726 02be D9       		.byte	-39
+ 727 02bf 04       		.byte	4
+ 728 02c0 DA       		.byte	-38
+ 729 02c1 04       		.byte	4
+ 730 02c2 DB       		.byte	-37
+ 731 02c3 04       		.byte	4
+ 732 02c4 DC       		.byte	-36
+ 733 02c5 01       		.byte	1
+ 734 02c6 DD       		.byte	-35
+ 735 02c7 11       		.byte	17
+ 736 02c8 DF       		.byte	-33
+ 737 02c9 01       		.byte	1
+ 738 02ca E6       		.byte	-26
+ 739 02cb C0       		.byte	-64
+ 740 02cc EA       		.byte	-22
+ 741 02cd 40       		.byte	64
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc25khXo.s 			page 14
+
+
+ 742 02ce EB       		.byte	-21
+ 743 02cf 02       		.byte	2
+ 744 02d0 00       		.byte	0
+ 745 02d1 10       		.byte	16
+ 746 02d2 06       		.byte	6
+ 747 02d3 6A       		.byte	106
+ 748 02d4 0A       		.byte	10
+ 749 02d5 50       		.byte	80
+ 750 02d6 0D       		.byte	13
+ 751 02d7 20       		.byte	32
+ 752 02d8 0E       		.byte	14
+ 753 02d9 10       		.byte	16
+ 754 02da 12       		.byte	18
+ 755 02db 04       		.byte	4
+ 756 02dc 17       		.byte	23
+ 757 02dd 06       		.byte	6
+ 758 02de 18       		.byte	24
+ 759 02df 10       		.byte	16
+ 760 02e0 19       		.byte	25
+ 761 02e1 80       		.byte	-128
+ 762 02e2 1A       		.byte	26
+ 763 02e3 04       		.byte	4
+ 764 02e4 1D       		.byte	29
+ 765 02e5 20       		.byte	32
+ 766 02e6 1E       		.byte	30
+ 767 02e7 10       		.byte	16
+ 768 02e8 1F       		.byte	31
+ 769 02e9 10       		.byte	16
+ 770 02ea 20       		.byte	32
+ 771 02eb 05       		.byte	5
+ 772 02ec 21       		.byte	33
+ 773 02ed 08       		.byte	8
+ 774 02ee 22       		.byte	34
+ 775 02ef 01       		.byte	1
+ 776 02f0 24       		.byte	36
+ 777 02f1 40       		.byte	64
+ 778 02f2 29       		.byte	41
+ 779 02f3 10       		.byte	16
+ 780 02f4 2B       		.byte	43
+ 781 02f5 20       		.byte	32
+ 782 02f6 2D       		.byte	45
+ 783 02f7 20       		.byte	32
+ 784 02f8 2E       		.byte	46
+ 785 02f9 20       		.byte	32
+ 786 02fa 2F       		.byte	47
+ 787 02fb 18       		.byte	24
+ 788 02fc 31       		.byte	49
+ 789 02fd 08       		.byte	8
+ 790 02fe 32       		.byte	50
+ 791 02ff 01       		.byte	1
+ 792 0300 37       		.byte	55
+ 793 0301 02       		.byte	2
+ 794 0302 38       		.byte	56
+ 795 0303 02       		.byte	2
+ 796 0304 39       		.byte	57
+ 797 0305 24       		.byte	36
+ 798 0306 3D       		.byte	61
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc25khXo.s 			page 15
+
+
+ 799 0307 08       		.byte	8
+ 800 0308 3E       		.byte	62
+ 801 0309 08       		.byte	8
+ 802 030a 3F       		.byte	63
+ 803 030b 0A       		.byte	10
+ 804 030c 45       		.byte	69
+ 805 030d 24       		.byte	36
+ 806 030e 4D       		.byte	77
+ 807 030f 20       		.byte	32
+ 808 0310 4F       		.byte	79
+ 809 0311 01       		.byte	1
+ 810 0312 56       		.byte	86
+ 811 0313 40       		.byte	64
+ 812 0314 57       		.byte	87
+ 813 0315 01       		.byte	1
+ 814 0316 59       		.byte	89
+ 815 0317 01       		.byte	1
+ 816 0318 5C       		.byte	92
+ 817 0319 40       		.byte	64
+ 818 031a 5D       		.byte	93
+ 819 031b 10       		.byte	16
+ 820 031c 5E       		.byte	94
+ 821 031d 08       		.byte	8
+ 822 031e 5F       		.byte	95
+ 823 031f 01       		.byte	1
+ 824 0320 60       		.byte	96
+ 825 0321 04       		.byte	4
+ 826 0322 62       		.byte	98
+ 827 0323 80       		.byte	-128
+ 828 0324 63       		.byte	99
+ 829 0325 40       		.byte	64
+ 830 0326 6A       		.byte	106
+ 831 0327 80       		.byte	-128
+ 832 0328 81       		.byte	-127
+ 833 0329 08       		.byte	8
+ 834 032a 82       		.byte	-126
+ 835 032b 02       		.byte	2
+ 836 032c 85       		.byte	-123
+ 837 032d 10       		.byte	16
+ 838 032e 87       		.byte	-121
+ 839 032f 41       		.byte	65
+ 840 0330 8C       		.byte	-116
+ 841 0331 01       		.byte	1
+ 842 0332 8D       		.byte	-115
+ 843 0333 80       		.byte	-128
+ 844 0334 8E       		.byte	-114
+ 845 0335 40       		.byte	64
+ 846 0336 8F       		.byte	-113
+ 847 0337 80       		.byte	-128
+ 848 0338 91       		.byte	-111
+ 849 0339 24       		.byte	36
+ 850 033a 92       		.byte	-110
+ 851 033b 40       		.byte	64
+ 852 033c 94       		.byte	-108
+ 853 033d 11       		.byte	17
+ 854 033e 96       		.byte	-106
+ 855 033f 06       		.byte	6
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc25khXo.s 			page 16
+
+
+ 856 0340 97       		.byte	-105
+ 857 0341 21       		.byte	33
+ 858 0342 99       		.byte	-103
+ 859 0343 11       		.byte	17
+ 860 0344 9A       		.byte	-102
+ 861 0345 06       		.byte	6
+ 862 0346 9B       		.byte	-101
+ 863 0347 06       		.byte	6
+ 864 0348 A2       		.byte	-94
+ 865 0349 84       		.byte	-124
+ 866 034a A3       		.byte	-93
+ 867 034b 2C       		.byte	44
+ 868 034c A6       		.byte	-90
+ 869 034d 02       		.byte	2
+ 870 034e A7       		.byte	-89
+ 871 034f 81       		.byte	-127
+ 872 0350 AB       		.byte	-85
+ 873 0351 40       		.byte	64
+ 874 0352 C0       		.byte	-64
+ 875 0353 F2       		.byte	-14
+ 876 0354 C2       		.byte	-62
+ 877 0355 6C       		.byte	108
+ 878 0356 C4       		.byte	-60
+ 879 0357 32       		.byte	50
+ 880 0358 CA       		.byte	-54
+ 881 0359 66       		.byte	102
+ 882 035a CC       		.byte	-52
+ 883 035b 83       		.byte	-125
+ 884 035c CE       		.byte	-50
+ 885 035d C7       		.byte	-57
+ 886 035e D0       		.byte	-48
+ 887 035f 60       		.byte	96
+ 888 0360 D2       		.byte	-46
+ 889 0361 20       		.byte	32
+ 890 0362 D6       		.byte	-42
+ 891 0363 F1       		.byte	-15
+ 892 0364 D8       		.byte	-40
+ 893 0365 0D       		.byte	13
+ 894 0366 32       		.byte	50
+ 895 0367 20       		.byte	32
+ 896 0368 36       		.byte	54
+ 897 0369 20       		.byte	32
+ 898 036a CC       		.byte	-52
+ 899 036b 30       		.byte	48
+ 900 036c A6       		.byte	-90
+ 901 036d 20       		.byte	32
+ 902 036e A6       		.byte	-90
+ 903 036f 20       		.byte	32
+ 904 0370 A6       		.byte	-90
+ 905 0371 20       		.byte	32
+ 906 0372 5C       		.byte	92
+ 907 0373 10       		.byte	16
+ 908 0374 D6       		.byte	-42
+ 909 0375 04       		.byte	4
+ 910 0376 94       		.byte	-108
+ 911 0377 10       		.byte	16
+ 912 0378 94       		.byte	-108
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc25khXo.s 			page 17
+
+
+ 913 0379 10       		.byte	16
+ 914 037a A6       		.byte	-90
+ 915 037b 20       		.byte	32
+ 916 037c 77       		.byte	119
+ 917 037d 40       		.byte	64
+ 918 037e 86       		.byte	-122
+ 919 037f 20       		.byte	32
+ 920 0380 9B       		.byte	-101
+ 921 0381 40       		.byte	64
+ 922 0382 A6       		.byte	-90
+ 923 0383 20       		.byte	32
+ 924 0384 AB       		.byte	-85
+ 925 0385 40       		.byte	64
+ 926 0386 DE       		.byte	-34
+ 927 0387 20       		.byte	32
+ 928 0388 E6       		.byte	-26
+ 929 0389 40       		.byte	64
+ 930 038a EE       		.byte	-18
+ 931 038b 80       		.byte	-128
+ 932 038c 94       		.byte	-108
+ 933 038d 10       		.byte	16
+ 934 038e 12       		.byte	18
+ 935 038f 80       		.byte	-128
+ 936 0390 7F       		.byte	127
+ 937 0391 02       		.byte	2
+ 938 0392 8C       		.byte	-116
+ 939 0393 10       		.byte	16
+ 940 0394 8E       		.byte	-114
+ 941 0395 80       		.byte	-128
+ 942 0396 8F       		.byte	-113
+ 943 0397 02       		.byte	2
+ 944 0398 94       		.byte	-108
+ 945 0399 10       		.byte	16
+ 946 039a C4       		.byte	-60
+ 947 039b 08       		.byte	8
+ 948 039c DE       		.byte	-34
+ 949 039d 04       		.byte	4
+ 950 039e E0       		.byte	-32
+ 951 039f 08       		.byte	8
+ 952 03a0 E2       		.byte	-30
+ 953 03a1 02       		.byte	2
+ 954 03a2 E4       		.byte	-28
+ 955 03a3 02       		.byte	2
+ 956 03a4 00       		.byte	0
+ 957 03a5 03       		.byte	3
+ 958 03a6 0C       		.byte	12
+ 959 03a7 03       		.byte	3
+ 960 03a8 10       		.byte	16
+ 961 03a9 03       		.byte	3
+ 962 03aa 1C       		.byte	28
+ 963 03ab 03       		.byte	3
+ 964 03ac 00       		.byte	0
+ 965 03ad 0F       		.byte	15
+ 966 03ae 00       		.byte	0
+ 967 03af 00       		.byte	0
+ 968 03b0 84       		.byte	-124
+ 969 03b1 80       		.byte	-128
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc25khXo.s 			page 18
+
+
+ 970 03b2 00       		.byte	0
+ 971 03b3 00       		.byte	0
+ 972 03b4 40       		.byte	64
+ 973 03b5 00       		.byte	0
+ 974 03b6 00       		.byte	0
+ 975 03b7 00       		.byte	0
+ 976 03b8 21       		.byte	33
+ 977 03b9 00       		.byte	0
+ 978 03ba 00       		.byte	0
+ 979 03bb 04       		.byte	4
+ 980 03bc 73       		.byte	115
+ 981 03bd 18       		.byte	24
+ 982 03be 0C       		.byte	12
+ 983 03bf 00       		.byte	0
+ 984 03c0 00       		.byte	0
+ 985 03c1 08       		.byte	8
+ 986 03c2 00       		.byte	0
+ 987 03c3 00       		.byte	0
+ 988 03c4 42       		.byte	66
+ 989 03c5 10       		.byte	16
+ 990 03c6 00       		.byte	0
+ 991 03c7 00       		.byte	0
+ 992 03c8 0F       		.byte	15
+ 993 03c9 00       		.byte	0
+ 994 03ca 70       		.byte	112
+ 995 03cb 00       		.byte	0
+ 996 03cc 1C       		.byte	28
+ 997 03cd 1C       		.byte	28
+ 998 03ce 63       		.byte	99
+ 999 03cf 42       		.byte	66
+ 1000 03d0 7F       		.byte	127
+ 1001 03d1 5F       		.byte	95
+ 1002 03d2 00       		.byte	0
+ 1003 03d3 00       		.byte	0
+ 1004 03d4 63       		.byte	99
+ 1005 03d5 1C       		.byte	28
+ 1006 03d6 00       		.byte	0
+ 1007 03d7 41       		.byte	65
+ 1008 03d8 08       		.byte	8
+ 1009 03d9 04       		.byte	4
+ 1010 03da 00       		.byte	0
+ 1011 03db 20       		.byte	32
+ 1012 03dc 04       		.byte	4
+ 1013 03dd 00       		.byte	0
+ 1014 03de 00       		.byte	0
+ 1015 03df 00       		.byte	0
+ 1016 03e0 0C       		.byte	12
+ 1017 03e1 47       		.byte	71
+ 1018 03e2 00       		.byte	0
+ 1019 03e3 18       		.byte	24
+ 1020 03e4 00       		.byte	0
+ 1021 03e5 00       		.byte	0
+ 1022 03e6 73       		.byte	115
+ 1023 03e7 43       		.byte	67
+ 1024 03e8 60       		.byte	96
+ 1025 03e9 20       		.byte	32
+ 1026 03ea 1C       		.byte	28
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc25khXo.s 			page 19
+
+
+ 1027 03eb 1F       		.byte	31
+ 1028 03ec 0F       		.byte	15
+ 1029 03ed 00       		.byte	0
+ 1030 03ee 00       		.byte	0
+ 1031 03ef 58       		.byte	88
+ 1032 03f0 00       		.byte	0
+ 1033 03f1 00       		.byte	0
+ 1034 03f2 20       		.byte	32
+ 1035 03f3 A8       		.byte	-88
+ 1036 03f4 00       		.byte	0
+ 1037 03f5 00       		.byte	0
+ 1038 03f6 00       		.byte	0
+ 1039 03f7 00       		.byte	0
+ 1040 03f8 63       		.byte	99
+ 1041 03f9 02       		.byte	2
+ 1042 03fa 05       		.byte	5
+ 1043 03fb 00       		.byte	0
+ 1044 03fc 01       		.byte	1
+ 1045 03fd 00       		.byte	0
+ 1046 03fe EC       		.byte	-20
+ 1047 03ff 00       		.byte	0
+ 1048 0400 0C       		.byte	12
+ 1049 0401 FF       		.byte	-1
+ 1050 0402 FF       		.byte	-1
+ 1051 0403 FF       		.byte	-1
+ 1052 0404 62       		.byte	98
+ 1053 0405 A0       		.byte	-96
+ 1054 0406 F0       		.byte	-16
+ 1055 0407 41       		.byte	65
+ 1056 0408 0C       		.byte	12
+ 1057 0409 00       		.byte	0
+ 1058 040a 00       		.byte	0
+ 1059 040b 00       		.byte	0
+ 1060 040c 00       		.byte	0
+ 1061 040d 00       		.byte	0
+ 1062 040e 02       		.byte	2
+ 1063 040f 13       		.byte	19
+ 1064 0410 04       		.byte	4
+ 1065 0411 04       		.byte	4
+ 1066 0412 04       		.byte	4
+ 1067 0413 04       		.byte	4
+ 1068 0414 11       		.byte	17
+ 1069 0415 11       		.byte	17
+ 1070 0416 00       		.byte	0
+ 1071 0417 01       		.byte	1
+ 1072 0418 00       		.byte	0
+ 1073 0419 00       		.byte	0
+ 1074 041a 00       		.byte	0
+ 1075 041b 00       		.byte	0
+ 1076 041c 00       		.byte	0
+ 1077 041d 00       		.byte	0
+ 1078 041e 40       		.byte	64
+ 1079 041f 02       		.byte	2
+ 1080 0420 00       		.byte	0
+ 1081 0421 10       		.byte	16
+ 1082 0422 30       		.byte	48
+ 1083 0423 10       		.byte	16
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc25khXo.s 			page 20
+
+
+ 1084 0424 00       		.byte	0
+ 1085 0425 10       		.byte	16
+ 1086 0426 10       		.byte	16
+ 1087 0427 12       		.byte	18
+ 1088 0428 00       		.byte	0
+ 1089 0429 00       		.byte	0
+ 1090 042a 00       		.byte	0
+ 1091 042b 00       		.byte	0
+ 1092 042c 00       		.byte	0
+ 1093 042d 00       		.byte	0
+ 1094 042e 00       		.byte	0
+ 1095 042f 00       		.byte	0
+ 1096 0430 00       		.byte	0
+ 1097 0431 00       		.byte	0
+ 1098 0432 00       		.byte	0
+ 1099 0433 00       		.byte	0
+ 1100 0434 00       		.byte	0
+ 1101 0435 00       		.byte	0
+ 1102 0436 00       		.byte	0
+ 1103 0437 00       		.byte	0
+ 1104 0438 80       		.byte	-128
+ 1105 0439 00       		.byte	0
+ 1106 043a 40       		.byte	64
+ 1107 043b 84       		.byte	-124
+ 1108 043c 84       		.byte	-124
+ 1109 043d 00       		.byte	0
+ 1110 043e 84       		.byte	-124
+ 1111 043f 00       		.byte	0
+ 1112 0440 00       		.byte	0
+ 1113 0441 00       		.byte	0
+ 1114 0442 00       		.byte	0
+ 1115 0443 00       		.byte	0
+ 1116 0444 00       		.byte	0
+ 1117 0445 02       		.byte	2
+ 1118 0446 02       		.byte	2
+ 1119 0447 00       		.byte	0
+ 1120 0448 02       		.byte	2
+ 1121 0449 00       		.byte	0
+ 1122 044a 00       		.byte	0
+ 1123 044b 00       		.byte	0
+ 1124              		.global	cy_meta_custnvl
+ 1125              		.section	.cycustnvl,"a",%progbits
+ 1126              		.align	2
+ 1127              		.type	cy_meta_custnvl, %object
+ 1128              		.size	cy_meta_custnvl, 4
+ 1129              	cy_meta_custnvl:
+ 1130 0000 00       		.byte	0
+ 1131 0001 00       		.byte	0
+ 1132 0002 40       		.byte	64
+ 1133 0003 05       		.byte	5
+ 1134              		.global	cy_meta_wonvl
+ 1135              		.section	.cywolatch,"a",%progbits
+ 1136              		.align	2
+ 1137              		.type	cy_meta_wonvl, %object
+ 1138              		.size	cy_meta_wonvl, 4
+ 1139              	cy_meta_wonvl:
+ 1140 0000 BC       		.byte	-68
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc25khXo.s 			page 21
+
+
+ 1141 0001 90       		.byte	-112
+ 1142 0002 AC       		.byte	-84
+ 1143 0003 AF       		.byte	-81
+ 1144              		.global	cy_meta_flashprotect
+ 1145              		.section	.cyflashprotect,"a",%progbits
+ 1146              		.align	2
+ 1147              		.type	cy_meta_flashprotect, %object
+ 1148              		.size	cy_meta_flashprotect, 256
+ 1149              	cy_meta_flashprotect:
+ 1150 0000 00000000 		.space	256
+ 1150      00000000 
+ 1150      00000000 
+ 1150      00000000 
+ 1150      00000000 
+ 1151              		.global	cy_metadata
+ 1152              		.section	.cymeta,"a",%progbits
+ 1153              		.align	2
+ 1154              		.type	cy_metadata, %object
+ 1155              		.size	cy_metadata, 12
+ 1156              	cy_metadata:
+ 1157 0000 00       		.byte	0
+ 1158 0001 01       		.byte	1
+ 1159 0002 2E       		.byte	46
+ 1160 0003 16       		.byte	22
+ 1161 0004 10       		.byte	16
+ 1162 0005 69       		.byte	105
+ 1163 0006 00       		.byte	0
+ 1164 0007 01       		.byte	1
+ 1165 0008 00       		.byte	0
+ 1166 0009 00       		.byte	0
+ 1167 000a 00       		.byte	0
+ 1168 000b 00       		.byte	0
+ 1169              		.text
+ 1170              	.Letext0:
+ 1171              		.file 1 ".\\Generated_Source\\PSoC5\\cymetadata.c"
+ 1172              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
+ 1173              		.section	.debug_info,"",%progbits
+ 1174              	.Ldebug_info0:
+ 1175 0000 37010000 		.4byte	0x137
+ 1176 0004 0400     		.2byte	0x4
+ 1177 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 1178 000a 04       		.byte	0x4
+ 1179 000b 01       		.uleb128 0x1
+ 1180 000c 00000000 		.4byte	.LASF18
+ 1181 0010 01       		.byte	0x1
+ 1182 0011 8E000000 		.4byte	.LASF19
+ 1183 0015 B4000000 		.4byte	.LASF20
+ 1184 0019 00000000 		.4byte	.Ldebug_line0
+ 1185 001d 02       		.uleb128 0x2
+ 1186 001e 01       		.byte	0x1
+ 1187 001f 06       		.byte	0x6
+ 1188 0020 D5010000 		.4byte	.LASF0
+ 1189 0024 02       		.uleb128 0x2
+ 1190 0025 01       		.byte	0x1
+ 1191 0026 08       		.byte	0x8
+ 1192 0027 FD000000 		.4byte	.LASF1
+ 1193 002b 02       		.uleb128 0x2
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc25khXo.s 			page 22
+
+
+ 1194 002c 02       		.byte	0x2
+ 1195 002d 05       		.byte	0x5
+ 1196 002e BC010000 		.4byte	.LASF2
+ 1197 0032 02       		.uleb128 0x2
+ 1198 0033 02       		.byte	0x2
+ 1199 0034 07       		.byte	0x7
+ 1200 0035 1D010000 		.4byte	.LASF3
+ 1201 0039 02       		.uleb128 0x2
+ 1202 003a 04       		.byte	0x4
+ 1203 003b 05       		.byte	0x5
+ 1204 003c CC010000 		.4byte	.LASF4
+ 1205 0040 02       		.uleb128 0x2
+ 1206 0041 04       		.byte	0x4
+ 1207 0042 07       		.byte	0x7
+ 1208 0043 0B010000 		.4byte	.LASF5
+ 1209 0047 02       		.uleb128 0x2
+ 1210 0048 08       		.byte	0x8
+ 1211 0049 05       		.byte	0x5
+ 1212 004a A9010000 		.4byte	.LASF6
+ 1213 004e 02       		.uleb128 0x2
+ 1214 004f 08       		.byte	0x8
+ 1215 0050 07       		.byte	0x7
+ 1216 0051 66010000 		.4byte	.LASF7
+ 1217 0055 03       		.uleb128 0x3
+ 1218 0056 04       		.byte	0x4
+ 1219 0057 05       		.byte	0x5
+ 1220 0058 696E7400 		.ascii	"int\000"
+ 1221 005c 02       		.uleb128 0x2
+ 1222 005d 04       		.byte	0x4
+ 1223 005e 07       		.byte	0x7
+ 1224 005f 59010000 		.4byte	.LASF8
+ 1225 0063 04       		.uleb128 0x4
+ 1226 0064 C6010000 		.4byte	.LASF21
+ 1227 0068 02       		.byte	0x2
+ 1228 0069 9201     		.2byte	0x192
+ 1229 006b 24000000 		.4byte	0x24
+ 1230 006f 02       		.uleb128 0x2
+ 1231 0070 04       		.byte	0x4
+ 1232 0071 04       		.byte	0x4
+ 1233 0072 F7000000 		.4byte	.LASF9
+ 1234 0076 02       		.uleb128 0x2
+ 1235 0077 08       		.byte	0x8
+ 1236 0078 04       		.byte	0x4
+ 1237 0079 30010000 		.4byte	.LASF10
+ 1238 007d 02       		.uleb128 0x2
+ 1239 007e 01       		.byte	0x1
+ 1240 007f 08       		.byte	0x8
+ 1241 0080 B7010000 		.4byte	.LASF11
+ 1242 0084 05       		.uleb128 0x5
+ 1243 0085 63000000 		.4byte	0x63
+ 1244 0089 95000000 		.4byte	0x95
+ 1245 008d 06       		.uleb128 0x6
+ 1246 008e 95000000 		.4byte	0x95
+ 1247 0092 4B04     		.2byte	0x44b
+ 1248 0094 00       		.byte	0
+ 1249 0095 02       		.uleb128 0x2
+ 1250 0096 04       		.byte	0x4
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc25khXo.s 			page 23
+
+
+ 1251 0097 07       		.byte	0x7
+ 1252 0098 A0010000 		.4byte	.LASF12
+ 1253 009c 07       		.uleb128 0x7
+ 1254 009d 47010000 		.4byte	.LASF13
+ 1255 00a1 01       		.byte	0x1
+ 1256 00a2 1F       		.byte	0x1f
+ 1257 00a3 AD000000 		.4byte	0xad
+ 1258 00a7 05       		.uleb128 0x5
+ 1259 00a8 03       		.byte	0x3
+ 1260 00a9 00000000 		.4byte	cy_meta_configecc
+ 1261 00ad 08       		.uleb128 0x8
+ 1262 00ae 84000000 		.4byte	0x84
+ 1263 00b2 05       		.uleb128 0x5
+ 1264 00b3 63000000 		.4byte	0x63
+ 1265 00b7 C2000000 		.4byte	0xc2
+ 1266 00bb 09       		.uleb128 0x9
+ 1267 00bc 95000000 		.4byte	0x95
+ 1268 00c0 03       		.byte	0x3
+ 1269 00c1 00       		.byte	0
+ 1270 00c2 07       		.uleb128 0x7
+ 1271 00c3 37010000 		.4byte	.LASF14
+ 1272 00c7 01       		.byte	0x1
+ 1273 00c8 B6       		.byte	0xb6
+ 1274 00c9 D3000000 		.4byte	0xd3
+ 1275 00cd 05       		.uleb128 0x5
+ 1276 00ce 03       		.byte	0x3
+ 1277 00cf 00000000 		.4byte	cy_meta_custnvl
+ 1278 00d3 08       		.uleb128 0x8
+ 1279 00d4 B2000000 		.4byte	0xb2
+ 1280 00d8 07       		.uleb128 0x7
+ 1281 00d9 92010000 		.4byte	.LASF15
+ 1282 00dd 01       		.byte	0x1
+ 1283 00de C4       		.byte	0xc4
+ 1284 00df E9000000 		.4byte	0xe9
+ 1285 00e3 05       		.uleb128 0x5
+ 1286 00e4 03       		.byte	0x3
+ 1287 00e5 00000000 		.4byte	cy_meta_wonvl
+ 1288 00e9 08       		.uleb128 0x8
+ 1289 00ea B2000000 		.4byte	0xb2
+ 1290 00ee 05       		.uleb128 0x5
+ 1291 00ef 63000000 		.4byte	0x63
+ 1292 00f3 FE000000 		.4byte	0xfe
+ 1293 00f7 09       		.uleb128 0x9
+ 1294 00f8 95000000 		.4byte	0x95
+ 1295 00fc FF       		.byte	0xff
+ 1296 00fd 00       		.byte	0
+ 1297 00fe 07       		.uleb128 0x7
+ 1298 00ff 7D010000 		.4byte	.LASF16
+ 1299 0103 01       		.byte	0x1
+ 1300 0104 D2       		.byte	0xd2
+ 1301 0105 0F010000 		.4byte	0x10f
+ 1302 0109 05       		.uleb128 0x5
+ 1303 010a 03       		.byte	0x3
+ 1304 010b 00000000 		.4byte	cy_meta_flashprotect
+ 1305 010f 08       		.uleb128 0x8
+ 1306 0110 EE000000 		.4byte	0xee
+ 1307 0114 05       		.uleb128 0x5
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc25khXo.s 			page 24
+
+
+ 1308 0115 63000000 		.4byte	0x63
+ 1309 0119 24010000 		.4byte	0x124
+ 1310 011d 09       		.uleb128 0x9
+ 1311 011e 95000000 		.4byte	0x95
+ 1312 0122 0B       		.byte	0xb
+ 1313 0123 00       		.byte	0
+ 1314 0124 07       		.uleb128 0x7
+ 1315 0125 EB000000 		.4byte	.LASF17
+ 1316 0129 01       		.byte	0x1
+ 1317 012a FF       		.byte	0xff
+ 1318 012b 35010000 		.4byte	0x135
+ 1319 012f 05       		.uleb128 0x5
+ 1320 0130 03       		.byte	0x3
+ 1321 0131 00000000 		.4byte	cy_metadata
+ 1322 0135 08       		.uleb128 0x8
+ 1323 0136 14010000 		.4byte	0x114
+ 1324 013a 00       		.byte	0
+ 1325              		.section	.debug_abbrev,"",%progbits
+ 1326              	.Ldebug_abbrev0:
+ 1327 0000 01       		.uleb128 0x1
+ 1328 0001 11       		.uleb128 0x11
+ 1329 0002 01       		.byte	0x1
+ 1330 0003 25       		.uleb128 0x25
+ 1331 0004 0E       		.uleb128 0xe
+ 1332 0005 13       		.uleb128 0x13
+ 1333 0006 0B       		.uleb128 0xb
+ 1334 0007 03       		.uleb128 0x3
+ 1335 0008 0E       		.uleb128 0xe
+ 1336 0009 1B       		.uleb128 0x1b
+ 1337 000a 0E       		.uleb128 0xe
+ 1338 000b 10       		.uleb128 0x10
+ 1339 000c 17       		.uleb128 0x17
+ 1340 000d 00       		.byte	0
+ 1341 000e 00       		.byte	0
+ 1342 000f 02       		.uleb128 0x2
+ 1343 0010 24       		.uleb128 0x24
+ 1344 0011 00       		.byte	0
+ 1345 0012 0B       		.uleb128 0xb
+ 1346 0013 0B       		.uleb128 0xb
+ 1347 0014 3E       		.uleb128 0x3e
+ 1348 0015 0B       		.uleb128 0xb
+ 1349 0016 03       		.uleb128 0x3
+ 1350 0017 0E       		.uleb128 0xe
+ 1351 0018 00       		.byte	0
+ 1352 0019 00       		.byte	0
+ 1353 001a 03       		.uleb128 0x3
+ 1354 001b 24       		.uleb128 0x24
+ 1355 001c 00       		.byte	0
+ 1356 001d 0B       		.uleb128 0xb
+ 1357 001e 0B       		.uleb128 0xb
+ 1358 001f 3E       		.uleb128 0x3e
+ 1359 0020 0B       		.uleb128 0xb
+ 1360 0021 03       		.uleb128 0x3
+ 1361 0022 08       		.uleb128 0x8
+ 1362 0023 00       		.byte	0
+ 1363 0024 00       		.byte	0
+ 1364 0025 04       		.uleb128 0x4
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc25khXo.s 			page 25
+
+
+ 1365 0026 16       		.uleb128 0x16
+ 1366 0027 00       		.byte	0
+ 1367 0028 03       		.uleb128 0x3
+ 1368 0029 0E       		.uleb128 0xe
+ 1369 002a 3A       		.uleb128 0x3a
+ 1370 002b 0B       		.uleb128 0xb
+ 1371 002c 3B       		.uleb128 0x3b
+ 1372 002d 05       		.uleb128 0x5
+ 1373 002e 49       		.uleb128 0x49
+ 1374 002f 13       		.uleb128 0x13
+ 1375 0030 00       		.byte	0
+ 1376 0031 00       		.byte	0
+ 1377 0032 05       		.uleb128 0x5
+ 1378 0033 01       		.uleb128 0x1
+ 1379 0034 01       		.byte	0x1
+ 1380 0035 49       		.uleb128 0x49
+ 1381 0036 13       		.uleb128 0x13
+ 1382 0037 01       		.uleb128 0x1
+ 1383 0038 13       		.uleb128 0x13
+ 1384 0039 00       		.byte	0
+ 1385 003a 00       		.byte	0
+ 1386 003b 06       		.uleb128 0x6
+ 1387 003c 21       		.uleb128 0x21
+ 1388 003d 00       		.byte	0
+ 1389 003e 49       		.uleb128 0x49
+ 1390 003f 13       		.uleb128 0x13
+ 1391 0040 2F       		.uleb128 0x2f
+ 1392 0041 05       		.uleb128 0x5
+ 1393 0042 00       		.byte	0
+ 1394 0043 00       		.byte	0
+ 1395 0044 07       		.uleb128 0x7
+ 1396 0045 34       		.uleb128 0x34
+ 1397 0046 00       		.byte	0
+ 1398 0047 03       		.uleb128 0x3
+ 1399 0048 0E       		.uleb128 0xe
+ 1400 0049 3A       		.uleb128 0x3a
+ 1401 004a 0B       		.uleb128 0xb
+ 1402 004b 3B       		.uleb128 0x3b
+ 1403 004c 0B       		.uleb128 0xb
+ 1404 004d 49       		.uleb128 0x49
+ 1405 004e 13       		.uleb128 0x13
+ 1406 004f 3F       		.uleb128 0x3f
+ 1407 0050 19       		.uleb128 0x19
+ 1408 0051 02       		.uleb128 0x2
+ 1409 0052 18       		.uleb128 0x18
+ 1410 0053 00       		.byte	0
+ 1411 0054 00       		.byte	0
+ 1412 0055 08       		.uleb128 0x8
+ 1413 0056 26       		.uleb128 0x26
+ 1414 0057 00       		.byte	0
+ 1415 0058 49       		.uleb128 0x49
+ 1416 0059 13       		.uleb128 0x13
+ 1417 005a 00       		.byte	0
+ 1418 005b 00       		.byte	0
+ 1419 005c 09       		.uleb128 0x9
+ 1420 005d 21       		.uleb128 0x21
+ 1421 005e 00       		.byte	0
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc25khXo.s 			page 26
+
+
+ 1422 005f 49       		.uleb128 0x49
+ 1423 0060 13       		.uleb128 0x13
+ 1424 0061 2F       		.uleb128 0x2f
+ 1425 0062 0B       		.uleb128 0xb
+ 1426 0063 00       		.byte	0
+ 1427 0064 00       		.byte	0
+ 1428 0065 00       		.byte	0
+ 1429              		.section	.debug_aranges,"",%progbits
+ 1430 0000 14000000 		.4byte	0x14
+ 1431 0004 0200     		.2byte	0x2
+ 1432 0006 00000000 		.4byte	.Ldebug_info0
+ 1433 000a 04       		.byte	0x4
+ 1434 000b 00       		.byte	0
+ 1435 000c 0000     		.2byte	0
+ 1436 000e 0000     		.2byte	0
+ 1437 0010 00000000 		.4byte	0
+ 1438 0014 00000000 		.4byte	0
+ 1439              		.section	.debug_line,"",%progbits
+ 1440              	.Ldebug_line0:
+ 1441 0000 4F000000 		.section	.debug_str,"MS",%progbits,1
+ 1441      02004900 
+ 1441      00000201 
+ 1441      FB0E0D00 
+ 1441      01010101 
+ 1442              	.LASF18:
+ 1443 0000 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1443      4320342E 
+ 1443      392E3320 
+ 1443      32303135 
+ 1443      30333033 
+ 1444 0033 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 1444      20726576 
+ 1444      6973696F 
+ 1444      6E203232 
+ 1444      31323230 
+ 1445 0066 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 1445      66756E63 
+ 1445      74696F6E 
+ 1445      2D736563 
+ 1445      74696F6E 
+ 1446              	.LASF19:
+ 1447 008e 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\cymetadata.c\000"
+ 1447      6E657261 
+ 1447      7465645F 
+ 1447      536F7572 
+ 1447      63655C50 
+ 1448              	.LASF20:
+ 1449 00b4 453A5C44 		.ascii	"E:\\Documents\\PSoC Creator\\engr478labs\\Servo_Dem"
+ 1449      6F63756D 
+ 1449      656E7473 
+ 1449      5C50536F 
+ 1449      43204372 
+ 1450 00e3 6F2E6379 		.ascii	"o.cydsn\000"
+ 1450      64736E00 
+ 1451              	.LASF17:
+ 1452 00eb 63795F6D 		.ascii	"cy_metadata\000"
+ 1452      65746164 
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc25khXo.s 			page 27
+
+
+ 1452      61746100 
+ 1453              	.LASF9:
+ 1454 00f7 666C6F61 		.ascii	"float\000"
+ 1454      7400
+ 1455              	.LASF1:
+ 1456 00fd 756E7369 		.ascii	"unsigned char\000"
+ 1456      676E6564 
+ 1456      20636861 
+ 1456      7200
+ 1457              	.LASF5:
+ 1458 010b 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1458      20756E73 
+ 1458      69676E65 
+ 1458      6420696E 
+ 1458      7400
+ 1459              	.LASF3:
+ 1460 011d 73686F72 		.ascii	"short unsigned int\000"
+ 1460      7420756E 
+ 1460      7369676E 
+ 1460      65642069 
+ 1460      6E7400
+ 1461              	.LASF10:
+ 1462 0130 646F7562 		.ascii	"double\000"
+ 1462      6C6500
+ 1463              	.LASF14:
+ 1464 0137 63795F6D 		.ascii	"cy_meta_custnvl\000"
+ 1464      6574615F 
+ 1464      63757374 
+ 1464      6E766C00 
+ 1465              	.LASF13:
+ 1466 0147 63795F6D 		.ascii	"cy_meta_configecc\000"
+ 1466      6574615F 
+ 1466      636F6E66 
+ 1466      69676563 
+ 1466      6300
+ 1467              	.LASF8:
+ 1468 0159 756E7369 		.ascii	"unsigned int\000"
+ 1468      676E6564 
+ 1468      20696E74 
+ 1468      00
+ 1469              	.LASF7:
+ 1470 0166 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1470      206C6F6E 
+ 1470      6720756E 
+ 1470      7369676E 
+ 1470      65642069 
+ 1471              	.LASF16:
+ 1472 017d 63795F6D 		.ascii	"cy_meta_flashprotect\000"
+ 1472      6574615F 
+ 1472      666C6173 
+ 1472      6870726F 
+ 1472      74656374 
+ 1473              	.LASF15:
+ 1474 0192 63795F6D 		.ascii	"cy_meta_wonvl\000"
+ 1474      6574615F 
+ 1474      776F6E76 
+ 1474      6C00
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc25khXo.s 			page 28
+
+
+ 1475              	.LASF12:
+ 1476 01a0 73697A65 		.ascii	"sizetype\000"
+ 1476      74797065 
+ 1476      00
+ 1477              	.LASF6:
+ 1478 01a9 6C6F6E67 		.ascii	"long long int\000"
+ 1478      206C6F6E 
+ 1478      6720696E 
+ 1478      7400
+ 1479              	.LASF11:
+ 1480 01b7 63686172 		.ascii	"char\000"
+ 1480      00
+ 1481              	.LASF2:
+ 1482 01bc 73686F72 		.ascii	"short int\000"
+ 1482      7420696E 
+ 1482      7400
+ 1483              	.LASF21:
+ 1484 01c6 75696E74 		.ascii	"uint8\000"
+ 1484      3800
+ 1485              	.LASF4:
+ 1486 01cc 6C6F6E67 		.ascii	"long int\000"
+ 1486      20696E74 
+ 1486      00
+ 1487              	.LASF0:
+ 1488 01d5 7369676E 		.ascii	"signed char\000"
+ 1488      65642063 
+ 1488      68617200 
+ 1489              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

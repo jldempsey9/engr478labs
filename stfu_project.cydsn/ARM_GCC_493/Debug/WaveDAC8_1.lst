@@ -1,0 +1,2677 @@
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccumrMQI.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"WaveDAC8_1.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.global	WaveDAC8_1_initVar
+  19              		.bss
+  20              		.type	WaveDAC8_1_initVar, %object
+  21              		.size	WaveDAC8_1_initVar, 1
+  22              	WaveDAC8_1_initVar:
+  23 0000 00       		.space	1
+  24              		.global	WaveDAC8_1_wave1
+  25              		.section	.rodata
+  26              		.align	2
+  27              		.type	WaveDAC8_1_wave1, %object
+  28              		.size	WaveDAC8_1_wave1, 25
+  29              	WaveDAC8_1_wave1:
+  30 0000 80       		.byte	-128
+  31 0001 9F       		.byte	-97
+  32 0002 BC       		.byte	-68
+  33 0003 D5       		.byte	-43
+  34 0004 E9       		.byte	-23
+  35 0005 F6       		.byte	-10
+  36 0006 FC       		.byte	-4
+  37 0007 FA       		.byte	-6
+  38 0008 F1       		.byte	-15
+  39 0009 E0       		.byte	-32
+  40 000a C9       		.byte	-55
+  41 000b AE       		.byte	-82
+  42 000c 8F       		.byte	-113
+  43 000d 70       		.byte	112
+  44 000e 51       		.byte	81
+  45 000f 36       		.byte	54
+  46 0010 1F       		.byte	31
+  47 0011 0E       		.byte	14
+  48 0012 05       		.byte	5
+  49 0013 03       		.byte	3
+  50 0014 09       		.byte	9
+  51 0015 16       		.byte	22
+  52 0016 2A       		.byte	42
+  53 0017 43       		.byte	67
+  54 0018 60       		.byte	96
+  55              		.global	WaveDAC8_1_wave2
+  56 0019 000000   		.align	2
+  57              		.type	WaveDAC8_1_wave2, %object
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccumrMQI.s 			page 2
+
+
+  58              		.size	WaveDAC8_1_wave2, 1000
+  59              	WaveDAC8_1_wave2:
+  60 001c 7D       		.byte	125
+  61 001d 7D       		.byte	125
+  62 001e 7D       		.byte	125
+  63 001f 7D       		.byte	125
+  64 0020 7E       		.byte	126
+  65 0021 7E       		.byte	126
+  66 0022 7E       		.byte	126
+  67 0023 7E       		.byte	126
+  68 0024 7E       		.byte	126
+  69 0025 7E       		.byte	126
+  70 0026 7F       		.byte	127
+  71 0027 7F       		.byte	127
+  72 0028 7F       		.byte	127
+  73 0029 7F       		.byte	127
+  74 002a 7F       		.byte	127
+  75 002b 7F       		.byte	127
+  76 002c 80       		.byte	-128
+  77 002d 80       		.byte	-128
+  78 002e 80       		.byte	-128
+  79 002f 80       		.byte	-128
+  80 0030 80       		.byte	-128
+  81 0031 80       		.byte	-128
+  82 0032 80       		.byte	-128
+  83 0033 81       		.byte	-127
+  84 0034 81       		.byte	-127
+  85 0035 81       		.byte	-127
+  86 0036 81       		.byte	-127
+  87 0037 81       		.byte	-127
+  88 0038 81       		.byte	-127
+  89 0039 82       		.byte	-126
+  90 003a 82       		.byte	-126
+  91 003b 82       		.byte	-126
+  92 003c 82       		.byte	-126
+  93 003d 82       		.byte	-126
+  94 003e 82       		.byte	-126
+  95 003f 82       		.byte	-126
+  96 0040 83       		.byte	-125
+  97 0041 83       		.byte	-125
+  98 0042 83       		.byte	-125
+  99 0043 83       		.byte	-125
+ 100 0044 83       		.byte	-125
+ 101 0045 83       		.byte	-125
+ 102 0046 84       		.byte	-124
+ 103 0047 84       		.byte	-124
+ 104 0048 84       		.byte	-124
+ 105 0049 84       		.byte	-124
+ 106 004a 84       		.byte	-124
+ 107 004b 84       		.byte	-124
+ 108 004c 84       		.byte	-124
+ 109 004d 85       		.byte	-123
+ 110 004e 85       		.byte	-123
+ 111 004f 85       		.byte	-123
+ 112 0050 85       		.byte	-123
+ 113 0051 85       		.byte	-123
+ 114 0052 85       		.byte	-123
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccumrMQI.s 			page 3
+
+
+ 115 0053 85       		.byte	-123
+ 116 0054 86       		.byte	-122
+ 117 0055 86       		.byte	-122
+ 118 0056 86       		.byte	-122
+ 119 0057 86       		.byte	-122
+ 120 0058 86       		.byte	-122
+ 121 0059 86       		.byte	-122
+ 122 005a 86       		.byte	-122
+ 123 005b 87       		.byte	-121
+ 124 005c 87       		.byte	-121
+ 125 005d 87       		.byte	-121
+ 126 005e 87       		.byte	-121
+ 127 005f 87       		.byte	-121
+ 128 0060 87       		.byte	-121
+ 129 0061 88       		.byte	-120
+ 130 0062 88       		.byte	-120
+ 131 0063 88       		.byte	-120
+ 132 0064 88       		.byte	-120
+ 133 0065 88       		.byte	-120
+ 134 0066 88       		.byte	-120
+ 135 0067 88       		.byte	-120
+ 136 0068 88       		.byte	-120
+ 137 0069 89       		.byte	-119
+ 138 006a 89       		.byte	-119
+ 139 006b 89       		.byte	-119
+ 140 006c 89       		.byte	-119
+ 141 006d 89       		.byte	-119
+ 142 006e 89       		.byte	-119
+ 143 006f 89       		.byte	-119
+ 144 0070 8A       		.byte	-118
+ 145 0071 8A       		.byte	-118
+ 146 0072 8A       		.byte	-118
+ 147 0073 8A       		.byte	-118
+ 148 0074 8A       		.byte	-118
+ 149 0075 8A       		.byte	-118
+ 150 0076 8A       		.byte	-118
+ 151 0077 8B       		.byte	-117
+ 152 0078 8B       		.byte	-117
+ 153 0079 8B       		.byte	-117
+ 154 007a 8B       		.byte	-117
+ 155 007b 8B       		.byte	-117
+ 156 007c 8B       		.byte	-117
+ 157 007d 8B       		.byte	-117
+ 158 007e 8B       		.byte	-117
+ 159 007f 8C       		.byte	-116
+ 160 0080 8C       		.byte	-116
+ 161 0081 8C       		.byte	-116
+ 162 0082 8C       		.byte	-116
+ 163 0083 8C       		.byte	-116
+ 164 0084 8C       		.byte	-116
+ 165 0085 8C       		.byte	-116
+ 166 0086 8C       		.byte	-116
+ 167 0087 8D       		.byte	-115
+ 168 0088 8D       		.byte	-115
+ 169 0089 8D       		.byte	-115
+ 170 008a 8D       		.byte	-115
+ 171 008b 8D       		.byte	-115
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccumrMQI.s 			page 4
+
+
+ 172 008c 8D       		.byte	-115
+ 173 008d 8D       		.byte	-115
+ 174 008e 8D       		.byte	-115
+ 175 008f 8E       		.byte	-114
+ 176 0090 8E       		.byte	-114
+ 177 0091 8E       		.byte	-114
+ 178 0092 8E       		.byte	-114
+ 179 0093 8E       		.byte	-114
+ 180 0094 8E       		.byte	-114
+ 181 0095 8E       		.byte	-114
+ 182 0096 8E       		.byte	-114
+ 183 0097 8E       		.byte	-114
+ 184 0098 8F       		.byte	-113
+ 185 0099 8F       		.byte	-113
+ 186 009a 8F       		.byte	-113
+ 187 009b 8F       		.byte	-113
+ 188 009c 8F       		.byte	-113
+ 189 009d 8F       		.byte	-113
+ 190 009e 8F       		.byte	-113
+ 191 009f 8F       		.byte	-113
+ 192 00a0 8F       		.byte	-113
+ 193 00a1 90       		.byte	-112
+ 194 00a2 90       		.byte	-112
+ 195 00a3 90       		.byte	-112
+ 196 00a4 90       		.byte	-112
+ 197 00a5 90       		.byte	-112
+ 198 00a6 90       		.byte	-112
+ 199 00a7 90       		.byte	-112
+ 200 00a8 90       		.byte	-112
+ 201 00a9 90       		.byte	-112
+ 202 00aa 90       		.byte	-112
+ 203 00ab 91       		.byte	-111
+ 204 00ac 91       		.byte	-111
+ 205 00ad 91       		.byte	-111
+ 206 00ae 91       		.byte	-111
+ 207 00af 91       		.byte	-111
+ 208 00b0 91       		.byte	-111
+ 209 00b1 91       		.byte	-111
+ 210 00b2 91       		.byte	-111
+ 211 00b3 91       		.byte	-111
+ 212 00b4 91       		.byte	-111
+ 213 00b5 91       		.byte	-111
+ 214 00b6 92       		.byte	-110
+ 215 00b7 92       		.byte	-110
+ 216 00b8 92       		.byte	-110
+ 217 00b9 92       		.byte	-110
+ 218 00ba 92       		.byte	-110
+ 219 00bb 92       		.byte	-110
+ 220 00bc 92       		.byte	-110
+ 221 00bd 92       		.byte	-110
+ 222 00be 92       		.byte	-110
+ 223 00bf 92       		.byte	-110
+ 224 00c0 92       		.byte	-110
+ 225 00c1 93       		.byte	-109
+ 226 00c2 93       		.byte	-109
+ 227 00c3 93       		.byte	-109
+ 228 00c4 93       		.byte	-109
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccumrMQI.s 			page 5
+
+
+ 229 00c5 93       		.byte	-109
+ 230 00c6 93       		.byte	-109
+ 231 00c7 93       		.byte	-109
+ 232 00c8 93       		.byte	-109
+ 233 00c9 93       		.byte	-109
+ 234 00ca 93       		.byte	-109
+ 235 00cb 93       		.byte	-109
+ 236 00cc 93       		.byte	-109
+ 237 00cd 93       		.byte	-109
+ 238 00ce 93       		.byte	-109
+ 239 00cf 94       		.byte	-108
+ 240 00d0 94       		.byte	-108
+ 241 00d1 94       		.byte	-108
+ 242 00d2 94       		.byte	-108
+ 243 00d3 94       		.byte	-108
+ 244 00d4 94       		.byte	-108
+ 245 00d5 94       		.byte	-108
+ 246 00d6 94       		.byte	-108
+ 247 00d7 94       		.byte	-108
+ 248 00d8 94       		.byte	-108
+ 249 00d9 94       		.byte	-108
+ 250 00da 94       		.byte	-108
+ 251 00db 94       		.byte	-108
+ 252 00dc 94       		.byte	-108
+ 253 00dd 94       		.byte	-108
+ 254 00de 94       		.byte	-108
+ 255 00df 95       		.byte	-107
+ 256 00e0 95       		.byte	-107
+ 257 00e1 95       		.byte	-107
+ 258 00e2 95       		.byte	-107
+ 259 00e3 95       		.byte	-107
+ 260 00e4 95       		.byte	-107
+ 261 00e5 95       		.byte	-107
+ 262 00e6 95       		.byte	-107
+ 263 00e7 95       		.byte	-107
+ 264 00e8 95       		.byte	-107
+ 265 00e9 95       		.byte	-107
+ 266 00ea 95       		.byte	-107
+ 267 00eb 95       		.byte	-107
+ 268 00ec 95       		.byte	-107
+ 269 00ed 95       		.byte	-107
+ 270 00ee 95       		.byte	-107
+ 271 00ef 95       		.byte	-107
+ 272 00f0 95       		.byte	-107
+ 273 00f1 95       		.byte	-107
+ 274 00f2 95       		.byte	-107
+ 275 00f3 95       		.byte	-107
+ 276 00f4 95       		.byte	-107
+ 277 00f5 95       		.byte	-107
+ 278 00f6 95       		.byte	-107
+ 279 00f7 96       		.byte	-106
+ 280 00f8 96       		.byte	-106
+ 281 00f9 96       		.byte	-106
+ 282 00fa 96       		.byte	-106
+ 283 00fb 96       		.byte	-106
+ 284 00fc 96       		.byte	-106
+ 285 00fd 96       		.byte	-106
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccumrMQI.s 			page 6
+
+
+ 286 00fe 96       		.byte	-106
+ 287 00ff 96       		.byte	-106
+ 288 0100 96       		.byte	-106
+ 289 0101 96       		.byte	-106
+ 290 0102 96       		.byte	-106
+ 291 0103 96       		.byte	-106
+ 292 0104 96       		.byte	-106
+ 293 0105 96       		.byte	-106
+ 294 0106 96       		.byte	-106
+ 295 0107 96       		.byte	-106
+ 296 0108 96       		.byte	-106
+ 297 0109 96       		.byte	-106
+ 298 010a 96       		.byte	-106
+ 299 010b 96       		.byte	-106
+ 300 010c 96       		.byte	-106
+ 301 010d 96       		.byte	-106
+ 302 010e 96       		.byte	-106
+ 303 010f 96       		.byte	-106
+ 304 0110 96       		.byte	-106
+ 305 0111 96       		.byte	-106
+ 306 0112 96       		.byte	-106
+ 307 0113 96       		.byte	-106
+ 308 0114 96       		.byte	-106
+ 309 0115 96       		.byte	-106
+ 310 0116 96       		.byte	-106
+ 311 0117 96       		.byte	-106
+ 312 0118 96       		.byte	-106
+ 313 0119 96       		.byte	-106
+ 314 011a 96       		.byte	-106
+ 315 011b 96       		.byte	-106
+ 316 011c 96       		.byte	-106
+ 317 011d 96       		.byte	-106
+ 318 011e 96       		.byte	-106
+ 319 011f 96       		.byte	-106
+ 320 0120 96       		.byte	-106
+ 321 0121 96       		.byte	-106
+ 322 0122 96       		.byte	-106
+ 323 0123 96       		.byte	-106
+ 324 0124 96       		.byte	-106
+ 325 0125 96       		.byte	-106
+ 326 0126 96       		.byte	-106
+ 327 0127 96       		.byte	-106
+ 328 0128 96       		.byte	-106
+ 329 0129 96       		.byte	-106
+ 330 012a 96       		.byte	-106
+ 331 012b 96       		.byte	-106
+ 332 012c 96       		.byte	-106
+ 333 012d 96       		.byte	-106
+ 334 012e 96       		.byte	-106
+ 335 012f 96       		.byte	-106
+ 336 0130 96       		.byte	-106
+ 337 0131 96       		.byte	-106
+ 338 0132 96       		.byte	-106
+ 339 0133 96       		.byte	-106
+ 340 0134 96       		.byte	-106
+ 341 0135 96       		.byte	-106
+ 342 0136 95       		.byte	-107
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccumrMQI.s 			page 7
+
+
+ 343 0137 95       		.byte	-107
+ 344 0138 95       		.byte	-107
+ 345 0139 95       		.byte	-107
+ 346 013a 95       		.byte	-107
+ 347 013b 95       		.byte	-107
+ 348 013c 95       		.byte	-107
+ 349 013d 95       		.byte	-107
+ 350 013e 95       		.byte	-107
+ 351 013f 95       		.byte	-107
+ 352 0140 95       		.byte	-107
+ 353 0141 95       		.byte	-107
+ 354 0142 95       		.byte	-107
+ 355 0143 95       		.byte	-107
+ 356 0144 95       		.byte	-107
+ 357 0145 95       		.byte	-107
+ 358 0146 95       		.byte	-107
+ 359 0147 95       		.byte	-107
+ 360 0148 95       		.byte	-107
+ 361 0149 95       		.byte	-107
+ 362 014a 95       		.byte	-107
+ 363 014b 95       		.byte	-107
+ 364 014c 95       		.byte	-107
+ 365 014d 95       		.byte	-107
+ 366 014e 94       		.byte	-108
+ 367 014f 94       		.byte	-108
+ 368 0150 94       		.byte	-108
+ 369 0151 94       		.byte	-108
+ 370 0152 94       		.byte	-108
+ 371 0153 94       		.byte	-108
+ 372 0154 94       		.byte	-108
+ 373 0155 94       		.byte	-108
+ 374 0156 94       		.byte	-108
+ 375 0157 94       		.byte	-108
+ 376 0158 94       		.byte	-108
+ 377 0159 94       		.byte	-108
+ 378 015a 94       		.byte	-108
+ 379 015b 94       		.byte	-108
+ 380 015c 94       		.byte	-108
+ 381 015d 94       		.byte	-108
+ 382 015e 93       		.byte	-109
+ 383 015f 93       		.byte	-109
+ 384 0160 93       		.byte	-109
+ 385 0161 93       		.byte	-109
+ 386 0162 93       		.byte	-109
+ 387 0163 93       		.byte	-109
+ 388 0164 93       		.byte	-109
+ 389 0165 93       		.byte	-109
+ 390 0166 93       		.byte	-109
+ 391 0167 93       		.byte	-109
+ 392 0168 93       		.byte	-109
+ 393 0169 93       		.byte	-109
+ 394 016a 93       		.byte	-109
+ 395 016b 93       		.byte	-109
+ 396 016c 92       		.byte	-110
+ 397 016d 92       		.byte	-110
+ 398 016e 92       		.byte	-110
+ 399 016f 92       		.byte	-110
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccumrMQI.s 			page 8
+
+
+ 400 0170 92       		.byte	-110
+ 401 0171 92       		.byte	-110
+ 402 0172 92       		.byte	-110
+ 403 0173 92       		.byte	-110
+ 404 0174 92       		.byte	-110
+ 405 0175 92       		.byte	-110
+ 406 0176 92       		.byte	-110
+ 407 0177 91       		.byte	-111
+ 408 0178 91       		.byte	-111
+ 409 0179 91       		.byte	-111
+ 410 017a 91       		.byte	-111
+ 411 017b 91       		.byte	-111
+ 412 017c 91       		.byte	-111
+ 413 017d 91       		.byte	-111
+ 414 017e 91       		.byte	-111
+ 415 017f 91       		.byte	-111
+ 416 0180 91       		.byte	-111
+ 417 0181 91       		.byte	-111
+ 418 0182 90       		.byte	-112
+ 419 0183 90       		.byte	-112
+ 420 0184 90       		.byte	-112
+ 421 0185 90       		.byte	-112
+ 422 0186 90       		.byte	-112
+ 423 0187 90       		.byte	-112
+ 424 0188 90       		.byte	-112
+ 425 0189 90       		.byte	-112
+ 426 018a 90       		.byte	-112
+ 427 018b 90       		.byte	-112
+ 428 018c 8F       		.byte	-113
+ 429 018d 8F       		.byte	-113
+ 430 018e 8F       		.byte	-113
+ 431 018f 8F       		.byte	-113
+ 432 0190 8F       		.byte	-113
+ 433 0191 8F       		.byte	-113
+ 434 0192 8F       		.byte	-113
+ 435 0193 8F       		.byte	-113
+ 436 0194 8F       		.byte	-113
+ 437 0195 8E       		.byte	-114
+ 438 0196 8E       		.byte	-114
+ 439 0197 8E       		.byte	-114
+ 440 0198 8E       		.byte	-114
+ 441 0199 8E       		.byte	-114
+ 442 019a 8E       		.byte	-114
+ 443 019b 8E       		.byte	-114
+ 444 019c 8E       		.byte	-114
+ 445 019d 8E       		.byte	-114
+ 446 019e 8D       		.byte	-115
+ 447 019f 8D       		.byte	-115
+ 448 01a0 8D       		.byte	-115
+ 449 01a1 8D       		.byte	-115
+ 450 01a2 8D       		.byte	-115
+ 451 01a3 8D       		.byte	-115
+ 452 01a4 8D       		.byte	-115
+ 453 01a5 8D       		.byte	-115
+ 454 01a6 8C       		.byte	-116
+ 455 01a7 8C       		.byte	-116
+ 456 01a8 8C       		.byte	-116
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccumrMQI.s 			page 9
+
+
+ 457 01a9 8C       		.byte	-116
+ 458 01aa 8C       		.byte	-116
+ 459 01ab 8C       		.byte	-116
+ 460 01ac 8C       		.byte	-116
+ 461 01ad 8C       		.byte	-116
+ 462 01ae 8B       		.byte	-117
+ 463 01af 8B       		.byte	-117
+ 464 01b0 8B       		.byte	-117
+ 465 01b1 8B       		.byte	-117
+ 466 01b2 8B       		.byte	-117
+ 467 01b3 8B       		.byte	-117
+ 468 01b4 8B       		.byte	-117
+ 469 01b5 8B       		.byte	-117
+ 470 01b6 8A       		.byte	-118
+ 471 01b7 8A       		.byte	-118
+ 472 01b8 8A       		.byte	-118
+ 473 01b9 8A       		.byte	-118
+ 474 01ba 8A       		.byte	-118
+ 475 01bb 8A       		.byte	-118
+ 476 01bc 8A       		.byte	-118
+ 477 01bd 89       		.byte	-119
+ 478 01be 89       		.byte	-119
+ 479 01bf 89       		.byte	-119
+ 480 01c0 89       		.byte	-119
+ 481 01c1 89       		.byte	-119
+ 482 01c2 89       		.byte	-119
+ 483 01c3 89       		.byte	-119
+ 484 01c4 88       		.byte	-120
+ 485 01c5 88       		.byte	-120
+ 486 01c6 88       		.byte	-120
+ 487 01c7 88       		.byte	-120
+ 488 01c8 88       		.byte	-120
+ 489 01c9 88       		.byte	-120
+ 490 01ca 88       		.byte	-120
+ 491 01cb 88       		.byte	-120
+ 492 01cc 87       		.byte	-121
+ 493 01cd 87       		.byte	-121
+ 494 01ce 87       		.byte	-121
+ 495 01cf 87       		.byte	-121
+ 496 01d0 87       		.byte	-121
+ 497 01d1 87       		.byte	-121
+ 498 01d2 86       		.byte	-122
+ 499 01d3 86       		.byte	-122
+ 500 01d4 86       		.byte	-122
+ 501 01d5 86       		.byte	-122
+ 502 01d6 86       		.byte	-122
+ 503 01d7 86       		.byte	-122
+ 504 01d8 86       		.byte	-122
+ 505 01d9 85       		.byte	-123
+ 506 01da 85       		.byte	-123
+ 507 01db 85       		.byte	-123
+ 508 01dc 85       		.byte	-123
+ 509 01dd 85       		.byte	-123
+ 510 01de 85       		.byte	-123
+ 511 01df 85       		.byte	-123
+ 512 01e0 84       		.byte	-124
+ 513 01e1 84       		.byte	-124
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccumrMQI.s 			page 10
+
+
+ 514 01e2 84       		.byte	-124
+ 515 01e3 84       		.byte	-124
+ 516 01e4 84       		.byte	-124
+ 517 01e5 84       		.byte	-124
+ 518 01e6 84       		.byte	-124
+ 519 01e7 83       		.byte	-125
+ 520 01e8 83       		.byte	-125
+ 521 01e9 83       		.byte	-125
+ 522 01ea 83       		.byte	-125
+ 523 01eb 83       		.byte	-125
+ 524 01ec 83       		.byte	-125
+ 525 01ed 82       		.byte	-126
+ 526 01ee 82       		.byte	-126
+ 527 01ef 82       		.byte	-126
+ 528 01f0 82       		.byte	-126
+ 529 01f1 82       		.byte	-126
+ 530 01f2 82       		.byte	-126
+ 531 01f3 82       		.byte	-126
+ 532 01f4 81       		.byte	-127
+ 533 01f5 81       		.byte	-127
+ 534 01f6 81       		.byte	-127
+ 535 01f7 81       		.byte	-127
+ 536 01f8 81       		.byte	-127
+ 537 01f9 81       		.byte	-127
+ 538 01fa 80       		.byte	-128
+ 539 01fb 80       		.byte	-128
+ 540 01fc 80       		.byte	-128
+ 541 01fd 80       		.byte	-128
+ 542 01fe 80       		.byte	-128
+ 543 01ff 80       		.byte	-128
+ 544 0200 80       		.byte	-128
+ 545 0201 7F       		.byte	127
+ 546 0202 7F       		.byte	127
+ 547 0203 7F       		.byte	127
+ 548 0204 7F       		.byte	127
+ 549 0205 7F       		.byte	127
+ 550 0206 7F       		.byte	127
+ 551 0207 7E       		.byte	126
+ 552 0208 7E       		.byte	126
+ 553 0209 7E       		.byte	126
+ 554 020a 7E       		.byte	126
+ 555 020b 7E       		.byte	126
+ 556 020c 7E       		.byte	126
+ 557 020d 7D       		.byte	125
+ 558 020e 7D       		.byte	125
+ 559 020f 7D       		.byte	125
+ 560 0210 7D       		.byte	125
+ 561 0211 7D       		.byte	125
+ 562 0212 7D       		.byte	125
+ 563 0213 7D       		.byte	125
+ 564 0214 7C       		.byte	124
+ 565 0215 7C       		.byte	124
+ 566 0216 7C       		.byte	124
+ 567 0217 7C       		.byte	124
+ 568 0218 7C       		.byte	124
+ 569 0219 7C       		.byte	124
+ 570 021a 7B       		.byte	123
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccumrMQI.s 			page 11
+
+
+ 571 021b 7B       		.byte	123
+ 572 021c 7B       		.byte	123
+ 573 021d 7B       		.byte	123
+ 574 021e 7B       		.byte	123
+ 575 021f 7B       		.byte	123
+ 576 0220 7A       		.byte	122
+ 577 0221 7A       		.byte	122
+ 578 0222 7A       		.byte	122
+ 579 0223 7A       		.byte	122
+ 580 0224 7A       		.byte	122
+ 581 0225 7A       		.byte	122
+ 582 0226 7A       		.byte	122
+ 583 0227 79       		.byte	121
+ 584 0228 79       		.byte	121
+ 585 0229 79       		.byte	121
+ 586 022a 79       		.byte	121
+ 587 022b 79       		.byte	121
+ 588 022c 79       		.byte	121
+ 589 022d 78       		.byte	120
+ 590 022e 78       		.byte	120
+ 591 022f 78       		.byte	120
+ 592 0230 78       		.byte	120
+ 593 0231 78       		.byte	120
+ 594 0232 78       		.byte	120
+ 595 0233 78       		.byte	120
+ 596 0234 77       		.byte	119
+ 597 0235 77       		.byte	119
+ 598 0236 77       		.byte	119
+ 599 0237 77       		.byte	119
+ 600 0238 77       		.byte	119
+ 601 0239 77       		.byte	119
+ 602 023a 76       		.byte	118
+ 603 023b 76       		.byte	118
+ 604 023c 76       		.byte	118
+ 605 023d 76       		.byte	118
+ 606 023e 76       		.byte	118
+ 607 023f 76       		.byte	118
+ 608 0240 76       		.byte	118
+ 609 0241 75       		.byte	117
+ 610 0242 75       		.byte	117
+ 611 0243 75       		.byte	117
+ 612 0244 75       		.byte	117
+ 613 0245 75       		.byte	117
+ 614 0246 75       		.byte	117
+ 615 0247 75       		.byte	117
+ 616 0248 74       		.byte	116
+ 617 0249 74       		.byte	116
+ 618 024a 74       		.byte	116
+ 619 024b 74       		.byte	116
+ 620 024c 74       		.byte	116
+ 621 024d 74       		.byte	116
+ 622 024e 74       		.byte	116
+ 623 024f 73       		.byte	115
+ 624 0250 73       		.byte	115
+ 625 0251 73       		.byte	115
+ 626 0252 73       		.byte	115
+ 627 0253 73       		.byte	115
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccumrMQI.s 			page 12
+
+
+ 628 0254 73       		.byte	115
+ 629 0255 72       		.byte	114
+ 630 0256 72       		.byte	114
+ 631 0257 72       		.byte	114
+ 632 0258 72       		.byte	114
+ 633 0259 72       		.byte	114
+ 634 025a 72       		.byte	114
+ 635 025b 72       		.byte	114
+ 636 025c 72       		.byte	114
+ 637 025d 71       		.byte	113
+ 638 025e 71       		.byte	113
+ 639 025f 71       		.byte	113
+ 640 0260 71       		.byte	113
+ 641 0261 71       		.byte	113
+ 642 0262 71       		.byte	113
+ 643 0263 71       		.byte	113
+ 644 0264 70       		.byte	112
+ 645 0265 70       		.byte	112
+ 646 0266 70       		.byte	112
+ 647 0267 70       		.byte	112
+ 648 0268 70       		.byte	112
+ 649 0269 70       		.byte	112
+ 650 026a 70       		.byte	112
+ 651 026b 6F       		.byte	111
+ 652 026c 6F       		.byte	111
+ 653 026d 6F       		.byte	111
+ 654 026e 6F       		.byte	111
+ 655 026f 6F       		.byte	111
+ 656 0270 6F       		.byte	111
+ 657 0271 6F       		.byte	111
+ 658 0272 6F       		.byte	111
+ 659 0273 6E       		.byte	110
+ 660 0274 6E       		.byte	110
+ 661 0275 6E       		.byte	110
+ 662 0276 6E       		.byte	110
+ 663 0277 6E       		.byte	110
+ 664 0278 6E       		.byte	110
+ 665 0279 6E       		.byte	110
+ 666 027a 6E       		.byte	110
+ 667 027b 6D       		.byte	109
+ 668 027c 6D       		.byte	109
+ 669 027d 6D       		.byte	109
+ 670 027e 6D       		.byte	109
+ 671 027f 6D       		.byte	109
+ 672 0280 6D       		.byte	109
+ 673 0281 6D       		.byte	109
+ 674 0282 6D       		.byte	109
+ 675 0283 6C       		.byte	108
+ 676 0284 6C       		.byte	108
+ 677 0285 6C       		.byte	108
+ 678 0286 6C       		.byte	108
+ 679 0287 6C       		.byte	108
+ 680 0288 6C       		.byte	108
+ 681 0289 6C       		.byte	108
+ 682 028a 6C       		.byte	108
+ 683 028b 6C       		.byte	108
+ 684 028c 6B       		.byte	107
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccumrMQI.s 			page 13
+
+
+ 685 028d 6B       		.byte	107
+ 686 028e 6B       		.byte	107
+ 687 028f 6B       		.byte	107
+ 688 0290 6B       		.byte	107
+ 689 0291 6B       		.byte	107
+ 690 0292 6B       		.byte	107
+ 691 0293 6B       		.byte	107
+ 692 0294 6B       		.byte	107
+ 693 0295 6A       		.byte	106
+ 694 0296 6A       		.byte	106
+ 695 0297 6A       		.byte	106
+ 696 0298 6A       		.byte	106
+ 697 0299 6A       		.byte	106
+ 698 029a 6A       		.byte	106
+ 699 029b 6A       		.byte	106
+ 700 029c 6A       		.byte	106
+ 701 029d 6A       		.byte	106
+ 702 029e 6A       		.byte	106
+ 703 029f 69       		.byte	105
+ 704 02a0 69       		.byte	105
+ 705 02a1 69       		.byte	105
+ 706 02a2 69       		.byte	105
+ 707 02a3 69       		.byte	105
+ 708 02a4 69       		.byte	105
+ 709 02a5 69       		.byte	105
+ 710 02a6 69       		.byte	105
+ 711 02a7 69       		.byte	105
+ 712 02a8 69       		.byte	105
+ 713 02a9 69       		.byte	105
+ 714 02aa 68       		.byte	104
+ 715 02ab 68       		.byte	104
+ 716 02ac 68       		.byte	104
+ 717 02ad 68       		.byte	104
+ 718 02ae 68       		.byte	104
+ 719 02af 68       		.byte	104
+ 720 02b0 68       		.byte	104
+ 721 02b1 68       		.byte	104
+ 722 02b2 68       		.byte	104
+ 723 02b3 68       		.byte	104
+ 724 02b4 68       		.byte	104
+ 725 02b5 67       		.byte	103
+ 726 02b6 67       		.byte	103
+ 727 02b7 67       		.byte	103
+ 728 02b8 67       		.byte	103
+ 729 02b9 67       		.byte	103
+ 730 02ba 67       		.byte	103
+ 731 02bb 67       		.byte	103
+ 732 02bc 67       		.byte	103
+ 733 02bd 67       		.byte	103
+ 734 02be 67       		.byte	103
+ 735 02bf 67       		.byte	103
+ 736 02c0 67       		.byte	103
+ 737 02c1 67       		.byte	103
+ 738 02c2 67       		.byte	103
+ 739 02c3 66       		.byte	102
+ 740 02c4 66       		.byte	102
+ 741 02c5 66       		.byte	102
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccumrMQI.s 			page 14
+
+
+ 742 02c6 66       		.byte	102
+ 743 02c7 66       		.byte	102
+ 744 02c8 66       		.byte	102
+ 745 02c9 66       		.byte	102
+ 746 02ca 66       		.byte	102
+ 747 02cb 66       		.byte	102
+ 748 02cc 66       		.byte	102
+ 749 02cd 66       		.byte	102
+ 750 02ce 66       		.byte	102
+ 751 02cf 66       		.byte	102
+ 752 02d0 66       		.byte	102
+ 753 02d1 66       		.byte	102
+ 754 02d2 66       		.byte	102
+ 755 02d3 65       		.byte	101
+ 756 02d4 65       		.byte	101
+ 757 02d5 65       		.byte	101
+ 758 02d6 65       		.byte	101
+ 759 02d7 65       		.byte	101
+ 760 02d8 65       		.byte	101
+ 761 02d9 65       		.byte	101
+ 762 02da 65       		.byte	101
+ 763 02db 65       		.byte	101
+ 764 02dc 65       		.byte	101
+ 765 02dd 65       		.byte	101
+ 766 02de 65       		.byte	101
+ 767 02df 65       		.byte	101
+ 768 02e0 65       		.byte	101
+ 769 02e1 65       		.byte	101
+ 770 02e2 65       		.byte	101
+ 771 02e3 65       		.byte	101
+ 772 02e4 65       		.byte	101
+ 773 02e5 65       		.byte	101
+ 774 02e6 65       		.byte	101
+ 775 02e7 65       		.byte	101
+ 776 02e8 65       		.byte	101
+ 777 02e9 65       		.byte	101
+ 778 02ea 65       		.byte	101
+ 779 02eb 64       		.byte	100
+ 780 02ec 64       		.byte	100
+ 781 02ed 64       		.byte	100
+ 782 02ee 64       		.byte	100
+ 783 02ef 64       		.byte	100
+ 784 02f0 64       		.byte	100
+ 785 02f1 64       		.byte	100
+ 786 02f2 64       		.byte	100
+ 787 02f3 64       		.byte	100
+ 788 02f4 64       		.byte	100
+ 789 02f5 64       		.byte	100
+ 790 02f6 64       		.byte	100
+ 791 02f7 64       		.byte	100
+ 792 02f8 64       		.byte	100
+ 793 02f9 64       		.byte	100
+ 794 02fa 64       		.byte	100
+ 795 02fb 64       		.byte	100
+ 796 02fc 64       		.byte	100
+ 797 02fd 64       		.byte	100
+ 798 02fe 64       		.byte	100
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccumrMQI.s 			page 15
+
+
+ 799 02ff 64       		.byte	100
+ 800 0300 64       		.byte	100
+ 801 0301 64       		.byte	100
+ 802 0302 64       		.byte	100
+ 803 0303 64       		.byte	100
+ 804 0304 64       		.byte	100
+ 805 0305 64       		.byte	100
+ 806 0306 64       		.byte	100
+ 807 0307 64       		.byte	100
+ 808 0308 64       		.byte	100
+ 809 0309 64       		.byte	100
+ 810 030a 64       		.byte	100
+ 811 030b 64       		.byte	100
+ 812 030c 64       		.byte	100
+ 813 030d 64       		.byte	100
+ 814 030e 64       		.byte	100
+ 815 030f 64       		.byte	100
+ 816 0310 64       		.byte	100
+ 817 0311 64       		.byte	100
+ 818 0312 64       		.byte	100
+ 819 0313 64       		.byte	100
+ 820 0314 64       		.byte	100
+ 821 0315 64       		.byte	100
+ 822 0316 64       		.byte	100
+ 823 0317 64       		.byte	100
+ 824 0318 64       		.byte	100
+ 825 0319 64       		.byte	100
+ 826 031a 64       		.byte	100
+ 827 031b 64       		.byte	100
+ 828 031c 64       		.byte	100
+ 829 031d 64       		.byte	100
+ 830 031e 64       		.byte	100
+ 831 031f 64       		.byte	100
+ 832 0320 64       		.byte	100
+ 833 0321 64       		.byte	100
+ 834 0322 64       		.byte	100
+ 835 0323 64       		.byte	100
+ 836 0324 64       		.byte	100
+ 837 0325 64       		.byte	100
+ 838 0326 64       		.byte	100
+ 839 0327 64       		.byte	100
+ 840 0328 64       		.byte	100
+ 841 0329 64       		.byte	100
+ 842 032a 65       		.byte	101
+ 843 032b 65       		.byte	101
+ 844 032c 65       		.byte	101
+ 845 032d 65       		.byte	101
+ 846 032e 65       		.byte	101
+ 847 032f 65       		.byte	101
+ 848 0330 65       		.byte	101
+ 849 0331 65       		.byte	101
+ 850 0332 65       		.byte	101
+ 851 0333 65       		.byte	101
+ 852 0334 65       		.byte	101
+ 853 0335 65       		.byte	101
+ 854 0336 65       		.byte	101
+ 855 0337 65       		.byte	101
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccumrMQI.s 			page 16
+
+
+ 856 0338 65       		.byte	101
+ 857 0339 65       		.byte	101
+ 858 033a 65       		.byte	101
+ 859 033b 65       		.byte	101
+ 860 033c 65       		.byte	101
+ 861 033d 65       		.byte	101
+ 862 033e 65       		.byte	101
+ 863 033f 65       		.byte	101
+ 864 0340 65       		.byte	101
+ 865 0341 65       		.byte	101
+ 866 0342 66       		.byte	102
+ 867 0343 66       		.byte	102
+ 868 0344 66       		.byte	102
+ 869 0345 66       		.byte	102
+ 870 0346 66       		.byte	102
+ 871 0347 66       		.byte	102
+ 872 0348 66       		.byte	102
+ 873 0349 66       		.byte	102
+ 874 034a 66       		.byte	102
+ 875 034b 66       		.byte	102
+ 876 034c 66       		.byte	102
+ 877 034d 66       		.byte	102
+ 878 034e 66       		.byte	102
+ 879 034f 66       		.byte	102
+ 880 0350 66       		.byte	102
+ 881 0351 66       		.byte	102
+ 882 0352 67       		.byte	103
+ 883 0353 67       		.byte	103
+ 884 0354 67       		.byte	103
+ 885 0355 67       		.byte	103
+ 886 0356 67       		.byte	103
+ 887 0357 67       		.byte	103
+ 888 0358 67       		.byte	103
+ 889 0359 67       		.byte	103
+ 890 035a 67       		.byte	103
+ 891 035b 67       		.byte	103
+ 892 035c 67       		.byte	103
+ 893 035d 67       		.byte	103
+ 894 035e 67       		.byte	103
+ 895 035f 67       		.byte	103
+ 896 0360 68       		.byte	104
+ 897 0361 68       		.byte	104
+ 898 0362 68       		.byte	104
+ 899 0363 68       		.byte	104
+ 900 0364 68       		.byte	104
+ 901 0365 68       		.byte	104
+ 902 0366 68       		.byte	104
+ 903 0367 68       		.byte	104
+ 904 0368 68       		.byte	104
+ 905 0369 68       		.byte	104
+ 906 036a 68       		.byte	104
+ 907 036b 69       		.byte	105
+ 908 036c 69       		.byte	105
+ 909 036d 69       		.byte	105
+ 910 036e 69       		.byte	105
+ 911 036f 69       		.byte	105
+ 912 0370 69       		.byte	105
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccumrMQI.s 			page 17
+
+
+ 913 0371 69       		.byte	105
+ 914 0372 69       		.byte	105
+ 915 0373 69       		.byte	105
+ 916 0374 69       		.byte	105
+ 917 0375 69       		.byte	105
+ 918 0376 6A       		.byte	106
+ 919 0377 6A       		.byte	106
+ 920 0378 6A       		.byte	106
+ 921 0379 6A       		.byte	106
+ 922 037a 6A       		.byte	106
+ 923 037b 6A       		.byte	106
+ 924 037c 6A       		.byte	106
+ 925 037d 6A       		.byte	106
+ 926 037e 6A       		.byte	106
+ 927 037f 6A       		.byte	106
+ 928 0380 6B       		.byte	107
+ 929 0381 6B       		.byte	107
+ 930 0382 6B       		.byte	107
+ 931 0383 6B       		.byte	107
+ 932 0384 6B       		.byte	107
+ 933 0385 6B       		.byte	107
+ 934 0386 6B       		.byte	107
+ 935 0387 6B       		.byte	107
+ 936 0388 6B       		.byte	107
+ 937 0389 6C       		.byte	108
+ 938 038a 6C       		.byte	108
+ 939 038b 6C       		.byte	108
+ 940 038c 6C       		.byte	108
+ 941 038d 6C       		.byte	108
+ 942 038e 6C       		.byte	108
+ 943 038f 6C       		.byte	108
+ 944 0390 6C       		.byte	108
+ 945 0391 6C       		.byte	108
+ 946 0392 6D       		.byte	109
+ 947 0393 6D       		.byte	109
+ 948 0394 6D       		.byte	109
+ 949 0395 6D       		.byte	109
+ 950 0396 6D       		.byte	109
+ 951 0397 6D       		.byte	109
+ 952 0398 6D       		.byte	109
+ 953 0399 6D       		.byte	109
+ 954 039a 6E       		.byte	110
+ 955 039b 6E       		.byte	110
+ 956 039c 6E       		.byte	110
+ 957 039d 6E       		.byte	110
+ 958 039e 6E       		.byte	110
+ 959 039f 6E       		.byte	110
+ 960 03a0 6E       		.byte	110
+ 961 03a1 6E       		.byte	110
+ 962 03a2 6F       		.byte	111
+ 963 03a3 6F       		.byte	111
+ 964 03a4 6F       		.byte	111
+ 965 03a5 6F       		.byte	111
+ 966 03a6 6F       		.byte	111
+ 967 03a7 6F       		.byte	111
+ 968 03a8 6F       		.byte	111
+ 969 03a9 6F       		.byte	111
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccumrMQI.s 			page 18
+
+
+ 970 03aa 70       		.byte	112
+ 971 03ab 70       		.byte	112
+ 972 03ac 70       		.byte	112
+ 973 03ad 70       		.byte	112
+ 974 03ae 70       		.byte	112
+ 975 03af 70       		.byte	112
+ 976 03b0 70       		.byte	112
+ 977 03b1 71       		.byte	113
+ 978 03b2 71       		.byte	113
+ 979 03b3 71       		.byte	113
+ 980 03b4 71       		.byte	113
+ 981 03b5 71       		.byte	113
+ 982 03b6 71       		.byte	113
+ 983 03b7 71       		.byte	113
+ 984 03b8 72       		.byte	114
+ 985 03b9 72       		.byte	114
+ 986 03ba 72       		.byte	114
+ 987 03bb 72       		.byte	114
+ 988 03bc 72       		.byte	114
+ 989 03bd 72       		.byte	114
+ 990 03be 72       		.byte	114
+ 991 03bf 72       		.byte	114
+ 992 03c0 73       		.byte	115
+ 993 03c1 73       		.byte	115
+ 994 03c2 73       		.byte	115
+ 995 03c3 73       		.byte	115
+ 996 03c4 73       		.byte	115
+ 997 03c5 73       		.byte	115
+ 998 03c6 74       		.byte	116
+ 999 03c7 74       		.byte	116
+ 1000 03c8 74       		.byte	116
+ 1001 03c9 74       		.byte	116
+ 1002 03ca 74       		.byte	116
+ 1003 03cb 74       		.byte	116
+ 1004 03cc 74       		.byte	116
+ 1005 03cd 75       		.byte	117
+ 1006 03ce 75       		.byte	117
+ 1007 03cf 75       		.byte	117
+ 1008 03d0 75       		.byte	117
+ 1009 03d1 75       		.byte	117
+ 1010 03d2 75       		.byte	117
+ 1011 03d3 75       		.byte	117
+ 1012 03d4 76       		.byte	118
+ 1013 03d5 76       		.byte	118
+ 1014 03d6 76       		.byte	118
+ 1015 03d7 76       		.byte	118
+ 1016 03d8 76       		.byte	118
+ 1017 03d9 76       		.byte	118
+ 1018 03da 76       		.byte	118
+ 1019 03db 77       		.byte	119
+ 1020 03dc 77       		.byte	119
+ 1021 03dd 77       		.byte	119
+ 1022 03de 77       		.byte	119
+ 1023 03df 77       		.byte	119
+ 1024 03e0 77       		.byte	119
+ 1025 03e1 78       		.byte	120
+ 1026 03e2 78       		.byte	120
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccumrMQI.s 			page 19
+
+
+ 1027 03e3 78       		.byte	120
+ 1028 03e4 78       		.byte	120
+ 1029 03e5 78       		.byte	120
+ 1030 03e6 78       		.byte	120
+ 1031 03e7 78       		.byte	120
+ 1032 03e8 79       		.byte	121
+ 1033 03e9 79       		.byte	121
+ 1034 03ea 79       		.byte	121
+ 1035 03eb 79       		.byte	121
+ 1036 03ec 79       		.byte	121
+ 1037 03ed 79       		.byte	121
+ 1038 03ee 7A       		.byte	122
+ 1039 03ef 7A       		.byte	122
+ 1040 03f0 7A       		.byte	122
+ 1041 03f1 7A       		.byte	122
+ 1042 03f2 7A       		.byte	122
+ 1043 03f3 7A       		.byte	122
+ 1044 03f4 7A       		.byte	122
+ 1045 03f5 7B       		.byte	123
+ 1046 03f6 7B       		.byte	123
+ 1047 03f7 7B       		.byte	123
+ 1048 03f8 7B       		.byte	123
+ 1049 03f9 7B       		.byte	123
+ 1050 03fa 7B       		.byte	123
+ 1051 03fb 7C       		.byte	124
+ 1052 03fc 7C       		.byte	124
+ 1053 03fd 7C       		.byte	124
+ 1054 03fe 7C       		.byte	124
+ 1055 03ff 7C       		.byte	124
+ 1056 0400 7C       		.byte	124
+ 1057 0401 7D       		.byte	125
+ 1058 0402 7D       		.byte	125
+ 1059 0403 7D       		.byte	125
+ 1060              		.bss
+ 1061              	WaveDAC8_1_Wave1Chan:
+ 1062 0001 00       		.space	1
+ 1063              	WaveDAC8_1_Wave2Chan:
+ 1064 0002 00       		.space	1
+ 1065              	WaveDAC8_1_Wave1TD:
+ 1066 0003 00       		.space	1
+ 1067              	WaveDAC8_1_Wave2TD:
+ 1068 0004 00       		.space	1
+ 1069              		.section	.text.WaveDAC8_1_Init,"ax",%progbits
+ 1070              		.align	2
+ 1071              		.global	WaveDAC8_1_Init
+ 1072              		.thumb
+ 1073              		.thumb_func
+ 1074              		.type	WaveDAC8_1_Init, %function
+ 1075              	WaveDAC8_1_Init:
+ 1076              	.LFB0:
+ 1077              		.file 1 ".\\Generated_Source\\PSoC5\\WaveDAC8_1.c"
+   1:.\Generated_Source\PSoC5/WaveDAC8_1.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * File Name: WaveDAC8_1.c
+   3:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Version 2.10
+   4:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+   5:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Description:
+   6:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  This file provides the source code for the 8-bit Waveform DAC 
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccumrMQI.s 			page 20
+
+
+   7:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  (WaveDAC8) Component.
+   8:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+   9:.\Generated_Source\PSoC5/WaveDAC8_1.c **** ********************************************************************************
+  10:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Copyright 2013, Cypress Semiconductor Corporation.  All rights reserved.
+  11:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * You may use this file only in accordance with the license, terms, conditions,
+  12:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  13:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * the software package with which this file was provided.
+  14:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *******************************************************************************/
+  15:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+  16:.\Generated_Source\PSoC5/WaveDAC8_1.c **** #include "WaveDAC8_1.h"
+  17:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+  18:.\Generated_Source\PSoC5/WaveDAC8_1.c **** uint8  WaveDAC8_1_initVar = 0u;
+  19:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+  20:.\Generated_Source\PSoC5/WaveDAC8_1.c **** const uint8 CYCODE WaveDAC8_1_wave1[WaveDAC8_1_WAVE1_LENGTH] = { 128u,159u,188u,213u,233u,246u,252u
+  21:.\Generated_Source\PSoC5/WaveDAC8_1.c **** const uint8 CYCODE WaveDAC8_1_wave2[WaveDAC8_1_WAVE2_LENGTH] = { 125u,125u,125u,125u,126u,126u,126u
+  22:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+  23:.\Generated_Source\PSoC5/WaveDAC8_1.c **** static uint8  WaveDAC8_1_Wave1Chan;
+  24:.\Generated_Source\PSoC5/WaveDAC8_1.c **** static uint8  WaveDAC8_1_Wave2Chan;
+  25:.\Generated_Source\PSoC5/WaveDAC8_1.c **** static uint8  WaveDAC8_1_Wave1TD;
+  26:.\Generated_Source\PSoC5/WaveDAC8_1.c **** static uint8  WaveDAC8_1_Wave2TD;
+  27:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+  28:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+  29:.\Generated_Source\PSoC5/WaveDAC8_1.c **** /*******************************************************************************
+  30:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Function Name: WaveDAC8_1_Init
+  31:.\Generated_Source\PSoC5/WaveDAC8_1.c **** ********************************************************************************
+  32:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+  33:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Summary:
+  34:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  Initializes component with parameters set in the customizer.
+  35:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+  36:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Parameters:  
+  37:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  None
+  38:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+  39:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Return: 
+  40:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  None
+  41:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+  42:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *******************************************************************************/
+  43:.\Generated_Source\PSoC5/WaveDAC8_1.c **** void WaveDAC8_1_Init(void) 
+  44:.\Generated_Source\PSoC5/WaveDAC8_1.c **** {
+ 1078              		.loc 1 44 0
+ 1079              		.cfi_startproc
+ 1080              		@ args = 0, pretend = 0, frame = 0
+ 1081              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1082 0000 80B5     		push	{r7, lr}
+ 1083              		.cfi_def_cfa_offset 8
+ 1084              		.cfi_offset 7, -8
+ 1085              		.cfi_offset 14, -4
+ 1086 0002 00AF     		add	r7, sp, #0
+ 1087              		.cfi_def_cfa_register 7
+  45:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	WaveDAC8_1_VDAC8_Init();
+ 1088              		.loc 1 45 0
+ 1089 0004 FFF7FEFF 		bl	WaveDAC8_1_VDAC8_Init
+  46:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	WaveDAC8_1_VDAC8_SetSpeed(WaveDAC8_1_HIGHSPEED);
+ 1090              		.loc 1 46 0
+ 1091 0008 0220     		movs	r0, #2
+ 1092 000a FFF7FEFF 		bl	WaveDAC8_1_VDAC8_SetSpeed
+  47:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	WaveDAC8_1_VDAC8_SetRange(WaveDAC8_1_DAC_RANGE);
+ 1093              		.loc 1 47 0
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccumrMQI.s 			page 21
+
+
+ 1094 000e 0020     		movs	r0, #0
+ 1095 0010 FFF7FEFF 		bl	WaveDAC8_1_VDAC8_SetRange
+  48:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+  49:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	#if(WaveDAC8_1_DAC_MODE == WaveDAC8_1_CURRENT_MODE)
+  50:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		WaveDAC8_1_IDAC8_SetPolarity(WaveDAC8_1_DAC_POL);
+  51:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	#endif /* WaveDAC8_1_DAC_MODE == WaveDAC8_1_CURRENT_MODE */
+  52:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+  53:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	#if(WaveDAC8_1_OUT_MODE == WaveDAC8_1_BUFFER_MODE)
+  54:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	   WaveDAC8_1_BuffAmp_Init();
+  55:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	#endif /* WaveDAC8_1_OUT_MODE == WaveDAC8_1_BUFFER_MODE */
+  56:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+  57:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	/* Get the TD Number for the DMA channel 1 and 2   */
+  58:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	WaveDAC8_1_Wave1TD = CyDmaTdAllocate();
+ 1096              		.loc 1 58 0
+ 1097 0014 FFF7FEFF 		bl	CyDmaTdAllocate
+ 1098 0018 0346     		mov	r3, r0
+ 1099 001a 1A46     		mov	r2, r3
+ 1100 001c 084B     		ldr	r3, .L2
+ 1101 001e 1A70     		strb	r2, [r3]
+  59:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	WaveDAC8_1_Wave2TD = CyDmaTdAllocate();
+ 1102              		.loc 1 59 0
+ 1103 0020 FFF7FEFF 		bl	CyDmaTdAllocate
+ 1104 0024 0346     		mov	r3, r0
+ 1105 0026 1A46     		mov	r2, r3
+ 1106 0028 064B     		ldr	r3, .L2+4
+ 1107 002a 1A70     		strb	r2, [r3]
+  60:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	
+  61:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	/* Initialize waveform pointers  */
+  62:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	WaveDAC8_1_Wave1Setup(WaveDAC8_1_wave1, WaveDAC8_1_WAVE1_LENGTH) ;
+ 1108              		.loc 1 62 0
+ 1109 002c 0648     		ldr	r0, .L2+8
+ 1110 002e 1921     		movs	r1, #25
+ 1111 0030 FFF7FEFF 		bl	WaveDAC8_1_Wave1Setup
+  63:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	WaveDAC8_1_Wave2Setup(WaveDAC8_1_wave2, WaveDAC8_1_WAVE2_LENGTH) ;
+ 1112              		.loc 1 63 0
+ 1113 0034 0548     		ldr	r0, .L2+12
+ 1114 0036 4FF47A71 		mov	r1, #1000
+ 1115 003a FFF7FEFF 		bl	WaveDAC8_1_Wave2Setup
+  64:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	
+  65:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	/* Initialize the internal clock if one present  */
+  66:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	#if defined(WaveDAC8_1_DacClk_PHASE)
+  67:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	   WaveDAC8_1_DacClk_SetPhase(WaveDAC8_1_CLK_PHASE_0nS);
+  68:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	#endif /* defined(WaveDAC8_1_DacClk_PHASE) */
+  69:.\Generated_Source\PSoC5/WaveDAC8_1.c **** }
+ 1116              		.loc 1 69 0
+ 1117 003e 80BD     		pop	{r7, pc}
+ 1118              	.L3:
+ 1119              		.align	2
+ 1120              	.L2:
+ 1121 0040 03000000 		.word	WaveDAC8_1_Wave1TD
+ 1122 0044 04000000 		.word	WaveDAC8_1_Wave2TD
+ 1123 0048 00000000 		.word	WaveDAC8_1_wave1
+ 1124 004c 00000000 		.word	WaveDAC8_1_wave2
+ 1125              		.cfi_endproc
+ 1126              	.LFE0:
+ 1127              		.size	WaveDAC8_1_Init, .-WaveDAC8_1_Init
+ 1128              		.section	.text.WaveDAC8_1_Enable,"ax",%progbits
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccumrMQI.s 			page 22
+
+
+ 1129              		.align	2
+ 1130              		.global	WaveDAC8_1_Enable
+ 1131              		.thumb
+ 1132              		.thumb_func
+ 1133              		.type	WaveDAC8_1_Enable, %function
+ 1134              	WaveDAC8_1_Enable:
+ 1135              	.LFB1:
+  70:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+  71:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+  72:.\Generated_Source\PSoC5/WaveDAC8_1.c **** /*******************************************************************************
+  73:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Function Name: WaveDAC8_1_Enable
+  74:.\Generated_Source\PSoC5/WaveDAC8_1.c **** ********************************************************************************
+  75:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  
+  76:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Summary: 
+  77:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  Enables the DAC block and DMA operation.
+  78:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+  79:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Parameters:  
+  80:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  None
+  81:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+  82:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Return: 
+  83:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  None
+  84:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+  85:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *******************************************************************************/
+  86:.\Generated_Source\PSoC5/WaveDAC8_1.c **** void WaveDAC8_1_Enable(void) 
+  87:.\Generated_Source\PSoC5/WaveDAC8_1.c **** {
+ 1136              		.loc 1 87 0
+ 1137              		.cfi_startproc
+ 1138              		@ args = 0, pretend = 0, frame = 0
+ 1139              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1140 0000 80B5     		push	{r7, lr}
+ 1141              		.cfi_def_cfa_offset 8
+ 1142              		.cfi_offset 7, -8
+ 1143              		.cfi_offset 14, -4
+ 1144 0002 00AF     		add	r7, sp, #0
+ 1145              		.cfi_def_cfa_register 7
+  88:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	WaveDAC8_1_VDAC8_Enable();
+ 1146              		.loc 1 88 0
+ 1147 0004 FFF7FEFF 		bl	WaveDAC8_1_VDAC8_Enable
+  89:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+  90:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	#if(WaveDAC8_1_OUT_MODE == WaveDAC8_1_BUFFER_MODE)
+  91:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	   WaveDAC8_1_BuffAmp_Enable();
+  92:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	#endif /* WaveDAC8_1_OUT_MODE == WaveDAC8_1_BUFFER_MODE */
+  93:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+  94:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	/* 
+  95:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	* Enable the channel. It is configured to remember the TD value so that
+  96:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	* it can be restored from the place where it has been stopped.
+  97:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	*/
+  98:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	(void)CyDmaChEnable(WaveDAC8_1_Wave1Chan, 1u);
+ 1148              		.loc 1 98 0
+ 1149 0008 084B     		ldr	r3, .L5
+ 1150 000a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 1151 000c 1846     		mov	r0, r3
+ 1152 000e 0121     		movs	r1, #1
+ 1153 0010 FFF7FEFF 		bl	CyDmaChEnable
+  99:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	(void)CyDmaChEnable(WaveDAC8_1_Wave2Chan, 1u);
+ 1154              		.loc 1 99 0
+ 1155 0014 064B     		ldr	r3, .L5+4
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccumrMQI.s 			page 23
+
+
+ 1156 0016 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 1157 0018 1846     		mov	r0, r3
+ 1158 001a 0121     		movs	r1, #1
+ 1159 001c FFF7FEFF 		bl	CyDmaChEnable
+ 100:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	
+ 101:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	/* set the initial value */
+ 102:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	WaveDAC8_1_SetValue(0u);
+ 1160              		.loc 1 102 0
+ 1161 0020 0020     		movs	r0, #0
+ 1162 0022 FFF7FEFF 		bl	WaveDAC8_1_VDAC8_SetValue
+ 103:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	
+ 104:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	#if(WaveDAC8_1_CLOCK_SRC == WaveDAC8_1_CLOCK_INT)  	
+ 105:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	   WaveDAC8_1_DacClk_Start();
+ 1163              		.loc 1 105 0
+ 1164 0026 FFF7FEFF 		bl	WaveDAC8_1_DacClk_Start
+ 106:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	#endif /* WaveDAC8_1_CLOCK_SRC == WaveDAC8_1_CLOCK_INT */
+ 107:.\Generated_Source\PSoC5/WaveDAC8_1.c **** }
+ 1165              		.loc 1 107 0
+ 1166 002a 80BD     		pop	{r7, pc}
+ 1167              	.L6:
+ 1168              		.align	2
+ 1169              	.L5:
+ 1170 002c 01000000 		.word	WaveDAC8_1_Wave1Chan
+ 1171 0030 02000000 		.word	WaveDAC8_1_Wave2Chan
+ 1172              		.cfi_endproc
+ 1173              	.LFE1:
+ 1174              		.size	WaveDAC8_1_Enable, .-WaveDAC8_1_Enable
+ 1175              		.section	.text.WaveDAC8_1_Start,"ax",%progbits
+ 1176              		.align	2
+ 1177              		.global	WaveDAC8_1_Start
+ 1178              		.thumb
+ 1179              		.thumb_func
+ 1180              		.type	WaveDAC8_1_Start, %function
+ 1181              	WaveDAC8_1_Start:
+ 1182              	.LFB2:
+ 108:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+ 109:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+ 110:.\Generated_Source\PSoC5/WaveDAC8_1.c **** /*******************************************************************************
+ 111:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Function Name: WaveDAC8_1_Start
+ 112:.\Generated_Source\PSoC5/WaveDAC8_1.c **** ********************************************************************************
+ 113:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+ 114:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Summary:
+ 115:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  The start function initializes the voltage DAC with the default values, 
+ 116:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  and sets the power to the given level.  A power level of 0, is the same as 
+ 117:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  executing the stop function.
+ 118:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+ 119:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Parameters:  
+ 120:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  None
+ 121:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+ 122:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Return: 
+ 123:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  None
+ 124:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+ 125:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Reentrant:
+ 126:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  No
+ 127:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+ 128:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *******************************************************************************/
+ 129:.\Generated_Source\PSoC5/WaveDAC8_1.c **** void WaveDAC8_1_Start(void) 
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccumrMQI.s 			page 24
+
+
+ 130:.\Generated_Source\PSoC5/WaveDAC8_1.c **** {
+ 1183              		.loc 1 130 0
+ 1184              		.cfi_startproc
+ 1185              		@ args = 0, pretend = 0, frame = 0
+ 1186              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1187 0000 80B5     		push	{r7, lr}
+ 1188              		.cfi_def_cfa_offset 8
+ 1189              		.cfi_offset 7, -8
+ 1190              		.cfi_offset 14, -4
+ 1191 0002 00AF     		add	r7, sp, #0
+ 1192              		.cfi_def_cfa_register 7
+ 131:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	/* If not Initialized then initialize all required hardware and software */
+ 132:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	if(WaveDAC8_1_initVar == 0u)
+ 1193              		.loc 1 132 0
+ 1194 0004 054B     		ldr	r3, .L9
+ 1195 0006 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 1196 0008 002B     		cmp	r3, #0
+ 1197 000a 04D1     		bne	.L8
+ 133:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	{
+ 134:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		WaveDAC8_1_Init();
+ 1198              		.loc 1 134 0
+ 1199 000c FFF7FEFF 		bl	WaveDAC8_1_Init
+ 135:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		WaveDAC8_1_initVar = 1u;
+ 1200              		.loc 1 135 0
+ 1201 0010 024B     		ldr	r3, .L9
+ 1202 0012 0122     		movs	r2, #1
+ 1203 0014 1A70     		strb	r2, [r3]
+ 1204              	.L8:
+ 136:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	}
+ 137:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	
+ 138:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	WaveDAC8_1_Enable();
+ 1205              		.loc 1 138 0
+ 1206 0016 FFF7FEFF 		bl	WaveDAC8_1_Enable
+ 139:.\Generated_Source\PSoC5/WaveDAC8_1.c **** }
+ 1207              		.loc 1 139 0
+ 1208 001a 80BD     		pop	{r7, pc}
+ 1209              	.L10:
+ 1210              		.align	2
+ 1211              	.L9:
+ 1212 001c 00000000 		.word	WaveDAC8_1_initVar
+ 1213              		.cfi_endproc
+ 1214              	.LFE2:
+ 1215              		.size	WaveDAC8_1_Start, .-WaveDAC8_1_Start
+ 1216              		.section	.text.WaveDAC8_1_StartEx,"ax",%progbits
+ 1217              		.align	2
+ 1218              		.global	WaveDAC8_1_StartEx
+ 1219              		.thumb
+ 1220              		.thumb_func
+ 1221              		.type	WaveDAC8_1_StartEx, %function
+ 1222              	WaveDAC8_1_StartEx:
+ 1223              	.LFB3:
+ 140:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+ 141:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+ 142:.\Generated_Source\PSoC5/WaveDAC8_1.c **** /*******************************************************************************
+ 143:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Function Name: WaveDAC8_1_StartEx
+ 144:.\Generated_Source\PSoC5/WaveDAC8_1.c **** ********************************************************************************
+ 145:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccumrMQI.s 			page 25
+
+
+ 146:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Summary:
+ 147:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  The StartEx function sets pointers and sizes for both waveforms
+ 148:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  and then starts the component.
+ 149:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+ 150:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Parameters:  
+ 151:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *   uint8 * wavePtr1:     Pointer to the waveform 1 array.
+ 152:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *   uint16  sampleSize1:  The amount of samples in the waveform 1.
+ 153:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *   uint8 * wavePtr2:     Pointer to the waveform 2 array.
+ 154:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *   uint16  sampleSize2:  The amount of samples in the waveform 2.
+ 155:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+ 156:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Return: 
+ 157:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  None
+ 158:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+ 159:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Reentrant:
+ 160:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  No
+ 161:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+ 162:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *******************************************************************************/
+ 163:.\Generated_Source\PSoC5/WaveDAC8_1.c **** void WaveDAC8_1_StartEx(const uint8 * wavePtr1, uint16 sampleSize1, const uint8 * wavePtr2, uint16 
+ 164:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+ 165:.\Generated_Source\PSoC5/WaveDAC8_1.c **** {
+ 1224              		.loc 1 165 0
+ 1225              		.cfi_startproc
+ 1226              		@ args = 0, pretend = 0, frame = 16
+ 1227              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1228 0000 80B5     		push	{r7, lr}
+ 1229              		.cfi_def_cfa_offset 8
+ 1230              		.cfi_offset 7, -8
+ 1231              		.cfi_offset 14, -4
+ 1232 0002 84B0     		sub	sp, sp, #16
+ 1233              		.cfi_def_cfa_offset 24
+ 1234 0004 00AF     		add	r7, sp, #0
+ 1235              		.cfi_def_cfa_register 7
+ 1236 0006 F860     		str	r0, [r7, #12]
+ 1237 0008 7A60     		str	r2, [r7, #4]
+ 1238 000a 1A46     		mov	r2, r3
+ 1239 000c 0B46     		mov	r3, r1	@ movhi
+ 1240 000e 7B81     		strh	r3, [r7, #10]	@ movhi
+ 1241 0010 1346     		mov	r3, r2	@ movhi
+ 1242 0012 3B81     		strh	r3, [r7, #8]	@ movhi
+ 166:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	WaveDAC8_1_Wave1Setup(wavePtr1, sampleSize1);
+ 1243              		.loc 1 166 0
+ 1244 0014 7B89     		ldrh	r3, [r7, #10]
+ 1245 0016 F868     		ldr	r0, [r7, #12]
+ 1246 0018 1946     		mov	r1, r3
+ 1247 001a FFF7FEFF 		bl	WaveDAC8_1_Wave1Setup
+ 167:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	WaveDAC8_1_Wave2Setup(wavePtr2, sampleSize2);
+ 1248              		.loc 1 167 0
+ 1249 001e 3B89     		ldrh	r3, [r7, #8]
+ 1250 0020 7868     		ldr	r0, [r7, #4]
+ 1251 0022 1946     		mov	r1, r3
+ 1252 0024 FFF7FEFF 		bl	WaveDAC8_1_Wave2Setup
+ 168:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	WaveDAC8_1_Start();
+ 1253              		.loc 1 168 0
+ 1254 0028 FFF7FEFF 		bl	WaveDAC8_1_Start
+ 169:.\Generated_Source\PSoC5/WaveDAC8_1.c **** }
+ 1255              		.loc 1 169 0
+ 1256 002c 1037     		adds	r7, r7, #16
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccumrMQI.s 			page 26
+
+
+ 1257              		.cfi_def_cfa_offset 8
+ 1258 002e BD46     		mov	sp, r7
+ 1259              		.cfi_def_cfa_register 13
+ 1260              		@ sp needed
+ 1261 0030 80BD     		pop	{r7, pc}
+ 1262              		.cfi_endproc
+ 1263              	.LFE3:
+ 1264              		.size	WaveDAC8_1_StartEx, .-WaveDAC8_1_StartEx
+ 1265 0032 00BF     		.section	.text.WaveDAC8_1_Stop,"ax",%progbits
+ 1266              		.align	2
+ 1267              		.global	WaveDAC8_1_Stop
+ 1268              		.thumb
+ 1269              		.thumb_func
+ 1270              		.type	WaveDAC8_1_Stop, %function
+ 1271              	WaveDAC8_1_Stop:
+ 1272              	.LFB4:
+ 170:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+ 171:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+ 172:.\Generated_Source\PSoC5/WaveDAC8_1.c **** /*******************************************************************************
+ 173:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Function Name: WaveDAC8_1_Stop
+ 174:.\Generated_Source\PSoC5/WaveDAC8_1.c **** ********************************************************************************
+ 175:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+ 176:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Summary:
+ 177:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  Stops the clock (if internal), disables the DMA channels
+ 178:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  and powers down the DAC.
+ 179:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+ 180:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Parameters:  
+ 181:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  None  
+ 182:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+ 183:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Return: 
+ 184:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  None
+ 185:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+ 186:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *******************************************************************************/
+ 187:.\Generated_Source\PSoC5/WaveDAC8_1.c **** void WaveDAC8_1_Stop(void) 
+ 188:.\Generated_Source\PSoC5/WaveDAC8_1.c **** {
+ 1273              		.loc 1 188 0
+ 1274              		.cfi_startproc
+ 1275              		@ args = 0, pretend = 0, frame = 0
+ 1276              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1277 0000 80B5     		push	{r7, lr}
+ 1278              		.cfi_def_cfa_offset 8
+ 1279              		.cfi_offset 7, -8
+ 1280              		.cfi_offset 14, -4
+ 1281 0002 00AF     		add	r7, sp, #0
+ 1282              		.cfi_def_cfa_register 7
+ 189:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	/* Turn off internal clock, if one present */
+ 190:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	#if(WaveDAC8_1_CLOCK_SRC == WaveDAC8_1_CLOCK_INT)  	
+ 191:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	   WaveDAC8_1_DacClk_Stop();
+ 1283              		.loc 1 191 0
+ 1284 0004 FFF7FEFF 		bl	WaveDAC8_1_DacClk_Stop
+ 192:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	#endif /* WaveDAC8_1_CLOCK_SRC == WaveDAC8_1_CLOCK_INT */
+ 193:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	
+ 194:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	/* Disble DMA channels */
+ 195:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	(void)CyDmaChDisable(WaveDAC8_1_Wave1Chan);
+ 1285              		.loc 1 195 0
+ 1286 0008 064B     		ldr	r3, .L13
+ 1287 000a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccumrMQI.s 			page 27
+
+
+ 1288 000c 1846     		mov	r0, r3
+ 1289 000e FFF7FEFF 		bl	CyDmaChDisable
+ 196:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	(void)CyDmaChDisable(WaveDAC8_1_Wave2Chan);
+ 1290              		.loc 1 196 0
+ 1291 0012 054B     		ldr	r3, .L13+4
+ 1292 0014 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 1293 0016 1846     		mov	r0, r3
+ 1294 0018 FFF7FEFF 		bl	CyDmaChDisable
+ 197:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+ 198:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	/* Disable power to DAC */
+ 199:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	WaveDAC8_1_VDAC8_Stop();
+ 1295              		.loc 1 199 0
+ 1296 001c FFF7FEFF 		bl	WaveDAC8_1_VDAC8_Stop
+ 200:.\Generated_Source\PSoC5/WaveDAC8_1.c **** }
+ 1297              		.loc 1 200 0
+ 1298 0020 80BD     		pop	{r7, pc}
+ 1299              	.L14:
+ 1300 0022 00BF     		.align	2
+ 1301              	.L13:
+ 1302 0024 01000000 		.word	WaveDAC8_1_Wave1Chan
+ 1303 0028 02000000 		.word	WaveDAC8_1_Wave2Chan
+ 1304              		.cfi_endproc
+ 1305              	.LFE4:
+ 1306              		.size	WaveDAC8_1_Stop, .-WaveDAC8_1_Stop
+ 1307              		.section	.text.WaveDAC8_1_Wave1Setup,"ax",%progbits
+ 1308              		.align	2
+ 1309              		.global	WaveDAC8_1_Wave1Setup
+ 1310              		.thumb
+ 1311              		.thumb_func
+ 1312              		.type	WaveDAC8_1_Wave1Setup, %function
+ 1313              	WaveDAC8_1_Wave1Setup:
+ 1314              	.LFB5:
+ 201:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+ 202:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+ 203:.\Generated_Source\PSoC5/WaveDAC8_1.c **** /*******************************************************************************
+ 204:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Function Name: WaveDAC8_1_Wave1Setup
+ 205:.\Generated_Source\PSoC5/WaveDAC8_1.c **** ********************************************************************************
+ 206:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+ 207:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Summary:
+ 208:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  Sets pointer and size for waveform 1.                                    
+ 209:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+ 210:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Parameters:  
+ 211:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  uint8 * WavePtr:     Pointer to the waveform array.
+ 212:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  uint16  SampleSize:  The amount of samples in the waveform.
+ 213:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+ 214:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Return: 
+ 215:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  None 
+ 216:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+ 217:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *******************************************************************************/
+ 218:.\Generated_Source\PSoC5/WaveDAC8_1.c **** void WaveDAC8_1_Wave1Setup(const uint8 * wavePtr, uint16 sampleSize)
+ 219:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+ 220:.\Generated_Source\PSoC5/WaveDAC8_1.c **** {
+ 1315              		.loc 1 220 0
+ 1316              		.cfi_startproc
+ 1317              		@ args = 0, pretend = 0, frame = 8
+ 1318              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1319 0000 80B5     		push	{r7, lr}
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccumrMQI.s 			page 28
+
+
+ 1320              		.cfi_def_cfa_offset 8
+ 1321              		.cfi_offset 7, -8
+ 1322              		.cfi_offset 14, -4
+ 1323 0002 82B0     		sub	sp, sp, #8
+ 1324              		.cfi_def_cfa_offset 16
+ 1325 0004 00AF     		add	r7, sp, #0
+ 1326              		.cfi_def_cfa_register 7
+ 1327 0006 7860     		str	r0, [r7, #4]
+ 1328 0008 0B46     		mov	r3, r1
+ 1329 000a 7B80     		strh	r3, [r7, #2]	@ movhi
+ 221:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	#if (CY_PSOC3)
+ 222:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		uint16 memoryType; /* determining the source memory type */
+ 223:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		memoryType = (WaveDAC8_1_HI16FLASHPTR == HI16(wavePtr)) ? HI16(CYDEV_FLS_BASE) : HI16(CYDEV_SRAM_
+ 224:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		
+ 225:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		WaveDAC8_1_Wave1Chan = WaveDAC8_1_Wave1_DMA_DmaInitialize(
+ 226:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		WaveDAC8_1_Wave1_DMA_BYTES_PER_BURST, WaveDAC8_1_Wave1_DMA_REQUEST_PER_BURST,
+ 227:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		memoryType, HI16(CYDEV_PERIPH_BASE));
+ 228:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	#else /* PSoC 5 */
+ 229:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		WaveDAC8_1_Wave1Chan = WaveDAC8_1_Wave1_DMA_DmaInitialize(
+ 230:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		WaveDAC8_1_Wave1_DMA_BYTES_PER_BURST, WaveDAC8_1_Wave1_DMA_REQUEST_PER_BURST,
+ 231:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		HI16(wavePtr), HI16(WaveDAC8_1_DAC8__D));
+ 1330              		.loc 1 231 0
+ 1331 000c 7B68     		ldr	r3, [r7, #4]
+ 1332 000e 1B0C     		lsrs	r3, r3, #16
+ 229:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		WaveDAC8_1_Wave1_DMA_BYTES_PER_BURST, WaveDAC8_1_Wave1_DMA_REQUEST_PER_BURST,
+ 1333              		.loc 1 229 0
+ 1334 0010 9BB2     		uxth	r3, r3
+ 1335 0012 0120     		movs	r0, #1
+ 1336 0014 0121     		movs	r1, #1
+ 1337 0016 1A46     		mov	r2, r3
+ 1338 0018 4FF48043 		mov	r3, #16384
+ 1339 001c FFF7FEFF 		bl	WaveDAC8_1_Wave1_DMA_DmaInitialize
+ 1340 0020 0346     		mov	r3, r0
+ 1341 0022 1A46     		mov	r2, r3
+ 1342 0024 104B     		ldr	r3, .L16
+ 1343 0026 1A70     		strb	r2, [r3]
+ 232:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	#endif /* CY_PSOC3 */
+ 233:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	
+ 234:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	/*
+ 235:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	* TD is looping on itself. 
+ 236:.\Generated_Source\PSoC5/WaveDAC8_1.c ****     * Increment the source address, but not the destination address. 
+ 237:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	*/
+ 238:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	(void)CyDmaTdSetConfiguration(WaveDAC8_1_Wave1TD, sampleSize, WaveDAC8_1_Wave1TD, 
+ 1344              		.loc 1 238 0
+ 1345 0028 104B     		ldr	r3, .L16+4
+ 1346 002a 1978     		ldrb	r1, [r3]	@ zero_extendqisi2
+ 1347 002c 0F4B     		ldr	r3, .L16+4
+ 1348 002e 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 1349 0030 7A88     		ldrh	r2, [r7, #2]
+ 1350 0032 0846     		mov	r0, r1
+ 1351 0034 1146     		mov	r1, r2
+ 1352 0036 1A46     		mov	r2, r3
+ 1353 0038 0123     		movs	r3, #1
+ 1354 003a FFF7FEFF 		bl	CyDmaTdSetConfiguration
+ 239:.\Generated_Source\PSoC5/WaveDAC8_1.c ****                                     (uint8)CY_DMA_TD_INC_SRC_ADR | (uint8)WaveDAC8_1_Wave1_DMA__TD_
+ 240:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	
+ 241:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	/* Set the TD source and destination address */
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccumrMQI.s 			page 29
+
+
+ 242:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	(void)CyDmaTdSetAddress(WaveDAC8_1_Wave1TD, LO16((uint32)wavePtr), LO16(WaveDAC8_1_DAC8__D));
+ 1355              		.loc 1 242 0
+ 1356 003e 0B4B     		ldr	r3, .L16+4
+ 1357 0040 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 1358 0042 7B68     		ldr	r3, [r7, #4]
+ 1359 0044 9BB2     		uxth	r3, r3
+ 1360 0046 1046     		mov	r0, r2
+ 1361 0048 1946     		mov	r1, r3
+ 1362 004a 45F68232 		movw	r2, #23426
+ 1363 004e FFF7FEFF 		bl	CyDmaTdSetAddress
+ 243:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	
+ 244:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	/* Associate the TD with the channel */
+ 245:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	(void)CyDmaChSetInitialTd(WaveDAC8_1_Wave1Chan, WaveDAC8_1_Wave1TD);
+ 1364              		.loc 1 245 0
+ 1365 0052 054B     		ldr	r3, .L16
+ 1366 0054 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 1367 0056 054B     		ldr	r3, .L16+4
+ 1368 0058 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 1369 005a 1046     		mov	r0, r2
+ 1370 005c 1946     		mov	r1, r3
+ 1371 005e FFF7FEFF 		bl	CyDmaChSetInitialTd
+ 246:.\Generated_Source\PSoC5/WaveDAC8_1.c **** }
+ 1372              		.loc 1 246 0
+ 1373 0062 0837     		adds	r7, r7, #8
+ 1374              		.cfi_def_cfa_offset 8
+ 1375 0064 BD46     		mov	sp, r7
+ 1376              		.cfi_def_cfa_register 13
+ 1377              		@ sp needed
+ 1378 0066 80BD     		pop	{r7, pc}
+ 1379              	.L17:
+ 1380              		.align	2
+ 1381              	.L16:
+ 1382 0068 01000000 		.word	WaveDAC8_1_Wave1Chan
+ 1383 006c 03000000 		.word	WaveDAC8_1_Wave1TD
+ 1384              		.cfi_endproc
+ 1385              	.LFE5:
+ 1386              		.size	WaveDAC8_1_Wave1Setup, .-WaveDAC8_1_Wave1Setup
+ 1387              		.section	.text.WaveDAC8_1_Wave2Setup,"ax",%progbits
+ 1388              		.align	2
+ 1389              		.global	WaveDAC8_1_Wave2Setup
+ 1390              		.thumb
+ 1391              		.thumb_func
+ 1392              		.type	WaveDAC8_1_Wave2Setup, %function
+ 1393              	WaveDAC8_1_Wave2Setup:
+ 1394              	.LFB6:
+ 247:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+ 248:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 
+ 249:.\Generated_Source\PSoC5/WaveDAC8_1.c **** /*******************************************************************************
+ 250:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Function Name: WaveDAC8_1_Wave2Setup
+ 251:.\Generated_Source\PSoC5/WaveDAC8_1.c **** ********************************************************************************
+ 252:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+ 253:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Summary:
+ 254:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  Sets pointer and size for waveform 2.                                    
+ 255:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+ 256:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Parameters:  
+ 257:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  uint8 * WavePtr:     Pointer to the waveform array.
+ 258:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  uint16  SampleSize:  The amount of samples in the waveform.
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccumrMQI.s 			page 30
+
+
+ 259:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+ 260:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Return: 
+ 261:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  None
+ 262:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
+ 263:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *******************************************************************************/
+ 264:.\Generated_Source\PSoC5/WaveDAC8_1.c **** void WaveDAC8_1_Wave2Setup(const uint8 * wavePtr, uint16 sampleSize)
+ 265:.\Generated_Source\PSoC5/WaveDAC8_1.c ****  
+ 266:.\Generated_Source\PSoC5/WaveDAC8_1.c **** {
+ 1395              		.loc 1 266 0
+ 1396              		.cfi_startproc
+ 1397              		@ args = 0, pretend = 0, frame = 8
+ 1398              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1399 0000 80B5     		push	{r7, lr}
+ 1400              		.cfi_def_cfa_offset 8
+ 1401              		.cfi_offset 7, -8
+ 1402              		.cfi_offset 14, -4
+ 1403 0002 82B0     		sub	sp, sp, #8
+ 1404              		.cfi_def_cfa_offset 16
+ 1405 0004 00AF     		add	r7, sp, #0
+ 1406              		.cfi_def_cfa_register 7
+ 1407 0006 7860     		str	r0, [r7, #4]
+ 1408 0008 0B46     		mov	r3, r1
+ 1409 000a 7B80     		strh	r3, [r7, #2]	@ movhi
+ 267:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	#if (CY_PSOC3)
+ 268:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		uint16 memoryType; /* determining the source memory type */
+ 269:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		memoryType = (WaveDAC8_1_HI16FLASHPTR == HI16(wavePtr)) ? HI16(CYDEV_FLS_BASE) : HI16(CYDEV_SRAM_
+ 270:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 			
+ 271:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		WaveDAC8_1_Wave2Chan = WaveDAC8_1_Wave2_DMA_DmaInitialize(
+ 272:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		WaveDAC8_1_Wave2_DMA_BYTES_PER_BURST, WaveDAC8_1_Wave2_DMA_REQUEST_PER_BURST,
+ 273:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		memoryType, HI16(CYDEV_PERIPH_BASE));
+ 274:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	#else /* PSoC 5 */
+ 275:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		WaveDAC8_1_Wave2Chan = WaveDAC8_1_Wave2_DMA_DmaInitialize(
+ 276:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		WaveDAC8_1_Wave2_DMA_BYTES_PER_BURST, WaveDAC8_1_Wave2_DMA_REQUEST_PER_BURST,
+ 277:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		HI16(wavePtr), HI16(WaveDAC8_1_DAC8__D));
+ 1410              		.loc 1 277 0
+ 1411 000c 7B68     		ldr	r3, [r7, #4]
+ 1412 000e 1B0C     		lsrs	r3, r3, #16
+ 275:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		WaveDAC8_1_Wave2_DMA_BYTES_PER_BURST, WaveDAC8_1_Wave2_DMA_REQUEST_PER_BURST,
+ 1413              		.loc 1 275 0
+ 1414 0010 9BB2     		uxth	r3, r3
+ 1415 0012 0120     		movs	r0, #1
+ 1416 0014 0121     		movs	r1, #1
+ 1417 0016 1A46     		mov	r2, r3
+ 1418 0018 4FF48043 		mov	r3, #16384
+ 1419 001c FFF7FEFF 		bl	WaveDAC8_1_Wave2_DMA_DmaInitialize
+ 1420 0020 0346     		mov	r3, r0
+ 1421 0022 1A46     		mov	r2, r3
+ 1422 0024 104B     		ldr	r3, .L19
+ 1423 0026 1A70     		strb	r2, [r3]
+ 278:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	#endif /* CY_PSOC3 */
+ 279:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	
+ 280:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	/*
+ 281:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	* TD is looping on itself. 
+ 282:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	* Increment the source address, but not the destination address. 
+ 283:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	*/
+ 284:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	(void)CyDmaTdSetConfiguration(WaveDAC8_1_Wave2TD, sampleSize, WaveDAC8_1_Wave2TD, 
+ 1424              		.loc 1 284 0
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccumrMQI.s 			page 31
+
+
+ 1425 0028 104B     		ldr	r3, .L19+4
+ 1426 002a 1978     		ldrb	r1, [r3]	@ zero_extendqisi2
+ 1427 002c 0F4B     		ldr	r3, .L19+4
+ 1428 002e 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 1429 0030 7A88     		ldrh	r2, [r7, #2]
+ 1430 0032 0846     		mov	r0, r1
+ 1431 0034 1146     		mov	r1, r2
+ 1432 0036 1A46     		mov	r2, r3
+ 1433 0038 0123     		movs	r3, #1
+ 1434 003a FFF7FEFF 		bl	CyDmaTdSetConfiguration
+ 285:.\Generated_Source\PSoC5/WaveDAC8_1.c ****                                     (uint8)CY_DMA_TD_INC_SRC_ADR | (uint8)WaveDAC8_1_Wave2_DMA__TD_
+ 286:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	
+ 287:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	/* Set the TD source and destination address */
+ 288:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	(void)CyDmaTdSetAddress(WaveDAC8_1_Wave2TD, LO16((uint32)wavePtr), LO16(WaveDAC8_1_DAC8__D));
+ 1435              		.loc 1 288 0
+ 1436 003e 0B4B     		ldr	r3, .L19+4
+ 1437 0040 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 1438 0042 7B68     		ldr	r3, [r7, #4]
+ 1439 0044 9BB2     		uxth	r3, r3
+ 1440 0046 1046     		mov	r0, r2
+ 1441 0048 1946     		mov	r1, r3
+ 1442 004a 45F68232 		movw	r2, #23426
+ 1443 004e FFF7FEFF 		bl	CyDmaTdSetAddress
+ 289:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	
+ 290:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	/* Associate the TD with the channel */
+ 291:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	(void)CyDmaChSetInitialTd(WaveDAC8_1_Wave2Chan, WaveDAC8_1_Wave2TD);
+ 1444              		.loc 1 291 0
+ 1445 0052 054B     		ldr	r3, .L19
+ 1446 0054 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 1447 0056 054B     		ldr	r3, .L19+4
+ 1448 0058 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 1449 005a 1046     		mov	r0, r2
+ 1450 005c 1946     		mov	r1, r3
+ 1451 005e FFF7FEFF 		bl	CyDmaChSetInitialTd
+ 292:.\Generated_Source\PSoC5/WaveDAC8_1.c **** }
+ 1452              		.loc 1 292 0
+ 1453 0062 0837     		adds	r7, r7, #8
+ 1454              		.cfi_def_cfa_offset 8
+ 1455 0064 BD46     		mov	sp, r7
+ 1456              		.cfi_def_cfa_register 13
+ 1457              		@ sp needed
+ 1458 0066 80BD     		pop	{r7, pc}
+ 1459              	.L20:
+ 1460              		.align	2
+ 1461              	.L19:
+ 1462 0068 02000000 		.word	WaveDAC8_1_Wave2Chan
+ 1463 006c 04000000 		.word	WaveDAC8_1_Wave2TD
+ 1464              		.cfi_endproc
+ 1465              	.LFE6:
+ 1466              		.size	WaveDAC8_1_Wave2Setup, .-WaveDAC8_1_Wave2Setup
+ 1467              		.text
+ 1468              	.Letext0:
+ 1469              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
+ 1470              		.section	.debug_info,"",%progbits
+ 1471              	.Ldebug_info0:
+ 1472 0000 4E020000 		.4byte	0x24e
+ 1473 0004 0400     		.2byte	0x4
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccumrMQI.s 			page 32
+
+
+ 1474 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 1475 000a 04       		.byte	0x4
+ 1476 000b 01       		.uleb128 0x1
+ 1477 000c 2C010000 		.4byte	.LASF36
+ 1478 0010 01       		.byte	0x1
+ 1479 0011 4A020000 		.4byte	.LASF37
+ 1480 0015 28000000 		.4byte	.LASF38
+ 1481 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 1482 001d 00000000 		.4byte	0
+ 1483 0021 00000000 		.4byte	.Ldebug_line0
+ 1484 0025 02       		.uleb128 0x2
+ 1485 0026 01       		.byte	0x1
+ 1486 0027 06       		.byte	0x6
+ 1487 0028 D8020000 		.4byte	.LASF0
+ 1488 002c 02       		.uleb128 0x2
+ 1489 002d 01       		.byte	0x1
+ 1490 002e 08       		.byte	0x8
+ 1491 002f E9010000 		.4byte	.LASF1
+ 1492 0033 02       		.uleb128 0x2
+ 1493 0034 02       		.byte	0x2
+ 1494 0035 05       		.byte	0x5
+ 1495 0036 D1010000 		.4byte	.LASF2
+ 1496 003a 02       		.uleb128 0x2
+ 1497 003b 02       		.byte	0x2
+ 1498 003c 07       		.byte	0x7
+ 1499 003d 71000000 		.4byte	.LASF3
+ 1500 0041 02       		.uleb128 0x2
+ 1501 0042 04       		.byte	0x4
+ 1502 0043 05       		.byte	0x5
+ 1503 0044 CF020000 		.4byte	.LASF4
+ 1504 0048 02       		.uleb128 0x2
+ 1505 0049 04       		.byte	0x4
+ 1506 004a 07       		.byte	0x7
+ 1507 004b DE000000 		.4byte	.LASF5
+ 1508 004f 02       		.uleb128 0x2
+ 1509 0050 08       		.byte	0x8
+ 1510 0051 05       		.byte	0x5
+ 1511 0052 37020000 		.4byte	.LASF6
+ 1512 0056 02       		.uleb128 0x2
+ 1513 0057 08       		.byte	0x8
+ 1514 0058 07       		.byte	0x7
+ 1515 0059 04020000 		.4byte	.LASF7
+ 1516 005d 03       		.uleb128 0x3
+ 1517 005e 04       		.byte	0x4
+ 1518 005f 05       		.byte	0x5
+ 1519 0060 696E7400 		.ascii	"int\000"
+ 1520 0064 02       		.uleb128 0x2
+ 1521 0065 04       		.byte	0x4
+ 1522 0066 07       		.byte	0x7
+ 1523 0067 F7010000 		.4byte	.LASF8
+ 1524 006b 04       		.uleb128 0x4
+ 1525 006c F8000000 		.4byte	.LASF9
+ 1526 0070 02       		.byte	0x2
+ 1527 0071 9201     		.2byte	0x192
+ 1528 0073 2C000000 		.4byte	0x2c
+ 1529 0077 04       		.uleb128 0x4
+ 1530 0078 DB010000 		.4byte	.LASF10
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccumrMQI.s 			page 33
+
+
+ 1531 007c 02       		.byte	0x2
+ 1532 007d 9301     		.2byte	0x193
+ 1533 007f 3A000000 		.4byte	0x3a
+ 1534 0083 04       		.uleb128 0x4
+ 1535 0084 E2010000 		.4byte	.LASF11
+ 1536 0088 02       		.byte	0x2
+ 1537 0089 9401     		.2byte	0x194
+ 1538 008b 48000000 		.4byte	0x48
+ 1539 008f 02       		.uleb128 0x2
+ 1540 0090 04       		.byte	0x4
+ 1541 0091 04       		.byte	0x4
+ 1542 0092 BA000000 		.4byte	.LASF12
+ 1543 0096 02       		.uleb128 0x2
+ 1544 0097 08       		.byte	0x8
+ 1545 0098 04       		.byte	0x4
+ 1546 0099 BA010000 		.4byte	.LASF13
+ 1547 009d 02       		.uleb128 0x2
+ 1548 009e 01       		.byte	0x1
+ 1549 009f 08       		.byte	0x8
+ 1550 00a0 45020000 		.4byte	.LASF14
+ 1551 00a4 02       		.uleb128 0x2
+ 1552 00a5 04       		.byte	0x4
+ 1553 00a6 07       		.byte	0x7
+ 1554 00a7 2E020000 		.4byte	.LASF15
+ 1555 00ab 05       		.uleb128 0x5
+ 1556 00ac 61000000 		.4byte	.LASF16
+ 1557 00b0 01       		.byte	0x1
+ 1558 00b1 2B       		.byte	0x2b
+ 1559 00b2 00000000 		.4byte	.LFB0
+ 1560 00b6 50000000 		.4byte	.LFE0-.LFB0
+ 1561 00ba 01       		.uleb128 0x1
+ 1562 00bb 9C       		.byte	0x9c
+ 1563 00bc 05       		.uleb128 0x5
+ 1564 00bd 86020000 		.4byte	.LASF17
+ 1565 00c1 01       		.byte	0x1
+ 1566 00c2 56       		.byte	0x56
+ 1567 00c3 00000000 		.4byte	.LFB1
+ 1568 00c7 34000000 		.4byte	.LFE1-.LFB1
+ 1569 00cb 01       		.uleb128 0x1
+ 1570 00cc 9C       		.byte	0x9c
+ 1571 00cd 05       		.uleb128 0x5
+ 1572 00ce 84000000 		.4byte	.LASF18
+ 1573 00d2 01       		.byte	0x1
+ 1574 00d3 81       		.byte	0x81
+ 1575 00d4 00000000 		.4byte	.LFB2
+ 1576 00d8 20000000 		.4byte	.LFE2-.LFB2
+ 1577 00dc 01       		.uleb128 0x1
+ 1578 00dd 9C       		.byte	0x9c
+ 1579 00de 06       		.uleb128 0x6
+ 1580 00df A7000000 		.4byte	.LASF24
+ 1581 00e3 01       		.byte	0x1
+ 1582 00e4 A3       		.byte	0xa3
+ 1583 00e5 00000000 		.4byte	.LFB3
+ 1584 00e9 32000000 		.4byte	.LFE3-.LFB3
+ 1585 00ed 01       		.uleb128 0x1
+ 1586 00ee 9C       		.byte	0x9c
+ 1587 00ef 2C010000 		.4byte	0x12c
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccumrMQI.s 			page 34
+
+
+ 1588 00f3 07       		.uleb128 0x7
+ 1589 00f4 95000000 		.4byte	.LASF19
+ 1590 00f8 01       		.byte	0x1
+ 1591 00f9 A3       		.byte	0xa3
+ 1592 00fa 2C010000 		.4byte	0x12c
+ 1593 00fe 02       		.uleb128 0x2
+ 1594 00ff 91       		.byte	0x91
+ 1595 0100 74       		.sleb128 -12
+ 1596 0101 07       		.uleb128 0x7
+ 1597 0102 FE000000 		.4byte	.LASF20
+ 1598 0106 01       		.byte	0x1
+ 1599 0107 A3       		.byte	0xa3
+ 1600 0108 77000000 		.4byte	0x77
+ 1601 010c 02       		.uleb128 0x2
+ 1602 010d 91       		.byte	0x91
+ 1603 010e 72       		.sleb128 -14
+ 1604 010f 07       		.uleb128 0x7
+ 1605 0110 9E000000 		.4byte	.LASF21
+ 1606 0114 01       		.byte	0x1
+ 1607 0115 A3       		.byte	0xa3
+ 1608 0116 2C010000 		.4byte	0x12c
+ 1609 011a 02       		.uleb128 0x2
+ 1610 011b 91       		.byte	0x91
+ 1611 011c 6C       		.sleb128 -20
+ 1612 011d 07       		.uleb128 0x7
+ 1613 011e 0A010000 		.4byte	.LASF22
+ 1614 0122 01       		.byte	0x1
+ 1615 0123 A3       		.byte	0xa3
+ 1616 0124 77000000 		.4byte	0x77
+ 1617 0128 02       		.uleb128 0x2
+ 1618 0129 91       		.byte	0x91
+ 1619 012a 70       		.sleb128 -16
+ 1620 012b 00       		.byte	0
+ 1621 012c 08       		.uleb128 0x8
+ 1622 012d 04       		.byte	0x4
+ 1623 012e 32010000 		.4byte	0x132
+ 1624 0132 09       		.uleb128 0x9
+ 1625 0133 6B000000 		.4byte	0x6b
+ 1626 0137 05       		.uleb128 0x5
+ 1627 0138 C1010000 		.4byte	.LASF23
+ 1628 013c 01       		.byte	0x1
+ 1629 013d BB       		.byte	0xbb
+ 1630 013e 00000000 		.4byte	.LFB4
+ 1631 0142 2C000000 		.4byte	.LFE4-.LFB4
+ 1632 0146 01       		.uleb128 0x1
+ 1633 0147 9C       		.byte	0x9c
+ 1634 0148 06       		.uleb128 0x6
+ 1635 0149 16010000 		.4byte	.LASF25
+ 1636 014d 01       		.byte	0x1
+ 1637 014e DA       		.byte	0xda
+ 1638 014f 00000000 		.4byte	.LFB5
+ 1639 0153 70000000 		.4byte	.LFE5-.LFB5
+ 1640 0157 01       		.uleb128 0x1
+ 1641 0158 9C       		.byte	0x9c
+ 1642 0159 7A010000 		.4byte	0x17a
+ 1643 015d 07       		.uleb128 0x7
+ 1644 015e F0000000 		.4byte	.LASF26
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccumrMQI.s 			page 35
+
+
+ 1645 0162 01       		.byte	0x1
+ 1646 0163 DA       		.byte	0xda
+ 1647 0164 2C010000 		.4byte	0x12c
+ 1648 0168 02       		.uleb128 0x2
+ 1649 0169 91       		.byte	0x91
+ 1650 016a 74       		.sleb128 -12
+ 1651 016b 07       		.uleb128 0x7
+ 1652 016c D3000000 		.4byte	.LASF27
+ 1653 0170 01       		.byte	0x1
+ 1654 0171 DA       		.byte	0xda
+ 1655 0172 77000000 		.4byte	0x77
+ 1656 0176 02       		.uleb128 0x2
+ 1657 0177 91       		.byte	0x91
+ 1658 0178 72       		.sleb128 -14
+ 1659 0179 00       		.byte	0
+ 1660 017a 0A       		.uleb128 0xa
+ 1661 017b 70020000 		.4byte	.LASF28
+ 1662 017f 01       		.byte	0x1
+ 1663 0180 0801     		.2byte	0x108
+ 1664 0182 00000000 		.4byte	.LFB6
+ 1665 0186 70000000 		.4byte	.LFE6-.LFB6
+ 1666 018a 01       		.uleb128 0x1
+ 1667 018b 9C       		.byte	0x9c
+ 1668 018c AF010000 		.4byte	0x1af
+ 1669 0190 0B       		.uleb128 0xb
+ 1670 0191 F0000000 		.4byte	.LASF26
+ 1671 0195 01       		.byte	0x1
+ 1672 0196 0801     		.2byte	0x108
+ 1673 0198 2C010000 		.4byte	0x12c
+ 1674 019c 02       		.uleb128 0x2
+ 1675 019d 91       		.byte	0x91
+ 1676 019e 74       		.sleb128 -12
+ 1677 019f 0B       		.uleb128 0xb
+ 1678 01a0 D3000000 		.4byte	.LASF27
+ 1679 01a4 01       		.byte	0x1
+ 1680 01a5 0801     		.2byte	0x108
+ 1681 01a7 77000000 		.4byte	0x77
+ 1682 01ab 02       		.uleb128 0x2
+ 1683 01ac 91       		.byte	0x91
+ 1684 01ad 72       		.sleb128 -14
+ 1685 01ae 00       		.byte	0
+ 1686 01af 0C       		.uleb128 0xc
+ 1687 01b0 BA020000 		.4byte	.LASF29
+ 1688 01b4 01       		.byte	0x1
+ 1689 01b5 17       		.byte	0x17
+ 1690 01b6 6B000000 		.4byte	0x6b
+ 1691 01ba 05       		.uleb128 0x5
+ 1692 01bb 03       		.byte	0x3
+ 1693 01bc 01000000 		.4byte	WaveDAC8_1_Wave1Chan
+ 1694 01c0 0C       		.uleb128 0xc
+ 1695 01c1 13000000 		.4byte	.LASF30
+ 1696 01c5 01       		.byte	0x1
+ 1697 01c6 18       		.byte	0x18
+ 1698 01c7 6B000000 		.4byte	0x6b
+ 1699 01cb 05       		.uleb128 0x5
+ 1700 01cc 03       		.byte	0x3
+ 1701 01cd 02000000 		.4byte	WaveDAC8_1_Wave2Chan
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccumrMQI.s 			page 36
+
+
+ 1702 01d1 0C       		.uleb128 0xc
+ 1703 01d2 C0000000 		.4byte	.LASF31
+ 1704 01d6 01       		.byte	0x1
+ 1705 01d7 19       		.byte	0x19
+ 1706 01d8 6B000000 		.4byte	0x6b
+ 1707 01dc 05       		.uleb128 0x5
+ 1708 01dd 03       		.byte	0x3
+ 1709 01de 03000000 		.4byte	WaveDAC8_1_Wave1TD
+ 1710 01e2 0C       		.uleb128 0xc
+ 1711 01e3 1B020000 		.4byte	.LASF32
+ 1712 01e7 01       		.byte	0x1
+ 1713 01e8 1A       		.byte	0x1a
+ 1714 01e9 6B000000 		.4byte	0x6b
+ 1715 01ed 05       		.uleb128 0x5
+ 1716 01ee 03       		.byte	0x3
+ 1717 01ef 04000000 		.4byte	WaveDAC8_1_Wave2TD
+ 1718 01f3 0D       		.uleb128 0xd
+ 1719 01f4 00000000 		.4byte	.LASF33
+ 1720 01f8 01       		.byte	0x1
+ 1721 01f9 12       		.byte	0x12
+ 1722 01fa 6B000000 		.4byte	0x6b
+ 1723 01fe 05       		.uleb128 0x5
+ 1724 01ff 03       		.byte	0x3
+ 1725 0200 00000000 		.4byte	WaveDAC8_1_initVar
+ 1726 0204 0E       		.uleb128 0xe
+ 1727 0205 6B000000 		.4byte	0x6b
+ 1728 0209 14020000 		.4byte	0x214
+ 1729 020d 0F       		.uleb128 0xf
+ 1730 020e A4000000 		.4byte	0xa4
+ 1731 0212 18       		.byte	0x18
+ 1732 0213 00       		.byte	0
+ 1733 0214 0D       		.uleb128 0xd
+ 1734 0215 98020000 		.4byte	.LASF34
+ 1735 0219 01       		.byte	0x1
+ 1736 021a 14       		.byte	0x14
+ 1737 021b 25020000 		.4byte	0x225
+ 1738 021f 05       		.uleb128 0x5
+ 1739 0220 03       		.byte	0x3
+ 1740 0221 00000000 		.4byte	WaveDAC8_1_wave1
+ 1741 0225 09       		.uleb128 0x9
+ 1742 0226 04020000 		.4byte	0x204
+ 1743 022a 0E       		.uleb128 0xe
+ 1744 022b 6B000000 		.4byte	0x6b
+ 1745 022f 3B020000 		.4byte	0x23b
+ 1746 0233 10       		.uleb128 0x10
+ 1747 0234 A4000000 		.4byte	0xa4
+ 1748 0238 E703     		.2byte	0x3e7
+ 1749 023a 00       		.byte	0
+ 1750 023b 0D       		.uleb128 0xd
+ 1751 023c A9020000 		.4byte	.LASF35
+ 1752 0240 01       		.byte	0x1
+ 1753 0241 15       		.byte	0x15
+ 1754 0242 4C020000 		.4byte	0x24c
+ 1755 0246 05       		.uleb128 0x5
+ 1756 0247 03       		.byte	0x3
+ 1757 0248 00000000 		.4byte	WaveDAC8_1_wave2
+ 1758 024c 09       		.uleb128 0x9
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccumrMQI.s 			page 37
+
+
+ 1759 024d 2A020000 		.4byte	0x22a
+ 1760 0251 00       		.byte	0
+ 1761              		.section	.debug_abbrev,"",%progbits
+ 1762              	.Ldebug_abbrev0:
+ 1763 0000 01       		.uleb128 0x1
+ 1764 0001 11       		.uleb128 0x11
+ 1765 0002 01       		.byte	0x1
+ 1766 0003 25       		.uleb128 0x25
+ 1767 0004 0E       		.uleb128 0xe
+ 1768 0005 13       		.uleb128 0x13
+ 1769 0006 0B       		.uleb128 0xb
+ 1770 0007 03       		.uleb128 0x3
+ 1771 0008 0E       		.uleb128 0xe
+ 1772 0009 1B       		.uleb128 0x1b
+ 1773 000a 0E       		.uleb128 0xe
+ 1774 000b 55       		.uleb128 0x55
+ 1775 000c 17       		.uleb128 0x17
+ 1776 000d 11       		.uleb128 0x11
+ 1777 000e 01       		.uleb128 0x1
+ 1778 000f 10       		.uleb128 0x10
+ 1779 0010 17       		.uleb128 0x17
+ 1780 0011 00       		.byte	0
+ 1781 0012 00       		.byte	0
+ 1782 0013 02       		.uleb128 0x2
+ 1783 0014 24       		.uleb128 0x24
+ 1784 0015 00       		.byte	0
+ 1785 0016 0B       		.uleb128 0xb
+ 1786 0017 0B       		.uleb128 0xb
+ 1787 0018 3E       		.uleb128 0x3e
+ 1788 0019 0B       		.uleb128 0xb
+ 1789 001a 03       		.uleb128 0x3
+ 1790 001b 0E       		.uleb128 0xe
+ 1791 001c 00       		.byte	0
+ 1792 001d 00       		.byte	0
+ 1793 001e 03       		.uleb128 0x3
+ 1794 001f 24       		.uleb128 0x24
+ 1795 0020 00       		.byte	0
+ 1796 0021 0B       		.uleb128 0xb
+ 1797 0022 0B       		.uleb128 0xb
+ 1798 0023 3E       		.uleb128 0x3e
+ 1799 0024 0B       		.uleb128 0xb
+ 1800 0025 03       		.uleb128 0x3
+ 1801 0026 08       		.uleb128 0x8
+ 1802 0027 00       		.byte	0
+ 1803 0028 00       		.byte	0
+ 1804 0029 04       		.uleb128 0x4
+ 1805 002a 16       		.uleb128 0x16
+ 1806 002b 00       		.byte	0
+ 1807 002c 03       		.uleb128 0x3
+ 1808 002d 0E       		.uleb128 0xe
+ 1809 002e 3A       		.uleb128 0x3a
+ 1810 002f 0B       		.uleb128 0xb
+ 1811 0030 3B       		.uleb128 0x3b
+ 1812 0031 05       		.uleb128 0x5
+ 1813 0032 49       		.uleb128 0x49
+ 1814 0033 13       		.uleb128 0x13
+ 1815 0034 00       		.byte	0
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccumrMQI.s 			page 38
+
+
+ 1816 0035 00       		.byte	0
+ 1817 0036 05       		.uleb128 0x5
+ 1818 0037 2E       		.uleb128 0x2e
+ 1819 0038 00       		.byte	0
+ 1820 0039 3F       		.uleb128 0x3f
+ 1821 003a 19       		.uleb128 0x19
+ 1822 003b 03       		.uleb128 0x3
+ 1823 003c 0E       		.uleb128 0xe
+ 1824 003d 3A       		.uleb128 0x3a
+ 1825 003e 0B       		.uleb128 0xb
+ 1826 003f 3B       		.uleb128 0x3b
+ 1827 0040 0B       		.uleb128 0xb
+ 1828 0041 27       		.uleb128 0x27
+ 1829 0042 19       		.uleb128 0x19
+ 1830 0043 11       		.uleb128 0x11
+ 1831 0044 01       		.uleb128 0x1
+ 1832 0045 12       		.uleb128 0x12
+ 1833 0046 06       		.uleb128 0x6
+ 1834 0047 40       		.uleb128 0x40
+ 1835 0048 18       		.uleb128 0x18
+ 1836 0049 9642     		.uleb128 0x2116
+ 1837 004b 19       		.uleb128 0x19
+ 1838 004c 00       		.byte	0
+ 1839 004d 00       		.byte	0
+ 1840 004e 06       		.uleb128 0x6
+ 1841 004f 2E       		.uleb128 0x2e
+ 1842 0050 01       		.byte	0x1
+ 1843 0051 3F       		.uleb128 0x3f
+ 1844 0052 19       		.uleb128 0x19
+ 1845 0053 03       		.uleb128 0x3
+ 1846 0054 0E       		.uleb128 0xe
+ 1847 0055 3A       		.uleb128 0x3a
+ 1848 0056 0B       		.uleb128 0xb
+ 1849 0057 3B       		.uleb128 0x3b
+ 1850 0058 0B       		.uleb128 0xb
+ 1851 0059 27       		.uleb128 0x27
+ 1852 005a 19       		.uleb128 0x19
+ 1853 005b 11       		.uleb128 0x11
+ 1854 005c 01       		.uleb128 0x1
+ 1855 005d 12       		.uleb128 0x12
+ 1856 005e 06       		.uleb128 0x6
+ 1857 005f 40       		.uleb128 0x40
+ 1858 0060 18       		.uleb128 0x18
+ 1859 0061 9642     		.uleb128 0x2116
+ 1860 0063 19       		.uleb128 0x19
+ 1861 0064 01       		.uleb128 0x1
+ 1862 0065 13       		.uleb128 0x13
+ 1863 0066 00       		.byte	0
+ 1864 0067 00       		.byte	0
+ 1865 0068 07       		.uleb128 0x7
+ 1866 0069 05       		.uleb128 0x5
+ 1867 006a 00       		.byte	0
+ 1868 006b 03       		.uleb128 0x3
+ 1869 006c 0E       		.uleb128 0xe
+ 1870 006d 3A       		.uleb128 0x3a
+ 1871 006e 0B       		.uleb128 0xb
+ 1872 006f 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccumrMQI.s 			page 39
+
+
+ 1873 0070 0B       		.uleb128 0xb
+ 1874 0071 49       		.uleb128 0x49
+ 1875 0072 13       		.uleb128 0x13
+ 1876 0073 02       		.uleb128 0x2
+ 1877 0074 18       		.uleb128 0x18
+ 1878 0075 00       		.byte	0
+ 1879 0076 00       		.byte	0
+ 1880 0077 08       		.uleb128 0x8
+ 1881 0078 0F       		.uleb128 0xf
+ 1882 0079 00       		.byte	0
+ 1883 007a 0B       		.uleb128 0xb
+ 1884 007b 0B       		.uleb128 0xb
+ 1885 007c 49       		.uleb128 0x49
+ 1886 007d 13       		.uleb128 0x13
+ 1887 007e 00       		.byte	0
+ 1888 007f 00       		.byte	0
+ 1889 0080 09       		.uleb128 0x9
+ 1890 0081 26       		.uleb128 0x26
+ 1891 0082 00       		.byte	0
+ 1892 0083 49       		.uleb128 0x49
+ 1893 0084 13       		.uleb128 0x13
+ 1894 0085 00       		.byte	0
+ 1895 0086 00       		.byte	0
+ 1896 0087 0A       		.uleb128 0xa
+ 1897 0088 2E       		.uleb128 0x2e
+ 1898 0089 01       		.byte	0x1
+ 1899 008a 3F       		.uleb128 0x3f
+ 1900 008b 19       		.uleb128 0x19
+ 1901 008c 03       		.uleb128 0x3
+ 1902 008d 0E       		.uleb128 0xe
+ 1903 008e 3A       		.uleb128 0x3a
+ 1904 008f 0B       		.uleb128 0xb
+ 1905 0090 3B       		.uleb128 0x3b
+ 1906 0091 05       		.uleb128 0x5
+ 1907 0092 27       		.uleb128 0x27
+ 1908 0093 19       		.uleb128 0x19
+ 1909 0094 11       		.uleb128 0x11
+ 1910 0095 01       		.uleb128 0x1
+ 1911 0096 12       		.uleb128 0x12
+ 1912 0097 06       		.uleb128 0x6
+ 1913 0098 40       		.uleb128 0x40
+ 1914 0099 18       		.uleb128 0x18
+ 1915 009a 9642     		.uleb128 0x2116
+ 1916 009c 19       		.uleb128 0x19
+ 1917 009d 01       		.uleb128 0x1
+ 1918 009e 13       		.uleb128 0x13
+ 1919 009f 00       		.byte	0
+ 1920 00a0 00       		.byte	0
+ 1921 00a1 0B       		.uleb128 0xb
+ 1922 00a2 05       		.uleb128 0x5
+ 1923 00a3 00       		.byte	0
+ 1924 00a4 03       		.uleb128 0x3
+ 1925 00a5 0E       		.uleb128 0xe
+ 1926 00a6 3A       		.uleb128 0x3a
+ 1927 00a7 0B       		.uleb128 0xb
+ 1928 00a8 3B       		.uleb128 0x3b
+ 1929 00a9 05       		.uleb128 0x5
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccumrMQI.s 			page 40
+
+
+ 1930 00aa 49       		.uleb128 0x49
+ 1931 00ab 13       		.uleb128 0x13
+ 1932 00ac 02       		.uleb128 0x2
+ 1933 00ad 18       		.uleb128 0x18
+ 1934 00ae 00       		.byte	0
+ 1935 00af 00       		.byte	0
+ 1936 00b0 0C       		.uleb128 0xc
+ 1937 00b1 34       		.uleb128 0x34
+ 1938 00b2 00       		.byte	0
+ 1939 00b3 03       		.uleb128 0x3
+ 1940 00b4 0E       		.uleb128 0xe
+ 1941 00b5 3A       		.uleb128 0x3a
+ 1942 00b6 0B       		.uleb128 0xb
+ 1943 00b7 3B       		.uleb128 0x3b
+ 1944 00b8 0B       		.uleb128 0xb
+ 1945 00b9 49       		.uleb128 0x49
+ 1946 00ba 13       		.uleb128 0x13
+ 1947 00bb 02       		.uleb128 0x2
+ 1948 00bc 18       		.uleb128 0x18
+ 1949 00bd 00       		.byte	0
+ 1950 00be 00       		.byte	0
+ 1951 00bf 0D       		.uleb128 0xd
+ 1952 00c0 34       		.uleb128 0x34
+ 1953 00c1 00       		.byte	0
+ 1954 00c2 03       		.uleb128 0x3
+ 1955 00c3 0E       		.uleb128 0xe
+ 1956 00c4 3A       		.uleb128 0x3a
+ 1957 00c5 0B       		.uleb128 0xb
+ 1958 00c6 3B       		.uleb128 0x3b
+ 1959 00c7 0B       		.uleb128 0xb
+ 1960 00c8 49       		.uleb128 0x49
+ 1961 00c9 13       		.uleb128 0x13
+ 1962 00ca 3F       		.uleb128 0x3f
+ 1963 00cb 19       		.uleb128 0x19
+ 1964 00cc 02       		.uleb128 0x2
+ 1965 00cd 18       		.uleb128 0x18
+ 1966 00ce 00       		.byte	0
+ 1967 00cf 00       		.byte	0
+ 1968 00d0 0E       		.uleb128 0xe
+ 1969 00d1 01       		.uleb128 0x1
+ 1970 00d2 01       		.byte	0x1
+ 1971 00d3 49       		.uleb128 0x49
+ 1972 00d4 13       		.uleb128 0x13
+ 1973 00d5 01       		.uleb128 0x1
+ 1974 00d6 13       		.uleb128 0x13
+ 1975 00d7 00       		.byte	0
+ 1976 00d8 00       		.byte	0
+ 1977 00d9 0F       		.uleb128 0xf
+ 1978 00da 21       		.uleb128 0x21
+ 1979 00db 00       		.byte	0
+ 1980 00dc 49       		.uleb128 0x49
+ 1981 00dd 13       		.uleb128 0x13
+ 1982 00de 2F       		.uleb128 0x2f
+ 1983 00df 0B       		.uleb128 0xb
+ 1984 00e0 00       		.byte	0
+ 1985 00e1 00       		.byte	0
+ 1986 00e2 10       		.uleb128 0x10
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccumrMQI.s 			page 41
+
+
+ 1987 00e3 21       		.uleb128 0x21
+ 1988 00e4 00       		.byte	0
+ 1989 00e5 49       		.uleb128 0x49
+ 1990 00e6 13       		.uleb128 0x13
+ 1991 00e7 2F       		.uleb128 0x2f
+ 1992 00e8 05       		.uleb128 0x5
+ 1993 00e9 00       		.byte	0
+ 1994 00ea 00       		.byte	0
+ 1995 00eb 00       		.byte	0
+ 1996              		.section	.debug_aranges,"",%progbits
+ 1997 0000 4C000000 		.4byte	0x4c
+ 1998 0004 0200     		.2byte	0x2
+ 1999 0006 00000000 		.4byte	.Ldebug_info0
+ 2000 000a 04       		.byte	0x4
+ 2001 000b 00       		.byte	0
+ 2002 000c 0000     		.2byte	0
+ 2003 000e 0000     		.2byte	0
+ 2004 0010 00000000 		.4byte	.LFB0
+ 2005 0014 50000000 		.4byte	.LFE0-.LFB0
+ 2006 0018 00000000 		.4byte	.LFB1
+ 2007 001c 34000000 		.4byte	.LFE1-.LFB1
+ 2008 0020 00000000 		.4byte	.LFB2
+ 2009 0024 20000000 		.4byte	.LFE2-.LFB2
+ 2010 0028 00000000 		.4byte	.LFB3
+ 2011 002c 32000000 		.4byte	.LFE3-.LFB3
+ 2012 0030 00000000 		.4byte	.LFB4
+ 2013 0034 2C000000 		.4byte	.LFE4-.LFB4
+ 2014 0038 00000000 		.4byte	.LFB5
+ 2015 003c 70000000 		.4byte	.LFE5-.LFB5
+ 2016 0040 00000000 		.4byte	.LFB6
+ 2017 0044 70000000 		.4byte	.LFE6-.LFB6
+ 2018 0048 00000000 		.4byte	0
+ 2019 004c 00000000 		.4byte	0
+ 2020              		.section	.debug_ranges,"",%progbits
+ 2021              	.Ldebug_ranges0:
+ 2022 0000 00000000 		.4byte	.LFB0
+ 2023 0004 50000000 		.4byte	.LFE0
+ 2024 0008 00000000 		.4byte	.LFB1
+ 2025 000c 34000000 		.4byte	.LFE1
+ 2026 0010 00000000 		.4byte	.LFB2
+ 2027 0014 20000000 		.4byte	.LFE2
+ 2028 0018 00000000 		.4byte	.LFB3
+ 2029 001c 32000000 		.4byte	.LFE3
+ 2030 0020 00000000 		.4byte	.LFB4
+ 2031 0024 2C000000 		.4byte	.LFE4
+ 2032 0028 00000000 		.4byte	.LFB5
+ 2033 002c 70000000 		.4byte	.LFE5
+ 2034 0030 00000000 		.4byte	.LFB6
+ 2035 0034 70000000 		.4byte	.LFE6
+ 2036 0038 00000000 		.4byte	0
+ 2037 003c 00000000 		.4byte	0
+ 2038              		.section	.debug_line,"",%progbits
+ 2039              	.Ldebug_line0:
+ 2040 0000 F2000000 		.section	.debug_str,"MS",%progbits,1
+ 2040      02004900 
+ 2040      00000201 
+ 2040      FB0E0D00 
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccumrMQI.s 			page 42
+
+
+ 2040      01010101 
+ 2041              	.LASF33:
+ 2042 0000 57617665 		.ascii	"WaveDAC8_1_initVar\000"
+ 2042      44414338 
+ 2042      5F315F69 
+ 2042      6E697456 
+ 2042      617200
+ 2043              	.LASF30:
+ 2044 0013 57617665 		.ascii	"WaveDAC8_1_Wave2Chan\000"
+ 2044      44414338 
+ 2044      5F315F57 
+ 2044      61766532 
+ 2044      4368616E 
+ 2045              	.LASF38:
+ 2046 0028 453A5C44 		.ascii	"E:\\Documents\\PSoC Creator\\engr478labs\\stfu_proj"
+ 2046      6F63756D 
+ 2046      656E7473 
+ 2046      5C50536F 
+ 2046      43204372 
+ 2047 0057 6563742E 		.ascii	"ect.cydsn\000"
+ 2047      63796473 
+ 2047      6E00
+ 2048              	.LASF16:
+ 2049 0061 57617665 		.ascii	"WaveDAC8_1_Init\000"
+ 2049      44414338 
+ 2049      5F315F49 
+ 2049      6E697400 
+ 2050              	.LASF3:
+ 2051 0071 73686F72 		.ascii	"short unsigned int\000"
+ 2051      7420756E 
+ 2051      7369676E 
+ 2051      65642069 
+ 2051      6E7400
+ 2052              	.LASF18:
+ 2053 0084 57617665 		.ascii	"WaveDAC8_1_Start\000"
+ 2053      44414338 
+ 2053      5F315F53 
+ 2053      74617274 
+ 2053      00
+ 2054              	.LASF19:
+ 2055 0095 77617665 		.ascii	"wavePtr1\000"
+ 2055      50747231 
+ 2055      00
+ 2056              	.LASF21:
+ 2057 009e 77617665 		.ascii	"wavePtr2\000"
+ 2057      50747232 
+ 2057      00
+ 2058              	.LASF24:
+ 2059 00a7 57617665 		.ascii	"WaveDAC8_1_StartEx\000"
+ 2059      44414338 
+ 2059      5F315F53 
+ 2059      74617274 
+ 2059      457800
+ 2060              	.LASF12:
+ 2061 00ba 666C6F61 		.ascii	"float\000"
+ 2061      7400
+ 2062              	.LASF31:
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccumrMQI.s 			page 43
+
+
+ 2063 00c0 57617665 		.ascii	"WaveDAC8_1_Wave1TD\000"
+ 2063      44414338 
+ 2063      5F315F57 
+ 2063      61766531 
+ 2063      544400
+ 2064              	.LASF27:
+ 2065 00d3 73616D70 		.ascii	"sampleSize\000"
+ 2065      6C655369 
+ 2065      7A6500
+ 2066              	.LASF5:
+ 2067 00de 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2067      20756E73 
+ 2067      69676E65 
+ 2067      6420696E 
+ 2067      7400
+ 2068              	.LASF26:
+ 2069 00f0 77617665 		.ascii	"wavePtr\000"
+ 2069      50747200 
+ 2070              	.LASF9:
+ 2071 00f8 75696E74 		.ascii	"uint8\000"
+ 2071      3800
+ 2072              	.LASF20:
+ 2073 00fe 73616D70 		.ascii	"sampleSize1\000"
+ 2073      6C655369 
+ 2073      7A653100 
+ 2074              	.LASF22:
+ 2075 010a 73616D70 		.ascii	"sampleSize2\000"
+ 2075      6C655369 
+ 2075      7A653200 
+ 2076              	.LASF25:
+ 2077 0116 57617665 		.ascii	"WaveDAC8_1_Wave1Setup\000"
+ 2077      44414338 
+ 2077      5F315F57 
+ 2077      61766531 
+ 2077      53657475 
+ 2078              	.LASF36:
+ 2079 012c 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 2079      4320342E 
+ 2079      392E3320 
+ 2079      32303135 
+ 2079      30333033 
+ 2080 015f 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 2080      20726576 
+ 2080      6973696F 
+ 2080      6E203232 
+ 2080      31323230 
+ 2081 0192 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 2081      66756E63 
+ 2081      74696F6E 
+ 2081      2D736563 
+ 2081      74696F6E 
+ 2082              	.LASF13:
+ 2083 01ba 646F7562 		.ascii	"double\000"
+ 2083      6C6500
+ 2084              	.LASF23:
+ 2085 01c1 57617665 		.ascii	"WaveDAC8_1_Stop\000"
+ 2085      44414338 
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccumrMQI.s 			page 44
+
+
+ 2085      5F315F53 
+ 2085      746F7000 
+ 2086              	.LASF2:
+ 2087 01d1 73686F72 		.ascii	"short int\000"
+ 2087      7420696E 
+ 2087      7400
+ 2088              	.LASF10:
+ 2089 01db 75696E74 		.ascii	"uint16\000"
+ 2089      313600
+ 2090              	.LASF11:
+ 2091 01e2 75696E74 		.ascii	"uint32\000"
+ 2091      333200
+ 2092              	.LASF1:
+ 2093 01e9 756E7369 		.ascii	"unsigned char\000"
+ 2093      676E6564 
+ 2093      20636861 
+ 2093      7200
+ 2094              	.LASF8:
+ 2095 01f7 756E7369 		.ascii	"unsigned int\000"
+ 2095      676E6564 
+ 2095      20696E74 
+ 2095      00
+ 2096              	.LASF7:
+ 2097 0204 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2097      206C6F6E 
+ 2097      6720756E 
+ 2097      7369676E 
+ 2097      65642069 
+ 2098              	.LASF32:
+ 2099 021b 57617665 		.ascii	"WaveDAC8_1_Wave2TD\000"
+ 2099      44414338 
+ 2099      5F315F57 
+ 2099      61766532 
+ 2099      544400
+ 2100              	.LASF15:
+ 2101 022e 73697A65 		.ascii	"sizetype\000"
+ 2101      74797065 
+ 2101      00
+ 2102              	.LASF6:
+ 2103 0237 6C6F6E67 		.ascii	"long long int\000"
+ 2103      206C6F6E 
+ 2103      6720696E 
+ 2103      7400
+ 2104              	.LASF14:
+ 2105 0245 63686172 		.ascii	"char\000"
+ 2105      00
+ 2106              	.LASF37:
+ 2107 024a 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\WaveDAC8_1.c\000"
+ 2107      6E657261 
+ 2107      7465645F 
+ 2107      536F7572 
+ 2107      63655C50 
+ 2108              	.LASF28:
+ 2109 0270 57617665 		.ascii	"WaveDAC8_1_Wave2Setup\000"
+ 2109      44414338 
+ 2109      5F315F57 
+ 2109      61766532 
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\ccumrMQI.s 			page 45
+
+
+ 2109      53657475 
+ 2110              	.LASF17:
+ 2111 0286 57617665 		.ascii	"WaveDAC8_1_Enable\000"
+ 2111      44414338 
+ 2111      5F315F45 
+ 2111      6E61626C 
+ 2111      6500
+ 2112              	.LASF34:
+ 2113 0298 57617665 		.ascii	"WaveDAC8_1_wave1\000"
+ 2113      44414338 
+ 2113      5F315F77 
+ 2113      61766531 
+ 2113      00
+ 2114              	.LASF35:
+ 2115 02a9 57617665 		.ascii	"WaveDAC8_1_wave2\000"
+ 2115      44414338 
+ 2115      5F315F77 
+ 2115      61766532 
+ 2115      00
+ 2116              	.LASF29:
+ 2117 02ba 57617665 		.ascii	"WaveDAC8_1_Wave1Chan\000"
+ 2117      44414338 
+ 2117      5F315F57 
+ 2117      61766531 
+ 2117      4368616E 
+ 2118              	.LASF4:
+ 2119 02cf 6C6F6E67 		.ascii	"long int\000"
+ 2119      20696E74 
+ 2119      00
+ 2120              	.LASF0:
+ 2121 02d8 7369676E 		.ascii	"signed char\000"
+ 2121      65642063 
+ 2121      68617200 
+ 2122              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

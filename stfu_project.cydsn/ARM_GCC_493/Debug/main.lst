@@ -1,0 +1,2271 @@
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc7HOeJf.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"main.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.global	recvChar
+  19              		.bss
+  20              		.type	recvChar, %object
+  21              		.size	recvChar, 1
+  22              	recvChar:
+  23 0000 00       		.space	1
+  24              		.global	adcOut
+  25 0001 000000   		.align	2
+  26              		.type	adcOut, %object
+  27              		.size	adcOut, 4
+  28              	adcOut:
+  29 0004 00000000 		.space	4
+  30              		.global	continuousSending
+  31              		.type	continuousSending, %object
+  32              		.size	continuousSending, 1
+  33              	continuousSending:
+  34 0008 00       		.space	1
+  35              		.global	dacState
+  36              		.type	dacState, %object
+  37              		.size	dacState, 1
+  38              	dacState:
+  39 0009 00       		.space	1
+  40              		.global	waveForm
+  41              		.type	waveForm, %object
+  42              		.size	waveForm, 1
+  43              	waveForm:
+  44 000a 00       		.space	1
+  45              		.global	inputting_degrees
+  46              		.type	inputting_degrees, %object
+  47              		.size	inputting_degrees, 1
+  48              	inputting_degrees:
+  49 000b 00       		.space	1
+  50              		.global	TransmitBuffer
+  51              		.align	2
+  52              		.type	TransmitBuffer, %object
+  53              		.size	TransmitBuffer, 16
+  54              	TransmitBuffer:
+  55 000c 00000000 		.space	16
+  55      00000000 
+  55      00000000 
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc7HOeJf.s 			page 2
+
+
+  55      00000000 
+  56              		.global	degree
+  57              		.align	2
+  58              		.type	degree, %object
+  59              		.size	degree, 4
+  60              	degree:
+  61 001c 00000000 		.space	4
+  62              		.global	digit_place
+  63              		.align	2
+  64              		.type	digit_place, %object
+  65              		.size	digit_place, 4
+  66              	digit_place:
+  67 0020 00000000 		.space	4
+  68              		.global	counter
+  69              		.align	2
+  70              		.type	counter, %object
+  71              		.size	counter, 4
+  72              	counter:
+  73 0024 00000000 		.space	4
+  74              		.comm	DMA_ARRAY,4096,4
+  75              		.comm	DMA_1_Chan,1,1
+  76              		.comm	DMA_1_TD,1,4
+  77              		.section	.text.exponentiate,"ax",%progbits
+  78              		.align	2
+  79              		.global	exponentiate
+  80              		.thumb
+  81              		.thumb_func
+  82              		.type	exponentiate, %function
+  83              	exponentiate:
+  84              	.LFB63:
+  85              		.file 1 ".\\main.c"
+   1:.\main.c      **** /******************************************************************************
+   2:.\main.c      **** * Project Name		: Lab 3
+   3:.\main.c      **** * File Name			: main.c
+   4:.\main.c      **** * Version 			: **
+   5:.\main.c      **** * Device Used		: CY8C5888LTI-LP097
+   6:.\main.c      **** * Software Used		: PSoC Creator 3.1 SP2
+   7:.\main.c      **** * Compiler    		: ARM GCC 4.8.4, ARM RVDS Generic, ARM MDK Generic
+   8:.\main.c      **** * Related Hardware	: CY8CKIT059 PSoC 5 LP Prototyping Kit 
+   9:.\main.c      **** * Owner				: KLMZ
+  10:.\main.c      **** *
+  11:.\main.c      **** ********************************************************************************
+  12:.\main.c      **** * Copyright (2015), Cypress Semiconductor Corporation. All Rights Reserved.
+  13:.\main.c      **** ********************************************************************************
+  14:.\main.c      **** * This software is owned by Cypress Semiconductor Corporation (Cypress)
+  15:.\main.c      **** * and is protected by and subject to worldwide patent protection (United
+  16:.\main.c      **** * States and foreign), United States copyright laws and international treaty
+  17:.\main.c      **** * provisions. Cypress hereby grants to licensee a personal, non-exclusive,
+  18:.\main.c      **** * non-transferable license to copy, use, modify, create derivative works of,
+  19:.\main.c      **** * and compile the Cypress Source Code and derivative works for the sole
+  20:.\main.c      **** * purpose of creating custom software in support of licensee product to be
+  21:.\main.c      **** * used only in conjunction with a Cypress integrated circuit as specified in
+  22:.\main.c      **** * the applicable agreement. Any reproduction, modification, translation,
+  23:.\main.c      **** * compilation, or representation of this software except as specified above 
+  24:.\main.c      **** * is prohibited without the express written permission of Cypress.
+  25:.\main.c      **** *
+  26:.\main.c      **** * Disclaimer: CYPRESS MAKES NO WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, WITH 
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc7HOeJf.s 			page 3
+
+
+  27:.\main.c      **** * REGARD TO THIS MATERIAL, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+  28:.\main.c      **** * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+  29:.\main.c      **** * Cypress reserves the right to make changes without further notice to the 
+  30:.\main.c      **** * materials described herein. Cypress does not assume any liability arising out 
+  31:.\main.c      **** * of the application or use of any product or circuit described herein. Cypress 
+  32:.\main.c      **** * does not authorize its products for use as critical components in life-support 
+  33:.\main.c      **** * systems where a malfunction or failure may reasonably be expected to result in 
+  34:.\main.c      **** * significant injury to the user. The inclusion of Cypress' product in a life-
+  35:.\main.c      **** * support systems application implies that the manufacturer assumes all risk of 
+  36:.\main.c      **** * such use and in doing so indemnifies Cypress against all charges. 
+  37:.\main.c      **** *
+  38:.\main.c      **** * Use of this Software may be limited by and subject to the applicable Cypress
+  39:.\main.c      **** * software license agreement. 
+  40:.\main.c      **** 
+  41:.\main.c      **** 
+  42:.\main.c      **** 3GL, John Dempsey, Kwesi, Haitham
+  43:.\main.c      **** *******************************************************************************/
+  44:.\main.c      **** 
+  45:.\main.c      **** #include <device.h>
+  46:.\main.c      **** #include "stdio.h"
+  47:.\main.c      **** #include <stdbool.h>
+  48:.\main.c      **** 
+  49:.\main.c      **** 
+  50:.\main.c      **** 
+  51:.\main.c      **** 
+  52:.\main.c      **** /*******************************************************************************
+  53:.\main.c      **** * Function Name: main
+  54:.\main.c      **** ********************************************************************************
+  55:.\main.c      **** *
+  56:.\main.c      **** * Summary:
+  57:.\main.c      **** *  main() performs following functions:
+  58:.\main.c      **** *  1: Starts the ADC, UART, and 2 different DAC components.
+  59:.\main.c      **** *  2: Receives UART Input to sample ADC and return sample to UART
+  60:.\main.c      **** *     On 'C' or 'c' received: continuously transmits samples as they are completed.
+  61:.\main.c      **** *     On 'R' or 'r' received: single Read command, polls ADC and prints reading.
+  62:.\main.c      **** *     On 'X' or 'x' received: stops continuously transmitting samples.
+  63:.\main.c      **** *     On 'S' or 's' received: Switches between waveform DAC and constant voltage DAC
+  64:.\main.c      ****       On 'W' or 'w' received: toggle waveform generated by waveform DAC
+  65:.\main.c      **** *
+  66:.\main.c      **** * Parameters:
+  67:.\main.c      **** *  None.
+  68:.\main.c      **** *
+  69:.\main.c      **** * Return:
+  70:.\main.c      **** *  None.
+  71:.\main.c      **** *
+  72:.\main.c      **** *******************************************************************************/
+  73:.\main.c      **** 
+  74:.\main.c      **** 
+  75:.\main.c      **** #define TRANSMIT_BUFFER_SIZE  16
+  76:.\main.c      **** 
+  77:.\main.c      **** 
+  78:.\main.c      **** uint8 recvChar = 0;     //stores received char from UART on interrupt
+  79:.\main.c      **** uint32 adcOut = 0;      //stores ADC result
+  80:.\main.c      **** bool continuousSending = false;     //polls ADC and sends Serial data continuously
+  81:.\main.c      **** uint8 dacState = 0;     //0 or 1 to choose between waveform DAC or constant voltage DAC
+  82:.\main.c      **** uint8 waveForm = 0;     //changes the waveform generated by waveform DAC
+  83:.\main.c      **** 
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc7HOeJf.s 			page 4
+
+
+  84:.\main.c      **** bool inputting_degrees = false;     //flag for if we're listening to numbers for serial connection
+  85:.\main.c      **** 
+  86:.\main.c      **** char TransmitBuffer[TRANSMIT_BUFFER_SIZE] = {0};  //transmit buffer for sending strings
+  87:.\main.c      **** 
+  88:.\main.c      **** int degree = 0;
+  89:.\main.c      **** int digit_place = 0;
+  90:.\main.c      **** int counter = 0;
+  91:.\main.c      **** 
+  92:.\main.c      **** long int DMA_ARRAY[1024];
+  93:.\main.c      **** 
+  94:.\main.c      **** 
+  95:.\main.c      **** 
+  96:.\main.c      **** //DMA
+  97:.\main.c      **** 
+  98:.\main.c      ****     /* Defines for DMA_1 */
+  99:.\main.c      **** #define DMA_1_BYTES_PER_BURST 1
+ 100:.\main.c      **** #define DMA_1_REQUEST_PER_BURST 1
+ 101:.\main.c      **** #define DMA_1_SRC_BASE (CYDEV_PERIPH_BASE)
+ 102:.\main.c      **** #define DMA_1_DST_BASE (CYDEV_SRAM_BASE)
+ 103:.\main.c      **** 
+ 104:.\main.c      **** /* Variable declarations for DMA_1 */
+ 105:.\main.c      **** /* Move these variable declarations to the top of the function */
+ 106:.\main.c      **** uint8 DMA_1_Chan;
+ 107:.\main.c      **** uint8 DMA_1_TD[1];
+ 108:.\main.c      **** 
+ 109:.\main.c      **** 
+ 110:.\main.c      **** //function declarations
+ 111:.\main.c      **** int Turn_servo_degrees(int degrees);
+ 112:.\main.c      **** 
+ 113:.\main.c      **** int exponentiate (int base, int exponent) {
+  86              		.loc 1 113 0
+  87              		.cfi_startproc
+  88              		@ args = 0, pretend = 0, frame = 16
+  89              		@ frame_needed = 1, uses_anonymous_args = 0
+  90              		@ link register save eliminated.
+  91 0000 80B4     		push	{r7}
+  92              		.cfi_def_cfa_offset 4
+  93              		.cfi_offset 7, -4
+  94 0002 85B0     		sub	sp, sp, #20
+  95              		.cfi_def_cfa_offset 24
+  96 0004 00AF     		add	r7, sp, #0
+  97              		.cfi_def_cfa_register 7
+  98 0006 7860     		str	r0, [r7, #4]
+  99 0008 3960     		str	r1, [r7]
+ 114:.\main.c      **** 
+ 115:.\main.c      ****     if (exponent == 0) return 1;
+ 100              		.loc 1 115 0
+ 101 000a 3B68     		ldr	r3, [r7]
+ 102 000c 002B     		cmp	r3, #0
+ 103 000e 01D1     		bne	.L2
+ 104              		.loc 1 115 0 is_stmt 0 discriminator 1
+ 105 0010 0123     		movs	r3, #1
+ 106 0012 13E0     		b	.L3
+ 107              	.L2:
+ 116:.\main.c      ****     int final = 1;
+ 108              		.loc 1 116 0 is_stmt 1
+ 109 0014 0123     		movs	r3, #1
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc7HOeJf.s 			page 5
+
+
+ 110 0016 FB60     		str	r3, [r7, #12]
+ 117:.\main.c      **** 
+ 118:.\main.c      ****     int k = 1;
+ 111              		.loc 1 118 0
+ 112 0018 0123     		movs	r3, #1
+ 113 001a BB60     		str	r3, [r7, #8]
+ 119:.\main.c      ****     for (k=1; k<=exponent; k++) {
+ 114              		.loc 1 119 0
+ 115 001c 0123     		movs	r3, #1
+ 116 001e BB60     		str	r3, [r7, #8]
+ 117 0020 07E0     		b	.L4
+ 118              	.L5:
+ 120:.\main.c      **** 	    final = final*base;
+ 119              		.loc 1 120 0 discriminator 3
+ 120 0022 FB68     		ldr	r3, [r7, #12]
+ 121 0024 7A68     		ldr	r2, [r7, #4]
+ 122 0026 02FB03F3 		mul	r3, r2, r3
+ 123 002a FB60     		str	r3, [r7, #12]
+ 119:.\main.c      ****     for (k=1; k<=exponent; k++) {
+ 124              		.loc 1 119 0 discriminator 3
+ 125 002c BB68     		ldr	r3, [r7, #8]
+ 126 002e 0133     		adds	r3, r3, #1
+ 127 0030 BB60     		str	r3, [r7, #8]
+ 128              	.L4:
+ 119:.\main.c      ****     for (k=1; k<=exponent; k++) {
+ 129              		.loc 1 119 0 is_stmt 0 discriminator 1
+ 130 0032 BA68     		ldr	r2, [r7, #8]
+ 131 0034 3B68     		ldr	r3, [r7]
+ 132 0036 9A42     		cmp	r2, r3
+ 133 0038 F3DD     		ble	.L5
+ 121:.\main.c      ****     }
+ 122:.\main.c      ****     
+ 123:.\main.c      ****     return final;
+ 134              		.loc 1 123 0 is_stmt 1
+ 135 003a FB68     		ldr	r3, [r7, #12]
+ 136              	.L3:
+ 124:.\main.c      **** }
+ 137              		.loc 1 124 0
+ 138 003c 1846     		mov	r0, r3
+ 139 003e 1437     		adds	r7, r7, #20
+ 140              		.cfi_def_cfa_offset 4
+ 141 0040 BD46     		mov	sp, r7
+ 142              		.cfi_def_cfa_register 13
+ 143              		@ sp needed
+ 144 0042 5DF8047B 		ldr	r7, [sp], #4
+ 145              		.cfi_restore 7
+ 146              		.cfi_def_cfa_offset 0
+ 147 0046 7047     		bx	lr
+ 148              		.cfi_endproc
+ 149              	.LFE63:
+ 150              		.size	exponentiate, .-exponentiate
+ 151              		.section	.text.DMA_Handler,"ax",%progbits
+ 152              		.align	2
+ 153              		.global	DMA_Handler
+ 154              		.thumb
+ 155              		.thumb_func
+ 156              		.type	DMA_Handler, %function
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc7HOeJf.s 			page 6
+
+
+ 157              	DMA_Handler:
+ 158              	.LFB64:
+ 125:.\main.c      **** int Sing (int);
+ 126:.\main.c      **** 
+ 127:.\main.c      **** 
+ 128:.\main.c      **** CY_ISR(DMA_Handler) {
+ 159              		.loc 1 128 0
+ 160              		.cfi_startproc
+ 161              		@ args = 0, pretend = 0, frame = 8
+ 162              		@ frame_needed = 1, uses_anonymous_args = 0
+ 163 0000 80B5     		push	{r7, lr}
+ 164              		.cfi_def_cfa_offset 8
+ 165              		.cfi_offset 7, -8
+ 166              		.cfi_offset 14, -4
+ 167 0002 82B0     		sub	sp, sp, #8
+ 168              		.cfi_def_cfa_offset 16
+ 169 0004 00AF     		add	r7, sp, #0
+ 170              		.cfi_def_cfa_register 7
+ 129:.\main.c      ****     dma_interrupt_ClearPending();
+ 171              		.loc 1 129 0
+ 172 0006 FFF7FEFF 		bl	dma_interrupt_ClearPending
+ 130:.\main.c      ****     
+ 131:.\main.c      ****     int i = 0;
+ 173              		.loc 1 131 0
+ 174 000a 0023     		movs	r3, #0
+ 175 000c 7B60     		str	r3, [r7, #4]
+ 132:.\main.c      ****     /*
+ 133:.\main.c      ****     for (i = 0; i < 256; i++) {
+ 134:.\main.c      ****         Sing(DMA_ARRAY[i]/1000);
+ 135:.\main.c      ****     }
+ 136:.\main.c      ****     */
+ 137:.\main.c      ****     
+ 138:.\main.c      **** }
+ 176              		.loc 1 138 0
+ 177 000e 0837     		adds	r7, r7, #8
+ 178              		.cfi_def_cfa_offset 8
+ 179 0010 BD46     		mov	sp, r7
+ 180              		.cfi_def_cfa_register 13
+ 181              		@ sp needed
+ 182 0012 80BD     		pop	{r7, pc}
+ 183              		.cfi_endproc
+ 184              	.LFE64:
+ 185              		.size	DMA_Handler, .-DMA_Handler
+ 186              		.section	.rodata
+ 187              		.align	2
+ 188              	.LC0:
+ 189 0000 676F7420 		.ascii	"got this character: %d\015\012\000"
+ 189      74686973 
+ 189      20636861 
+ 189      72616374 
+ 189      65723A20 
+ 190 0019 000000   		.align	2
+ 191              	.LC1:
+ 192 001c 52656365 		.ascii	"Receiving degrees, digitplace: %d\015\012\000"
+ 192      6976696E 
+ 192      67206465 
+ 192      67726565 
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc7HOeJf.s 			page 7
+
+
+ 192      732C2064 
+ 193              		.align	2
+ 194              	.LC2:
+ 195 0040 53696E67 		.ascii	"Single ADC Read: %lu\015\012\000"
+ 195      6C652041 
+ 195      44432052 
+ 195      6561643A 
+ 195      20256C75 
+ 196 0057 00       		.align	2
+ 197              	.LC3:
+ 198 0058 496E7661 		.ascii	"Invalid command!\015\012\000"
+ 198      6C696420 
+ 198      636F6D6D 
+ 198      616E6421 
+ 198      0D0A00
+ 199              		.section	.text.ReadSerial,"ax",%progbits
+ 200              		.align	2
+ 201              		.global	ReadSerial
+ 202              		.thumb
+ 203              		.thumb_func
+ 204              		.type	ReadSerial, %function
+ 205              	ReadSerial:
+ 206              	.LFB65:
+ 139:.\main.c      **** 
+ 140:.\main.c      **** //ISR triggered upon UART receiving data
+ 141:.\main.c      **** CY_ISR(ReadSerial) {
+ 207              		.loc 1 141 0
+ 208              		.cfi_startproc
+ 209              		@ args = 0, pretend = 0, frame = 8
+ 210              		@ frame_needed = 1, uses_anonymous_args = 0
+ 211 0000 80B5     		push	{r7, lr}
+ 212              		.cfi_def_cfa_offset 8
+ 213              		.cfi_offset 7, -8
+ 214              		.cfi_offset 14, -4
+ 215 0002 82B0     		sub	sp, sp, #8
+ 216              		.cfi_def_cfa_offset 16
+ 217 0004 00AF     		add	r7, sp, #0
+ 218              		.cfi_def_cfa_register 7
+ 142:.\main.c      ****     //interpret the data
+ 143:.\main.c      ****     //S or s = switch between waveform and constant Voltage
+ 144:.\main.c      ****     //R or r = read voltage
+ 145:.\main.c      ****     //C or c = constant output data
+ 146:.\main.c      ****     //X or x = stop constantly outputting data
+ 147:.\main.c      ****     //W or w = switch waveform
+ 148:.\main.c      ****     
+ 149:.\main.c      ****     isr_1_ClearPending();   //apparently do this at beginning of ISR
+ 219              		.loc 1 149 0
+ 220 0006 FFF7FEFF 		bl	isr_1_ClearPending
+ 150:.\main.c      ****     
+ 151:.\main.c      ****     recvChar = UART_1_GetChar();
+ 221              		.loc 1 151 0
+ 222 000a FFF7FEFF 		bl	UART_1_GetChar
+ 223 000e 0346     		mov	r3, r0
+ 224 0010 1A46     		mov	r2, r3
+ 225 0012 B94B     		ldr	r3, .L22
+ 226 0014 1A70     		strb	r2, [r3]
+ 152:.\main.c      ****     sprintf(TransmitBuffer, "got this character: %d\r\n", recvChar);
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc7HOeJf.s 			page 8
+
+
+ 227              		.loc 1 152 0
+ 228 0016 B84B     		ldr	r3, .L22
+ 229 0018 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 230 001a B848     		ldr	r0, .L22+4
+ 231 001c B849     		ldr	r1, .L22+8
+ 232 001e 1A46     		mov	r2, r3
+ 233 0020 FFF7FEFF 		bl	sprintf
+ 153:.\main.c      ****     UART_1_PutString(TransmitBuffer);
+ 234              		.loc 1 153 0
+ 235 0024 B548     		ldr	r0, .L22+4
+ 236 0026 FFF7FEFF 		bl	UART_1_PutString
+ 154:.\main.c      ****     
+ 155:.\main.c      ****     bool invalid = false;
+ 237              		.loc 1 155 0
+ 238 002a 0023     		movs	r3, #0
+ 239 002c FB71     		strb	r3, [r7, #7]
+ 156:.\main.c      ****     
+ 157:.\main.c      ****     
+ 158:.\main.c      ****     switch(recvChar)
+ 240              		.loc 1 158 0
+ 241 002e B24B     		ldr	r3, .L22
+ 242 0030 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 243 0032 782B     		cmp	r3, #120
+ 244 0034 00F24081 		bhi	.L8
+ 245 0038 01A2     		adr	r2, .L10
+ 246 003a 52F823F0 		ldr	pc, [r2, r3, lsl #2]
+ 247 003e 00BF     		.p2align 2
+ 248              	.L10:
+ 249 0040 C5020000 		.word	.L21+1
+ 250 0044 B9020000 		.word	.L8+1
+ 251 0048 B9020000 		.word	.L8+1
+ 252 004c B9020000 		.word	.L8+1
+ 253 0050 B9020000 		.word	.L8+1
+ 254 0054 B9020000 		.word	.L8+1
+ 255 0058 B9020000 		.word	.L8+1
+ 256 005c B9020000 		.word	.L8+1
+ 257 0060 B9020000 		.word	.L8+1
+ 258 0064 B9020000 		.word	.L8+1
+ 259 0068 B9020000 		.word	.L8+1
+ 260 006c B9020000 		.word	.L8+1
+ 261 0070 B9020000 		.word	.L8+1
+ 262 0074 B9020000 		.word	.L8+1
+ 263 0078 B9020000 		.word	.L8+1
+ 264 007c B9020000 		.word	.L8+1
+ 265 0080 B9020000 		.word	.L8+1
+ 266 0084 B9020000 		.word	.L8+1
+ 267 0088 B9020000 		.word	.L8+1
+ 268 008c B9020000 		.word	.L8+1
+ 269 0090 B9020000 		.word	.L8+1
+ 270 0094 B9020000 		.word	.L8+1
+ 271 0098 B9020000 		.word	.L8+1
+ 272 009c B9020000 		.word	.L8+1
+ 273 00a0 B9020000 		.word	.L8+1
+ 274 00a4 B9020000 		.word	.L8+1
+ 275 00a8 B9020000 		.word	.L8+1
+ 276 00ac B9020000 		.word	.L8+1
+ 277 00b0 B9020000 		.word	.L8+1
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc7HOeJf.s 			page 9
+
+
+ 278 00b4 B9020000 		.word	.L8+1
+ 279 00b8 B9020000 		.word	.L8+1
+ 280 00bc B9020000 		.word	.L8+1
+ 281 00c0 B9020000 		.word	.L8+1
+ 282 00c4 B9020000 		.word	.L8+1
+ 283 00c8 B9020000 		.word	.L8+1
+ 284 00cc B9020000 		.word	.L8+1
+ 285 00d0 B9020000 		.word	.L8+1
+ 286 00d4 B9020000 		.word	.L8+1
+ 287 00d8 B9020000 		.word	.L8+1
+ 288 00dc B9020000 		.word	.L8+1
+ 289 00e0 B9020000 		.word	.L8+1
+ 290 00e4 B9020000 		.word	.L8+1
+ 291 00e8 B9020000 		.word	.L8+1
+ 292 00ec B9020000 		.word	.L8+1
+ 293 00f0 B9020000 		.word	.L8+1
+ 294 00f4 B9020000 		.word	.L8+1
+ 295 00f8 B9020000 		.word	.L8+1
+ 296 00fc B9020000 		.word	.L8+1
+ 297 0100 B9020000 		.word	.L8+1
+ 298 0104 B9020000 		.word	.L8+1
+ 299 0108 B9020000 		.word	.L8+1
+ 300 010c B9020000 		.word	.L8+1
+ 301 0110 B9020000 		.word	.L8+1
+ 302 0114 B9020000 		.word	.L8+1
+ 303 0118 B9020000 		.word	.L8+1
+ 304 011c B9020000 		.word	.L8+1
+ 305 0120 B9020000 		.word	.L8+1
+ 306 0124 B9020000 		.word	.L8+1
+ 307 0128 B9020000 		.word	.L8+1
+ 308 012c B9020000 		.word	.L8+1
+ 309 0130 B9020000 		.word	.L8+1
+ 310 0134 B9020000 		.word	.L8+1
+ 311 0138 B9020000 		.word	.L8+1
+ 312 013c B9020000 		.word	.L8+1
+ 313 0140 B9020000 		.word	.L8+1
+ 314 0144 B9020000 		.word	.L8+1
+ 315 0148 B9020000 		.word	.L8+1
+ 316 014c 8B020000 		.word	.L11+1
+ 317 0150 B9020000 		.word	.L8+1
+ 318 0154 B9020000 		.word	.L8+1
+ 319 0158 B9020000 		.word	.L8+1
+ 320 015c B9020000 		.word	.L8+1
+ 321 0160 AF020000 		.word	.L12+1
+ 322 0164 B9020000 		.word	.L8+1
+ 323 0168 B9020000 		.word	.L8+1
+ 324 016c B9020000 		.word	.L8+1
+ 325 0170 9B020000 		.word	.L13+1
+ 326 0174 B9020000 		.word	.L8+1
+ 327 0178 B9020000 		.word	.L8+1
+ 328 017c B9020000 		.word	.L8+1
+ 329 0180 B9020000 		.word	.L8+1
+ 330 0184 B9020000 		.word	.L8+1
+ 331 0188 53020000 		.word	.L14+1
+ 332 018c 25020000 		.word	.L15+1
+ 333 0190 B9020000 		.word	.L8+1
+ 334 0194 B9020000 		.word	.L8+1
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc7HOeJf.s 			page 10
+
+
+ 335 0198 B9020000 		.word	.L8+1
+ 336 019c A5020000 		.word	.L16+1
+ 337 01a0 93020000 		.word	.L17+1
+ 338 01a4 B9020000 		.word	.L8+1
+ 339 01a8 B9020000 		.word	.L8+1
+ 340 01ac B9020000 		.word	.L8+1
+ 341 01b0 B9020000 		.word	.L8+1
+ 342 01b4 B9020000 		.word	.L8+1
+ 343 01b8 B9020000 		.word	.L8+1
+ 344 01bc B9020000 		.word	.L8+1
+ 345 01c0 B9020000 		.word	.L8+1
+ 346 01c4 B9020000 		.word	.L8+1
+ 347 01c8 B9020000 		.word	.L8+1
+ 348 01cc 8B020000 		.word	.L11+1
+ 349 01d0 B9020000 		.word	.L8+1
+ 350 01d4 B9020000 		.word	.L8+1
+ 351 01d8 B9020000 		.word	.L8+1
+ 352 01dc B9020000 		.word	.L8+1
+ 353 01e0 AF020000 		.word	.L12+1
+ 354 01e4 B9020000 		.word	.L8+1
+ 355 01e8 B9020000 		.word	.L8+1
+ 356 01ec B9020000 		.word	.L8+1
+ 357 01f0 9B020000 		.word	.L13+1
+ 358 01f4 B9020000 		.word	.L8+1
+ 359 01f8 B9020000 		.word	.L8+1
+ 360 01fc B9020000 		.word	.L8+1
+ 361 0200 B9020000 		.word	.L8+1
+ 362 0204 B9020000 		.word	.L8+1
+ 363 0208 53020000 		.word	.L14+1
+ 364 020c 25020000 		.word	.L15+1
+ 365 0210 B9020000 		.word	.L8+1
+ 366 0214 B9020000 		.word	.L8+1
+ 367 0218 B9020000 		.word	.L8+1
+ 368 021c A5020000 		.word	.L16+1
+ 369 0220 93020000 		.word	.L17+1
+ 370              		.p2align 1
+ 371              	.L15:
+ 159:.\main.c      ****     {
+ 160:.\main.c      ****         case 0:
+ 161:.\main.c      ****             //no new data
+ 162:.\main.c      ****             break;
+ 163:.\main.c      ****         case 'S':
+ 164:.\main.c      ****         case 's':
+ 165:.\main.c      ****             //switch flag for inputting degrees, next characters are numbers for servo degrees
+ 166:.\main.c      ****             inputting_degrees = true;
+ 372              		.loc 1 166 0
+ 373 0224 374B     		ldr	r3, .L22+12
+ 374 0226 0122     		movs	r2, #1
+ 375 0228 1A70     		strb	r2, [r3]
+ 167:.\main.c      ****             degree = 0;
+ 376              		.loc 1 167 0
+ 377 022a 374B     		ldr	r3, .L22+16
+ 378 022c 0022     		movs	r2, #0
+ 379 022e 1A60     		str	r2, [r3]
+ 168:.\main.c      ****             digit_place = 0;
+ 380              		.loc 1 168 0
+ 381 0230 364B     		ldr	r3, .L22+20
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc7HOeJf.s 			page 11
+
+
+ 382 0232 0022     		movs	r2, #0
+ 383 0234 1A60     		str	r2, [r3]
+ 169:.\main.c      ****             counter = 0;
+ 384              		.loc 1 169 0
+ 385 0236 364B     		ldr	r3, .L22+24
+ 386 0238 0022     		movs	r2, #0
+ 387 023a 1A60     		str	r2, [r3]
+ 170:.\main.c      ****             
+ 171:.\main.c      ****             sprintf(TransmitBuffer, "Receiving degrees, digitplace: %d\r\n", digit_place);
+ 388              		.loc 1 171 0
+ 389 023c 334B     		ldr	r3, .L22+20
+ 390 023e 1B68     		ldr	r3, [r3]
+ 391 0240 2E48     		ldr	r0, .L22+4
+ 392 0242 3449     		ldr	r1, .L22+28
+ 393 0244 1A46     		mov	r2, r3
+ 394 0246 FFF7FEFF 		bl	sprintf
+ 172:.\main.c      ****             UART_1_PutString(TransmitBuffer);
+ 395              		.loc 1 172 0
+ 396 024a 2C48     		ldr	r0, .L22+4
+ 397 024c FFF7FEFF 		bl	UART_1_PutString
+ 173:.\main.c      ****             break;
+ 398              		.loc 1 173 0
+ 399 0250 39E0     		b	.L18
+ 400              	.L14:
+ 174:.\main.c      ****         case 'R':
+ 175:.\main.c      ****         case 'r':
+ 176:.\main.c      ****             //Reads data and sends it to UART
+ 177:.\main.c      ****             if(ADC_DelSig_1_IsEndConversion(ADC_DelSig_1_RETURN_STATUS)) {
+ 401              		.loc 1 177 0
+ 402 0252 0120     		movs	r0, #1
+ 403 0254 FFF7FEFF 		bl	ADC_DelSig_1_IsEndConversion
+ 404 0258 0346     		mov	r3, r0
+ 405 025a 002B     		cmp	r3, #0
+ 406 025c 14D0     		beq	.L19
+ 178:.\main.c      ****                 //adcOut = ADC_DelSig_1_CountsTo_mVolts(ADC_DelSig_1_GetResult16());
+ 179:.\main.c      ****                 adcOut = ADC_DelSig_1_CountsTo_mVolts(ADC_DelSig_1_GetResult8());
+ 407              		.loc 1 179 0
+ 408 025e FFF7FEFF 		bl	ADC_DelSig_1_GetResult8
+ 409 0262 0346     		mov	r3, r0
+ 410 0264 1846     		mov	r0, r3
+ 411 0266 FFF7FEFF 		bl	ADC_DelSig_1_CountsTo_mVolts
+ 412 026a 0346     		mov	r3, r0
+ 413 026c 1A46     		mov	r2, r3
+ 414 026e 2A4B     		ldr	r3, .L22+32
+ 415 0270 1A60     		str	r2, [r3]
+ 180:.\main.c      ****                 sprintf(TransmitBuffer, "Single ADC Read: %lu\r\n", adcOut);
+ 416              		.loc 1 180 0
+ 417 0272 294B     		ldr	r3, .L22+32
+ 418 0274 1B68     		ldr	r3, [r3]
+ 419 0276 2148     		ldr	r0, .L22+4
+ 420 0278 2849     		ldr	r1, .L22+36
+ 421 027a 1A46     		mov	r2, r3
+ 422 027c FFF7FEFF 		bl	sprintf
+ 181:.\main.c      ****                 UART_1_PutString(TransmitBuffer);
+ 423              		.loc 1 181 0
+ 424 0280 1E48     		ldr	r0, .L22+4
+ 425 0282 FFF7FEFF 		bl	UART_1_PutString
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc7HOeJf.s 			page 12
+
+
+ 182:.\main.c      ****             }
+ 183:.\main.c      ****             break;
+ 426              		.loc 1 183 0
+ 427 0286 1EE0     		b	.L18
+ 428              	.L19:
+ 429 0288 1DE0     		b	.L18
+ 430              	.L11:
+ 184:.\main.c      ****         case 'C':
+ 185:.\main.c      ****         case 'c':
+ 186:.\main.c      ****             //Continuously sends data
+ 187:.\main.c      ****             continuousSending = true;
+ 431              		.loc 1 187 0
+ 432 028a 254B     		ldr	r3, .L22+40
+ 433 028c 0122     		movs	r2, #1
+ 434 028e 1A70     		strb	r2, [r3]
+ 188:.\main.c      ****             break;
+ 435              		.loc 1 188 0
+ 436 0290 19E0     		b	.L18
+ 437              	.L17:
+ 189:.\main.c      ****         case 'X':
+ 190:.\main.c      ****         case 'x':
+ 191:.\main.c      ****             //Cancels continuously sending data
+ 192:.\main.c      ****             continuousSending = false;
+ 438              		.loc 1 192 0
+ 439 0292 234B     		ldr	r3, .L22+40
+ 440 0294 0022     		movs	r2, #0
+ 441 0296 1A70     		strb	r2, [r3]
+ 193:.\main.c      ****             break;
+ 442              		.loc 1 193 0
+ 443 0298 15E0     		b	.L18
+ 444              	.L13:
+ 194:.\main.c      ****         case 'l':
+ 195:.\main.c      ****         case 'L':
+ 196:.\main.c      ****             Sing(300);
+ 445              		.loc 1 196 0
+ 446 029a 4FF49670 		mov	r0, #300
+ 447 029e FFF7FEFF 		bl	Sing
+ 197:.\main.c      ****             break;
+ 448              		.loc 1 197 0
+ 449 02a2 10E0     		b	.L18
+ 450              	.L16:
+ 198:.\main.c      ****         case 'W':
+ 199:.\main.c      ****         case 'w':
+ 200:.\main.c      ****             Sing(600);
+ 451              		.loc 1 200 0
+ 452 02a4 4FF41670 		mov	r0, #600
+ 453 02a8 FFF7FEFF 		bl	Sing
+ 201:.\main.c      ****             break;
+ 454              		.loc 1 201 0
+ 455 02ac 0BE0     		b	.L18
+ 456              	.L12:
+ 202:.\main.c      ****         case 'h':
+ 203:.\main.c      ****         case 'H':
+ 204:.\main.c      ****             Sing(55000);
+ 457              		.loc 1 204 0
+ 458 02ae 4DF2D860 		movw	r0, #55000
+ 459 02b2 FFF7FEFF 		bl	Sing
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc7HOeJf.s 			page 13
+
+
+ 205:.\main.c      ****             break;
+ 460              		.loc 1 205 0
+ 461 02b6 06E0     		b	.L18
+ 462              	.L8:
+ 206:.\main.c      ****         default:
+ 207:.\main.c      ****             // Place error handling code here
+ 208:.\main.c      ****             //lol no
+ 209:.\main.c      ****             invalid = true;
+ 463              		.loc 1 209 0
+ 464 02b8 0123     		movs	r3, #1
+ 465 02ba FB71     		strb	r3, [r7, #7]
+ 210:.\main.c      ****             
+ 211:.\main.c      ****             
+ 212:.\main.c      ****             //ok maybe we'll print something
+ 213:.\main.c      ****             UART_1_PutString("Invalid command!\r\n");
+ 466              		.loc 1 213 0
+ 467 02bc 1948     		ldr	r0, .L22+44
+ 468 02be FFF7FEFF 		bl	UART_1_PutString
+ 214:.\main.c      ****             break;    
+ 469              		.loc 1 214 0
+ 470 02c2 00E0     		b	.L18
+ 471              	.L21:
+ 162:.\main.c      ****         case 'S':
+ 472              		.loc 1 162 0
+ 473 02c4 00BF     		nop
+ 474              	.L18:
+ 215:.\main.c      ****     }
+ 216:.\main.c      ****     
+ 217:.\main.c      ****     if (invalid && inputting_degrees) {
+ 475              		.loc 1 217 0
+ 476 02c6 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 477 02c8 002B     		cmp	r3, #0
+ 478 02ca 11D0     		beq	.L7
+ 479              		.loc 1 217 0 is_stmt 0 discriminator 1
+ 480 02cc 0D4B     		ldr	r3, .L22+12
+ 481 02ce 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 482 02d0 002B     		cmp	r3, #0
+ 483 02d2 0DD0     		beq	.L7
+ 484              	.LBB2:
+ 218:.\main.c      ****         //assume its a number
+ 219:.\main.c      ****         int num = recvChar - 48;
+ 485              		.loc 1 219 0 is_stmt 1
+ 486 02d4 084B     		ldr	r3, .L22
+ 487 02d6 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 488 02d8 303B     		subs	r3, r3, #48
+ 489 02da 3B60     		str	r3, [r7]
+ 220:.\main.c      ****         
+ 221:.\main.c      ****         Turn_servo_degrees(num * 15);
+ 490              		.loc 1 221 0
+ 491 02dc 3A68     		ldr	r2, [r7]
+ 492 02de 1346     		mov	r3, r2
+ 493 02e0 1B01     		lsls	r3, r3, #4
+ 494 02e2 9B1A     		subs	r3, r3, r2
+ 495 02e4 1846     		mov	r0, r3
+ 496 02e6 FFF7FEFF 		bl	Turn_servo_degrees
+ 222:.\main.c      ****         /*
+ 223:.\main.c      ****         sprintf(TransmitBuffer, "got this as num: %d\r\n", num);
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc7HOeJf.s 			page 14
+
+
+ 224:.\main.c      ****         UART_1_PutString(TransmitBuffer);
+ 225:.\main.c      ****         sprintf(TransmitBuffer, "got this as counter: %d\r\n", counter);
+ 226:.\main.c      ****         UART_1_PutString(TransmitBuffer);
+ 227:.\main.c      ****         sprintf(TransmitBuffer, "got this as degree: %d\r\n", degree);
+ 228:.\main.c      ****         UART_1_PutString(TransmitBuffer);
+ 229:.\main.c      ****         */
+ 230:.\main.c      ****         
+ 231:.\main.c      ****         inputting_degrees = false;
+ 497              		.loc 1 231 0
+ 498 02ea 064B     		ldr	r3, .L22+12
+ 499 02ec 0022     		movs	r2, #0
+ 500 02ee 1A70     		strb	r2, [r3]
+ 501              	.L7:
+ 502              	.LBE2:
+ 232:.\main.c      ****     }
+ 233:.\main.c      **** 
+ 234:.\main.c      ****         
+ 235:.\main.c      ****         /*
+ 236:.\main.c      ****         //otherwise w're listening for the numbers.  'X' means stop
+ 237:.\main.c      ****     } else if (recvChar == 'x' || recvChar == 'X' ) {
+ 238:.\main.c      ****         inputting_degrees = false;
+ 239:.\main.c      ****         digit_place = 0;
+ 240:.\main.c      ****         Turn_servo_degrees(degree);
+ 241:.\main.c      ****     } else {
+ 242:.\main.c      ****         //lastly we're accepting the input for the servo degrees
+ 243:.\main.c      ****         //expecting numbers here
+ 244:.\main.c      ****         degree = recvChar * 10;
+ 245:.\main.c      ****         
+ 246:.\main.c      ****         digit_place++;
+ 247:.\main.c      ****         
+ 248:.\main.c      ****         sprintf(TransmitBuffer, "recieved this char: %d, digit place: %d\r\n", recvChar, digit_plac
+ 249:.\main.c      ****         UART_1_PutString(TransmitBuffer);
+ 250:.\main.c      ****         sprintf(TransmitBuffer, "Processing degree input, this is our degree: %d\r\n", degree);
+ 251:.\main.c      ****         UART_1_PutString(TransmitBuffer);
+ 252:.\main.c      **** 
+ 253:.\main.c      ****     
+ 254:.\main.c      ****         
+ 255:.\main.c      ****         */
+ 256:.\main.c      ****         
+ 257:.\main.c      **** }
+ 503              		.loc 1 257 0
+ 504 02f0 0837     		adds	r7, r7, #8
+ 505              		.cfi_def_cfa_offset 8
+ 506 02f2 BD46     		mov	sp, r7
+ 507              		.cfi_def_cfa_register 13
+ 508              		@ sp needed
+ 509 02f4 80BD     		pop	{r7, pc}
+ 510              	.L23:
+ 511 02f6 00BF     		.align	2
+ 512              	.L22:
+ 513 02f8 00000000 		.word	recvChar
+ 514 02fc 00000000 		.word	TransmitBuffer
+ 515 0300 00000000 		.word	.LC0
+ 516 0304 00000000 		.word	inputting_degrees
+ 517 0308 00000000 		.word	degree
+ 518 030c 00000000 		.word	digit_place
+ 519 0310 00000000 		.word	counter
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc7HOeJf.s 			page 15
+
+
+ 520 0314 1C000000 		.word	.LC1
+ 521 0318 00000000 		.word	adcOut
+ 522 031c 40000000 		.word	.LC2
+ 523 0320 00000000 		.word	continuousSending
+ 524 0324 58000000 		.word	.LC3
+ 525              		.cfi_endproc
+ 526              	.LFE65:
+ 527              		.size	ReadSerial, .-ReadSerial
+ 528              		.section	.rodata
+ 529 006b 00       		.align	2
+ 530              	.LC4:
+ 531 006c 434F4D20 		.ascii	"COM Port Open\015\012\000"
+ 531      506F7274 
+ 531      204F7065 
+ 531      6E0D0A00 
+ 532              		.align	2
+ 533              	.LC5:
+ 534 007c 496E6974 		.ascii	"Initialized read: %lu mV\015\012\000"
+ 534      69616C69 
+ 534      7A656420 
+ 534      72656164 
+ 534      3A20256C 
+ 535              		.section	.text.main,"ax",%progbits
+ 536              		.align	2
+ 537              		.global	main
+ 538              		.thumb
+ 539              		.thumb_func
+ 540              		.type	main, %function
+ 541              	main:
+ 542              	.LFB66:
+ 258:.\main.c      **** 
+ 259:.\main.c      **** 
+ 260:.\main.c      **** 
+ 261:.\main.c      **** int main()
+ 262:.\main.c      **** {
+ 543              		.loc 1 262 0
+ 544              		.cfi_startproc
+ 545              		@ args = 0, pretend = 0, frame = 0
+ 546              		@ frame_needed = 1, uses_anonymous_args = 0
+ 547 0000 80B5     		push	{r7, lr}
+ 548              		.cfi_def_cfa_offset 8
+ 549              		.cfi_offset 7, -8
+ 550              		.cfi_offset 14, -4
+ 551 0002 00AF     		add	r7, sp, #0
+ 552              		.cfi_def_cfa_register 7
+ 263:.\main.c      ****     
+ 264:.\main.c      ****     
+ 265:.\main.c      ****     
+ 266:.\main.c      **** 
+ 267:.\main.c      **** 
+ 268:.\main.c      **** /* DMA Configuration for DMA_1 */
+ 269:.\main.c      ****     DMA_1_Chan = DMA_1_DmaInitialize(DMA_1_BYTES_PER_BURST, DMA_1_REQUEST_PER_BURST, 
+ 553              		.loc 1 269 0
+ 554 0004 0120     		movs	r0, #1
+ 555 0006 0121     		movs	r1, #1
+ 556 0008 4FF48042 		mov	r2, #16384
+ 557 000c 41F6FF73 		movw	r3, #8191
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc7HOeJf.s 			page 16
+
+
+ 558 0010 FFF7FEFF 		bl	DMA_1_DmaInitialize
+ 559 0014 0346     		mov	r3, r0
+ 560 0016 1A46     		mov	r2, r3
+ 561 0018 2E4B     		ldr	r3, .L26
+ 562 001a 1A70     		strb	r2, [r3]
+ 270:.\main.c      ****     HI16(DMA_1_SRC_BASE), HI16(DMA_1_DST_BASE));
+ 271:.\main.c      ****     DMA_1_TD[0] = CyDmaTdAllocate();
+ 563              		.loc 1 271 0
+ 564 001c FFF7FEFF 		bl	CyDmaTdAllocate
+ 565 0020 0346     		mov	r3, r0
+ 566 0022 1A46     		mov	r2, r3
+ 567 0024 2C4B     		ldr	r3, .L26+4
+ 568 0026 1A70     		strb	r2, [r3]
+ 272:.\main.c      ****     CyDmaTdSetConfiguration(DMA_1_TD[0], 1024, DMA_1_TD[0], DMA_1__TD_TERMOUT_EN | TD_INC_DST_ADR);
+ 569              		.loc 1 272 0
+ 570 0028 2B4B     		ldr	r3, .L26+4
+ 571 002a 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 572 002c 2A4B     		ldr	r3, .L26+4
+ 573 002e 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 574 0030 1046     		mov	r0, r2
+ 575 0032 4FF48061 		mov	r1, #1024
+ 576 0036 1A46     		mov	r2, r3
+ 577 0038 0623     		movs	r3, #6
+ 578 003a FFF7FEFF 		bl	CyDmaTdSetConfiguration
+ 273:.\main.c      ****     CyDmaTdSetAddress(DMA_1_TD[0], LO16((uint32)ADC_DelSig_1_DEC_SAMP_PTR), LO16((uint32)DMA_ARRAY)
+ 579              		.loc 1 273 0
+ 580 003e 264B     		ldr	r3, .L26+4
+ 581 0040 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 582 0042 264B     		ldr	r3, .L26+8
+ 583 0044 9BB2     		uxth	r3, r3
+ 584 0046 1046     		mov	r0, r2
+ 585 0048 44F61061 		movw	r1, #19984
+ 586 004c 1A46     		mov	r2, r3
+ 587 004e FFF7FEFF 		bl	CyDmaTdSetAddress
+ 274:.\main.c      ****     CyDmaChSetInitialTd(DMA_1_Chan, DMA_1_TD[0]);
+ 588              		.loc 1 274 0
+ 589 0052 204B     		ldr	r3, .L26
+ 590 0054 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 591 0056 204B     		ldr	r3, .L26+4
+ 592 0058 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 593 005a 1046     		mov	r0, r2
+ 594 005c 1946     		mov	r1, r3
+ 595 005e FFF7FEFF 		bl	CyDmaChSetInitialTd
+ 275:.\main.c      ****     CyDmaChEnable(DMA_1_Chan, 1);
+ 596              		.loc 1 275 0
+ 597 0062 1C4B     		ldr	r3, .L26
+ 598 0064 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 599 0066 1846     		mov	r0, r3
+ 600 0068 0121     		movs	r1, #1
+ 601 006a FFF7FEFF 		bl	CyDmaChEnable
+ 276:.\main.c      **** 
+ 277:.\main.c      **** 
+ 278:.\main.c      **** 
+ 279:.\main.c      **** 
+ 280:.\main.c      **** 
+ 281:.\main.c      **** 
+ 282:.\main.c      ****     isr_1_StartEx(ReadSerial);      //attach the interrupt
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc7HOeJf.s 			page 17
+
+
+ 602              		.loc 1 282 0
+ 603 006e 1C48     		ldr	r0, .L26+12
+ 604 0070 FFF7FEFF 		bl	isr_1_StartEx
+ 283:.\main.c      ****     dma_interrupt_StartEx(DMA_Handler); //attach DMA interrupt
+ 605              		.loc 1 283 0
+ 606 0074 1B48     		ldr	r0, .L26+16
+ 607 0076 FFF7FEFF 		bl	dma_interrupt_StartEx
+ 284:.\main.c      ****     CYGlobalIntEnable;              //this one line wasted like an hour
+ 608              		.loc 1 284 0
+ 609              	@ 284 ".\main.c" 1
+ 610 007a 62B6     		CPSIE   i
+ 611              	@ 0 "" 2
+ 285:.\main.c      ****     
+ 286:.\main.c      ****     //start the stupid hardware thingies
+ 287:.\main.c      ****     Speaker_PWM_Start();
+ 612              		.loc 1 287 0
+ 613              		.thumb
+ 614 007c FFF7FEFF 		bl	Speaker_PWM_Start
+ 288:.\main.c      ****     Servo_PWM_Start();
+ 615              		.loc 1 288 0
+ 616 0080 FFF7FEFF 		bl	Servo_PWM_Start
+ 289:.\main.c      ****     ADC_DelSig_1_Start();
+ 617              		.loc 1 289 0
+ 618 0084 FFF7FEFF 		bl	ADC_DelSig_1_Start
+ 290:.\main.c      ****     UART_1_Start();                             //does anyone even read these?
+ 619              		.loc 1 290 0
+ 620 0088 FFF7FEFF 		bl	UART_1_Start
+ 291:.\main.c      ****     UART_1_SetRxInterruptMode(UART_1_RX_STS_FIFO_NOTEMPTY);     //enable interrupts via software
+ 621              		.loc 1 291 0
+ 622 008c 2020     		movs	r0, #32
+ 623 008e FFF7FEFF 		bl	UART_1_SetRxInterruptMode
+ 292:.\main.c      **** 
+ 293:.\main.c      ****     WaveDAC8_1_Start();
+ 624              		.loc 1 293 0
+ 625 0092 FFF7FEFF 		bl	WaveDAC8_1_Start
+ 294:.\main.c      ****     
+ 295:.\main.c      ****     //initialize variables
+ 296:.\main.c      ****     
+ 297:.\main.c      ****     
+ 298:.\main.c      ****     //Start ADC Conversion(s)
+ 299:.\main.c      ****     ADC_DelSig_1_StartConvert();
+ 626              		.loc 1 299 0
+ 627 0096 FFF7FEFF 		bl	ADC_DelSig_1_StartConvert
+ 300:.\main.c      ****     Waveform_Reg_Write(waveForm);         //initialize wavesignal for waveform DAC
+ 628              		.loc 1 300 0
+ 629 009a 134B     		ldr	r3, .L26+20
+ 630 009c 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 631 009e 1846     		mov	r0, r3
+ 632 00a0 FFF7FEFF 		bl	Waveform_Reg_Write
+ 301:.\main.c      **** 
+ 302:.\main.c      ****     
+ 303:.\main.c      ****     // Send message to verify COM port is connected properly 
+ 304:.\main.c      ****     UART_1_PutString("COM Port Open\r\n");
+ 633              		.loc 1 304 0
+ 634 00a4 1148     		ldr	r0, .L26+24
+ 635 00a6 FFF7FEFF 		bl	UART_1_PutString
+ 305:.\main.c      ****     
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc7HOeJf.s 			page 18
+
+
+ 306:.\main.c      ****     adcOut = ADC_DelSig_1_CountsTo_mVolts(ADC_DelSig_1_GetResult8());
+ 636              		.loc 1 306 0
+ 637 00aa FFF7FEFF 		bl	ADC_DelSig_1_GetResult8
+ 638 00ae 0346     		mov	r3, r0
+ 639 00b0 1846     		mov	r0, r3
+ 640 00b2 FFF7FEFF 		bl	ADC_DelSig_1_CountsTo_mVolts
+ 641 00b6 0346     		mov	r3, r0
+ 642 00b8 1A46     		mov	r2, r3
+ 643 00ba 0D4B     		ldr	r3, .L26+28
+ 644 00bc 1A60     		str	r2, [r3]
+ 307:.\main.c      ****     sprintf(TransmitBuffer, "Initialized read: %lu mV\r\n", adcOut);
+ 645              		.loc 1 307 0
+ 646 00be 0C4B     		ldr	r3, .L26+28
+ 647 00c0 1B68     		ldr	r3, [r3]
+ 648 00c2 0C48     		ldr	r0, .L26+32
+ 649 00c4 0C49     		ldr	r1, .L26+36
+ 650 00c6 1A46     		mov	r2, r3
+ 651 00c8 FFF7FEFF 		bl	sprintf
+ 308:.\main.c      ****     UART_1_PutString(TransmitBuffer);
+ 652              		.loc 1 308 0
+ 653 00cc 0948     		ldr	r0, .L26+32
+ 654 00ce FFF7FEFF 		bl	UART_1_PutString
+ 655              	.L25:
+ 309:.\main.c      ****     
+ 310:.\main.c      ****     //for loop polls ADC continuously if the proper mode is selected
+ 311:.\main.c      ****     for(;;)
+ 312:.\main.c      ****     {     
+ 313:.\main.c      ****         //check for proper mode
+ 314:.\main.c      ****         if(false) {
+ 315:.\main.c      ****             if(ADC_DelSig_1_IsEndConversion(ADC_DelSig_1_RETURN_STATUS))    //poll ADC
+ 316:.\main.c      ****             {
+ 317:.\main.c      **** 
+ 318:.\main.c      ****                 //adcOut = ADC_DelSig_1_CountsTo_mVolts(ADC_DelSig_1_GetResult16());  //save output
+ 319:.\main.c      ****                 adcOut = ADC_DelSig_1_CountsTo_mVolts(ADC_DelSig_1_GetResult8());
+ 320:.\main.c      ****                 //print data to UART
+ 321:.\main.c      ****                 sprintf(TransmitBuffer, "Continuous ADC Read: %lu mV\r\n", adcOut);
+ 322:.\main.c      ****                 UART_1_PutString(TransmitBuffer);
+ 323:.\main.c      ****                 
+ 324:.\main.c      ****             }
+ 325:.\main.c      ****         }
+ 326:.\main.c      ****     }
+ 656              		.loc 1 326 0
+ 657 00d2 FEE7     		b	.L25
+ 658              	.L27:
+ 659              		.align	2
+ 660              	.L26:
+ 661 00d4 00000000 		.word	DMA_1_Chan
+ 662 00d8 00000000 		.word	DMA_1_TD
+ 663 00dc 00000000 		.word	DMA_ARRAY
+ 664 00e0 00000000 		.word	ReadSerial
+ 665 00e4 00000000 		.word	DMA_Handler
+ 666 00e8 00000000 		.word	waveForm
+ 667 00ec 6C000000 		.word	.LC4
+ 668 00f0 00000000 		.word	adcOut
+ 669 00f4 00000000 		.word	TransmitBuffer
+ 670 00f8 7C000000 		.word	.LC5
+ 671              		.cfi_endproc
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc7HOeJf.s 			page 19
+
+
+ 672              	.LFE66:
+ 673              		.size	main, .-main
+ 674              		.section	.rodata
+ 675 0097 00       		.align	2
+ 676              	.LC6:
+ 677 0098 77726974 		.ascii	"writing these degrees to servo: %d\015\012\000"
+ 677      696E6720 
+ 677      74686573 
+ 677      65206465 
+ 677      67726565 
+ 678              		.section	.text.Turn_servo_degrees,"ax",%progbits
+ 679              		.align	2
+ 680              		.global	Turn_servo_degrees
+ 681              		.thumb
+ 682              		.thumb_func
+ 683              		.type	Turn_servo_degrees, %function
+ 684              	Turn_servo_degrees:
+ 685              	.LFB67:
+ 327:.\main.c      ****     return 0;
+ 328:.\main.c      **** }
+ 329:.\main.c      **** 
+ 330:.\main.c      **** 
+ 331:.\main.c      **** int Turn_servo_degrees(int degree) {
+ 686              		.loc 1 331 0
+ 687              		.cfi_startproc
+ 688              		@ args = 0, pretend = 0, frame = 16
+ 689              		@ frame_needed = 1, uses_anonymous_args = 0
+ 690 0000 80B5     		push	{r7, lr}
+ 691              		.cfi_def_cfa_offset 8
+ 692              		.cfi_offset 7, -8
+ 693              		.cfi_offset 14, -4
+ 694 0002 84B0     		sub	sp, sp, #16
+ 695              		.cfi_def_cfa_offset 24
+ 696 0004 00AF     		add	r7, sp, #0
+ 697              		.cfi_def_cfa_register 7
+ 698 0006 7860     		str	r0, [r7, #4]
+ 332:.\main.c      ****     
+ 333:.\main.c      ****     
+ 334:.\main.c      ****     
+ 335:.\main.c      ****     int amt = degree * 255 / 360;
+ 699              		.loc 1 335 0
+ 700 0008 7A68     		ldr	r2, [r7, #4]
+ 701 000a 1346     		mov	r3, r2
+ 702 000c 1B02     		lsls	r3, r3, #8
+ 703 000e 9B1A     		subs	r3, r3, r2
+ 704 0010 0C4A     		ldr	r2, .L30
+ 705 0012 82FB0312 		smull	r1, r2, r2, r3
+ 706 0016 1A44     		add	r2, r2, r3
+ 707 0018 1212     		asrs	r2, r2, #8
+ 708 001a DB17     		asrs	r3, r3, #31
+ 709 001c D31A     		subs	r3, r2, r3
+ 710 001e FB60     		str	r3, [r7, #12]
+ 336:.\main.c      ****     Servo_PWM_WriteCompare(amt);
+ 711              		.loc 1 336 0
+ 712 0020 FB68     		ldr	r3, [r7, #12]
+ 713 0022 DBB2     		uxtb	r3, r3
+ 714 0024 1846     		mov	r0, r3
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc7HOeJf.s 			page 20
+
+
+ 715 0026 FFF7FEFF 		bl	Servo_PWM_WriteCompare
+ 337:.\main.c      ****     
+ 338:.\main.c      ****     sprintf(TransmitBuffer, "writing these degrees to servo: %d\r\n", amt);
+ 716              		.loc 1 338 0
+ 717 002a 0748     		ldr	r0, .L30+4
+ 718 002c 0749     		ldr	r1, .L30+8
+ 719 002e FA68     		ldr	r2, [r7, #12]
+ 720 0030 FFF7FEFF 		bl	sprintf
+ 339:.\main.c      ****     UART_1_PutString(TransmitBuffer);
+ 721              		.loc 1 339 0
+ 722 0034 0448     		ldr	r0, .L30+4
+ 723 0036 FFF7FEFF 		bl	UART_1_PutString
+ 340:.\main.c      ****     
+ 341:.\main.c      ****     return 0;    
+ 724              		.loc 1 341 0
+ 725 003a 0023     		movs	r3, #0
+ 342:.\main.c      **** }
+ 726              		.loc 1 342 0
+ 727 003c 1846     		mov	r0, r3
+ 728 003e 1037     		adds	r7, r7, #16
+ 729              		.cfi_def_cfa_offset 8
+ 730 0040 BD46     		mov	sp, r7
+ 731              		.cfi_def_cfa_register 13
+ 732              		@ sp needed
+ 733 0042 80BD     		pop	{r7, pc}
+ 734              	.L31:
+ 735              		.align	2
+ 736              	.L30:
+ 737 0044 B7600BB6 		.word	-1240768329
+ 738 0048 00000000 		.word	TransmitBuffer
+ 739 004c 98000000 		.word	.LC6
+ 740              		.cfi_endproc
+ 741              	.LFE67:
+ 742              		.size	Turn_servo_degrees, .-Turn_servo_degrees
+ 743              		.section	.rodata
+ 744 00bd 000000   		.align	2
+ 745              	.LC7:
+ 746 00c0 73696E67 		.ascii	"singing with value: %d\015\012\000"
+ 746      696E6720 
+ 746      77697468 
+ 746      2076616C 
+ 746      75653A20 
+ 747 00d9 000000   		.section	.text.Sing,"ax",%progbits
+ 748              		.align	2
+ 749              		.global	Sing
+ 750              		.thumb
+ 751              		.thumb_func
+ 752              		.type	Sing, %function
+ 753              	Sing:
+ 754              	.LFB68:
+ 343:.\main.c      **** 
+ 344:.\main.c      **** int Sing(int thing) {
+ 755              		.loc 1 344 0
+ 756              		.cfi_startproc
+ 757              		@ args = 0, pretend = 0, frame = 8
+ 758              		@ frame_needed = 1, uses_anonymous_args = 0
+ 759 0000 80B5     		push	{r7, lr}
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc7HOeJf.s 			page 21
+
+
+ 760              		.cfi_def_cfa_offset 8
+ 761              		.cfi_offset 7, -8
+ 762              		.cfi_offset 14, -4
+ 763 0002 82B0     		sub	sp, sp, #8
+ 764              		.cfi_def_cfa_offset 16
+ 765 0004 00AF     		add	r7, sp, #0
+ 766              		.cfi_def_cfa_register 7
+ 767 0006 7860     		str	r0, [r7, #4]
+ 345:.\main.c      ****     sprintf(TransmitBuffer, "singing with value: %d\r\n", thing);
+ 768              		.loc 1 345 0
+ 769 0008 0848     		ldr	r0, .L34
+ 770 000a 0949     		ldr	r1, .L34+4
+ 771 000c 7A68     		ldr	r2, [r7, #4]
+ 772 000e FFF7FEFF 		bl	sprintf
+ 346:.\main.c      ****     UART_1_PutString(TransmitBuffer);
+ 773              		.loc 1 346 0
+ 774 0012 0648     		ldr	r0, .L34
+ 775 0014 FFF7FEFF 		bl	UART_1_PutString
+ 347:.\main.c      ****     
+ 348:.\main.c      ****     Speaker_PWM_WriteCompare(thing);   
+ 776              		.loc 1 348 0
+ 777 0018 7B68     		ldr	r3, [r7, #4]
+ 778 001a 9BB2     		uxth	r3, r3
+ 779 001c 1846     		mov	r0, r3
+ 780 001e FFF7FEFF 		bl	Speaker_PWM_WriteCompare
+ 349:.\main.c      ****     //Speaker_PWM_WritePeriod(thing);
+ 350:.\main.c      ****     
+ 351:.\main.c      ****     return 0;
+ 781              		.loc 1 351 0
+ 782 0022 0023     		movs	r3, #0
+ 352:.\main.c      **** }
+ 783              		.loc 1 352 0
+ 784 0024 1846     		mov	r0, r3
+ 785 0026 0837     		adds	r7, r7, #8
+ 786              		.cfi_def_cfa_offset 8
+ 787 0028 BD46     		mov	sp, r7
+ 788              		.cfi_def_cfa_register 13
+ 789              		@ sp needed
+ 790 002a 80BD     		pop	{r7, pc}
+ 791              	.L35:
+ 792              		.align	2
+ 793              	.L34:
+ 794 002c 00000000 		.word	TransmitBuffer
+ 795 0030 C0000000 		.word	.LC7
+ 796              		.cfi_endproc
+ 797              	.LFE68:
+ 798              		.size	Sing, .-Sing
+ 799              		.text
+ 800              	.Letext0:
+ 801              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\3.3\\psoc creator\\import\\gnu\\arm\\4.9.
+ 802              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\3.3\\psoc creator\\import\\gnu\\arm\\4.9.
+ 803              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 804              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 805              		.section	.debug_info,"",%progbits
+ 806              	.Ldebug_info0:
+ 807 0000 1C030000 		.4byte	0x31c
+ 808 0004 0400     		.2byte	0x4
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc7HOeJf.s 			page 22
+
+
+ 809 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 810 000a 04       		.byte	0x4
+ 811 000b 01       		.uleb128 0x1
+ 812 000c 6A000000 		.4byte	.LASF44
+ 813 0010 01       		.byte	0x1
+ 814 0011 F8000000 		.4byte	.LASF45
+ 815 0015 27000000 		.4byte	.LASF46
+ 816 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 817 001d 00000000 		.4byte	0
+ 818 0021 00000000 		.4byte	.Ldebug_line0
+ 819 0025 02       		.uleb128 0x2
+ 820 0026 01       		.byte	0x1
+ 821 0027 06       		.byte	0x6
+ 822 0028 8C020000 		.4byte	.LASF0
+ 823 002c 02       		.uleb128 0x2
+ 824 002d 01       		.byte	0x1
+ 825 002e 08       		.byte	0x8
+ 826 002f 3F010000 		.4byte	.LASF1
+ 827 0033 02       		.uleb128 0x2
+ 828 0034 02       		.byte	0x2
+ 829 0035 05       		.byte	0x5
+ 830 0036 59020000 		.4byte	.LASF2
+ 831 003a 02       		.uleb128 0x2
+ 832 003b 02       		.byte	0x2
+ 833 003c 07       		.byte	0x7
+ 834 003d 65010000 		.4byte	.LASF3
+ 835 0041 03       		.uleb128 0x3
+ 836 0042 60000000 		.4byte	.LASF9
+ 837 0046 02       		.byte	0x2
+ 838 0047 3F       		.byte	0x3f
+ 839 0048 4C000000 		.4byte	0x4c
+ 840 004c 02       		.uleb128 0x2
+ 841 004d 04       		.byte	0x4
+ 842 004e 05       		.byte	0x5
+ 843 004f 69020000 		.4byte	.LASF4
+ 844 0053 02       		.uleb128 0x2
+ 845 0054 04       		.byte	0x4
+ 846 0055 07       		.byte	0x7
+ 847 0056 B0010000 		.4byte	.LASF5
+ 848 005a 02       		.uleb128 0x2
+ 849 005b 08       		.byte	0x8
+ 850 005c 05       		.byte	0x5
+ 851 005d 32020000 		.4byte	.LASF6
+ 852 0061 02       		.uleb128 0x2
+ 853 0062 08       		.byte	0x8
+ 854 0063 07       		.byte	0x7
+ 855 0064 FB010000 		.4byte	.LASF7
+ 856 0068 04       		.uleb128 0x4
+ 857 0069 04       		.byte	0x4
+ 858 006a 05       		.byte	0x5
+ 859 006b 696E7400 		.ascii	"int\000"
+ 860 006f 02       		.uleb128 0x2
+ 861 0070 04       		.byte	0x4
+ 862 0071 07       		.byte	0x7
+ 863 0072 E2010000 		.4byte	.LASF8
+ 864 0076 03       		.uleb128 0x3
+ 865 0077 12020000 		.4byte	.LASF10
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc7HOeJf.s 			page 23
+
+
+ 866 007b 03       		.byte	0x3
+ 867 007c 2C       		.byte	0x2c
+ 868 007d 41000000 		.4byte	0x41
+ 869 0081 05       		.uleb128 0x5
+ 870 0082 63020000 		.4byte	.LASF11
+ 871 0086 04       		.byte	0x4
+ 872 0087 9201     		.2byte	0x192
+ 873 0089 2C000000 		.4byte	0x2c
+ 874 008d 05       		.uleb128 0x5
+ 875 008e C7010000 		.4byte	.LASF12
+ 876 0092 04       		.byte	0x4
+ 877 0093 9301     		.2byte	0x193
+ 878 0095 3A000000 		.4byte	0x3a
+ 879 0099 05       		.uleb128 0x5
+ 880 009a CE010000 		.4byte	.LASF13
+ 881 009e 04       		.byte	0x4
+ 882 009f 9401     		.2byte	0x194
+ 883 00a1 53000000 		.4byte	0x53
+ 884 00a5 02       		.uleb128 0x2
+ 885 00a6 04       		.byte	0x4
+ 886 00a7 04       		.byte	0x4
+ 887 00a8 2A010000 		.4byte	.LASF14
+ 888 00ac 02       		.uleb128 0x2
+ 889 00ad 08       		.byte	0x8
+ 890 00ae 04       		.byte	0x4
+ 891 00af 01010000 		.4byte	.LASF15
+ 892 00b3 02       		.uleb128 0x2
+ 893 00b4 01       		.byte	0x1
+ 894 00b5 08       		.byte	0x8
+ 895 00b6 40020000 		.4byte	.LASF16
+ 896 00ba 05       		.uleb128 0x5
+ 897 00bb 52010000 		.4byte	.LASF17
+ 898 00bf 04       		.byte	0x4
+ 899 00c0 3C02     		.2byte	0x23c
+ 900 00c2 C6000000 		.4byte	0xc6
+ 901 00c6 06       		.uleb128 0x6
+ 902 00c7 81000000 		.4byte	0x81
+ 903 00cb 02       		.uleb128 0x2
+ 904 00cc 04       		.byte	0x4
+ 905 00cd 07       		.byte	0x7
+ 906 00ce 29020000 		.4byte	.LASF18
+ 907 00d2 07       		.uleb128 0x7
+ 908 00d3 D5010000 		.4byte	.LASF26
+ 909 00d7 01       		.byte	0x1
+ 910 00d8 71       		.byte	0x71
+ 911 00d9 68000000 		.4byte	0x68
+ 912 00dd 00000000 		.4byte	.LFB63
+ 913 00e1 48000000 		.4byte	.LFE63-.LFB63
+ 914 00e5 01       		.uleb128 0x1
+ 915 00e6 9C       		.byte	0x9c
+ 916 00e7 22010000 		.4byte	0x122
+ 917 00eb 08       		.uleb128 0x8
+ 918 00ec 57010000 		.4byte	.LASF19
+ 919 00f0 01       		.byte	0x1
+ 920 00f1 71       		.byte	0x71
+ 921 00f2 68000000 		.4byte	0x68
+ 922 00f6 02       		.uleb128 0x2
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc7HOeJf.s 			page 24
+
+
+ 923 00f7 91       		.byte	0x91
+ 924 00f8 6C       		.sleb128 -20
+ 925 00f9 08       		.uleb128 0x8
+ 926 00fa 50020000 		.4byte	.LASF20
+ 927 00fe 01       		.byte	0x1
+ 928 00ff 71       		.byte	0x71
+ 929 0100 68000000 		.4byte	0x68
+ 930 0104 02       		.uleb128 0x2
+ 931 0105 91       		.byte	0x91
+ 932 0106 68       		.sleb128 -24
+ 933 0107 09       		.uleb128 0x9
+ 934 0108 1B010000 		.4byte	.LASF21
+ 935 010c 01       		.byte	0x1
+ 936 010d 74       		.byte	0x74
+ 937 010e 68000000 		.4byte	0x68
+ 938 0112 02       		.uleb128 0x2
+ 939 0113 91       		.byte	0x91
+ 940 0114 74       		.sleb128 -12
+ 941 0115 0A       		.uleb128 0xa
+ 942 0116 6B00     		.ascii	"k\000"
+ 943 0118 01       		.byte	0x1
+ 944 0119 76       		.byte	0x76
+ 945 011a 68000000 		.4byte	0x68
+ 946 011e 02       		.uleb128 0x2
+ 947 011f 91       		.byte	0x91
+ 948 0120 70       		.sleb128 -16
+ 949 0121 00       		.byte	0
+ 950 0122 0B       		.uleb128 0xb
+ 951 0123 EF010000 		.4byte	.LASF22
+ 952 0127 01       		.byte	0x1
+ 953 0128 80       		.byte	0x80
+ 954 0129 00000000 		.4byte	.LFB64
+ 955 012d 14000000 		.4byte	.LFE64-.LFB64
+ 956 0131 01       		.uleb128 0x1
+ 957 0132 9C       		.byte	0x9c
+ 958 0133 44010000 		.4byte	0x144
+ 959 0137 0A       		.uleb128 0xa
+ 960 0138 6900     		.ascii	"i\000"
+ 961 013a 01       		.byte	0x1
+ 962 013b 83       		.byte	0x83
+ 963 013c 68000000 		.4byte	0x68
+ 964 0140 02       		.uleb128 0x2
+ 965 0141 91       		.byte	0x91
+ 966 0142 74       		.sleb128 -12
+ 967 0143 00       		.byte	0
+ 968 0144 0B       		.uleb128 0xb
+ 969 0145 10010000 		.4byte	.LASF23
+ 970 0149 01       		.byte	0x1
+ 971 014a 8D       		.byte	0x8d
+ 972 014b 00000000 		.4byte	.LFB65
+ 973 014f 28030000 		.4byte	.LFE65-.LFB65
+ 974 0153 01       		.uleb128 0x1
+ 975 0154 9C       		.byte	0x9c
+ 976 0155 80010000 		.4byte	0x180
+ 977 0159 09       		.uleb128 0x9
+ 978 015a 08010000 		.4byte	.LASF24
+ 979 015e 01       		.byte	0x1
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc7HOeJf.s 			page 25
+
+
+ 980 015f 9B       		.byte	0x9b
+ 981 0160 80010000 		.4byte	0x180
+ 982 0164 02       		.uleb128 0x2
+ 983 0165 91       		.byte	0x91
+ 984 0166 77       		.sleb128 -9
+ 985 0167 0C       		.uleb128 0xc
+ 986 0168 D4020000 		.4byte	.LBB2
+ 987 016c 1C000000 		.4byte	.LBE2-.LBB2
+ 988 0170 0A       		.uleb128 0xa
+ 989 0171 6E756D00 		.ascii	"num\000"
+ 990 0175 01       		.byte	0x1
+ 991 0176 DB       		.byte	0xdb
+ 992 0177 68000000 		.4byte	0x68
+ 993 017b 02       		.uleb128 0x2
+ 994 017c 91       		.byte	0x91
+ 995 017d 70       		.sleb128 -16
+ 996 017e 00       		.byte	0
+ 997 017f 00       		.byte	0
+ 998 0180 02       		.uleb128 0x2
+ 999 0181 01       		.byte	0x1
+ 1000 0182 02       		.byte	0x2
+ 1001 0183 98020000 		.4byte	.LASF25
+ 1002 0187 0D       		.uleb128 0xd
+ 1003 0188 C2010000 		.4byte	.LASF47
+ 1004 018c 01       		.byte	0x1
+ 1005 018d 0501     		.2byte	0x105
+ 1006 018f 68000000 		.4byte	0x68
+ 1007 0193 00000000 		.4byte	.LFB66
+ 1008 0197 FC000000 		.4byte	.LFE66-.LFB66
+ 1009 019b 01       		.uleb128 0x1
+ 1010 019c 9C       		.byte	0x9c
+ 1011 019d 0E       		.uleb128 0xe
+ 1012 019e 79020000 		.4byte	.LASF27
+ 1013 01a2 01       		.byte	0x1
+ 1014 01a3 4B01     		.2byte	0x14b
+ 1015 01a5 68000000 		.4byte	0x68
+ 1016 01a9 00000000 		.4byte	.LFB67
+ 1017 01ad 50000000 		.4byte	.LFE67-.LFB67
+ 1018 01b1 01       		.uleb128 0x1
+ 1019 01b2 9C       		.byte	0x9c
+ 1020 01b3 D6010000 		.4byte	0x1d6
+ 1021 01b7 0F       		.uleb128 0xf
+ 1022 01b8 72020000 		.4byte	.LASF28
+ 1023 01bc 01       		.byte	0x1
+ 1024 01bd 4B01     		.2byte	0x14b
+ 1025 01bf 68000000 		.4byte	0x68
+ 1026 01c3 02       		.uleb128 0x2
+ 1027 01c4 91       		.byte	0x91
+ 1028 01c5 6C       		.sleb128 -20
+ 1029 01c6 10       		.uleb128 0x10
+ 1030 01c7 616D7400 		.ascii	"amt\000"
+ 1031 01cb 01       		.byte	0x1
+ 1032 01cc 4F01     		.2byte	0x14f
+ 1033 01ce 68000000 		.4byte	0x68
+ 1034 01d2 02       		.uleb128 0x2
+ 1035 01d3 91       		.byte	0x91
+ 1036 01d4 74       		.sleb128 -12
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc7HOeJf.s 			page 26
+
+
+ 1037 01d5 00       		.byte	0
+ 1038 01d6 0E       		.uleb128 0xe
+ 1039 01d7 4D010000 		.4byte	.LASF29
+ 1040 01db 01       		.byte	0x1
+ 1041 01dc 5801     		.2byte	0x158
+ 1042 01de 68000000 		.4byte	0x68
+ 1043 01e2 00000000 		.4byte	.LFB68
+ 1044 01e6 34000000 		.4byte	.LFE68-.LFB68
+ 1045 01ea 01       		.uleb128 0x1
+ 1046 01eb 9C       		.byte	0x9c
+ 1047 01ec 00020000 		.4byte	0x200
+ 1048 01f0 0F       		.uleb128 0xf
+ 1049 01f1 78010000 		.4byte	.LASF30
+ 1050 01f5 01       		.byte	0x1
+ 1051 01f6 5801     		.2byte	0x158
+ 1052 01f8 68000000 		.4byte	0x68
+ 1053 01fc 02       		.uleb128 0x2
+ 1054 01fd 91       		.byte	0x91
+ 1055 01fe 74       		.sleb128 -12
+ 1056 01ff 00       		.byte	0
+ 1057 0200 11       		.uleb128 0x11
+ 1058 0201 87010000 		.4byte	.LASF31
+ 1059 0205 05       		.byte	0x5
+ 1060 0206 9606     		.2byte	0x696
+ 1061 0208 0C020000 		.4byte	0x20c
+ 1062 020c 06       		.uleb128 0x6
+ 1063 020d 76000000 		.4byte	0x76
+ 1064 0211 12       		.uleb128 0x12
+ 1065 0212 21010000 		.4byte	.LASF32
+ 1066 0216 01       		.byte	0x1
+ 1067 0217 4E       		.byte	0x4e
+ 1068 0218 81000000 		.4byte	0x81
+ 1069 021c 05       		.uleb128 0x5
+ 1070 021d 03       		.byte	0x3
+ 1071 021e 00000000 		.4byte	recvChar
+ 1072 0222 12       		.uleb128 0x12
+ 1073 0223 38010000 		.4byte	.LASF33
+ 1074 0227 01       		.byte	0x1
+ 1075 0228 4F       		.byte	0x4f
+ 1076 0229 99000000 		.4byte	0x99
+ 1077 022d 05       		.uleb128 0x5
+ 1078 022e 03       		.byte	0x3
+ 1079 022f 00000000 		.4byte	adcOut
+ 1080 0233 12       		.uleb128 0x12
+ 1081 0234 15000000 		.4byte	.LASF34
+ 1082 0238 01       		.byte	0x1
+ 1083 0239 50       		.byte	0x50
+ 1084 023a 80010000 		.4byte	0x180
+ 1085 023e 05       		.uleb128 0x5
+ 1086 023f 03       		.byte	0x3
+ 1087 0240 00000000 		.4byte	continuousSending
+ 1088 0244 12       		.uleb128 0x12
+ 1089 0245 0C000000 		.4byte	.LASF35
+ 1090 0249 01       		.byte	0x1
+ 1091 024a 51       		.byte	0x51
+ 1092 024b 81000000 		.4byte	0x81
+ 1093 024f 05       		.uleb128 0x5
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc7HOeJf.s 			page 27
+
+
+ 1094 0250 03       		.byte	0x3
+ 1095 0251 00000000 		.4byte	dacState
+ 1096 0255 12       		.uleb128 0x12
+ 1097 0256 5C010000 		.4byte	.LASF36
+ 1098 025a 01       		.byte	0x1
+ 1099 025b 52       		.byte	0x52
+ 1100 025c 81000000 		.4byte	0x81
+ 1101 0260 05       		.uleb128 0x5
+ 1102 0261 03       		.byte	0x3
+ 1103 0262 00000000 		.4byte	waveForm
+ 1104 0266 12       		.uleb128 0x12
+ 1105 0267 9E010000 		.4byte	.LASF37
+ 1106 026b 01       		.byte	0x1
+ 1107 026c 54       		.byte	0x54
+ 1108 026d 80010000 		.4byte	0x180
+ 1109 0271 05       		.uleb128 0x5
+ 1110 0272 03       		.byte	0x3
+ 1111 0273 00000000 		.4byte	inputting_degrees
+ 1112 0277 13       		.uleb128 0x13
+ 1113 0278 B3000000 		.4byte	0xb3
+ 1114 027c 87020000 		.4byte	0x287
+ 1115 0280 14       		.uleb128 0x14
+ 1116 0281 CB000000 		.4byte	0xcb
+ 1117 0285 0F       		.byte	0xf
+ 1118 0286 00       		.byte	0
+ 1119 0287 12       		.uleb128 0x12
+ 1120 0288 1A020000 		.4byte	.LASF38
+ 1121 028c 01       		.byte	0x1
+ 1122 028d 56       		.byte	0x56
+ 1123 028e 77020000 		.4byte	0x277
+ 1124 0292 05       		.uleb128 0x5
+ 1125 0293 03       		.byte	0x3
+ 1126 0294 00000000 		.4byte	TransmitBuffer
+ 1127 0298 12       		.uleb128 0x12
+ 1128 0299 72020000 		.4byte	.LASF28
+ 1129 029d 01       		.byte	0x1
+ 1130 029e 58       		.byte	0x58
+ 1131 029f 68000000 		.4byte	0x68
+ 1132 02a3 05       		.uleb128 0x5
+ 1133 02a4 03       		.byte	0x3
+ 1134 02a5 00000000 		.4byte	degree
+ 1135 02a9 12       		.uleb128 0x12
+ 1136 02aa 00000000 		.4byte	.LASF39
+ 1137 02ae 01       		.byte	0x1
+ 1138 02af 59       		.byte	0x59
+ 1139 02b0 68000000 		.4byte	0x68
+ 1140 02b4 05       		.uleb128 0x5
+ 1141 02b5 03       		.byte	0x3
+ 1142 02b6 00000000 		.4byte	digit_place
+ 1143 02ba 12       		.uleb128 0x12
+ 1144 02bb 30010000 		.4byte	.LASF40
+ 1145 02bf 01       		.byte	0x1
+ 1146 02c0 5A       		.byte	0x5a
+ 1147 02c1 68000000 		.4byte	0x68
+ 1148 02c5 05       		.uleb128 0x5
+ 1149 02c6 03       		.byte	0x3
+ 1150 02c7 00000000 		.4byte	counter
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc7HOeJf.s 			page 28
+
+
+ 1151 02cb 13       		.uleb128 0x13
+ 1152 02cc 4C000000 		.4byte	0x4c
+ 1153 02d0 DC020000 		.4byte	0x2dc
+ 1154 02d4 15       		.uleb128 0x15
+ 1155 02d5 CB000000 		.4byte	0xcb
+ 1156 02d9 FF03     		.2byte	0x3ff
+ 1157 02db 00       		.byte	0
+ 1158 02dc 12       		.uleb128 0x12
+ 1159 02dd 94010000 		.4byte	.LASF41
+ 1160 02e1 01       		.byte	0x1
+ 1161 02e2 5C       		.byte	0x5c
+ 1162 02e3 CB020000 		.4byte	0x2cb
+ 1163 02e7 05       		.uleb128 0x5
+ 1164 02e8 03       		.byte	0x3
+ 1165 02e9 00000000 		.4byte	DMA_ARRAY
+ 1166 02ed 12       		.uleb128 0x12
+ 1167 02ee 45020000 		.4byte	.LASF42
+ 1168 02f2 01       		.byte	0x1
+ 1169 02f3 6A       		.byte	0x6a
+ 1170 02f4 81000000 		.4byte	0x81
+ 1171 02f8 05       		.uleb128 0x5
+ 1172 02f9 03       		.byte	0x3
+ 1173 02fa 00000000 		.4byte	DMA_1_Chan
+ 1174 02fe 13       		.uleb128 0x13
+ 1175 02ff 81000000 		.4byte	0x81
+ 1176 0303 0E030000 		.4byte	0x30e
+ 1177 0307 14       		.uleb128 0x14
+ 1178 0308 CB000000 		.4byte	0xcb
+ 1179 030c 00       		.byte	0
+ 1180 030d 00       		.byte	0
+ 1181 030e 12       		.uleb128 0x12
+ 1182 030f 7E010000 		.4byte	.LASF43
+ 1183 0313 01       		.byte	0x1
+ 1184 0314 6B       		.byte	0x6b
+ 1185 0315 FE020000 		.4byte	0x2fe
+ 1186 0319 05       		.uleb128 0x5
+ 1187 031a 03       		.byte	0x3
+ 1188 031b 00000000 		.4byte	DMA_1_TD
+ 1189 031f 00       		.byte	0
+ 1190              		.section	.debug_abbrev,"",%progbits
+ 1191              	.Ldebug_abbrev0:
+ 1192 0000 01       		.uleb128 0x1
+ 1193 0001 11       		.uleb128 0x11
+ 1194 0002 01       		.byte	0x1
+ 1195 0003 25       		.uleb128 0x25
+ 1196 0004 0E       		.uleb128 0xe
+ 1197 0005 13       		.uleb128 0x13
+ 1198 0006 0B       		.uleb128 0xb
+ 1199 0007 03       		.uleb128 0x3
+ 1200 0008 0E       		.uleb128 0xe
+ 1201 0009 1B       		.uleb128 0x1b
+ 1202 000a 0E       		.uleb128 0xe
+ 1203 000b 55       		.uleb128 0x55
+ 1204 000c 17       		.uleb128 0x17
+ 1205 000d 11       		.uleb128 0x11
+ 1206 000e 01       		.uleb128 0x1
+ 1207 000f 10       		.uleb128 0x10
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc7HOeJf.s 			page 29
+
+
+ 1208 0010 17       		.uleb128 0x17
+ 1209 0011 00       		.byte	0
+ 1210 0012 00       		.byte	0
+ 1211 0013 02       		.uleb128 0x2
+ 1212 0014 24       		.uleb128 0x24
+ 1213 0015 00       		.byte	0
+ 1214 0016 0B       		.uleb128 0xb
+ 1215 0017 0B       		.uleb128 0xb
+ 1216 0018 3E       		.uleb128 0x3e
+ 1217 0019 0B       		.uleb128 0xb
+ 1218 001a 03       		.uleb128 0x3
+ 1219 001b 0E       		.uleb128 0xe
+ 1220 001c 00       		.byte	0
+ 1221 001d 00       		.byte	0
+ 1222 001e 03       		.uleb128 0x3
+ 1223 001f 16       		.uleb128 0x16
+ 1224 0020 00       		.byte	0
+ 1225 0021 03       		.uleb128 0x3
+ 1226 0022 0E       		.uleb128 0xe
+ 1227 0023 3A       		.uleb128 0x3a
+ 1228 0024 0B       		.uleb128 0xb
+ 1229 0025 3B       		.uleb128 0x3b
+ 1230 0026 0B       		.uleb128 0xb
+ 1231 0027 49       		.uleb128 0x49
+ 1232 0028 13       		.uleb128 0x13
+ 1233 0029 00       		.byte	0
+ 1234 002a 00       		.byte	0
+ 1235 002b 04       		.uleb128 0x4
+ 1236 002c 24       		.uleb128 0x24
+ 1237 002d 00       		.byte	0
+ 1238 002e 0B       		.uleb128 0xb
+ 1239 002f 0B       		.uleb128 0xb
+ 1240 0030 3E       		.uleb128 0x3e
+ 1241 0031 0B       		.uleb128 0xb
+ 1242 0032 03       		.uleb128 0x3
+ 1243 0033 08       		.uleb128 0x8
+ 1244 0034 00       		.byte	0
+ 1245 0035 00       		.byte	0
+ 1246 0036 05       		.uleb128 0x5
+ 1247 0037 16       		.uleb128 0x16
+ 1248 0038 00       		.byte	0
+ 1249 0039 03       		.uleb128 0x3
+ 1250 003a 0E       		.uleb128 0xe
+ 1251 003b 3A       		.uleb128 0x3a
+ 1252 003c 0B       		.uleb128 0xb
+ 1253 003d 3B       		.uleb128 0x3b
+ 1254 003e 05       		.uleb128 0x5
+ 1255 003f 49       		.uleb128 0x49
+ 1256 0040 13       		.uleb128 0x13
+ 1257 0041 00       		.byte	0
+ 1258 0042 00       		.byte	0
+ 1259 0043 06       		.uleb128 0x6
+ 1260 0044 35       		.uleb128 0x35
+ 1261 0045 00       		.byte	0
+ 1262 0046 49       		.uleb128 0x49
+ 1263 0047 13       		.uleb128 0x13
+ 1264 0048 00       		.byte	0
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc7HOeJf.s 			page 30
+
+
+ 1265 0049 00       		.byte	0
+ 1266 004a 07       		.uleb128 0x7
+ 1267 004b 2E       		.uleb128 0x2e
+ 1268 004c 01       		.byte	0x1
+ 1269 004d 3F       		.uleb128 0x3f
+ 1270 004e 19       		.uleb128 0x19
+ 1271 004f 03       		.uleb128 0x3
+ 1272 0050 0E       		.uleb128 0xe
+ 1273 0051 3A       		.uleb128 0x3a
+ 1274 0052 0B       		.uleb128 0xb
+ 1275 0053 3B       		.uleb128 0x3b
+ 1276 0054 0B       		.uleb128 0xb
+ 1277 0055 27       		.uleb128 0x27
+ 1278 0056 19       		.uleb128 0x19
+ 1279 0057 49       		.uleb128 0x49
+ 1280 0058 13       		.uleb128 0x13
+ 1281 0059 11       		.uleb128 0x11
+ 1282 005a 01       		.uleb128 0x1
+ 1283 005b 12       		.uleb128 0x12
+ 1284 005c 06       		.uleb128 0x6
+ 1285 005d 40       		.uleb128 0x40
+ 1286 005e 18       		.uleb128 0x18
+ 1287 005f 9742     		.uleb128 0x2117
+ 1288 0061 19       		.uleb128 0x19
+ 1289 0062 01       		.uleb128 0x1
+ 1290 0063 13       		.uleb128 0x13
+ 1291 0064 00       		.byte	0
+ 1292 0065 00       		.byte	0
+ 1293 0066 08       		.uleb128 0x8
+ 1294 0067 05       		.uleb128 0x5
+ 1295 0068 00       		.byte	0
+ 1296 0069 03       		.uleb128 0x3
+ 1297 006a 0E       		.uleb128 0xe
+ 1298 006b 3A       		.uleb128 0x3a
+ 1299 006c 0B       		.uleb128 0xb
+ 1300 006d 3B       		.uleb128 0x3b
+ 1301 006e 0B       		.uleb128 0xb
+ 1302 006f 49       		.uleb128 0x49
+ 1303 0070 13       		.uleb128 0x13
+ 1304 0071 02       		.uleb128 0x2
+ 1305 0072 18       		.uleb128 0x18
+ 1306 0073 00       		.byte	0
+ 1307 0074 00       		.byte	0
+ 1308 0075 09       		.uleb128 0x9
+ 1309 0076 34       		.uleb128 0x34
+ 1310 0077 00       		.byte	0
+ 1311 0078 03       		.uleb128 0x3
+ 1312 0079 0E       		.uleb128 0xe
+ 1313 007a 3A       		.uleb128 0x3a
+ 1314 007b 0B       		.uleb128 0xb
+ 1315 007c 3B       		.uleb128 0x3b
+ 1316 007d 0B       		.uleb128 0xb
+ 1317 007e 49       		.uleb128 0x49
+ 1318 007f 13       		.uleb128 0x13
+ 1319 0080 02       		.uleb128 0x2
+ 1320 0081 18       		.uleb128 0x18
+ 1321 0082 00       		.byte	0
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc7HOeJf.s 			page 31
+
+
+ 1322 0083 00       		.byte	0
+ 1323 0084 0A       		.uleb128 0xa
+ 1324 0085 34       		.uleb128 0x34
+ 1325 0086 00       		.byte	0
+ 1326 0087 03       		.uleb128 0x3
+ 1327 0088 08       		.uleb128 0x8
+ 1328 0089 3A       		.uleb128 0x3a
+ 1329 008a 0B       		.uleb128 0xb
+ 1330 008b 3B       		.uleb128 0x3b
+ 1331 008c 0B       		.uleb128 0xb
+ 1332 008d 49       		.uleb128 0x49
+ 1333 008e 13       		.uleb128 0x13
+ 1334 008f 02       		.uleb128 0x2
+ 1335 0090 18       		.uleb128 0x18
+ 1336 0091 00       		.byte	0
+ 1337 0092 00       		.byte	0
+ 1338 0093 0B       		.uleb128 0xb
+ 1339 0094 2E       		.uleb128 0x2e
+ 1340 0095 01       		.byte	0x1
+ 1341 0096 3F       		.uleb128 0x3f
+ 1342 0097 19       		.uleb128 0x19
+ 1343 0098 03       		.uleb128 0x3
+ 1344 0099 0E       		.uleb128 0xe
+ 1345 009a 3A       		.uleb128 0x3a
+ 1346 009b 0B       		.uleb128 0xb
+ 1347 009c 3B       		.uleb128 0x3b
+ 1348 009d 0B       		.uleb128 0xb
+ 1349 009e 27       		.uleb128 0x27
+ 1350 009f 19       		.uleb128 0x19
+ 1351 00a0 11       		.uleb128 0x11
+ 1352 00a1 01       		.uleb128 0x1
+ 1353 00a2 12       		.uleb128 0x12
+ 1354 00a3 06       		.uleb128 0x6
+ 1355 00a4 40       		.uleb128 0x40
+ 1356 00a5 18       		.uleb128 0x18
+ 1357 00a6 9642     		.uleb128 0x2116
+ 1358 00a8 19       		.uleb128 0x19
+ 1359 00a9 01       		.uleb128 0x1
+ 1360 00aa 13       		.uleb128 0x13
+ 1361 00ab 00       		.byte	0
+ 1362 00ac 00       		.byte	0
+ 1363 00ad 0C       		.uleb128 0xc
+ 1364 00ae 0B       		.uleb128 0xb
+ 1365 00af 01       		.byte	0x1
+ 1366 00b0 11       		.uleb128 0x11
+ 1367 00b1 01       		.uleb128 0x1
+ 1368 00b2 12       		.uleb128 0x12
+ 1369 00b3 06       		.uleb128 0x6
+ 1370 00b4 00       		.byte	0
+ 1371 00b5 00       		.byte	0
+ 1372 00b6 0D       		.uleb128 0xd
+ 1373 00b7 2E       		.uleb128 0x2e
+ 1374 00b8 00       		.byte	0
+ 1375 00b9 3F       		.uleb128 0x3f
+ 1376 00ba 19       		.uleb128 0x19
+ 1377 00bb 03       		.uleb128 0x3
+ 1378 00bc 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc7HOeJf.s 			page 32
+
+
+ 1379 00bd 3A       		.uleb128 0x3a
+ 1380 00be 0B       		.uleb128 0xb
+ 1381 00bf 3B       		.uleb128 0x3b
+ 1382 00c0 05       		.uleb128 0x5
+ 1383 00c1 49       		.uleb128 0x49
+ 1384 00c2 13       		.uleb128 0x13
+ 1385 00c3 11       		.uleb128 0x11
+ 1386 00c4 01       		.uleb128 0x1
+ 1387 00c5 12       		.uleb128 0x12
+ 1388 00c6 06       		.uleb128 0x6
+ 1389 00c7 40       		.uleb128 0x40
+ 1390 00c8 18       		.uleb128 0x18
+ 1391 00c9 9642     		.uleb128 0x2116
+ 1392 00cb 19       		.uleb128 0x19
+ 1393 00cc 00       		.byte	0
+ 1394 00cd 00       		.byte	0
+ 1395 00ce 0E       		.uleb128 0xe
+ 1396 00cf 2E       		.uleb128 0x2e
+ 1397 00d0 01       		.byte	0x1
+ 1398 00d1 3F       		.uleb128 0x3f
+ 1399 00d2 19       		.uleb128 0x19
+ 1400 00d3 03       		.uleb128 0x3
+ 1401 00d4 0E       		.uleb128 0xe
+ 1402 00d5 3A       		.uleb128 0x3a
+ 1403 00d6 0B       		.uleb128 0xb
+ 1404 00d7 3B       		.uleb128 0x3b
+ 1405 00d8 05       		.uleb128 0x5
+ 1406 00d9 27       		.uleb128 0x27
+ 1407 00da 19       		.uleb128 0x19
+ 1408 00db 49       		.uleb128 0x49
+ 1409 00dc 13       		.uleb128 0x13
+ 1410 00dd 11       		.uleb128 0x11
+ 1411 00de 01       		.uleb128 0x1
+ 1412 00df 12       		.uleb128 0x12
+ 1413 00e0 06       		.uleb128 0x6
+ 1414 00e1 40       		.uleb128 0x40
+ 1415 00e2 18       		.uleb128 0x18
+ 1416 00e3 9642     		.uleb128 0x2116
+ 1417 00e5 19       		.uleb128 0x19
+ 1418 00e6 01       		.uleb128 0x1
+ 1419 00e7 13       		.uleb128 0x13
+ 1420 00e8 00       		.byte	0
+ 1421 00e9 00       		.byte	0
+ 1422 00ea 0F       		.uleb128 0xf
+ 1423 00eb 05       		.uleb128 0x5
+ 1424 00ec 00       		.byte	0
+ 1425 00ed 03       		.uleb128 0x3
+ 1426 00ee 0E       		.uleb128 0xe
+ 1427 00ef 3A       		.uleb128 0x3a
+ 1428 00f0 0B       		.uleb128 0xb
+ 1429 00f1 3B       		.uleb128 0x3b
+ 1430 00f2 05       		.uleb128 0x5
+ 1431 00f3 49       		.uleb128 0x49
+ 1432 00f4 13       		.uleb128 0x13
+ 1433 00f5 02       		.uleb128 0x2
+ 1434 00f6 18       		.uleb128 0x18
+ 1435 00f7 00       		.byte	0
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc7HOeJf.s 			page 33
+
+
+ 1436 00f8 00       		.byte	0
+ 1437 00f9 10       		.uleb128 0x10
+ 1438 00fa 34       		.uleb128 0x34
+ 1439 00fb 00       		.byte	0
+ 1440 00fc 03       		.uleb128 0x3
+ 1441 00fd 08       		.uleb128 0x8
+ 1442 00fe 3A       		.uleb128 0x3a
+ 1443 00ff 0B       		.uleb128 0xb
+ 1444 0100 3B       		.uleb128 0x3b
+ 1445 0101 05       		.uleb128 0x5
+ 1446 0102 49       		.uleb128 0x49
+ 1447 0103 13       		.uleb128 0x13
+ 1448 0104 02       		.uleb128 0x2
+ 1449 0105 18       		.uleb128 0x18
+ 1450 0106 00       		.byte	0
+ 1451 0107 00       		.byte	0
+ 1452 0108 11       		.uleb128 0x11
+ 1453 0109 34       		.uleb128 0x34
+ 1454 010a 00       		.byte	0
+ 1455 010b 03       		.uleb128 0x3
+ 1456 010c 0E       		.uleb128 0xe
+ 1457 010d 3A       		.uleb128 0x3a
+ 1458 010e 0B       		.uleb128 0xb
+ 1459 010f 3B       		.uleb128 0x3b
+ 1460 0110 05       		.uleb128 0x5
+ 1461 0111 49       		.uleb128 0x49
+ 1462 0112 13       		.uleb128 0x13
+ 1463 0113 3F       		.uleb128 0x3f
+ 1464 0114 19       		.uleb128 0x19
+ 1465 0115 3C       		.uleb128 0x3c
+ 1466 0116 19       		.uleb128 0x19
+ 1467 0117 00       		.byte	0
+ 1468 0118 00       		.byte	0
+ 1469 0119 12       		.uleb128 0x12
+ 1470 011a 34       		.uleb128 0x34
+ 1471 011b 00       		.byte	0
+ 1472 011c 03       		.uleb128 0x3
+ 1473 011d 0E       		.uleb128 0xe
+ 1474 011e 3A       		.uleb128 0x3a
+ 1475 011f 0B       		.uleb128 0xb
+ 1476 0120 3B       		.uleb128 0x3b
+ 1477 0121 0B       		.uleb128 0xb
+ 1478 0122 49       		.uleb128 0x49
+ 1479 0123 13       		.uleb128 0x13
+ 1480 0124 3F       		.uleb128 0x3f
+ 1481 0125 19       		.uleb128 0x19
+ 1482 0126 02       		.uleb128 0x2
+ 1483 0127 18       		.uleb128 0x18
+ 1484 0128 00       		.byte	0
+ 1485 0129 00       		.byte	0
+ 1486 012a 13       		.uleb128 0x13
+ 1487 012b 01       		.uleb128 0x1
+ 1488 012c 01       		.byte	0x1
+ 1489 012d 49       		.uleb128 0x49
+ 1490 012e 13       		.uleb128 0x13
+ 1491 012f 01       		.uleb128 0x1
+ 1492 0130 13       		.uleb128 0x13
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc7HOeJf.s 			page 34
+
+
+ 1493 0131 00       		.byte	0
+ 1494 0132 00       		.byte	0
+ 1495 0133 14       		.uleb128 0x14
+ 1496 0134 21       		.uleb128 0x21
+ 1497 0135 00       		.byte	0
+ 1498 0136 49       		.uleb128 0x49
+ 1499 0137 13       		.uleb128 0x13
+ 1500 0138 2F       		.uleb128 0x2f
+ 1501 0139 0B       		.uleb128 0xb
+ 1502 013a 00       		.byte	0
+ 1503 013b 00       		.byte	0
+ 1504 013c 15       		.uleb128 0x15
+ 1505 013d 21       		.uleb128 0x21
+ 1506 013e 00       		.byte	0
+ 1507 013f 49       		.uleb128 0x49
+ 1508 0140 13       		.uleb128 0x13
+ 1509 0141 2F       		.uleb128 0x2f
+ 1510 0142 05       		.uleb128 0x5
+ 1511 0143 00       		.byte	0
+ 1512 0144 00       		.byte	0
+ 1513 0145 00       		.byte	0
+ 1514              		.section	.debug_aranges,"",%progbits
+ 1515 0000 44000000 		.4byte	0x44
+ 1516 0004 0200     		.2byte	0x2
+ 1517 0006 00000000 		.4byte	.Ldebug_info0
+ 1518 000a 04       		.byte	0x4
+ 1519 000b 00       		.byte	0
+ 1520 000c 0000     		.2byte	0
+ 1521 000e 0000     		.2byte	0
+ 1522 0010 00000000 		.4byte	.LFB63
+ 1523 0014 48000000 		.4byte	.LFE63-.LFB63
+ 1524 0018 00000000 		.4byte	.LFB64
+ 1525 001c 14000000 		.4byte	.LFE64-.LFB64
+ 1526 0020 00000000 		.4byte	.LFB65
+ 1527 0024 28030000 		.4byte	.LFE65-.LFB65
+ 1528 0028 00000000 		.4byte	.LFB66
+ 1529 002c FC000000 		.4byte	.LFE66-.LFB66
+ 1530 0030 00000000 		.4byte	.LFB67
+ 1531 0034 50000000 		.4byte	.LFE67-.LFB67
+ 1532 0038 00000000 		.4byte	.LFB68
+ 1533 003c 34000000 		.4byte	.LFE68-.LFB68
+ 1534 0040 00000000 		.4byte	0
+ 1535 0044 00000000 		.4byte	0
+ 1536              		.section	.debug_ranges,"",%progbits
+ 1537              	.Ldebug_ranges0:
+ 1538 0000 00000000 		.4byte	.LFB63
+ 1539 0004 48000000 		.4byte	.LFE63
+ 1540 0008 00000000 		.4byte	.LFB64
+ 1541 000c 14000000 		.4byte	.LFE64
+ 1542 0010 00000000 		.4byte	.LFB65
+ 1543 0014 28030000 		.4byte	.LFE65
+ 1544 0018 00000000 		.4byte	.LFB66
+ 1545 001c FC000000 		.4byte	.LFE66
+ 1546 0020 00000000 		.4byte	.LFB67
+ 1547 0024 50000000 		.4byte	.LFE67
+ 1548 0028 00000000 		.4byte	.LFB68
+ 1549 002c 34000000 		.4byte	.LFE68
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc7HOeJf.s 			page 35
+
+
+ 1550 0030 00000000 		.4byte	0
+ 1551 0034 00000000 		.4byte	0
+ 1552              		.section	.debug_line,"",%progbits
+ 1553              	.Ldebug_line0:
+ 1554 0000 2A020000 		.section	.debug_str,"MS",%progbits,1
+ 1554      02004901 
+ 1554      00000201 
+ 1554      FB0E0D00 
+ 1554      01010101 
+ 1555              	.LASF39:
+ 1556 0000 64696769 		.ascii	"digit_place\000"
+ 1556      745F706C 
+ 1556      61636500 
+ 1557              	.LASF35:
+ 1558 000c 64616353 		.ascii	"dacState\000"
+ 1558      74617465 
+ 1558      00
+ 1559              	.LASF34:
+ 1560 0015 636F6E74 		.ascii	"continuousSending\000"
+ 1560      696E756F 
+ 1560      75735365 
+ 1560      6E64696E 
+ 1560      6700
+ 1561              	.LASF46:
+ 1562 0027 453A5C44 		.ascii	"E:\\Documents\\PSoC Creator\\engr478labs\\stfu_proj"
+ 1562      6F63756D 
+ 1562      656E7473 
+ 1562      5C50536F 
+ 1562      43204372 
+ 1563 0056 6563742E 		.ascii	"ect.cydsn\000"
+ 1563      63796473 
+ 1563      6E00
+ 1564              	.LASF9:
+ 1565 0060 5F5F696E 		.ascii	"__int32_t\000"
+ 1565      7433325F 
+ 1565      7400
+ 1566              	.LASF44:
+ 1567 006a 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1567      4320342E 
+ 1567      392E3320 
+ 1567      32303135 
+ 1567      30333033 
+ 1568 009d 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m3 -mthumb -g -O"
+ 1568      20726576 
+ 1568      6973696F 
+ 1568      6E203232 
+ 1568      31323230 
+ 1569 00d0 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 1569      66756E63 
+ 1569      74696F6E 
+ 1569      2D736563 
+ 1569      74696F6E 
+ 1570              	.LASF45:
+ 1571 00f8 2E5C6D61 		.ascii	".\\main.c\000"
+ 1571      696E2E63 
+ 1571      00
+ 1572              	.LASF15:
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc7HOeJf.s 			page 36
+
+
+ 1573 0101 646F7562 		.ascii	"double\000"
+ 1573      6C6500
+ 1574              	.LASF24:
+ 1575 0108 696E7661 		.ascii	"invalid\000"
+ 1575      6C696400 
+ 1576              	.LASF23:
+ 1577 0110 52656164 		.ascii	"ReadSerial\000"
+ 1577      53657269 
+ 1577      616C00
+ 1578              	.LASF21:
+ 1579 011b 66696E61 		.ascii	"final\000"
+ 1579      6C00
+ 1580              	.LASF32:
+ 1581 0121 72656376 		.ascii	"recvChar\000"
+ 1581      43686172 
+ 1581      00
+ 1582              	.LASF14:
+ 1583 012a 666C6F61 		.ascii	"float\000"
+ 1583      7400
+ 1584              	.LASF40:
+ 1585 0130 636F756E 		.ascii	"counter\000"
+ 1585      74657200 
+ 1586              	.LASF33:
+ 1587 0138 6164634F 		.ascii	"adcOut\000"
+ 1587      757400
+ 1588              	.LASF1:
+ 1589 013f 756E7369 		.ascii	"unsigned char\000"
+ 1589      676E6564 
+ 1589      20636861 
+ 1589      7200
+ 1590              	.LASF29:
+ 1591 014d 53696E67 		.ascii	"Sing\000"
+ 1591      00
+ 1592              	.LASF17:
+ 1593 0152 72656738 		.ascii	"reg8\000"
+ 1593      00
+ 1594              	.LASF19:
+ 1595 0157 62617365 		.ascii	"base\000"
+ 1595      00
+ 1596              	.LASF36:
+ 1597 015c 77617665 		.ascii	"waveForm\000"
+ 1597      466F726D 
+ 1597      00
+ 1598              	.LASF3:
+ 1599 0165 73686F72 		.ascii	"short unsigned int\000"
+ 1599      7420756E 
+ 1599      7369676E 
+ 1599      65642069 
+ 1599      6E7400
+ 1600              	.LASF30:
+ 1601 0178 7468696E 		.ascii	"thing\000"
+ 1601      6700
+ 1602              	.LASF43:
+ 1603 017e 444D415F 		.ascii	"DMA_1_TD\000"
+ 1603      315F5444 
+ 1603      00
+ 1604              	.LASF31:
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc7HOeJf.s 			page 37
+
+
+ 1605 0187 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1605      52784275 
+ 1605      66666572 
+ 1605      00
+ 1606              	.LASF41:
+ 1607 0194 444D415F 		.ascii	"DMA_ARRAY\000"
+ 1607      41525241 
+ 1607      5900
+ 1608              	.LASF37:
+ 1609 019e 696E7075 		.ascii	"inputting_degrees\000"
+ 1609      7474696E 
+ 1609      675F6465 
+ 1609      67726565 
+ 1609      7300
+ 1610              	.LASF5:
+ 1611 01b0 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1611      20756E73 
+ 1611      69676E65 
+ 1611      6420696E 
+ 1611      7400
+ 1612              	.LASF47:
+ 1613 01c2 6D61696E 		.ascii	"main\000"
+ 1613      00
+ 1614              	.LASF12:
+ 1615 01c7 75696E74 		.ascii	"uint16\000"
+ 1615      313600
+ 1616              	.LASF13:
+ 1617 01ce 75696E74 		.ascii	"uint32\000"
+ 1617      333200
+ 1618              	.LASF26:
+ 1619 01d5 6578706F 		.ascii	"exponentiate\000"
+ 1619      6E656E74 
+ 1619      69617465 
+ 1619      00
+ 1620              	.LASF8:
+ 1621 01e2 756E7369 		.ascii	"unsigned int\000"
+ 1621      676E6564 
+ 1621      20696E74 
+ 1621      00
+ 1622              	.LASF22:
+ 1623 01ef 444D415F 		.ascii	"DMA_Handler\000"
+ 1623      48616E64 
+ 1623      6C657200 
+ 1624              	.LASF7:
+ 1625 01fb 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1625      206C6F6E 
+ 1625      6720756E 
+ 1625      7369676E 
+ 1625      65642069 
+ 1626              	.LASF10:
+ 1627 0212 696E7433 		.ascii	"int32_t\000"
+ 1627      325F7400 
+ 1628              	.LASF38:
+ 1629 021a 5472616E 		.ascii	"TransmitBuffer\000"
+ 1629      736D6974 
+ 1629      42756666 
+ 1629      657200
+ARM GAS  C:\Users\Jonah\AppData\Local\Temp\cc7HOeJf.s 			page 38
+
+
+ 1630              	.LASF18:
+ 1631 0229 73697A65 		.ascii	"sizetype\000"
+ 1631      74797065 
+ 1631      00
+ 1632              	.LASF6:
+ 1633 0232 6C6F6E67 		.ascii	"long long int\000"
+ 1633      206C6F6E 
+ 1633      6720696E 
+ 1633      7400
+ 1634              	.LASF16:
+ 1635 0240 63686172 		.ascii	"char\000"
+ 1635      00
+ 1636              	.LASF42:
+ 1637 0245 444D415F 		.ascii	"DMA_1_Chan\000"
+ 1637      315F4368 
+ 1637      616E00
+ 1638              	.LASF20:
+ 1639 0250 6578706F 		.ascii	"exponent\000"
+ 1639      6E656E74 
+ 1639      00
+ 1640              	.LASF2:
+ 1641 0259 73686F72 		.ascii	"short int\000"
+ 1641      7420696E 
+ 1641      7400
+ 1642              	.LASF11:
+ 1643 0263 75696E74 		.ascii	"uint8\000"
+ 1643      3800
+ 1644              	.LASF4:
+ 1645 0269 6C6F6E67 		.ascii	"long int\000"
+ 1645      20696E74 
+ 1645      00
+ 1646              	.LASF28:
+ 1647 0272 64656772 		.ascii	"degree\000"
+ 1647      656500
+ 1648              	.LASF27:
+ 1649 0279 5475726E 		.ascii	"Turn_servo_degrees\000"
+ 1649      5F736572 
+ 1649      766F5F64 
+ 1649      65677265 
+ 1649      657300
+ 1650              	.LASF0:
+ 1651 028c 7369676E 		.ascii	"signed char\000"
+ 1651      65642063 
+ 1651      68617200 
+ 1652              	.LASF25:
+ 1653 0298 5F426F6F 		.ascii	"_Bool\000"
+ 1653      6C00
+ 1654              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

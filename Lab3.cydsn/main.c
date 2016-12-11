@@ -105,6 +105,10 @@ CY_ISR(ReadSerial) {
             break;
         case 'S':
         case 's':
+            //PWM_1_write(90);
+            
+            
+            
             //Switches between waveform DAC and voltage DAC
             dacState ^= 1;      //XOR with 1 toggles dacState between 0 and 1
             AMux_1_Select(dacState);

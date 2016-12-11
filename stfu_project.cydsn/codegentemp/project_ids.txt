@@ -1,0 +1,6 @@
+E:\Documents\PSoC Creator\engr478labs\stfu_project.cydsn\stfu_project.cyprj|366fa329-3ab9-4d89-a700-c549fd7b329b
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|1051044d-8b16-4619-bf95-6d6a6bae486a
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\default\CyReferenceLibrary\CyReferenceLibrary.cylib\CyReferenceLibrary.cyprj|22b2dfb5-ddfa-45dd-afd4-9ab7b5175ed6
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|32924e2b-1c4c-450f-a278-cd4ce8d64272
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|74729d6a-18d7-470a-9a8e-fe73acdf1a82
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|0addb2dc-dc3c-40e9-8ab5-a92b3f8b5428
